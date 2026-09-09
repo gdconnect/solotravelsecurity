@@ -24,4 +24,15 @@
     // see https://opennext.js.org/cloudflare/howtos/image
     "binding": "IMAGES",
   },
+  "routes": [
+    {
+      // Custom domain — Cloudflare auto-creates the CNAME + SSL.
+      "pattern": "solotravelsecurity.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "www.solotravelsecurity.com",
+      "custom_domain": true,
+    },
+  ],
 }

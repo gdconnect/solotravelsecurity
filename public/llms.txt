@@ -7,7 +7,7 @@
 ## About this site
 
 - **Status:** Pre-launch — coming soon.
-- **Live URL:** https://solotravelsecurity.example
+- **Live URL:** https://solotravelsecurity.com
 - **Focus:** Awareness, planning, scams, transit, accommodation, and digital
   hygiene for solo travellers.
 

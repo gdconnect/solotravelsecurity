@@ -9,7 +9,7 @@ import type { MetadataRoute } from "next";
  */
 
 export const SITE_NAME = "Solo Travel Security";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://solotravelsecurity.example";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://solotravelsecurity.com";
 export const SITE_DESCRIPTION =
   "Solo Travel Security is a forthcoming field-tested playbook for solo travellers — situational awareness, scam literacy, transit hygiene and calm decision-making.";
 
