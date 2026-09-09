@@ -1,5 +1,4 @@
-import { Bell, Sparkles } from "lucide-react";
-import { Reveal, SectionHeading } from "@/components/atoms";
+import { Icon, Reveal, SectionHeading } from "@/components/atoms";
 import { EmailNotify } from "@/components/molecules";
 
 /**
@@ -29,10 +28,10 @@ export function NotifyBanner() {
               />
             </div>
             <div className="flex flex-col gap-4">
-              <EmailNotify />
-              <p className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.18em] text-slate-500 dark:text-amber-50/60">
-                <Sparkles className="size-3" aria-hidden="true" /> No spam, ever.
-                <Bell className="ml-2 size-3" aria-hidden="true" /> Unsubscribe in one click.
+              <EmailNotify idSuffix="-banner" />
+              <p className="inline-flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.18em] text-slate-600 dark:text-amber-50/65">
+                <Icon name="sparkles" className="size-3" /> No spam, ever.
+                <Icon name="bell" className="ml-2 size-3" /> Unsubscribe in one click.
               </p>
             </div>
           </div>

@@ -1,20 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Nunito } from "next/font/google";
 import { JsonLd } from "@/components/atoms";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, siteGraph } from "@/lib/schema";
 import "./globals.css";
-
-const display = Bricolage_Grotesque({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const body = Nunito({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: [
@@ -72,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
-      className={`${display.variable} ${body.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <head>
         <meta name="color-scheme" content="light dark" />
@@ -85,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full">
         <JsonLd data={siteGraph()} />
         {children}
+        <script defer src="/notify.js" />
       </body>
     </html>
   );

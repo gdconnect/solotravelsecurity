@@ -1,4 +1,3 @@
-import { CreditCard, Eye, Hotel, Map, Phone, ShieldAlert } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/atoms";
 import { PrincipleList } from "@/components/molecules";
 
@@ -55,32 +54,32 @@ export function ManifestoSection() {
             tone="amber"
             items={[
               {
-                icon: Eye,
+                icon: "eye",
                 title: "Awareness, not anxiety",
                 body: "Notice your surroundings on your own terms. Anxiety narrows attention; awareness widens it.",
               },
               {
-                icon: Map,
+                icon: "map",
                 title: "Pre-load the city",
                 body: "Read about common scams and the safe transit options before you land. Surprises are the real risk.",
               },
               {
-                icon: Hotel,
+                icon: "hotel",
                 title: "Vet the room, not just the price",
                 body: "Locks, exits, neighbours, lighting, and the walk from the door to the elevator.",
               },
               {
-                icon: CreditCard,
+                icon: "card",
                 title: "Two cards, two pockets",
                 body: "Carry one, stash one. Notify your bank. Use the local SIM or eSIM for everything that matters.",
               },
               {
-                icon: Phone,
+                icon: "phone",
                 title: "A check-in that actually fires",
                 body: "A trusted contact, a scheduled message, and a backup who knows your itinerary end-to-end.",
               },
               {
-                icon: ShieldAlert,
+                icon: "shieldAlert",
                 title: "A clean fallback ladder",
                 body: "Local emergency, nearest consulate, embassy hotline, and the airline's after-hours desk — all in one note.",
               },

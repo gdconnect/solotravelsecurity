@@ -8,8 +8,12 @@
  * Grotesque display + Nunito body. Soft layered shadows.
  */
 @theme {
-  --font-display: "Bricolage Grotesque", "Nunito", ui-rounded, system-ui, sans-serif;
-  --font-body: "Nunito", ui-rounded, system-ui, sans-serif;
+  /* System font stack — zero font network requests, instant render, AA contrast. */
+  --font-display:
+    ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-body:
+    ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Editorial layered ambient shadows */
   --shadow-card: 0 2px 6px -1px rgb(15 23 42 / 0.06), 0 12px 28px -10px rgb(15 23 42 / 0.12);
@@ -94,24 +98,20 @@ html.dark ::selection {
   color: transparent;
 }
 
-/* Scroll reveal (JS adds .is-visible; no-JS / bots show content immediately) */
-.reveal {
-  opacity: 0;
-  translate: 0 16px;
-  transition:
-    opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    translate 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-}
-.reveal.is-visible {
-  opacity: 1;
-  translate: 0 0;
+/* CSS-only entrance — plays once on mount, no JS, no hydration cost. */
+.reveal-on-mount {
+  animation: reveal-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
 }
 
-@media (scripting: none) {
-  .reveal {
-    opacity: 1 !important;
-    translate: none !important;
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
   }
 }
 

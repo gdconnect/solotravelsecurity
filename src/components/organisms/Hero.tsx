@@ -1,6 +1,6 @@
-import { Bell, Compass, Eye, Shield } from "lucide-react";
 import { Badge, Reveal } from "@/components/atoms";
 import { EmailNotify } from "@/components/molecules/EmailNotify";
+import { Icon } from "@/components/atoms/Icon";
 
 /**
  * ORGANISM — Hero.
@@ -23,7 +23,7 @@ export function Hero() {
       <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-7 px-4 pt-20 pb-16 text-center sm:px-6 sm:pt-28 sm:pb-24">
         <Reveal>
           <Badge tone="amber" tilt="left">
-            <Compass className="size-3" aria-hidden="true" />
+            <Icon name="compass" className="size-3" />
             Coming soon · 2026
           </Badge>
         </Reveal>
@@ -34,7 +34,7 @@ export function Hero() {
             className="max-w-2xl text-balance font-display text-5xl font-black leading-[0.98] tracking-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-amber-50"
           >
             Solo travel,
-            <span className="block text-amber-500 dark:text-amber-300">sharply aware.</span>
+            <span className="block text-amber-700 dark:text-amber-300">sharply aware.</span>
           </h1>
         </Reveal>
 
@@ -48,20 +48,20 @@ export function Hero() {
 
         <Reveal delay={240} className="w-full">
           <div id="notify" className="flex justify-center">
-            <EmailNotify />
+            <EmailNotify idSuffix="-hero" />
           </div>
         </Reveal>
 
         <Reveal delay={320}>
-          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 font-mono text-[10px] font-black uppercase tracking-[0.18em] text-slate-500 dark:text-amber-50/55">
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 font-mono text-[10px] font-black uppercase tracking-[0.18em] text-slate-600 dark:text-amber-50/65">
             <li className="inline-flex items-center gap-1.5">
-              <Eye className="size-3" aria-hidden="true" /> Awareness
+              <Icon name="eye" className="size-3" /> Awareness
             </li>
             <li className="inline-flex items-center gap-1.5">
-              <Shield className="size-3" aria-hidden="true" /> Calm
+              <Icon name="shield" className="size-3" /> Calm
             </li>
             <li className="inline-flex items-center gap-1.5">
-              <Bell className="size-3" aria-hidden="true" /> Not paranoia
+              <Icon name="bell" className="size-3" /> Not paranoia
             </li>
           </ul>
         </Reveal>
