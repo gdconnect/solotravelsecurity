@@ -1,0 +1,28 @@
+# Solo Travel Security
+
+> Solo Travel Security is a forthcoming independent publication that helps
+> solo travellers move through unfamiliar places with confidence, situational
+> awareness, and calm. Tactical awareness, not paranoia.
+
+## About this site
+
+- **Status:** Pre-launch — coming soon.
+- **Live URL:** https://solotravelsecurity.example
+- **Focus:** Awareness, planning, scams, transit, accommodation, and digital
+  hygiene for solo travellers.
+
+## Topics covered
+
+- Pre-trip situational intelligence
+- On-the-ground awareness and body language
+- Money, cards and connectivity hygiene
+- Accommodation vetting
+- Local scams and how to recognise them
+- Transit, taxis and ride-shares
+- Emergency protocols and consulate reach-out
+
+## Structure
+
+The site is a single landing page at launch. More pages and a field-tested
+playbook will follow once we have verified, on-the-ground contributors in
+each region.
