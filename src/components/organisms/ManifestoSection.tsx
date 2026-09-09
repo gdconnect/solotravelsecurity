@@ -44,8 +44,8 @@ export function ManifestoSection() {
               Solo Travel Security is being built to be that short list. Field-tested practices from
               people who actually travel alone, organised by the moments you’ll face — arriving
               late, picking a hotel, taking a cab, pulling cash, dealing with an unfamiliar
-              consulate. No paid placements, no affiliate links, no growth-hacked noise. Just the
-              playbook.
+              consulate. When a recommendation is paid or affiliate, it’s labelled as such.
+              Everything else is just the playbook.
             </p>
           </div>
         </Reveal>
