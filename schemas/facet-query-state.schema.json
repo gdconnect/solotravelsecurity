@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/facet-query-state.schema.json",
+  "title": "FacetQueryState",
+  "description": "Formal schema for faceted search filter state, URL parameter bindings, and zero-PII situational context.",
+  "type": "object",
+  "required": [
+    "query",
+    "types",
+    "pillars",
+    "categories",
+    "archetypes",
+    "riskTiers",
+    "formats",
+    "priceTiers",
+    "sortBy",
+    "personalizedOnly"
+  ],
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "Free text search string. Bound to URL parameter 'q'."
+    },
+    "types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "product",
+          "scam",
+          "airport",
+          "micro_zone",
+          "regulatory",
+          "topic",
+          "checklist",
+          "country"
+        ]
+      },
+      "description": "Filter by entity classification. Bound to repeated URL parameter 'type'."
+    },
+    "pillars": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PIL-PERIMETER",
+          "PIL-FINANCIAL",
+          "PIL-COMMS",
+          "PIL-TRANSIT",
+          "PIL-THREAT",
+          "PIL-DIGITAL",
+          "PIL-CONSULAR"
+        ]
+      },
+      "description": "Filter by security pillar. Bound to repeated URL parameter 'pillar'."
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Filter by taxonomy category slug. Bound to repeated URL parameter 'category'."
+    },
+    "archetypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "solo-female",
+          "first-time-solo",
+          "digital-nomad",
+          "budget-backpacker",
+          "senior-solo"
+        ]
+      },
+      "description": "Filter by traveler archetype. Bound to repeated URL parameter 'archetype'."
+    },
+    "lifecyclePhases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHS-PRETRIP",
+          "PHS-STAGING",
+          "PHS-AIRSIDE",
+          "PHS-INGRESS",
+          "PHS-LODGING",
+          "PHS-DAYROAM",
+          "PHS-NIGHTROAM",
+          "PHS-CRISIS",
+          "PHS-EGRESS"
+        ]
+      },
+      "description": "Filter by travel lifecycle phase. Bound to repeated URL parameter 'phase'."
+    },
+    "riskTiers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+      },
+      "description": "Filter by risk tier. Bound to repeated URL parameter 'risk'."
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "physical_gear",
+          "digital_tool",
+          "truth_table",
+          "field_protocol",
+          "customs_rule",
+          "micro_zone_dossier",
+          "checklist_rule"
+        ]
+      },
+      "description": "Filter by medium format. Bound to repeated URL parameter 'format'."
+    },
+    "priceTiers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["free", "under_25", "25_to_50", "50_plus"]
+      },
+      "description": "Filter by price bracket. Bound to repeated URL parameter 'price'."
+    },
+    "destinations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Filter by destination city slug. Bound to repeated URL parameter 'dest'."
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "Optional ISO 3166-1 alpha-2 filter. Bound to URL parameter 'country'."
+    },
+    "spofOnly": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, filters exclusively for items resolving single points of failure. Bound to 'spof=1'."
+    },
+    "sortBy": {
+      "type": "string",
+      "enum": ["relevance", "rating", "price_asc", "price_desc", "title", "spof_priority"],
+      "default": "relevance",
+      "description": "Sorting rule. Bound to URL parameter 'sort'."
+    },
+    "personalizedOnly": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, activates local-first zero-PII personal trip filter. Bound to 'personalized=1'."
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Pagination page index. Bound to 'p'."
+    },
+    "pageSize": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 24,
+      "description": "Items per page."
+    }
+  },
+  "additionalProperties": false
+}

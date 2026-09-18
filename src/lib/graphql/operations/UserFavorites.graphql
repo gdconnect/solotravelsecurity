@@ -1,0 +1,15 @@
+query UserFavorites($sessionToken: String!) {
+  userFavorites(sessionToken: $sessionToken) {
+    id
+    type
+    title
+    url
+    category
+    description
+    price
+    rating
+    badge
+    savedAt
+    notes
+  }
+}

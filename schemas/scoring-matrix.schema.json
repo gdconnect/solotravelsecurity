@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/scoring-matrix.schema.json",
+  "title": "ScoringMatrix",
+  "description": "Multi-dimensional, weighted scoring matrix evaluating traveler readiness, dimensional pillars, and Single Point of Failure (SPOF) caps.",
+  "type": "object",
+  "required": ["id", "title", "maximumScore", "pillars", "spofTriggers", "gradeThresholds"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^SM-[A-Z0-9_-]+$",
+      "description": "Unique deterministic scoring matrix identifier."
+    },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "maximumScore": { "type": "number", "default": 100 },
+    "pillars": {
+      "type": "array",
+      "description": "Weighted dimensional pillars whose weights must sum to 100.",
+      "items": {
+        "type": "object",
+        "required": ["pillarId", "name", "weight", "criteria"],
+        "properties": {
+          "pillarId": { "type": "string" },
+          "name": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0, "maximum": 100 },
+          "criteria": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "label", "points"],
+              "properties": {
+                "code": { "type": "string" },
+                "label": { "type": "string" },
+                "points": { "type": "number" },
+                "isNegativeDeduction": { "type": "boolean", "default": false }
+              }
+            }
+          }
+        }
+      }
+    },
+    "spofTriggers": {
+      "type": "array",
+      "description": "Catastrophic single points of failure that cap the final score regardless of other positive attributes.",
+      "items": {
+        "type": "object",
+        "required": ["triggerId", "label", "conditionExpression", "scoreCap", "assignedGrade"],
+        "properties": {
+          "triggerId": { "type": "string" },
+          "label": { "type": "string" },
+          "conditionExpression": { "type": "string" },
+          "scoreCap": { "type": "number", "maximum": 50 },
+          "assignedGrade": { "type": "string", "enum": ["C", "D", "F"] },
+          "remediationRequired": { "type": "string" }
+        }
+      }
+    },
+    "gradeThresholds": {
+      "type": "object",
+      "required": ["A", "B", "C", "D", "F"],
+      "properties": {
+        "A": { "type": "number", "minimum": 85, "maximum": 100 },
+        "B": { "type": "number", "minimum": 70, "maximum": 84 },
+        "C": { "type": "number", "minimum": 50, "maximum": 69 },
+        "D": { "type": "number", "minimum": 35, "maximum": 49 },
+        "F": { "type": "number", "minimum": 0, "maximum": 34 }
+      }
+    }
+  }
+}

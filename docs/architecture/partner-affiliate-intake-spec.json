@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "system": {
+    "id": "sts-partner-affiliate-intake-engine",
+    "name": "Solo Travel Security Partner & Affiliate Intake System",
+    "version": "1.0.0",
+    "architecturePattern": "Schema-Driven Client-Side Edge Matching with JIT Combinatorial Validation",
+    "zeroPiiCertified": true,
+    "lastUpdated": "2026-09-12T19:30:00Z"
+  },
+  "schemaRegistry": [
+    {
+      "schemaId": "https://solotravelsecurity.com/schemas/partner-profile-intake.schema.json",
+      "filePath": "schemas/partner-profile-intake.schema.json",
+      "title": "PartnerProfileIntake",
+      "scope": "Vendor legal registration, tax classification, licensing, AM Best rating, and payout rail configuration."
+    },
+    {
+      "schemaId": "https://solotravelsecurity.com/schemas/partner-offer-intake.schema.json",
+      "filePath": "schemas/partner-offer-intake.schema.json",
+      "title": "PartnerOfferIntake",
+      "scope": "Commercial offer contracts, CPA/revshare terms, deep-linking URL templates, geofencing, and life-safety grading."
+    },
+    {
+      "schemaId": "https://solotravelsecurity.com/schemas/offer-matching-rule.schema.json",
+      "filePath": "schemas/offer-matching-rule.schema.json",
+      "title": "OfferMatchingRule",
+      "scope": "Deterministic matching rules, category blocking, score boost multipliers, and placement slot assignments."
+    },
+    {
+      "schemaId": "https://solotravelsecurity.com/schemas/partner-intake-batch.schema.json",
+      "filePath": "schemas/partner-intake-batch.schema.json",
+      "title": "PartnerIntakeBatch",
+      "scope": "Bulk onboarding batch payload schema for partners and commercial offers."
+    },
+    {
+      "schemaId": "https://solotravelsecurity.com/schemas/user-offer-match-result.schema.json",
+      "filePath": "schemas/user-offer-match-result.schema.json",
+      "title": "UserOfferMatchResult",
+      "scope": "Evaluated output payload returned to Next.js listing pages containing slotted placements and exclusion audits."
+    }
+  ],
+  "thinkingTools": {
+    "decisionTables": [
+      {
+        "id": "DT-INTAKE-VALIDATION-01",
+        "name": "Partner & Offer Onboarding Gating Decision Table",
+        "referenceFile": "src/data/monetization/intake-decision-tables.json",
+        "inputs": [
+          "isInsuranceLicensedOrExempt",
+          "hasVerifiedPhysicalTest",
+          "hasValidHttpsTrackingTemplate",
+          "hasAcceptedFtcDisclaimer",
+          "hasConfirmedSanctionsCompliance"
+        ],
+        "outputs": ["onboardingDecision", "rejectionReason"],
+        "ruleCount": 5
+      },
+      {
+        "id": "DT-OFFER-ELIGIBILITY-01",
+        "name": "Offer Eligibility & Contextual Filtering Decision Table",
+        "referenceFile": "src/data/monetization/intake-decision-tables.json",
+        "inputs": [
+          "destinationRiskTier",
+          "destinationSanctioned",
+          "travelerArchetype",
+          "deviceIsEsimCapable",
+          "activityScooterMotorcycle"
+        ],
+        "outputs": ["eligibleCategories", "blockedCategories", "slotHeroBannerCategory"],
+        "ruleCount": 5
+      },
+      {
+        "id": "DT-PAYOUT-ARBITRAGE-02",
+        "name": "Commercial Yield vs Life-Safety Arbitrage Table",
+        "referenceFile": "src/data/monetization/intake-decision-tables.json",
+        "inputs": ["destinationRiskTier", "lifeSafetyScoreDelta", "cpaDollarDelta"],
+        "outputs": ["priorityWinner", "arbitrageRationale"],
+        "ruleCount": 3
+      }
+    ],
+    "truthTables": [
+      {
+        "id": "TT-INTAKE-GATING-01",
+        "name": "Partner Onboarding Legal & Integrity Truth Table",
+        "referenceFile": "src/data/monetization/intake-truth-tables.json",
+        "conditions": [
+          "c1_entityRegistered",
+          "c2_insuranceRegulatedIfApplicable",
+          "c3_trackingHttpsSecure",
+          "c4_editorialTested"
+        ],
+        "actions": ["a1_allowIntakeApproval", "a2_tagRequiresManualAudit", "a3_hardReject"]
+      },
+      {
+        "id": "TT-SANCTIONS-EXCLUSION-01",
+        "name": "OFAC & International Sanctions Geofence Truth Table",
+        "referenceFile": "src/data/monetization/intake-truth-tables.json",
+        "conditions": [
+          "c1_destinationSanctioned",
+          "c2_isCommercialPayoutOffer",
+          "c3_isFirstPartyPublicSafety"
+        ],
+        "actions": ["a1_renderOffer", "a2_suppressCommercialLinks", "a3_displayEmbassyWarningOnly"]
+      },
+      {
+        "id": "TT-OFFER-CONFLICT-01",
+        "name": "Offer Category Collision & Exclusivity Truth Table",
+        "referenceFile": "src/data/monetization/intake-truth-tables.json",
+        "conditions": [
+          "c1_multipleEligibleInSameSlot",
+          "c2_exclusiveSponsorAgreementActive",
+          "c3_safetyScoresIdentical"
+        ],
+        "actions": [
+          "a1_serveExclusivePartner",
+          "a2_serveHighestSafetyScore",
+          "a3_renderSideBySideComparison"
+        ]
+      }
+    ],
+    "scoringMatrices": [
+      {
+        "matrixId": "SM-OFFER-RELEVANCE-01",
+        "name": "Offer Dynamic Relevance & Slot Placement Matrix",
+        "referenceFile": "src/data/monetization/intake-scoring-matrices.json",
+        "formula": "Composite_Score = (0.35 * LifeSafetyRank) + (0.30 * CommercialYieldScore) + (0.20 * ContextualAffinity) + (0.15 * FrictionInverseScore)",
+        "slots": {
+          "hero_emergency_banner": { "minScore": 85.0, "maxSlots": 1 },
+          "sticky_bottom_drawer": { "minScore": 75.0, "maxSlots": 1 },
+          "spec_matrix_row": { "minScore": 70.0, "maxSlots": 3 },
+          "inline_checklist_recommendation": { "minScore": 60.0, "maxSlots": 2 }
+        }
+      },
+      {
+        "matrixId": "SM-PARTNER-REPUTATION-01",
+        "name": "Partner Underwriter Solvency & Trust Index",
+        "referenceFile": "src/data/monetization/intake-scoring-matrices.json",
+        "dimensions": [
+          "underwriterSolvency (40%)",
+          "claimTurnaroundDays (30%)",
+          "regulatoryComplianceHistory (30%)"
+        ]
+      }
+    ]
+  },
+  "jitCombinatorialSimulation": {
+    "engineScript": "scripts/jit-partner-intake-evaluator.py",
+    "runtime": "Python 3.12 (Standard Library itertools)",
+    "cartesianSpaceDimensions": {
+      "archetypes": 5,
+      "destinations": 7,
+      "lifecycles": 5,
+      "healthProfiles": 4,
+      "deviceCapabilities": 2,
+      "budgetTiers": 3
+    },
+    "totalTheoreticalStates": 4200,
+    "empiricalFindings": {
+      "validOfferCoverageRate": 0.875,
+      "sanctionsBlockedRate": 0.125,
+      "topCategoryWinShares": {
+        "medical_evac": 0.583,
+        "parent_guardian_service": 0.206,
+        "preloaded_esim": 0.086,
+        "anti_theft_fintech": 0.051,
+        "perimeter_defense_hardware": 0.04,
+        "travel_health_insurance": 0.034
+      }
+    }
+  },
+  "placementSlotsTaxonomy": [
+    {
+      "slotKey": "hero_emergency_banner",
+      "name": "Hero Emergency Banner",
+      "placementLocation": "Above the fold on high/critical risk destinations",
+      "primaryTargetCategories": ["medical_evac", "parent_guardian_service"]
+    },
+    {
+      "slotKey": "sticky_bottom_drawer",
+      "name": "Sticky Conversion Drawer",
+      "placementLocation": "Docked at bottom of viewport during scroll",
+      "primaryTargetCategories": ["preloaded_esim", "anti_theft_fintech", "medical_evac"]
+    },
+    {
+      "slotKey": "spec_matrix_row",
+      "name": "Spec Comparison Drawer Row",
+      "placementLocation": "Interactive side-by-side comparison tray",
+      "primaryTargetCategories": ["medical_evac", "travel_health_insurance", "satellite_sos"]
+    },
+    {
+      "slotKey": "inline_checklist_recommendation",
+      "name": "Inline Checklist Anchor",
+      "placementLocation": "Contextual action item inside interactive playbooks",
+      "primaryTargetCategories": [
+        "preloaded_esim",
+        "anti_theft_fintech",
+        "perimeter_defense_hardware"
+      ]
+    }
+  ],
+  "runtimeImplementations": {
+    "validatorModule": "src/lib/monetization/intake-validator.ts",
+    "matcherModule": "src/lib/monetization/offer-matcher.ts",
+    "masterCatalog": "src/data/monetization/partner-intake-catalog.json"
+  }
+}

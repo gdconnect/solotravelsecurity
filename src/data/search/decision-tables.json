@@ -1,0 +1,348 @@
+[
+  {
+    "id": "DT-FACET-QUERY-01",
+    "title": "Multi-Facet Query Evaluation & Pipeline Routing Table",
+    "description": "Deterministic decision matrix mapping inbound search token combinations and facet filters to indexing pipelines, execution strictness, and ranking behaviors.",
+    "pillarId": "PIL-TRANSIT",
+    "conditionColumns": [
+      {
+        "key": "queryIntentType",
+        "label": "Query Intent Classification",
+        "type": "enum",
+        "allowedValues": [
+          "empty",
+          "sku_brand",
+          "destination_specific",
+          "threat_vector",
+          "broad_keyword"
+        ]
+      },
+      {
+        "key": "hasFacetConstraints",
+        "label": "Facet Constraints Applied",
+        "type": "boolean"
+      },
+      {
+        "key": "isPersonalizedActive",
+        "label": "Client Personalization Active",
+        "type": "boolean"
+      },
+      {
+        "key": "riskTierFilter",
+        "label": "Risk Tier Filter",
+        "type": "enum",
+        "allowedValues": ["none", "low_moderate", "elevated_critical"]
+      }
+    ],
+    "actionColumns": [
+      { "key": "pipelineMode", "label": "Execution Pipeline Mode", "type": "directive" },
+      { "key": "textMatchStrictness", "label": "Text Matching Strictness", "type": "directive" },
+      { "key": "rankingStrategy", "label": "Relevance Ranking Strategy", "type": "code" },
+      { "key": "threatAlertElevation", "label": "Threat Alert Elevation Flag", "type": "warning" }
+    ],
+    "rules": [
+      {
+        "ruleId": "R-THREAT-ELEVATED",
+        "scenario": "Threat vector search in elevated/critical risk tier",
+        "priority": 100,
+        "conditions": {
+          "queryIntentType": "threat_vector",
+          "hasFacetConstraints": "*",
+          "isPersonalizedActive": "*",
+          "riskTierFilter": "elevated_critical"
+        },
+        "actions": {
+          "pipelineMode": "THREAT_DOSSIER_PRIORITY_INJECTION",
+          "textMatchStrictness": "STEMMED_EXPANDED_SYNONYMS",
+          "rankingStrategy": "SPOF_ELEVATION_FIRST",
+          "threatAlertElevation": "CRITICAL_POPUP_BANNER_DEPLOYED"
+        }
+      },
+      {
+        "ruleId": "R-SKU-BRAND",
+        "scenario": "Direct hardware or SaaS tool SKU query",
+        "priority": 90,
+        "conditions": {
+          "queryIntentType": "sku_brand",
+          "hasFacetConstraints": "*",
+          "isPersonalizedActive": "*",
+          "riskTierFilter": "*"
+        },
+        "actions": {
+          "pipelineMode": "EXACT_PRODUCT_SPEC_PIN",
+          "textMatchStrictness": "EXACT_IDENTIFIER_MATCH",
+          "rankingStrategy": "RELEVANCE_EXACT_TITLE",
+          "threatAlertElevation": "STANDARD_CARD_HIGHLIGHT"
+        }
+      },
+      {
+        "ruleId": "R-DESTINATION-PERSONALIZED",
+        "scenario": "Destination city search with active traveler persona",
+        "priority": 80,
+        "conditions": {
+          "queryIntentType": "destination_specific",
+          "hasFacetConstraints": "*",
+          "isPersonalizedActive": true,
+          "riskTierFilter": "*"
+        },
+        "actions": {
+          "pipelineMode": "CURATED_CITY_INGRESS_BUNDLE",
+          "textMatchStrictness": "GEOSPATIAL_SLUG_MATCH",
+          "rankingStrategy": "PERSONALIZED_SITUATIONAL_BOOST",
+          "threatAlertElevation": "INGRESS_CURFEW_ALERT_PINNED"
+        }
+      },
+      {
+        "ruleId": "R-FACET-ONLY",
+        "scenario": "Pure facet exploration with no keyword query",
+        "priority": 70,
+        "conditions": {
+          "queryIntentType": "empty",
+          "hasFacetConstraints": true,
+          "isPersonalizedActive": "*",
+          "riskTierFilter": "*"
+        },
+        "actions": {
+          "pipelineMode": "PURE_DISJUNCTIVE_FACET_INDEX",
+          "textMatchStrictness": "PASS_ALL_FILTERED",
+          "rankingStrategy": "EDITORIAL_WEIGHT_AND_RATING",
+          "threatAlertElevation": "NONE"
+        }
+      },
+      {
+        "ruleId": "R-BROAD-KEYWORD",
+        "scenario": "General freeform keyword search across all categories",
+        "priority": 50,
+        "conditions": {
+          "queryIntentType": "broad_keyword",
+          "hasFacetConstraints": "*",
+          "isPersonalizedActive": "*",
+          "riskTierFilter": "*"
+        },
+        "actions": {
+          "pipelineMode": "MULTI_FIELD_BM25_SEARCH",
+          "textMatchStrictness": "SUBSTRING_AND_TOKEN_OR",
+          "rankingStrategy": "WEIGHTED_BM25_SCORE",
+          "threatAlertElevation": "CONTEXTUAL_SNIPPET_MATCH"
+        }
+      }
+    ],
+    "defaultAction": {
+      "pipelineMode": "DEFAULT_CATALOG_EXPLORER",
+      "textMatchStrictness": "SUBSTRING_TOKEN_MATCH",
+      "rankingStrategy": "RELEVANCE_PRIORITY",
+      "threatAlertElevation": "NONE"
+    }
+  },
+  {
+    "id": "DT-FACET-RELAX-02",
+    "title": "Zero-Results Progressive Constraint Relaxation Matrix",
+    "description": "Determines the precise order of facet constraint removal when an over-constrained query yields zero matches, preventing user dead-ends.",
+    "pillarId": "PIL-PERIMETER",
+    "conditionColumns": [
+      { "key": "activePriceFilter", "label": "Price Filter Active", "type": "boolean" },
+      { "key": "activeFormatFilter", "label": "Format Filter Active", "type": "boolean" },
+      { "key": "activeRiskFilter", "label": "Risk Tier Filter Active", "type": "boolean" },
+      { "key": "activeTypeFilter", "label": "Item Type Filter Active", "type": "boolean" },
+      { "key": "activeTextQuery", "label": "Text Query Non-Empty", "type": "boolean" }
+    ],
+    "actionColumns": [
+      { "key": "dimensionToRelax", "label": "Recommended Dimension to Relax", "type": "directive" },
+      { "key": "remediationMessage", "label": "Traveler Guidance Message", "type": "warning" },
+      { "key": "fallbackStrategy", "label": "Fallback Search Strategy", "type": "code" }
+    ],
+    "rules": [
+      {
+        "ruleId": "R-RELAX-PRICE-FIRST",
+        "scenario": "Price filter active alongside format or risk",
+        "priority": 100,
+        "conditions": {
+          "activePriceFilter": true,
+          "activeFormatFilter": "*",
+          "activeRiskFilter": "*",
+          "activeTypeFilter": "*",
+          "activeTextQuery": "*"
+        },
+        "actions": {
+          "dimensionToRelax": "priceTiers",
+          "remediationMessage": "No items match your price bracket. Widening price filter to reveal vetted open protocols and premium solutions.",
+          "fallbackStrategy": "DROP_PRICE_KEEP_OTHERS"
+        }
+      },
+      {
+        "ruleId": "R-RELAX-FORMAT-SECOND",
+        "scenario": "Format filter active without price constraint",
+        "priority": 80,
+        "conditions": {
+          "activePriceFilter": false,
+          "activeFormatFilter": true,
+          "activeRiskFilter": "*",
+          "activeTypeFilter": "*",
+          "activeTextQuery": "*"
+        },
+        "actions": {
+          "dimensionToRelax": "formats",
+          "remediationMessage": "No physical gear found for this scenario. Showing field protocols and truth tables covering the same risk.",
+          "fallbackStrategy": "DROP_FORMAT_KEEP_OTHERS"
+        }
+      },
+      {
+        "ruleId": "R-RELAX-RISK-THIRD",
+        "scenario": "Risk tier filter active with item type",
+        "priority": 60,
+        "conditions": {
+          "activePriceFilter": false,
+          "activeFormatFilter": false,
+          "activeRiskFilter": true,
+          "activeTypeFilter": "*",
+          "activeTextQuery": "*"
+        },
+        "actions": {
+          "dimensionToRelax": "riskTiers",
+          "remediationMessage": "No items match this strict risk tier. Expanding to adjacent operational tiers.",
+          "fallbackStrategy": "EXPAND_TO_ALL_RISK_TIERS"
+        }
+      },
+      {
+        "ruleId": "R-RELAX-QUERY-LAST",
+        "scenario": "Text query with no facet match",
+        "priority": 40,
+        "conditions": {
+          "activePriceFilter": false,
+          "activeFormatFilter": false,
+          "activeRiskFilter": false,
+          "activeTypeFilter": "*",
+          "activeTextQuery": true
+        },
+        "actions": {
+          "dimensionToRelax": "query",
+          "remediationMessage": "Specific keyword returned 0 hits. Showing all verified security resources in this category.",
+          "fallbackStrategy": "FUZZY_STEMMED_FALLBACK"
+        }
+      }
+    ],
+    "defaultAction": {
+      "dimensionToRelax": "all",
+      "remediationMessage": "Zero matches found. Resetting filters to base catalog.",
+      "fallbackStrategy": "RESET_ALL_FILTERS"
+    }
+  },
+  {
+    "id": "DT-FACET-SKAG-03",
+    "title": "Programmatic SEO & Canonical Indexability Decision Table",
+    "description": "Evaluates facet combinations to decide whether a permuted URL is indexed, canonicalized to parent, or blocked via noindex to safeguard crawl budget.",
+    "pillarId": "PIL-CONSULAR",
+    "conditionColumns": [
+      {
+        "key": "facetDepth",
+        "label": "Number of Filter Dimensions Selected",
+        "type": "enum",
+        "allowedValues": ["1", "2", "3", "4_plus"]
+      },
+      {
+        "key": "itemCount",
+        "label": "Matching Candidate Count",
+        "type": "enum",
+        "allowedValues": ["zero", "one_to_two", "three_to_nine", "ten_plus"]
+      },
+      { "key": "hasFreeTextQuery", "label": "Contains Free Text Query (q=)", "type": "boolean" },
+      {
+        "key": "hasSortOrPageParam",
+        "label": "Contains Sort or Pagination Param",
+        "type": "boolean"
+      }
+    ],
+    "actionColumns": [
+      { "key": "robotsTag", "label": "Meta Robots Directive", "type": "directive" },
+      { "key": "canonicalTarget", "label": "Canonical Link Target", "type": "directive" },
+      { "key": "sitemapEligibility", "label": "XML Sitemap Inclusion", "type": "code" }
+    ],
+    "rules": [
+      {
+        "ruleId": "R-TEXT-QUERY-NOINDEX",
+        "scenario": "URL contains free text query parameter",
+        "priority": 100,
+        "conditions": {
+          "hasFreeTextQuery": true,
+          "facetDepth": "*",
+          "itemCount": "*",
+          "hasSortOrPageParam": "*"
+        },
+        "actions": {
+          "robotsTag": "noindex,follow",
+          "canonicalTarget": "STRIP_QUERY_PARAM_TO_BASE_PATH",
+          "sitemapEligibility": "EXCLUDE_FROM_SITEMAP"
+        }
+      },
+      {
+        "ruleId": "R-SORT-PAGE-NOINDEX",
+        "scenario": "URL contains non-default sort or page > 1",
+        "priority": 90,
+        "conditions": {
+          "hasFreeTextQuery": false,
+          "facetDepth": "*",
+          "itemCount": "*",
+          "hasSortOrPageParam": true
+        },
+        "actions": {
+          "robotsTag": "noindex,follow",
+          "canonicalTarget": "CANONICAL_TO_PAGE_ONE_DEFAULT_SORT",
+          "sitemapEligibility": "EXCLUDE_FROM_SITEMAP"
+        }
+      },
+      {
+        "ruleId": "R-THIN-CONTENT-NOINDEX",
+        "scenario": "Facet combination has fewer than 3 items",
+        "priority": 80,
+        "conditions": {
+          "hasFreeTextQuery": false,
+          "facetDepth": "*",
+          "itemCount": ["zero", "one_to_two"],
+          "hasSortOrPageParam": false
+        },
+        "actions": {
+          "robotsTag": "noindex,follow",
+          "canonicalTarget": "CANONICAL_TO_CLOSEST_PARENT_DIRECTORY",
+          "sitemapEligibility": "EXCLUDE_FROM_SITEMAP"
+        }
+      },
+      {
+        "ruleId": "R-CURATED-SKAG-INDEX",
+        "scenario": "High-value 1 or 2 facet combination with 3+ items",
+        "priority": 70,
+        "conditions": {
+          "hasFreeTextQuery": false,
+          "facetDepth": ["1", "2"],
+          "itemCount": ["three_to_nine", "ten_plus"],
+          "hasSortOrPageParam": false
+        },
+        "actions": {
+          "robotsTag": "index,follow",
+          "canonicalTarget": "SELF_CANONICAL_PERMUTED_ROUTE",
+          "sitemapEligibility": "INCLUDE_IN_XML_SITEMAP"
+        }
+      },
+      {
+        "ruleId": "R-DEEP-FACET-CANONICAL",
+        "scenario": "3 or more facet dimensions combined",
+        "priority": 60,
+        "conditions": {
+          "hasFreeTextQuery": false,
+          "facetDepth": ["3", "4_plus"],
+          "itemCount": "*",
+          "hasSortOrPageParam": false
+        },
+        "actions": {
+          "robotsTag": "noindex,follow",
+          "canonicalTarget": "CANONICAL_TO_PRIMARY_PILLAR_OR_CITY",
+          "sitemapEligibility": "EXCLUDE_FROM_SITEMAP"
+        }
+      }
+    ],
+    "defaultAction": {
+      "robotsTag": "noindex,follow",
+      "canonicalTarget": "CANONICAL_TO_ROOT_PLAYBOOK_SEARCH",
+      "sitemapEligibility": "EXCLUDE_FROM_SITEMAP"
+    }
+  }
+]

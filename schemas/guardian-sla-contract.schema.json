@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/guardian-sla-contract.schema.json",
+  "title": "GuardianSlaContract",
+  "description": "Formal JSON Schema defining the Parent/Sponsor Guardian SLA Contract, check-in intervals, heartbeat state machine, and emergency escalation ladder.",
+  "type": "object",
+  "required": [
+    "contractId",
+    "tier",
+    "travelerId",
+    "sponsorEmail",
+    "destinationCity",
+    "destinationCountry",
+    "checkInFrequencyHours",
+    "silentGracePeriodMinutes",
+    "escalationLadder",
+    "consularPacket"
+  ],
+  "properties": {
+    "contractId": { "type": "string", "pattern": "^SLA-[A-Z0-9_-]+$" },
+    "tier": {
+      "type": "string",
+      "enum": ["free_tripwire", "single_trip_pass", "annual_explorer", "family_syndicate"]
+    },
+    "travelerId": { "type": "string" },
+    "sponsorEmail": { "type": "string", "format": "email" },
+    "sponsorPhone": { "type": "string" },
+    "destinationCity": { "type": "string" },
+    "destinationCountry": { "type": "string" },
+    "checkInFrequencyHours": { "type": "integer", "minimum": 1, "maximum": 48 },
+    "silentGracePeriodMinutes": { "type": "integer", "minimum": 15, "maximum": 240 },
+    "escalationLadder": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stepNumber",
+          "triggerDelayMinutes",
+          "actionChannel",
+          "targetRecipient",
+          "payloadType"
+        ],
+        "properties": {
+          "stepNumber": { "type": "integer" },
+          "triggerDelayMinutes": { "type": "integer" },
+          "actionChannel": {
+            "type": "string",
+            "enum": [
+              "silent_push_traveler",
+              "sms_traveler",
+              "email_sponsor",
+              "sms_sponsor",
+              "consular_dispatch_packet"
+            ]
+          },
+          "targetRecipient": {
+            "type": "string",
+            "enum": ["traveler", "sponsor", "emergency_services"]
+          },
+          "payloadType": { "type": "string" }
+        }
+      }
+    },
+    "consularPacket": {
+      "type": "object",
+      "required": [
+        "embassyName",
+        "crisisPhone",
+        "localEmergencyNumbers",
+        "lastKnownLodgingAddress"
+      ],
+      "properties": {
+        "embassyName": { "type": "string" },
+        "crisisPhone": { "type": "string" },
+        "localEmergencyNumbers": {
+          "type": "object",
+          "required": ["police", "ambulance"],
+          "properties": {
+            "police": { "type": "string" },
+            "ambulance": { "type": "string" },
+            "touristPolice": { "type": "string" }
+          }
+        },
+        "lastKnownLodgingAddress": { "type": "string" }
+      }
+    }
+  }
+}

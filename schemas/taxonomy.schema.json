@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/taxonomy.schema.json",
+  "title": "SoloTravelSecurityTaxonomy",
+  "description": "Exhaustive taxonomy schema classifying domains, lifecycles, archetypes, risk tiers, and threat vectors in solo travel security.",
+  "type": "object",
+  "required": ["pillars", "phases", "archetypes", "riskTiers", "threatVectors"],
+  "properties": {
+    "pillars": {
+      "type": "array",
+      "description": "Core sovereign pillars of traveler security.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "slug", "description", "weight", "icon"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^PIL-[A-Z0-9_-]+$" },
+          "name": { "type": "string" },
+          "slug": { "type": "string" },
+          "description": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0, "maximum": 100 },
+          "icon": { "type": "string" },
+          "threatVectors": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "description": "Chronological travel lifecycle phases from pre-trip planning to post-trip debrief.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "slug", "order", "description"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^PHS-[A-Z0-9_-]+$" },
+          "name": { "type": "string" },
+          "slug": { "type": "string" },
+          "order": { "type": "integer", "minimum": 1 },
+          "description": { "type": "string" },
+          "typicalWindow": { "type": "string" }
+        }
+      }
+    },
+    "archetypes": {
+      "type": "array",
+      "description": "Target traveler persona profiles with distinct vulnerability patterns.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "slug", "description", "vulnerabilityFocus"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^ARC-[A-Z0-9_-]+$" },
+          "name": { "type": "string" },
+          "slug": { "type": "string" },
+          "description": { "type": "string" },
+          "vulnerabilityFocus": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "riskTiers": {
+      "type": "array",
+      "description": "Operational risk classification tiers.",
+      "items": {
+        "type": "object",
+        "required": ["tier", "label", "numericalLevel", "description", "baselinePosture"],
+        "properties": {
+          "tier": { "type": "string", "enum": ["LOW", "MODERATE", "ELEVATED", "HIGH"] },
+          "label": { "type": "string" },
+          "numericalLevel": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "description": { "type": "string" },
+          "baselinePosture": { "type": "string" }
+        }
+      }
+    },
+    "threatVectors": {
+      "type": "array",
+      "description": "Specific tactical threat scenarios encountered by solo travelers.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "slug", "pillarId", "severity", "description"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^VEC-[A-Z0-9_-]+$" },
+          "name": { "type": "string" },
+          "slug": { "type": "string" },
+          "pillarId": { "type": "string" },
+          "severity": { "type": "string", "enum": ["CRITICAL", "HIGH", "MODERATE", "LOW"] },
+          "description": { "type": "string" },
+          "mitigationStrategy": { "type": "string" }
+        }
+      }
+    }
+  }
+}

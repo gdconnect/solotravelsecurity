@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/truth-table.schema.json",
+  "title": "TruthTable",
+  "description": "Formal boolean logic truth table verifying exhaustive, non-contradictory resolutions for high-stakes solo travel scenarios.",
+  "type": "object",
+  "required": ["id", "title", "propositions", "outputVariables", "rows", "completenessVerified"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^TT-[A-Z0-9_-]+$",
+      "description": "Unique deterministic truth table identifier."
+    },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "scenarioCategory": { "type": "string" },
+    "propositions": {
+      "type": "array",
+      "description": "Independent binary boolean propositions.",
+      "items": {
+        "type": "object",
+        "required": ["symbol", "name", "description"],
+        "properties": {
+          "symbol": { "type": "string", "pattern": "^P[0-9]+$" },
+          "key": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "outputVariables": {
+      "type": "array",
+      "description": "Formal resolution parameters emitted by the truth table.",
+      "items": {
+        "type": "object",
+        "required": ["key", "type", "description"],
+        "properties": {
+          "key": { "type": "string" },
+          "type": { "type": "string", "enum": ["actionCode", "threatLevel", "script", "posture"] },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "rows": {
+      "type": "array",
+      "description": "Truth rows covering truth assignments.",
+      "items": {
+        "type": "object",
+        "required": ["rowId", "inputs", "outputs"],
+        "properties": {
+          "rowId": { "type": "string" },
+          "inputs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": ["boolean", "string"],
+              "description": "true, false, or '*' (don't care / wildcard)"
+            }
+          },
+          "outputs": {
+            "type": "object",
+            "additionalProperties": { "type": "string" }
+          },
+          "formalRationale": { "type": "string" }
+        }
+      }
+    },
+    "completenessVerified": {
+      "type": "boolean",
+      "description": "Proof that every input permutation maps to exactly one deterministic output with no conflicts or deadlocks."
+    }
+  }
+}

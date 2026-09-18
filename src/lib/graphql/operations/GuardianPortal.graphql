@@ -1,0 +1,30 @@
+query GuardianPortal($token: ID!) {
+  guardianPortal(token: $token) {
+    token
+    travelerName
+    destinationCity
+    destinationCountry
+    status
+    nextWindowUtc
+    readinessScore
+    readinessGrade
+    milestones {
+      id
+      label
+      expectedTime
+      completedTime
+      status
+    }
+    consularHotlines {
+      usEmbassyPhone
+      ukEmbassyPhone
+      ausEmbassyPhone
+    }
+    emergencyNumbers {
+      police
+      ambulance
+      fire
+      touristPolice
+    }
+  }
+}

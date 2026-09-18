@@ -1,0 +1,4149 @@
+[
+  {
+    "iso2": "AL",
+    "iso3": "ALB",
+    "name": "Albania",
+    "nativeName": "Shqipëria",
+    "capital": "Tirana",
+    "currencyCode": "ALL",
+    "currencySymbol": "Lek",
+    "currencyName": "Albanian lek",
+    "phonePrefix": "+355",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q222",
+    "coordinates": {
+      "latitude": 41,
+      "longitude": 20
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "129",
+      "ambulance": "127",
+      "fire": "128",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+355-4-2247-285",
+      "ukEmbassyPhone": "+355-4-2234-973",
+      "ausEmbassyPhone": "+355-4-2247-285"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Albania is celebrated for exceptional hospitality (Besa code) and dramatic Riviera beaches. Crime against travelers is rare; road infrastructure is developing.",
+    "keySafetyRules": [
+      "Carry cash in Albanian Lek (ALL); card terminals are uncommon outside Tirana hotels.",
+      "Public transit relies on 'furgon' minibuses; confirm destination and price with the driver before loading bags.",
+      "Emergency dispatch is reachable via 112."
+    ],
+    "primaryCities": ["tirana"]
+  },
+  {
+    "iso2": "AR",
+    "iso3": "ARG",
+    "name": "Argentina",
+    "nativeName": "Argentina",
+    "capital": "Buenos Aires",
+    "currencyCode": "ARS",
+    "currencySymbol": "$",
+    "currencyName": "Argentine peso",
+    "phonePrefix": "+54",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q414",
+    "coordinates": {
+      "latitude": -34,
+      "longitude": -64
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "107",
+      "fire": "100",
+      "touristPolice": "+54-9-11-5050-3293"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+54-11-5777-4533",
+      "ukEmbassyPhone": "+54-11-4808-2200",
+      "ausEmbassyPhone": "+54-11-4779-3500"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "I"]
+    },
+    "overview": "Argentina is European in feel with rich wine and tango culture. Solo travelers should watch for snatch-and-grab motorcycle theft (motochorros) and mustard/liquid distraction tricks.",
+    "keySafetyRules": [
+      "If someone spills liquid or mustard on you, immediately secure your bags and walk away without letting them 'help'.",
+      "Keep phones stashed away from cafe windows and sidewalk curbs.",
+      "Tourist Police in Buenos Aires provide specialized multilingual assistance via WhatsApp."
+    ],
+    "primaryCities": ["buenos-aires"]
+  },
+  {
+    "iso2": "AM",
+    "iso3": "ARM",
+    "name": "Armenia",
+    "nativeName": "Հայաստան",
+    "capital": "Yerevan",
+    "currencyCode": "AMD",
+    "currencySymbol": "֏",
+    "currencyName": "Armenian dram",
+    "phonePrefix": "+374",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q399",
+    "coordinates": {
+      "latitude": 40,
+      "longitude": 45
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "102",
+      "ambulance": "103",
+      "fire": "101",
+      "touristPolice": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+374-10-464-700",
+      "ukEmbassyPhone": "+374-10-264-301",
+      "ausEmbassyPhone": "+374-10-464-700"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Armenia is peaceful, family-oriented, and very safe for solo travelers. Yerevan's center is safe day and night; border demarcation areas in the south require checking advisory status.",
+    "keySafetyRules": [
+      "Use GG or Yandex Taxi apps to secure verified pricing across Yerevan.",
+      "Avoid traveling near eastern border zones adjacent to active geopolitical demarcation lines.",
+      "Dial 911 for unified rescue and emergency service."
+    ],
+    "primaryCities": ["yerevan"]
+  },
+  {
+    "iso2": "AU",
+    "iso3": "AUS",
+    "name": "Australia",
+    "nativeName": "Australia",
+    "capital": "Canberra",
+    "currencyCode": "AUD",
+    "currencySymbol": "$",
+    "currencyName": "Australian dollar",
+    "phonePrefix": "+61",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "wikidataId": "Q408",
+    "coordinates": {
+      "latitude": -27,
+      "longitude": 133
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "000",
+      "ambulance": "000",
+      "fire": "000"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+61-2-6214-5600",
+      "ukEmbassyPhone": "+61-2-6270-6666",
+      "ausEmbassyPhone": "1300-555-135"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["I"]
+    },
+    "overview": "Australia is exceptionally safe for solo travelers with modern medical systems. Environmental dangers (powerful surf rip tides, outback dehydration, intense UV) demand preparation.",
+    "keySafetyRules": [
+      "Always swim between the red and yellow flags on lifeguarded surf beaches.",
+      "Carry ample water and offline communication when venturing into regional or desert routes.",
+      "Emergency dispatch number is 000 (triple zero)."
+    ],
+    "primaryCities": ["sydney", "melbourne"]
+  },
+  {
+    "iso2": "AT",
+    "iso3": "AUT",
+    "name": "Austria",
+    "nativeName": "Österreich",
+    "capital": "Vienna",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+43",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q40",
+    "coordinates": {
+      "latitude": 47.33333333,
+      "longitude": 13.33333333
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "133",
+      "ambulance": "144",
+      "fire": "122",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+43-1-313390",
+      "ukEmbassyPhone": "+43-1-716130",
+      "ausEmbassyPhone": "+43-1-506740"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Austria boasts some of the lowest crime statistics in Europe, impeccable alpine transport, and orderly urban systems. Solo travel here is comfortable and low-friction.",
+    "keySafetyRules": [
+      "Always validate transit tickets at entrance pillars before descending to train platforms.",
+      "Mountain weather changes rapidly; check Bergwetter forecasts before solo alpine trekking.",
+      "General emergency line 112 works across all mobile operators without area code."
+    ],
+    "primaryCities": ["vienna"]
+  },
+  {
+    "iso2": "BB",
+    "iso3": "BRB",
+    "name": "Barbados",
+    "nativeName": "Barbados",
+    "capital": "Bridgetown",
+    "currencyCode": "BBD",
+    "currencySymbol": "Bds$",
+    "currencyName": "Barbadian dollar",
+    "phonePrefix": "+1",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "wikidataId": "Q244",
+    "coordinates": {
+      "latitude": 13.16666666,
+      "longitude": -59.53333333
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "211",
+      "ambulance": "511",
+      "fire": "311"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+1-246-227-4000",
+      "ukEmbassyPhone": "+1-246-430-7800",
+      "ausEmbassyPhone": "+1-246-227-4000"
+    },
+    "electricalStandards": {
+      "voltage": "115V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Barbados is peaceful, welcoming, and safe for solo travelers with British-influenced legal traditions and friendly coastal communities.",
+    "keySafetyRules": [
+      "Camouflage clothing of any type is strictly illegal for civilians in Barbados.",
+      "Yellow public minibuses and blue transit buses are safe, affordable transit options.",
+      "Police dispatch is 211; medical ambulance is 511."
+    ],
+    "primaryCities": ["bridgetown"]
+  },
+  {
+    "iso2": "BE",
+    "iso3": "BEL",
+    "name": "Belgium",
+    "nativeName": "België",
+    "capital": "Brussels",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+32",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q31",
+    "coordinates": {
+      "latitude": 50.83333333,
+      "longitude": 4
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "101",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+32-2-811-4000",
+      "ukEmbassyPhone": "+32-2-287-6211",
+      "ausEmbassyPhone": "+32-2-286-0500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "Belgium is central and easy to traverse by rail. Brussels Midi station and surrounding areas require vigilance against luggage snatching and pocket theft.",
+    "keySafetyRules": [
+      "Keep hands on luggage handles when standing on Brussels Midi/Zuid Eurostar platforms.",
+      "Buy train tickets in advance or through the SNCB app to avoid on-board surcharge fees.",
+      "112 provides multi-lingual EU emergency assistance."
+    ],
+    "primaryCities": ["brussels"]
+  },
+  {
+    "iso2": "BZ",
+    "iso3": "BLZ",
+    "name": "Belize",
+    "nativeName": "Belize",
+    "capital": "Belmopan",
+    "currencyCode": "BZD",
+    "currencySymbol": "$",
+    "currencyName": "Belize dollar",
+    "phonePrefix": "+501",
+    "region": "Americas",
+    "subregion": "Central America",
+    "wikidataId": "Q242",
+    "coordinates": {
+      "latitude": 17.25,
+      "longitude": -88.75
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+501-822-4011",
+      "ukEmbassyPhone": "+501-822-2146",
+      "ausEmbassyPhone": "+501-822-4011"
+    },
+    "electricalStandards": {
+      "voltage": "110/220V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B", "G"]
+    },
+    "overview": "Belize is English-speaking and renowned for barrier reef diving and Maya ruins. Belize City has gang-related street crime; travelers should transit quickly to the Cayes or Cayo.",
+    "keySafetyRules": [
+      "Transfer directly from Belize City airport to water taxis for Caye Caulker or San Pedro without lingering downtown.",
+      "Use authorized boat operators adhering to life vest safety standards on reef outings.",
+      "Unified emergency hotline is 911."
+    ],
+    "primaryCities": ["belize-city"]
+  },
+  {
+    "iso2": "BT",
+    "iso3": "BTN",
+    "name": "Bhutan",
+    "nativeName": "ʼbrug-yul",
+    "capital": "Thimphu",
+    "currencyCode": "BTN",
+    "currencySymbol": "Nu.",
+    "currencyName": "Bhutanese ngultrum",
+    "phonePrefix": "+975",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "wikidataId": "Q917",
+    "coordinates": {
+      "latitude": 27.5,
+      "longitude": 90.5
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "113",
+      "ambulance": "112",
+      "fire": "110"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+91-11-2419-8000",
+      "ukEmbassyPhone": "+91-11-2419-2100",
+      "ausEmbassyPhone": "+91-11-4139-9900"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "D", "G"]
+    },
+    "overview": "Bhutan is tranquil and strictly regulated for international tourism. Crime is practically unheard of; mountain driving on cliffside highways is the only notable hazard.",
+    "keySafetyRules": [
+      "Travel is organized with certified local guides who coordinate transport and emergency logistics.",
+      "Carry warm layers as temperatures fluctuate steeply between mountain valleys.",
+      "Medical emergency line is 112."
+    ],
+    "primaryCities": ["thimphu"]
+  },
+  {
+    "iso2": "BO",
+    "iso3": "BOL",
+    "name": "Bolivia",
+    "nativeName": "Bolivia",
+    "capital": "Sucre",
+    "currencyCode": "BOB",
+    "currencySymbol": "Bs.",
+    "currencyName": "Bolivian boliviano",
+    "phonePrefix": "+591",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q750",
+    "coordinates": {
+      "latitude": -17,
+      "longitude": -65
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "118",
+      "fire": "119",
+      "touristPolice": "+591-2-222-5016"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+591-2-216-8000",
+      "ukEmbassyPhone": "+591-2-243-3424",
+      "ausEmbassyPhone": "+591-2-216-8000"
+    },
+    "electricalStandards": {
+      "voltage": "115/230V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "C"]
+    },
+    "overview": "Bolivia features surreal Salar de Uyuni salt flats and high-altitude culture. Express kidnappings in unverified radio cabs and extreme altitude require preparation.",
+    "keySafetyRules": [
+      "Only use pre-called Radio Taxis; never enter unmarked street cabs at bus terminals or night venues.",
+      "Give yourself 2-3 days to adapt to La Paz's 3,600m altitude before strenuous trekking.",
+      "Tourist Police handle disputes and stolen document filings in major centers."
+    ],
+    "primaryCities": ["la-paz"]
+  },
+  {
+    "iso2": "BA",
+    "iso3": "BIH",
+    "name": "Bosnia and Herzegovina",
+    "nativeName": "Bosna i Hercegovina",
+    "capital": "Sarajevo",
+    "currencyCode": "BAM",
+    "currencySymbol": "KM",
+    "currencyName": "Bosnia and Herzegovina convertible mark",
+    "phonePrefix": "+387",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q225",
+    "coordinates": {
+      "latitude": 44,
+      "longitude": 18
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "122",
+      "ambulance": "124",
+      "fire": "123",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+387-33-704-000",
+      "ukEmbassyPhone": "+387-33-282-200",
+      "ausEmbassyPhone": "+387-33-704-000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Bosnia and Herzegovina offers breathtaking historical crossways in Sarajevo and Mostar. Crime is low; remaining marked minefield areas in unpaved backcountry require strict trail discipline.",
+    "keySafetyRules": [
+      "Never wander off marked trails in backcountry hills; respect red skull minefield warning signs.",
+      "Carry cash (Bosnian Convertible Mark - BAM) as card penetration is limited in markets.",
+      "Emergency police dispatch is 122."
+    ],
+    "primaryCities": ["sarajevo"]
+  },
+  {
+    "iso2": "BW",
+    "iso3": "BWA",
+    "name": "Botswana",
+    "nativeName": "Botswana",
+    "capital": "Gaborone",
+    "currencyCode": "BWP",
+    "currencySymbol": "P",
+    "currencyName": "Botswana pula",
+    "phonePrefix": "+267",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "wikidataId": "Q963",
+    "coordinates": {
+      "latitude": -22,
+      "longitude": 24
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "997",
+      "fire": "998"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+267-395-3982",
+      "ukEmbassyPhone": "+267-395-2841",
+      "ausEmbassyPhone": "+267-395-3982"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "G", "M"]
+    },
+    "overview": "Botswana is one of Africa's safest, most politically stable democracies. High-end safari eco-tourism dominates; wildlife safety in unfenced wilderness camps is primary.",
+    "keySafetyRules": [
+      "Never walk between safari tents at night without an armed camp escort due to wild predators.",
+      "Use 4WD vehicles with high clearance when navigating Chobe or Moremi game reserves.",
+      "Police dispatch is 999."
+    ],
+    "primaryCities": ["gaborone"]
+  },
+  {
+    "iso2": "BR",
+    "iso3": "BRA",
+    "name": "Brazil",
+    "nativeName": "Brasil",
+    "capital": "Brasilia",
+    "currencyCode": "BRL",
+    "currencySymbol": "R$",
+    "currencyName": "Brazilian real",
+    "phonePrefix": "+55",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q155",
+    "coordinates": {
+      "latitude": -10,
+      "longitude": -55
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "190",
+      "ambulance": "192",
+      "fire": "193",
+      "touristPolice": "+55-21-2332-2924"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+55-61-3312-7000",
+      "ukEmbassyPhone": "+55-61-3329-2300",
+      "ausEmbassyPhone": "+55-61-3224-5500"
+    },
+    "electricalStandards": {
+      "voltage": "127/220V",
+      "frequency": "60Hz",
+      "plugTypes": ["C", "N"]
+    },
+    "overview": "Brazil offers legendary energy and landscapes, but demands disciplined situational street awareness. High rates of street robbery in major cities require minimal asset exposure.",
+    "keySafetyRules": [
+      "Never walk on Rio's Copacabana or Ipanema beaches after sunset.",
+      "Do not wear gold chains, luxury watches, or carry cameras openly in public squares.",
+      "Use Uber or registered 99 rides; avoid unmarked street cabs at night."
+    ],
+    "primaryCities": ["rio-de-janeiro"]
+  },
+  {
+    "iso2": "BG",
+    "iso3": "BGR",
+    "name": "Bulgaria",
+    "nativeName": "България",
+    "capital": "Sofia",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+359",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "wikidataId": "Q219",
+    "coordinates": {
+      "latitude": 43,
+      "longitude": 25
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+359-2-937-5100",
+      "ukEmbassyPhone": "+359-2-933-9222",
+      "ausEmbassyPhone": "+359-2-937-5100"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Bulgaria offers exceptional mountain trekking and Black Sea coastal towns. Street crime is low; minor taxi overcharging around Sofia airport is the chief nuisance.",
+    "keySafetyRules": [
+      "Order official Yellow Taxi cabs from the terminal desk inside Sofia Airport arrivals.",
+      "Keep cash in Bulgarian Lev (BGN) for smaller mountain huts and rural monasteries.",
+      "Unified EU emergency number 112 applies nationwide."
+    ],
+    "primaryCities": ["sofia"]
+  },
+  {
+    "iso2": "KH",
+    "iso3": "KHM",
+    "name": "Cambodia",
+    "nativeName": "Kâmpŭchéa",
+    "capital": "Phnom Penh",
+    "currencyCode": "KHR",
+    "currencySymbol": "KHR",
+    "currencyName": "Cambodian riel",
+    "phonePrefix": "+855",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q424",
+    "coordinates": {
+      "latitude": 13,
+      "longitude": 105
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "117",
+      "ambulance": "119",
+      "fire": "118",
+      "touristPolice": "+855-63-760-215"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+855-23-728-000",
+      "ukEmbassyPhone": "+855-23-426-651",
+      "ausEmbassyPhone": "+855-23-213-470"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "C", "G"]
+    },
+    "overview": "Cambodia is famous for Angkor Wat and gentle hospitality. Drive-by bag snatches from tuk-tuks in Phnom Penh and unexploded ordnance in off-trail rural regions are primary risks.",
+    "keySafetyRules": [
+      "Keep phones and daypacks enclosed inside tuk-tuks rather than held loosely near open side frames.",
+      "Never leave marked paths around rural temple ruins or forested borders due to historical landmines.",
+      "Use PassApp or Grab for rides rather than negotiating roadside tuk-tuk quotes."
+    ],
+    "primaryCities": ["siem-reap"]
+  },
+  {
+    "iso2": "CA",
+    "iso3": "CAN",
+    "name": "Canada",
+    "nativeName": "Canada",
+    "capital": "Ottawa",
+    "currencyCode": "CAD",
+    "currencySymbol": "$",
+    "currencyName": "Canadian dollar",
+    "phonePrefix": "+1",
+    "region": "Americas",
+    "subregion": "Northern America",
+    "wikidataId": "Q16",
+    "coordinates": {
+      "latitude": 60,
+      "longitude": -95
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+1-613-238-5335",
+      "ukEmbassyPhone": "+1-613-237-1530",
+      "ausEmbassyPhone": "+1-613-236-0841"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Canada offers world-class public safety and extensive wilderness. Urban areas are peaceful, with severe winter sub-zero blizzards and remote wildlife being primary concerns.",
+    "keySafetyRules": [
+      "Carry bear spray and understand wildlife protocols when trekking national parks in Alberta or BC.",
+      "Winter driving requires winter-rated snow tires and emergency vehicle survival kits.",
+      "Dial 911 for all emergencies."
+    ],
+    "primaryCities": ["toronto", "vancouver"]
+  },
+  {
+    "iso2": "CL",
+    "iso3": "CHL",
+    "name": "Chile",
+    "nativeName": "Chile",
+    "capital": "Santiago",
+    "currencyCode": "CLP",
+    "currencySymbol": "$",
+    "currencyName": "Chilean peso",
+    "phonePrefix": "+56",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q298",
+    "coordinates": {
+      "latitude": -30,
+      "longitude": -71
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "133",
+      "ambulance": "131",
+      "fire": "132"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+56-2-2330-3000",
+      "ukEmbassyPhone": "+56-2-2370-4100",
+      "ausEmbassyPhone": "+56-2-2550-3500"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "L"]
+    },
+    "overview": "Chile is one of South America's most stable and developed economies. Crime is comparatively low; standard caution applies around Santiago central markets and bus terminals.",
+    "keySafetyRules": [
+      "Keep daypacks on your lap when traveling on Santiago's metro or intercity buses.",
+      "Prepare for rapid weather transformations when trekking Torres del Paine in Patagonia.",
+      "Police (Carabineros) emergency dispatch is 133."
+    ],
+    "primaryCities": ["santiago"]
+  },
+  {
+    "iso2": "CO",
+    "iso3": "COL",
+    "name": "Colombia",
+    "nativeName": "Colombia",
+    "capital": "Bogotá",
+    "currencyCode": "COP",
+    "currencySymbol": "$",
+    "currencyName": "Colombian peso",
+    "phonePrefix": "+57",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q739",
+    "coordinates": {
+      "latitude": 4,
+      "longitude": -72
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "123",
+      "ambulance": "123",
+      "fire": "119",
+      "touristPolice": "+57-1-3374413"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+57-1-275-2000",
+      "ukEmbassyPhone": "+57-1-326-8300",
+      "ausEmbassyPhone": "+57-1-631-4300"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Colombia is scenic and welcoming, but demands strict operational boundaries. Major risks include scopolamine drugging via dating apps and robbery in isolated alleys.",
+    "keySafetyRules": [
+      "Obey 'No dar papaya' — never display valuable phones, watches, or jewelry openly on the street.",
+      "Never meet dating app contacts in private hotel rooms or airbnbs; choose public, security-staffed venues.",
+      "Use app-based rides (Uber, Cabify) rather than flagging street taxis after dark."
+    ],
+    "primaryCities": ["medellin", "bogota", "cartagena"]
+  },
+  {
+    "iso2": "CR",
+    "iso3": "CRI",
+    "name": "Costa Rica",
+    "nativeName": "Costa Rica",
+    "capital": "San Jose",
+    "currencyCode": "CRC",
+    "currencySymbol": "₡",
+    "currencyName": "Costa Rican colón",
+    "phonePrefix": "+506",
+    "region": "Americas",
+    "subregion": "Central America",
+    "wikidataId": "Q800",
+    "coordinates": {
+      "latitude": 10,
+      "longitude": -84
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+506-2519-2000",
+      "ukEmbassyPhone": "+506-2258-2025",
+      "ausEmbassyPhone": "+506-2220-3000"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Costa Rica is renowned for biodiversity and peaceful stability. Car break-ins and unattended beach theft represent the primary operational exposures.",
+    "keySafetyRules": [
+      "Never leave luggage, gear, or passports in rental vehicles, even for short scenic stops.",
+      "Only take official red taxis displaying yellow door triangles, or use Uber.",
+      "Observe strong Pacific rip current warnings; avoid swimming on unpatrolled beaches alone."
+    ],
+    "primaryCities": ["san-jose"]
+  },
+  {
+    "iso2": "HR",
+    "iso3": "HRV",
+    "name": "Croatia",
+    "nativeName": "Hrvatska",
+    "capital": "Zagreb",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+385",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q224",
+    "coordinates": {
+      "latitude": 45.16666666,
+      "longitude": 15.5
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "192",
+      "ambulance": "194",
+      "fire": "193",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+385-1-661-2200",
+      "ukEmbassyPhone": "+385-1-600-9100",
+      "ausEmbassyPhone": "+385-1-489-1200"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Croatia offers exceptional safety, pristine Adriatic waters, and strong tourist infrastructure. Solo travelers enjoy relaxed environments with minimal street crime.",
+    "keySafetyRules": [
+      "Exchange currency or withdraw Euros only from verified bank ATMs (avoid high-fee Euronet kiosks).",
+      "Observe sea urchin warnings and wear water shoes on rocky coastal beaches.",
+      "General emergency dispatch is reachable via 112 across all networks."
+    ],
+    "primaryCities": ["dubrovnik"]
+  },
+  {
+    "iso2": "CY",
+    "iso3": "CYP",
+    "name": "Cyprus",
+    "nativeName": "Κύπρος",
+    "capital": "Nicosia",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+357",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q229",
+    "coordinates": {
+      "latitude": 35,
+      "longitude": 33
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+357-22-393939",
+      "ukEmbassyPhone": "+357-22-861100",
+      "ausEmbassyPhone": "+357-22-753001"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Cyprus has low crime and welcoming coastal communities. Driving is on the left side of the road, and the UN buffer zone requires passport checks when crossing north.",
+    "keySafetyRules": [
+      "Bring your passport if crossing the Green Line pedestrian checkpoints in Nicosia.",
+      "Vehicles drive on the left side of the road; take care when crossing pedestrian lanes.",
+      "Emergency services are unified under 112."
+    ],
+    "primaryCities": ["nicosia"]
+  },
+  {
+    "iso2": "CZ",
+    "iso3": "CZE",
+    "name": "Czech Republic",
+    "nativeName": "Česká republika",
+    "capital": "Prague",
+    "currencyCode": "CZK",
+    "currencySymbol": "Kč",
+    "currencyName": "Czech koruna",
+    "phonePrefix": "+420",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "wikidataId": "Q213",
+    "coordinates": {
+      "latitude": 49.75,
+      "longitude": 15.5
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "158",
+      "ambulance": "155",
+      "fire": "150",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+420-257-022-000",
+      "ukEmbassyPhone": "+420-257-400-500",
+      "ausEmbassyPhone": "+420-296-578-300"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "The Czech Republic offers high solo safety with rich medieval architecture. Main operational risks are aggressive taxi overcharging at Prague Main Station and pickpockets on Charles Bridge.",
+    "keySafetyRules": [
+      "Never take unmetered street cabs from Prague train stations or Old Town Square; use Liftago or Uber.",
+      "Exchange currency only at verified bank branches; street currency touts hand out worthless obsolete foreign banknotes.",
+      "112 connects directly to multi-lingual dispatch operators."
+    ],
+    "primaryCities": ["prague"]
+  },
+  {
+    "iso2": "DK",
+    "iso3": "DNK",
+    "name": "Denmark",
+    "nativeName": "Danmark",
+    "capital": "Copenhagen",
+    "currencyCode": "DKK",
+    "currencySymbol": "Kr.",
+    "currencyName": "Danish krone",
+    "phonePrefix": "+45",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q35",
+    "coordinates": {
+      "latitude": 56,
+      "longitude": 10
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+45-33-41-71-00",
+      "ukEmbassyPhone": "+45-35-44-52-00",
+      "ausEmbassyPhone": "+45-70-26-36-76"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E", "F", "K"]
+    },
+    "overview": "Denmark is peaceful, highly organized, and universally accessible. Bicycle traffic is dense and fast; pedestrians must remain vigilant when stepping onto bike paths.",
+    "keySafetyRules": [
+      "Never walk in designated bike lanes; Copenhagen cyclists travel fast and expect clear pathways.",
+      "Christiania area has specific photography bans and strict community rules; respect posted signage.",
+      "Non-emergency police line is 114; emergency line is 112."
+    ],
+    "primaryCities": ["copenhagen"]
+  },
+  {
+    "iso2": "DO",
+    "iso3": "DOM",
+    "name": "Dominican Republic",
+    "nativeName": "República Dominicana",
+    "capital": "Santo Domingo",
+    "currencyCode": "DOP",
+    "currencySymbol": "$",
+    "currencyName": "Dominican peso",
+    "phonePrefix": "+1",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "wikidataId": "Q786",
+    "coordinates": {
+      "latitude": 19,
+      "longitude": -70.66666666
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911",
+      "touristPolice": "+1-809-200-3500"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+1-809-567-7775",
+      "ukEmbassyPhone": "+1-809-472-7111",
+      "ausEmbassyPhone": "+1-809-567-7775"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "The Dominican Republic offers vibrant Caribbean culture. Outside resort perimeters, motorcycle drive-by theft and unmetered taxi fares are typical concerns.",
+    "keySafetyRules": [
+      "Use Uber or airport terminal taxi desks rather than unmarked street vehicles.",
+      "Keep phones securely tucked away when walking near busy roadway intersections.",
+      "POLITUR (Tourist Police) provides specialized traveler assistance across resort corridors."
+    ],
+    "primaryCities": ["santo-domingo"]
+  },
+  {
+    "iso2": "EC",
+    "iso3": "ECU",
+    "name": "Ecuador",
+    "nativeName": "Ecuador",
+    "capital": "Quito",
+    "currencyCode": "USD",
+    "currencySymbol": "$",
+    "currencyName": "United States dollar",
+    "phonePrefix": "+593",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q736",
+    "coordinates": {
+      "latitude": -2,
+      "longitude": -77.5
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+593-2-398-5000",
+      "ukEmbassyPhone": "+593-2-397-2200",
+      "ausEmbassyPhone": "+593-2-398-5000"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Ecuador offers the Galapagos Islands, Andes mountains, and Amazon basin. Coastal port zones and intercity bus routes face elevated security friction.",
+    "keySafetyRules": [
+      "Stick to safe historic colonial centers in Quito and Cuenca; avoid walking after dark in port cities like Guayaquil.",
+      "Keep daypacks clamped between your feet on regional buses (do not store above head).",
+      "Unified emergency hotline is 911."
+    ],
+    "primaryCities": ["quito"]
+  },
+  {
+    "iso2": "EG",
+    "iso3": "EGY",
+    "name": "Egypt",
+    "nativeName": "مصر‎",
+    "capital": "Cairo",
+    "currencyCode": "EGP",
+    "currencySymbol": "ج.م",
+    "currencyName": "Egyptian pound",
+    "phonePrefix": "+20",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "wikidataId": "Q79",
+    "coordinates": {
+      "latitude": 27,
+      "longitude": 30
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "122",
+      "ambulance": "123",
+      "fire": "180",
+      "touristPolice": "126"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+20-2-2797-3300",
+      "ukEmbassyPhone": "+20-2-2791-6000",
+      "ausEmbassyPhone": "+20-2-2770-6600"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Egypt provides peerless antiquity. Solo visitors navigate intense commercial badgering at the Giza Pyramids and Luxor temples; organized security convoys monitor highway transit.",
+    "keySafetyRules": [
+      "Pre-book verified guides through reputable agencies to buffer against relentless site hawkers.",
+      "Use Uber in Cairo and Alexandria to prevent constant taxi fare disputes.",
+      "Dial 126 for the dedicated Tourist Police."
+    ],
+    "primaryCities": ["cairo"]
+  },
+  {
+    "iso2": "SV",
+    "iso3": "SLV",
+    "name": "El Salvador",
+    "nativeName": "El Salvador",
+    "capital": "San Salvador",
+    "currencyCode": "USD",
+    "currencySymbol": "$",
+    "currencyName": "United States dollar",
+    "phonePrefix": "+503",
+    "region": "Americas",
+    "subregion": "Central America",
+    "wikidataId": "Q792",
+    "coordinates": {
+      "latitude": 13.83333333,
+      "longitude": -88.91666666
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "913"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+503-2501-2999",
+      "ukEmbassyPhone": "+503-2511-5757",
+      "ausEmbassyPhone": "+503-2501-2999"
+    },
+    "electricalStandards": {
+      "voltage": "115V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "El Salvador has seen a dramatic drop in street homicide and crime in recent years. Surfing coastal towns (El Tunco, El Zonte) are popular and secure for solo visitors.",
+    "keySafetyRules": [
+      "Stick to established surf corridors and well-lit historic center plazas in San Salvador.",
+      "Both US Dollars and Bitcoin are accepted alongside standard credit cards.",
+      "Unified emergency hotline is 911."
+    ],
+    "primaryCities": ["san-salvador"]
+  },
+  {
+    "iso2": "EE",
+    "iso3": "EST",
+    "name": "Estonia",
+    "nativeName": "Eesti",
+    "capital": "Tallinn",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+372",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q191",
+    "coordinates": {
+      "latitude": 59,
+      "longitude": 26
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+372-668-8100",
+      "ukEmbassyPhone": "+372-667-4700",
+      "ausEmbassyPhone": "+372-668-8100"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Estonia is an ultra-digital, safe, and modern Baltic society. Tallinn Old Town is compact, well-lit, and very safe for solo walkers day or night.",
+    "keySafetyRules": [
+      "Estonian law requires pedestrians to wear small reflective safety tags on clothing during dark winter months.",
+      "Virtually all services and payments can be handled contactlessly or on mobile.",
+      "Unified emergency dispatch is 112."
+    ],
+    "primaryCities": ["tallinn"]
+  },
+  {
+    "iso2": "FJ",
+    "iso3": "FJI",
+    "name": "Fiji Islands",
+    "nativeName": "Fiji",
+    "capital": "Suva",
+    "currencyCode": "FJD",
+    "currencySymbol": "FJ$",
+    "currencyName": "Fijian dollar",
+    "phonePrefix": "+679",
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "wikidataId": "Q712",
+    "coordinates": {
+      "latitude": -18,
+      "longitude": 175
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "917",
+      "ambulance": "911",
+      "fire": "910"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+679-331-4466",
+      "ukEmbassyPhone": "+679-330-4744",
+      "ausEmbassyPhone": "+679-338-2211"
+    },
+    "electricalStandards": {
+      "voltage": "240V",
+      "frequency": "50Hz",
+      "plugTypes": ["I"]
+    },
+    "overview": "Fiji is warm, communal, and peaceful across outer island resorts. Urban areas in Suva and Nadi require standard nighttime caution.",
+    "keySafetyRules": [
+      "Avoid walking alone on dark unlit roads in downtown Suva late at night.",
+      "Respect village customs (sevusevu protocol of presenting kava roots to village chiefs).",
+      "Dial 917 for police or 911 for ambulance."
+    ],
+    "primaryCities": ["suva"]
+  },
+  {
+    "iso2": "FI",
+    "iso3": "FIN",
+    "name": "Finland",
+    "nativeName": "Suomi",
+    "capital": "Helsinki",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+358",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q33",
+    "coordinates": {
+      "latitude": 64,
+      "longitude": 26
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+358-9-5211",
+      "ukEmbassyPhone": "+358-9-2286-5100",
+      "ausEmbassyPhone": "+358-9-476-4700"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Finland is consistently ranked the happiest and one of the safest nations on Earth. Solitude, nature immersion, and pristine public services make it a solo haven.",
+    "keySafetyRules": [
+      "Winter conditions require studded footwear to avoid slip injuries on black ice.",
+      "Download the 112 Suomi application which automatically transmits exact GPS coordinates to dispatchers during emergency calls.",
+      "Finnish trains and buses run with absolute punctuality; plan transfers precisely."
+    ],
+    "primaryCities": ["helsinki"]
+  },
+  {
+    "iso2": "FR",
+    "iso3": "FRA",
+    "name": "France",
+    "nativeName": "France",
+    "capital": "Paris",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+33",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q142",
+    "coordinates": {
+      "latitude": 46,
+      "longitude": 2
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "17",
+      "ambulance": "15",
+      "fire": "18",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+33-1-43-12-22-22",
+      "ukEmbassyPhone": "+33-1-44-51-31-00",
+      "ausEmbassyPhone": "+33-1-40-59-33-00"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "France offers robust public infrastructure and medical support. Solo visitors primarily encounter distraction theft (petition clipboards, ring drop scam) around major monuments and rail terminuses.",
+    "keySafetyRules": [
+      "Decline to sign clipboards or engage with strangers attempting distraction around monuments.",
+      "Keep phones securely gripped when sitting near metro car doors.",
+      "Book licensed taxis only via official airport taxi queue lines (avoid unauthorized terminal touts)."
+    ],
+    "primaryCities": ["paris", "nice"]
+  },
+  {
+    "iso2": "GE",
+    "iso3": "GEO",
+    "name": "Georgia",
+    "nativeName": "საქართველო",
+    "capital": "Tbilisi",
+    "currencyCode": "GEL",
+    "currencySymbol": "ლ",
+    "currencyName": "Georgian lari",
+    "phonePrefix": "+995",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q230",
+    "coordinates": {
+      "latitude": 42,
+      "longitude": 43.5
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+995-32-227-7000",
+      "ukEmbassyPhone": "+995-32-227-4747",
+      "ausEmbassyPhone": "+995-32-227-7000"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Georgia is one of the safest, most welcoming nomad hubs in Eurasia. Crime is negligible; fast driving on mountain passes and stray dogs in rural hiking paths are main factors.",
+    "keySafetyRules": [
+      "Use Bolt app for transparent, low-cost transit across Tbilisi and Batumi.",
+      "Exercise defensive pedestrian caution when crossing multi-lane Tbilisi avenues.",
+      "Unified emergency line 112 connects to English-fluent operators."
+    ],
+    "primaryCities": ["tbilisi"]
+  },
+  {
+    "iso2": "DE",
+    "iso3": "DEU",
+    "name": "Germany",
+    "nativeName": "Deutschland",
+    "capital": "Berlin",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+49",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q183",
+    "coordinates": {
+      "latitude": 51,
+      "longitude": 9
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+49-30-8305-0",
+      "ukEmbassyPhone": "+49-30-20457-0",
+      "ausEmbassyPhone": "+49-30-880088-0"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Germany boasts world-class public transport and very low crime. Late-night central train stations (Hauptbahnhof) can host minor loitering or pickpocketing, but overall safety is high.",
+    "keySafetyRules": [
+      "Carry cash in addition to cards; many smaller bakeries, cafes, and taxis still prefer physical cash.",
+      "Stamp train/subway tickets at platform validator boxes before boarding to avoid €60 fines.",
+      "Exercise standard vigilance around major railway hub entrances late at night."
+    ],
+    "primaryCities": ["berlin", "munich"]
+  },
+  {
+    "iso2": "GH",
+    "iso3": "GHA",
+    "name": "Ghana",
+    "nativeName": "Ghana",
+    "capital": "Accra",
+    "currencyCode": "GHS",
+    "currencySymbol": "GH₵",
+    "currencyName": "Ghanaian cedi",
+    "phonePrefix": "+233",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "wikidataId": "Q117",
+    "coordinates": {
+      "latitude": 8,
+      "longitude": -2
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "191",
+      "ambulance": "193",
+      "fire": "192"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+233-30-274-1000",
+      "ukEmbassyPhone": "+233-30-221-3200",
+      "ausEmbassyPhone": "+233-30-221-6400"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "G"]
+    },
+    "overview": "Ghana is renowned for warmth and hospitality, earning its title as the Gateway to Africa. Solo travelers navigate street traffic in Accra and opportunistic card cloning.",
+    "keySafetyRules": [
+      "Use ride-hailing apps (Uber, Bolt) rather than tro-tro minibuses for city transit.",
+      "Take anti-malarial prophylaxis and use mosquito repellent especially during rainy seasons.",
+      "Emergency police is 191."
+    ],
+    "primaryCities": ["accra"]
+  },
+  {
+    "iso2": "GR",
+    "iso3": "GRC",
+    "name": "Greece",
+    "nativeName": "Ελλάδα",
+    "capital": "Athens",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+30",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q41",
+    "coordinates": {
+      "latitude": 39,
+      "longitude": 22
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "100",
+      "ambulance": "166",
+      "fire": "199",
+      "touristPolice": "171"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+30-210-721-2951",
+      "ukEmbassyPhone": "+30-210-727-2600",
+      "ausEmbassyPhone": "+30-210-870-4000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Greece has very low violent crime and welcoming local communities across the mainland and islands. Pickpocketing on the Athens metro (Syntagma–Monastiraki line) and island quad-bike accidents are common solo hazards.",
+    "keySafetyRules": [
+      "Keep hands on bags and zipped pockets on Athens public transit lines.",
+      "Avoid renting quad bikes / ATVs without prior experience and helmet compliance.",
+      "Tourist police (171) provide 24/7 multi-lingual assistance for foreign visitors."
+    ],
+    "primaryCities": ["athens"]
+  },
+  {
+    "iso2": "GT",
+    "iso3": "GTM",
+    "name": "Guatemala",
+    "nativeName": "Guatemala",
+    "capital": "Guatemala City",
+    "currencyCode": "GTQ",
+    "currencySymbol": "Q",
+    "currencyName": "Guatemalan quetzal",
+    "phonePrefix": "+502",
+    "region": "Americas",
+    "subregion": "Central America",
+    "wikidataId": "Q774",
+    "coordinates": {
+      "latitude": 15.5,
+      "longitude": -90.25
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "128",
+      "fire": "122",
+      "touristPolice": "+502-2297-7400"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+502-2354-0000",
+      "ukEmbassyPhone": "+502-2380-7300",
+      "ausEmbassyPhone": "+502-2354-0000"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Guatemala offers magnificent Mayan heritage in Tikal and Lake Atitlan. Armed robbery on remote hiking trails and chicken buses makes tourist shuttles mandatory.",
+    "keySafetyRules": [
+      "Always take tourist shuttles rather than local chicken buses between Guatemala City, Antigua, and Lake Atitlan.",
+      "Hire certified PROATUR tourist police escorts when hiking volcanoes (e.g. Acatenango).",
+      "PROATUR Tourist Assistance hotline is 1500."
+    ],
+    "primaryCities": ["antigua"]
+  },
+  {
+    "iso2": "HU",
+    "iso3": "HUN",
+    "name": "Hungary",
+    "nativeName": "Magyarország",
+    "capital": "Budapest",
+    "currencyCode": "HUF",
+    "currencySymbol": "Ft",
+    "currencyName": "Hungarian forint",
+    "phonePrefix": "+36",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "wikidataId": "Q28",
+    "coordinates": {
+      "latitude": 47,
+      "longitude": 20
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "107",
+      "ambulance": "104",
+      "fire": "105",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+36-1-475-4400",
+      "ukEmbassyPhone": "+36-1-266-2888",
+      "ausEmbassyPhone": "+36-1-457-9777"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Hungary, anchored by Budapest, is safe and popular with budget solo backpackers. Primary hazards involve bar bill padding scams in District V and unmetered yellow cabs.",
+    "keySafetyRules": [
+      "Beware of friendly women inviting you into specific side-street bars near Váci utca; extortionate drink tabs are enforced by bouncers.",
+      "Call official taxi dispatch (Főtaxi, Bolt) instead of flagging curb cabs.",
+      "Single transit tickets must be validated immediately inside metro stations or tram doorways."
+    ],
+    "primaryCities": ["budapest"]
+  },
+  {
+    "iso2": "IS",
+    "iso3": "ISL",
+    "name": "Iceland",
+    "nativeName": "Ísland",
+    "capital": "Reykjavik",
+    "currencyCode": "ISK",
+    "currencySymbol": "ko",
+    "currencyName": "Icelandic króna",
+    "phonePrefix": "+354",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q189",
+    "coordinates": {
+      "latitude": 65,
+      "longitude": -18
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+354-595-2200",
+      "ukEmbassyPhone": "+354-550-5100",
+      "ausEmbassyPhone": "+354-595-2200"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Iceland has virtually zero violent crime. Operational risks stem exclusively from nature: sneaker waves on black sand beaches, sudden volcanic gale winds, and river crossings on F-roads.",
+    "keySafetyRules": [
+      "Never turn your back to the ocean at Reynisfjara black sand beach; sneaker waves regularly pull travelers out to sea.",
+      "Check safetravel.is and vedur.is daily before driving the Ring Road or interior highlands.",
+      "112 Iceland app allows check-in location breadcrumbs for search-and-rescue teams."
+    ],
+    "primaryCities": ["reykjavik"]
+  },
+  {
+    "iso2": "IN",
+    "iso3": "IND",
+    "name": "India",
+    "nativeName": "भारत",
+    "capital": "New Delhi",
+    "currencyCode": "INR",
+    "currencySymbol": "₹",
+    "currencyName": "Indian rupee",
+    "phonePrefix": "+91",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "wikidataId": "Q668",
+    "coordinates": {
+      "latitude": 20,
+      "longitude": 77
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "102",
+      "fire": "101",
+      "touristPolice": "1363"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+91-11-2419-8000",
+      "ukEmbassyPhone": "+91-11-2419-2100",
+      "ausEmbassyPhone": "+91-11-4139-9900"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "D", "M"]
+    },
+    "overview": "India offers intense cultural immersion. Solo travelers require assertive boundary setting against aggressive commission touts, fake railway office scams, and food/water pathogens.",
+    "keySafetyRules": [
+      "Drink exclusively bottled, sealed water or water filtered via reverse osmosis.",
+      "Ignore street guides claiming the official station ticket office is closed or moved.",
+      "Dial 112 for national emergency or 1363 for the Multi-Lingual Tourist Helpline."
+    ],
+    "primaryCities": ["new-delhi"]
+  },
+  {
+    "iso2": "ID",
+    "iso3": "IDN",
+    "name": "Indonesia",
+    "nativeName": "Indonesia",
+    "capital": "Jakarta",
+    "currencyCode": "IDR",
+    "currencySymbol": "Rp",
+    "currencyName": "Indonesian rupiah",
+    "phonePrefix": "+62",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q252",
+    "coordinates": {
+      "latitude": -5,
+      "longitude": 120
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "118",
+      "fire": "113",
+      "touristPolice": "+62-361-224111"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+62-21-5083-1000",
+      "ukEmbassyPhone": "+62-21-2356-5200",
+      "ausEmbassyPhone": "+62-21-2550-5555"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Indonesia, particularly Bali and Lombok, is a major solo hub. Primary threats are scooter accidents, ATM skimmers, illicit toxic methanol spirits, and bag snatches.",
+    "keySafetyRules": [
+      "Only use bank-branch ATMs (BCA, Mandiri) inside guarded vestibules.",
+      "Always wear a certified helmet and maintain valid international licensing when driving scooters.",
+      "Avoid unsealed cocktails or home-distilled spirits (Arak) due to methanol poisoning risks."
+    ],
+    "primaryCities": ["bali"]
+  },
+  {
+    "iso2": "IE",
+    "iso3": "IRL",
+    "name": "Ireland",
+    "nativeName": "Éire",
+    "capital": "Dublin",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+353",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q27",
+    "coordinates": {
+      "latitude": 53,
+      "longitude": -8
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "999",
+      "fire": "999"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+353-1-668-8777",
+      "ukEmbassyPhone": "+353-1-205-3700",
+      "ausEmbassyPhone": "+353-1-664-5300"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Ireland is safe, hospitable, and English-speaking, making it ideal for first-time solo travelers. Late-night drunken rowdiness in central Dublin nightlife zones is the primary consideration.",
+    "keySafetyRules": [
+      "Exercise standard situational awareness around Temple Bar and O'Connell Street late at night.",
+      "Use Leap Card for streamlined multi-modal public transport across Dublin.",
+      "Dial 999 or 112 for the Garda Síochána (national police) in any emergency."
+    ],
+    "primaryCities": ["dublin"]
+  },
+  {
+    "iso2": "IL",
+    "iso3": "ISR",
+    "name": "Israel",
+    "nativeName": "יִשְׂרָאֵל",
+    "capital": "Jerusalem",
+    "currencyCode": "ILS",
+    "currencySymbol": "₪",
+    "currencyName": "Israeli new shekel",
+    "phonePrefix": "+972",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q801",
+    "coordinates": {
+      "latitude": 31.5,
+      "longitude": 34.75
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "100",
+      "ambulance": "101",
+      "fire": "102"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+972-3-519-7575",
+      "ukEmbassyPhone": "+972-3-725-1222",
+      "ausEmbassyPhone": "+972-3-693-5000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "H", "M"]
+    },
+    "overview": "Israel features ancient historic treasures alongside high-tech coastal cities. Geopolitical security alerts and rocket sirens require immediate familiarity with bomb shelter protocols.",
+    "keySafetyRules": [
+      "Download the Home Front Command (Tzeva Adom) alert app and locate public bomb shelters (Mamad) in your lodging.",
+      "Follow military and civilian directives immediately during siren sounding.",
+      "Police dispatch is 100; medical ambulance (Magen David Adom) is 101."
+    ],
+    "primaryCities": ["tel-aviv"]
+  },
+  {
+    "iso2": "IT",
+    "iso3": "ITA",
+    "name": "Italy",
+    "nativeName": "Italia",
+    "capital": "Rome",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+39",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q38",
+    "coordinates": {
+      "latitude": 42.83333333,
+      "longitude": 12.83333333
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "118",
+      "fire": "115",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+39-06-46741",
+      "ukEmbassyPhone": "+39-06-4220-0001",
+      "ausEmbassyPhone": "+39-06-852721"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F", "L"]
+    },
+    "overview": "Italy features world-class heritage with moderate solo travel safety. Violent crime is low; however, opportunistic pickpocketing at high-density rail stations (Termini, Centrale) and tourist landmarks is highly organized.",
+    "keySafetyRules": [
+      "Segregate primary bank cards from pocket wallets when boarding public transit.",
+      "Insist on official white city taxis with fixed rates from major international airports.",
+      "Validate train and bus transit tickets before boarding to prevent steep municipal fines."
+    ],
+    "primaryCities": ["rome", "florence", "milan", "venice"]
+  },
+  {
+    "iso2": "JM",
+    "iso3": "JAM",
+    "name": "Jamaica",
+    "nativeName": "Jamaica",
+    "capital": "Kingston",
+    "currencyCode": "JMD",
+    "currencySymbol": "J$",
+    "currencyName": "Jamaican dollar",
+    "phonePrefix": "+1",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "wikidataId": "Q766",
+    "coordinates": {
+      "latitude": 18.25,
+      "longitude": -77.5
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "119",
+      "ambulance": "110",
+      "fire": "110"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+1-876-702-6000",
+      "ukEmbassyPhone": "+1-876-936-0700",
+      "ausEmbassyPhone": "+1-876-702-6000"
+    },
+    "electricalStandards": {
+      "voltage": "110V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Jamaica offers iconic music, cuisine, and Caribbean beaches. High violent crime in specific Kingston and Montego Bay neighborhoods requires adhering to verified routes.",
+    "keySafetyRules": [
+      "Only take JUTA-certified taxis (displaying red license plates).",
+      "Avoid isolated night walks along unpatrolled public beaches.",
+      "Police dispatch is 119; medical and fire is 110."
+    ],
+    "primaryCities": ["kingston"]
+  },
+  {
+    "iso2": "JP",
+    "iso3": "JPN",
+    "name": "Japan",
+    "nativeName": "日本",
+    "capital": "Tokyo",
+    "currencyCode": "JPY",
+    "currencySymbol": "¥",
+    "currencyName": "Japanese yen",
+    "phonePrefix": "+81",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "wikidataId": "Q17",
+    "coordinates": {
+      "latitude": 36,
+      "longitude": 138
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "119",
+      "fire": "119"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+81-3-3224-5000",
+      "ukEmbassyPhone": "+81-3-5211-1100",
+      "ausEmbassyPhone": "+81-3-5232-4111"
+    },
+    "electricalStandards": {
+      "voltage": "100V",
+      "frequency": "50/60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Japan remains one of the safest nations on Earth for solo travelers. Violent crime is rare; main risks are nightlife bar touts in Roppongi/Kabukicho and natural seismic hazards.",
+    "keySafetyRules": [
+      "Never follow street touts or nightlife promoters into basement bars.",
+      "Keep physical cash on hand; traditional restaurants and transport kiosks often reject foreign cards.",
+      "Install earthquake notification apps (Yurekuru Call or Safety Tips for Travelers)."
+    ],
+    "primaryCities": ["tokyo", "kyoto", "osaka"]
+  },
+  {
+    "iso2": "JO",
+    "iso3": "JOR",
+    "name": "Jordan",
+    "nativeName": "الأردن",
+    "capital": "Amman",
+    "currencyCode": "JOD",
+    "currencySymbol": "ا.د",
+    "currencyName": "Jordanian dinar",
+    "phonePrefix": "+962",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q810",
+    "coordinates": {
+      "latitude": 31,
+      "longitude": 36
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911",
+      "touristPolice": "+962-6-569-0384"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+962-6-590-6000",
+      "ukEmbassyPhone": "+962-6-590-1500",
+      "ausEmbassyPhone": "+962-6-580-7000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["B", "C", "D", "F", "G", "J"]
+    },
+    "overview": "Jordan is an island of peace and profound hospitality in the Levant. Petra, Wadi Rum, and Amman are welcoming to independent solo female and male travelers.",
+    "keySafetyRules": [
+      "Respect conservative dress conventions outside beach resorts and Wadi Rum bedouin camps.",
+      "Confirm taxi meter activation or agree on fares before departing Queen Alia International Airport.",
+      "Unified emergency hotline is 911."
+    ],
+    "primaryCities": ["amman"]
+  },
+  {
+    "iso2": "KE",
+    "iso3": "KEN",
+    "name": "Kenya",
+    "nativeName": "Kenya",
+    "capital": "Nairobi",
+    "currencyCode": "KES",
+    "currencySymbol": "KSh",
+    "currencyName": "Kenyan shilling",
+    "phonePrefix": "+254",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "wikidataId": "Q114",
+    "coordinates": {
+      "latitude": 1,
+      "longitude": 38
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "999",
+      "fire": "999"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+254-20-363-6000",
+      "ukEmbassyPhone": "+254-20-287-3000",
+      "ausEmbassyPhone": "+254-20-427-7100"
+    },
+    "electricalStandards": {
+      "voltage": "240V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Kenya is an East African hub for wildlife safaris and coastal Diani Beach. Nairobi requires situational caution against opportunistic street theft.",
+    "keySafetyRules": [
+      "Use Uber or Bolt for city movements in Nairobi and Mombasa.",
+      "Store expensive camera telephoto lenses inside non-descript backpacks until inside national park game reserves.",
+      "Emergency dispatch is 999 or 112."
+    ],
+    "primaryCities": ["nairobi"]
+  },
+  {
+    "iso2": "LA",
+    "iso3": "LAO",
+    "name": "Laos",
+    "nativeName": "ສປປລາວ",
+    "capital": "Vientiane",
+    "currencyCode": "LAK",
+    "currencySymbol": "₭",
+    "currencyName": "Lao kip",
+    "phonePrefix": "+856",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q819",
+    "coordinates": {
+      "latitude": 18,
+      "longitude": 105
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "1191",
+      "ambulance": "1195",
+      "fire": "1190",
+      "touristPolice": "+856-21-251-128"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+856-21-487-000",
+      "ukEmbassyPhone": "+856-21-353-840",
+      "ausEmbassyPhone": "+856-21-353-800"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "B", "C", "E", "F"]
+    },
+    "overview": "Laos is tranquil and relaxed along the Mekong. Chief concerns involve unpaved motorcycle trail accidents, boat safety on remote rivers, and curfew closures.",
+    "keySafetyRules": [
+      "Wear certified helmets when riding scooters; medical evacuation from rural Laos to Thailand is costly.",
+      "Respect local town curfews (typically midnight in Luang Prabang).",
+      "Carry cash in Lao Kip (LAK); card readers are infrequent outside high-end hotels."
+    ],
+    "primaryCities": ["luang-prabang"]
+  },
+  {
+    "iso2": "LV",
+    "iso3": "LVA",
+    "name": "Latvia",
+    "nativeName": "Latvija",
+    "capital": "Riga",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+371",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q211",
+    "coordinates": {
+      "latitude": 57,
+      "longitude": 25
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "113",
+      "fire": "112",
+      "touristPolice": "+371-67181818"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+371-6710-7000",
+      "ukEmbassyPhone": "+371-6777-5900",
+      "ausEmbassyPhone": "+371-6710-7000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Latvia offers rich Art Nouveau architecture and peaceful Baltic coastline. Riga is welcoming, with the only notable hazard being inflated bar bills in Old Town tourist venues.",
+    "keySafetyRules": [
+      "Check menu prices before ordering in Old Riga bars to avoid inflated drink checks.",
+      "Use Bolt app for reliable, fixed-rate taxi transportation.",
+      "Unified emergency dispatch is 112."
+    ],
+    "primaryCities": ["riga"]
+  },
+  {
+    "iso2": "LT",
+    "iso3": "LTU",
+    "name": "Lithuania",
+    "nativeName": "Lietuva",
+    "capital": "Vilnius",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+370",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q37",
+    "coordinates": {
+      "latitude": 56,
+      "longitude": 24
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+370-5-266-5500",
+      "ukEmbassyPhone": "+370-5-212-2070",
+      "ausEmbassyPhone": "+370-5-266-5500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Lithuania features baroque architecture, extensive forest nature, and low crime rates. Vilnius and Kaunas are peaceful and well-suited to independent travelers.",
+    "keySafetyRules": [
+      "Use Bolt or eTaksi to hail rides instead of hailing unmarked street cabs.",
+      "Tap-to-pay is accepted across nearly all transit, dining, and shops.",
+      "Dial 112 for any emergency response."
+    ],
+    "primaryCities": ["vilnius"]
+  },
+  {
+    "iso2": "LU",
+    "iso3": "LUX",
+    "name": "Luxembourg",
+    "nativeName": "Luxembourg",
+    "capital": "Luxembourg",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+352",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q32",
+    "coordinates": {
+      "latitude": 49.75,
+      "longitude": 6.16666666
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "113",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+352-46-01-23",
+      "ukEmbassyPhone": "+352-22-98-64",
+      "ausEmbassyPhone": "+352-46-01-23"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Luxembourg is safe, affluent, and offers 100% free nationwide public transit (trains, trams, buses) for all travelers.",
+    "keySafetyRules": [
+      "Enjoy free public transit across the entire country; standard 2nd-class travel requires no ticket purchase.",
+      "Exercise standard night vigilance in the vicinity of Luxembourg Gare Centrale.",
+      "Police emergency is 113; medical and fire is 112."
+    ],
+    "primaryCities": ["luxembourg"]
+  },
+  {
+    "iso2": "MY",
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "nativeName": "Malaysia",
+    "capital": "Kuala Lumpur",
+    "currencyCode": "MYR",
+    "currencySymbol": "RM",
+    "currencyName": "Malaysian ringgit",
+    "phonePrefix": "+60",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q833",
+    "coordinates": {
+      "latitude": 2.5,
+      "longitude": 112.5
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "999",
+      "fire": "994",
+      "touristPolice": "+60-3-2149-6590"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+60-3-7953-7000",
+      "ukEmbassyPhone": "+60-3-2170-2200",
+      "ausEmbassyPhone": "+60-3-2146-5555"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Malaysia is modern, multicultural, and English-speaking. Petty crime, specifically motorcycle bag snatching along street curbs, requires defensive positioning.",
+    "keySafetyRules": [
+      "Carry bags on the shoulder away from traffic to neutralize motorcycle snatch-and-grab.",
+      "Use Grab for airport and inner-city transit rather than unmetered street taxis.",
+      "Emergency dispatch is 999."
+    ],
+    "primaryCities": ["kuala-lumpur"]
+  },
+  {
+    "iso2": "MV",
+    "iso3": "MDV",
+    "name": "Maldives",
+    "nativeName": "Maldives",
+    "capital": "Male",
+    "currencyCode": "MVR",
+    "currencySymbol": "Rf",
+    "currencyName": "Maldivian rufiyaa",
+    "phonePrefix": "+960",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "wikidataId": "Q826",
+    "coordinates": {
+      "latitude": 3.25,
+      "longitude": 73
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "119",
+      "ambulance": "102",
+      "fire": "118"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+960-330-0022",
+      "ukEmbassyPhone": "+960-331-5085",
+      "ausEmbassyPhone": "+94-11-246-3200"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "G"]
+    },
+    "overview": "The Maldives offers pristine atolls and high safety on resort islands and inhabited local islands. Sea transfer conditions and water safety require attention.",
+    "keySafetyRules": [
+      "Observe local cultural dress codes on inhabited local islands outside designated bikini beaches.",
+      "Confirm weather and swell conditions before embarking on inter-island speedboat transfers.",
+      "Police dispatch is 119."
+    ],
+    "primaryCities": ["male"]
+  },
+  {
+    "iso2": "MT",
+    "iso3": "MLT",
+    "name": "Malta",
+    "nativeName": "Malta",
+    "capital": "Valletta",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+356",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q233",
+    "coordinates": {
+      "latitude": 35.83333333,
+      "longitude": 14.58333333
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+356-2561-4000",
+      "ukEmbassyPhone": "+356-2323-0000",
+      "ausEmbassyPhone": "+356-2133-8201"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Malta is sunny, historic, and English-fluent. The island is safe for solo travelers, with Paceville (nightlife quarter) being the only zone prone to drunken brawls.",
+    "keySafetyRules": [
+      "Avoid isolated side alleys in Paceville late at night when clubs close.",
+      "Electrical outlets use British 3-pin Type G sockets; bring appropriate converters.",
+      "Unified emergency number is 112."
+    ],
+    "primaryCities": ["valletta"]
+  },
+  {
+    "iso2": "MU",
+    "iso3": "MUS",
+    "name": "Mauritius",
+    "nativeName": "Maurice",
+    "capital": "Port Louis",
+    "currencyCode": "MUR",
+    "currencySymbol": "₨",
+    "currencyName": "Mauritian rupee",
+    "phonePrefix": "+230",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "wikidataId": "Q1027",
+    "coordinates": {
+      "latitude": -20.28333333,
+      "longitude": 57.55
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "114",
+      "fire": "115",
+      "touristPolice": "+230-213-7878"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+230-202-4400",
+      "ukEmbassyPhone": "+230-202-9400",
+      "ausEmbassyPhone": "+230-202-0160"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "G"]
+    },
+    "overview": "Mauritius is peaceful and prosperous with stunning tropical beaches. Solo visitors enjoy low crime and well-developed hospitality services.",
+    "keySafetyRules": [
+      "Drive on the left side of the road if renting a vehicle.",
+      "Use metered taxis or hotel transportation for evening outings.",
+      "Emergency police is 999; medical ambulance is 114."
+    ],
+    "primaryCities": ["port-louis"]
+  },
+  {
+    "iso2": "MX",
+    "iso3": "MEX",
+    "name": "Mexico",
+    "nativeName": "México",
+    "capital": "Ciudad de México",
+    "currencyCode": "MXN",
+    "currencySymbol": "$",
+    "currencyName": "Mexican peso",
+    "phonePrefix": "+52",
+    "region": "Americas",
+    "subregion": "Northern America",
+    "wikidataId": "Q96",
+    "coordinates": {
+      "latitude": 23,
+      "longitude": -102
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911",
+      "touristPolice": "078"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+52-55-5080-2000",
+      "ukEmbassyPhone": "+52-55-1670-3200",
+      "ausEmbassyPhone": "+52-55-1101-2200"
+    },
+    "electricalStandards": {
+      "voltage": "127V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Mexico provides deep culinary and historical culture. Operational discipline is essential: stick to verified tourist zones, use authorized transit, and avoid intercity bus travel at night.",
+    "keySafetyRules": [
+      "Never hail random street taxis; book Sitio cabs or verified rideshare apps (Uber/Didi).",
+      "Stick to well-patrolled districts (Condesa, Roma, Polanco) and avoid unlit streets after midnight.",
+      "Withdraw money only from bank ATMs situated inside protected branch lobbies during day hours."
+    ],
+    "primaryCities": ["mexico-city", "oaxaca", "cancun"]
+  },
+  {
+    "iso2": "MC",
+    "iso3": "MCO",
+    "name": "Monaco",
+    "nativeName": "Monaco",
+    "capital": "Monaco",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+377",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q235",
+    "coordinates": {
+      "latitude": 43.73333333,
+      "longitude": 7.4
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "17",
+      "ambulance": "18",
+      "fire": "18",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+33-1-43-12-22-22",
+      "ukEmbassyPhone": "+33-1-44-51-31-00",
+      "ausEmbassyPhone": "+33-1-40-59-33-00"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E", "F"]
+    },
+    "overview": "Monaco has the highest police presence per capita in the world and comprehensive CCTV coverage. Violent and petty crime are virtually nonexistent.",
+    "keySafetyRules": [
+      "Strict public etiquette and dress codes are enforced near the Casino and palace.",
+      "Public CCTV coverage is ubiquitous across public walkways and elevators.",
+      "Emergency line 112 connects to Monaco public safety headquarters."
+    ],
+    "primaryCities": ["monaco"]
+  },
+  {
+    "iso2": "MN",
+    "iso3": "MNG",
+    "name": "Mongolia",
+    "nativeName": "Монгол улс",
+    "capital": "Ulan Bator",
+    "currencyCode": "MNT",
+    "currencySymbol": "₮",
+    "currencyName": "Mongolian tögrög",
+    "phonePrefix": "+976",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "wikidataId": "Q711",
+    "coordinates": {
+      "latitude": 46,
+      "longitude": 105
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "102",
+      "ambulance": "103",
+      "fire": "101"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+976-7007-6001",
+      "ukEmbassyPhone": "+976-11-458-133",
+      "ausEmbassyPhone": "+976-7013-3001"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "Mongolia offers immense wilderness and steppe nomad culture. Extreme winter sub-zero temperatures and pickpockets at Ulaanbaatar's Naran Tuul Black Market are key concerns.",
+    "keySafetyRules": [
+      "Guard wallets and phones vigilantly when navigating the crowded Naran Tuul market.",
+      "Ensure GPS satellite communications when driving into the Gobi desert or Altai mountains.",
+      "Police dispatch is 102."
+    ],
+    "primaryCities": ["ulaanbaatar"]
+  },
+  {
+    "iso2": "ME",
+    "iso3": "MNE",
+    "name": "Montenegro",
+    "nativeName": "Црна Гора",
+    "capital": "Podgorica",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+382",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q236",
+    "coordinates": {
+      "latitude": 42.5,
+      "longitude": 19.3
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "122",
+      "ambulance": "124",
+      "fire": "123",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+382-20-410-500",
+      "ukEmbassyPhone": "+382-20-450-140",
+      "ausEmbassyPhone": "+382-20-410-500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Montenegro boasts stunning fjords (Kotor) and Adriatic beaches. Solo travelers find low crime, with winding coastal roads being the primary hazard.",
+    "keySafetyRules": [
+      "Exercise defensive driving on narrow mountain serpentines along Kotor Bay.",
+      "Montenegro uses the Euro despite not being an EU member; carry cash for small coastal bakeries.",
+      "Emergency line 112 works across all mobile operators."
+    ],
+    "primaryCities": ["kotor"]
+  },
+  {
+    "iso2": "MA",
+    "iso3": "MAR",
+    "name": "Morocco",
+    "nativeName": "المغرب",
+    "capital": "Rabat",
+    "currencyCode": "MAD",
+    "currencySymbol": "DH",
+    "currencyName": "Moroccan dirham",
+    "phonePrefix": "+212",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "wikidataId": "Q1028",
+    "coordinates": {
+      "latitude": 32,
+      "longitude": -5
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "19",
+      "ambulance": "15",
+      "fire": "15",
+      "touristPolice": "+212-524-384-601"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+212-537-637-200",
+      "ukEmbassyPhone": "+212-537-633-333",
+      "ausEmbassyPhone": "+212-537-637-200"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "Morocco offers sensory wonder in medinas and desert routes. Solo travelers (particularly solo women) encounter persistent street solicitation and faux guide misdirection.",
+    "keySafetyRules": [
+      "Firmly and politely ignore faux guides claiming 'the street is closed' in the Marrakech or Fez medinas.",
+      "Download offline maps (Maps.me / Organic Maps) to navigate labyrinthine medinas independently.",
+      "In urban centers, dial 19 for police or 15 for medical ambulance."
+    ],
+    "primaryCities": ["marrakech"]
+  },
+  {
+    "iso2": "NA",
+    "iso3": "NAM",
+    "name": "Namibia",
+    "nativeName": "Namibia",
+    "capital": "Windhoek",
+    "currencyCode": "NAD",
+    "currencySymbol": "$",
+    "currencyName": "Namibian dollar",
+    "phonePrefix": "+264",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "wikidataId": "Q1030",
+    "coordinates": {
+      "latitude": -22,
+      "longitude": 17
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "10111",
+      "ambulance": "211111",
+      "fire": "211111"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+264-61-295-8500",
+      "ukEmbassyPhone": "+264-61-274-800",
+      "ausEmbassyPhone": "+264-61-295-8500"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "M"]
+    },
+    "overview": "Namibia is celebrated for dramatic desert landscapes and self-drive road trips. Long distances between fuel stations and gravel road rollovers are primary risks.",
+    "keySafetyRules": [
+      "Keep speeds below 80 km/h on gravel roads to prevent catastrophic tire blowouts or rollovers.",
+      "Carry two spare tires, satellite communications, and minimum 10 liters of drinking water on road trips.",
+      "Police emergency is 10111."
+    ],
+    "primaryCities": ["windhoek"]
+  },
+  {
+    "iso2": "NP",
+    "iso3": "NPL",
+    "name": "Nepal",
+    "nativeName": "नेपाल",
+    "capital": "Kathmandu",
+    "currencyCode": "NPR",
+    "currencySymbol": "₨",
+    "currencyName": "Nepalese rupee",
+    "phonePrefix": "+977",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "wikidataId": "Q837",
+    "coordinates": {
+      "latitude": 28,
+      "longitude": 84
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "100",
+      "ambulance": "102",
+      "fire": "101",
+      "touristPolice": "+977-1-424-7041"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+977-1-423-4000",
+      "ukEmbassyPhone": "+977-1-423-7100",
+      "ausEmbassyPhone": "+977-1-437-1678"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "D", "M"]
+    },
+    "overview": "Nepal is a Himalayan trekker's paradise. High altitude sickness (AMS), remote trail logistics, and mountain flight delays are the primary operational challenges.",
+    "keySafetyRules": [
+      "Ascend gradually; never disregard headache or nausea above 2,500m (follow acclimatization protocols).",
+      "Ensure your travel insurance explicitly covers high-altitude helicopter rescue up to 6,000m.",
+      "Tourist Police headquarters in Kathmandu handles permits and missing traveler reports."
+    ],
+    "primaryCities": ["kathmandu"]
+  },
+  {
+    "iso2": "NL",
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "nativeName": "Nederland",
+    "capital": "Amsterdam",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+31",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q55",
+    "coordinates": {
+      "latitude": 52.5,
+      "longitude": 5.75
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+31-70-310-2209",
+      "ukEmbassyPhone": "+31-70-427-0400",
+      "ausEmbassyPhone": "+31-70-310-8200"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "The Netherlands is exceptionally safe, English-fluent, and well-organized. The most common physical hazard for solo visitors is pedestrian bicycle lane collisions and opportunistic bicycle/pocket theft.",
+    "keySafetyRules": [
+      "Always stay off designated red asphalt cycle lanes; cyclists have right of way and travel at speed.",
+      "Keep valuables secure around Amsterdam Centraal and the Red Light District.",
+      "Only purchase services and items from licensed, authorized premises."
+    ],
+    "primaryCities": ["amsterdam"]
+  },
+  {
+    "iso2": "NZ",
+    "iso3": "NZL",
+    "name": "New Zealand",
+    "nativeName": "New Zealand",
+    "capital": "Wellington",
+    "currencyCode": "NZD",
+    "currencySymbol": "$",
+    "currencyName": "New Zealand dollar",
+    "phonePrefix": "+64",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "wikidataId": "Q664",
+    "coordinates": {
+      "latitude": -41,
+      "longitude": 174
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "111",
+      "ambulance": "111",
+      "fire": "111"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+64-4-462-6000",
+      "ukEmbassyPhone": "+64-4-924-2888",
+      "ausEmbassyPhone": "+64-4-473-6411"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["I"]
+    },
+    "overview": "New Zealand is peaceful, progressive, and easy to navigate. Sudden alpine mountain weather shifts and left-hand driving on narrow winding roads are chief considerations.",
+    "keySafetyRules": [
+      "File your hiking trip intentions with the Department of Conservation (DOC) before remote treks.",
+      "Adapt to driving on the left and never drive tired after long-haul transpacific flights.",
+      "Unified emergency response is 111."
+    ],
+    "primaryCities": ["auckland"]
+  },
+  {
+    "iso2": "MK",
+    "iso3": "MKD",
+    "name": "North Macedonia",
+    "nativeName": "Северна Македонија",
+    "capital": "Skopje",
+    "currencyCode": "MKD",
+    "currencySymbol": "ден",
+    "currencyName": "Denar",
+    "phonePrefix": "+389",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q221",
+    "coordinates": {
+      "latitude": 41.83333333,
+      "longitude": 22
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "192",
+      "ambulance": "194",
+      "fire": "193",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+389-2-310-2000",
+      "ukEmbassyPhone": "+389-2-3299-299",
+      "ausEmbassyPhone": "+389-2-310-2000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "North Macedonia is peaceful and scenic, especially around historic Lake Ohrid. Solo travelers face minimal safety concerns and low living costs.",
+    "keySafetyRules": [
+      "Agree on taxi prices or insist on meters when departing Skopje International Airport.",
+      "Carry Macedonian Denar (MKD) for regional bazaar purchases.",
+      "Emergency number 112 connects to unified emergency dispatch."
+    ],
+    "primaryCities": ["skopje"]
+  },
+  {
+    "iso2": "NO",
+    "iso3": "NOR",
+    "name": "Norway",
+    "nativeName": "Norge",
+    "capital": "Oslo",
+    "currencyCode": "NOK",
+    "currencySymbol": "ko",
+    "currencyName": "Norwegian krone",
+    "phonePrefix": "+47",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q20",
+    "coordinates": {
+      "latitude": 62,
+      "longitude": 10
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "113",
+      "fire": "110"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+47-21-30-85-40",
+      "ukEmbassyPhone": "+47-23-13-27-00",
+      "ausEmbassyPhone": "+47-22-55-22-00"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Norway offers peerless personal security and social stability. Solo travel risks are almost exclusively meteorological: rapid arctic temperature drops, icy fiord trails, and remote isolation.",
+    "keySafetyRules": [
+      "Follow the Norwegian Mountain Code (Fjellvettreglene); never embark on hikes like Trolltunga without proper cold-weather gear.",
+      "Norway is virtually cashless; carry a chip-and-PIN credit card with zero foreign transaction fees.",
+      "Dial 112 for police and 113 for medical triage."
+    ],
+    "primaryCities": ["oslo"]
+  },
+  {
+    "iso2": "OM",
+    "iso3": "OMN",
+    "name": "Oman",
+    "nativeName": "عمان",
+    "capital": "Muscat",
+    "currencyCode": "OMR",
+    "currencySymbol": ".ع.ر",
+    "currencyName": "Omani rial",
+    "phonePrefix": "+968",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q842",
+    "coordinates": {
+      "latitude": 21,
+      "longitude": 57
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "9999",
+      "ambulance": "9999",
+      "fire": "9999"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+968-2464-3400",
+      "ukEmbassyPhone": "+968-2460-9000",
+      "ausEmbassyPhone": "+968-2464-3400"
+    },
+    "electricalStandards": {
+      "voltage": "240V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Oman is peaceful, spotless, and celebrated for genuine Arabian hospitality. Crime is virtually non-existent; desert route navigation is the primary operational consideration.",
+    "keySafetyRules": [
+      "Ensure 4WD capability, adequate water reserves, and GPS tracks before entering Wahiba Sands dunes.",
+      "Observe modest dress standards covering shoulders and knees in public souks and mosques.",
+      "Unified emergency number is 9999."
+    ],
+    "primaryCities": ["muscat"]
+  },
+  {
+    "iso2": "PA",
+    "iso3": "PAN",
+    "name": "Panama",
+    "nativeName": "Panamá",
+    "capital": "Panama City",
+    "currencyCode": "PAB",
+    "currencySymbol": "B/.",
+    "currencyName": "Panamanian balboa",
+    "phonePrefix": "+507",
+    "region": "Americas",
+    "subregion": "Central America",
+    "wikidataId": "Q804",
+    "coordinates": {
+      "latitude": 9,
+      "longitude": -80
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "104",
+      "ambulance": "911",
+      "fire": "103",
+      "touristPolice": "+507-511-9260"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+507-317-5000",
+      "ukEmbassyPhone": "+507-297-6550",
+      "ausEmbassyPhone": "+507-317-5000"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Panama is modern with the US dollar as legal tender. Panama City's Casco Viejo is well-patrolled; travelers should avoid straying into adjacent neighborhood borders (El Chorrillo).",
+    "keySafetyRules": [
+      "Do not wander past the police-guarded perimeter of Casco Viejo into El Chorrillo.",
+      "Use Uber or yellow cabs with pre-negotiated rates.",
+      "Emergency medical is 911; police dispatch is 104."
+    ],
+    "primaryCities": ["panama-city"]
+  },
+  {
+    "iso2": "PY",
+    "iso3": "PRY",
+    "name": "Paraguay",
+    "nativeName": "Paraguay",
+    "capital": "Asunción",
+    "currencyCode": "PYG",
+    "currencySymbol": "₲",
+    "currencyName": "Paraguayan guarani",
+    "phonePrefix": "+595",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q733",
+    "coordinates": {
+      "latitude": -23,
+      "longitude": -58
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "141",
+      "fire": "132"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+595-21-604-568",
+      "ukEmbassyPhone": "+595-21-614-586",
+      "ausEmbassyPhone": "+595-21-604-568"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C"]
+    },
+    "overview": "Paraguay offers authentic, off-the-beaten-path South American travel. Asuncion is generally tranquil; border areas near Ciudad del Este require heightened caution.",
+    "keySafetyRules": [
+      "Exercise vigilance against pickpocketing in crowded commercial sectors of Ciudad del Este.",
+      "Use Bolt or Muv apps for verified car transport across Asuncion.",
+      "Emergency police dispatch is 911."
+    ],
+    "primaryCities": ["asuncion"]
+  },
+  {
+    "iso2": "PE",
+    "iso3": "PER",
+    "name": "Peru",
+    "nativeName": "Perú",
+    "capital": "Lima",
+    "currencyCode": "PEN",
+    "currencySymbol": "S/.",
+    "currencyName": "Peruvian sol",
+    "phonePrefix": "+51",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q419",
+    "coordinates": {
+      "latitude": -10,
+      "longitude": -76
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "105",
+      "ambulance": "117",
+      "fire": "116",
+      "touristPolice": "+51-1-460-1060"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+51-1-618-2000",
+      "ukEmbassyPhone": "+51-1-617-3000",
+      "ausEmbassyPhone": "+51-1-222-8281"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B", "C"]
+    },
+    "overview": "Peru is breathtaking from Machu Picchu to Lima's food scene. Solo travelers face counterfeit currency, luggage diversion at bus stations, and elevation sickness.",
+    "keySafetyRules": [
+      "Acclimatize in Cusco for 48 hours before undertaking the Inca Trail or Rainbow Mountain trek.",
+      "Use premium intercity bus companies (Cruz del Sur) with security luggage checks rather than local lines.",
+      "Check banknote watermarks; counterfeit Peruvian Sol notes are prevalent in markets."
+    ],
+    "primaryCities": ["lima", "cusco"]
+  },
+  {
+    "iso2": "PH",
+    "iso3": "PHL",
+    "name": "Philippines",
+    "nativeName": "Pilipinas",
+    "capital": "Manila",
+    "currencyCode": "PHP",
+    "currencySymbol": "₱",
+    "currencyName": "Philippine peso",
+    "phonePrefix": "+63",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q928",
+    "coordinates": {
+      "latitude": 13,
+      "longitude": 122
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+63-2-5301-2000",
+      "ukEmbassyPhone": "+63-2-8858-2200",
+      "ausEmbassyPhone": "+63-2-7757-8100"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B", "C"]
+    },
+    "overview": "The Philippines offers beautiful island archipelago hopping and friendly communities. Solo travelers should maintain situational awareness in congested Manila transit terminals.",
+    "keySafetyRules": [
+      "Use Grab in major metro areas (Metro Manila, Cebu) to ensure verified routes and transparent fares.",
+      "Avoid isolated coastal boat transfers in inclement weather during typhoon season.",
+      "National emergency hotline is 911."
+    ],
+    "primaryCities": ["manila"]
+  },
+  {
+    "iso2": "PL",
+    "iso3": "POL",
+    "name": "Poland",
+    "nativeName": "Polska",
+    "capital": "Warsaw",
+    "currencyCode": "PLN",
+    "currencySymbol": "zł",
+    "currencyName": "Polish złoty",
+    "phonePrefix": "+48",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "wikidataId": "Q36",
+    "coordinates": {
+      "latitude": 52,
+      "longitude": 20
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "997",
+      "ambulance": "999",
+      "fire": "998",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+48-22-504-2000",
+      "ukEmbassyPhone": "+48-22-317-4000",
+      "ausEmbassyPhone": "+48-22-521-3444"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "Poland is one of Europe's safest and most economical solo travel destinations. Excellent intercity PKP Intercity rail links and low crime make it welcoming year-round.",
+    "keySafetyRules": [
+      "Decline promotions for gentleman's clubs in Krakow Old Town or Warsaw Nowy Świat where card overcharging occurs.",
+      "PKP train tickets bought online must be shown on charged phones with personal ID.",
+      "Unified 112 connects to English-fluent dispatchers nationwide."
+    ],
+    "primaryCities": ["krakow"]
+  },
+  {
+    "iso2": "PT",
+    "iso3": "PRT",
+    "name": "Portugal",
+    "nativeName": "Portugal",
+    "capital": "Lisbon",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+351",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q45",
+    "coordinates": {
+      "latitude": 39.5,
+      "longitude": -8
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+351-21-727-3300",
+      "ukEmbassyPhone": "+351-21-392-4000",
+      "ausEmbassyPhone": "+351-21-310-1500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Portugal is consistently ranked among the safest countries globally. Low violent crime, walkable cities, and strong tourist protections make it exceptional for solo travelers.",
+    "keySafetyRules": [
+      "Watch for pickpockets on historic tram routes (notably Tram 28 in Lisbon).",
+      "Ignore street dealers offering fake substances in historic squares; keep walking without engaging.",
+      "Ensure proper footwear for steep cobblestone streets, especially in wet conditions."
+    ],
+    "primaryCities": ["lisbon", "porto"]
+  },
+  {
+    "iso2": "QA",
+    "iso3": "QAT",
+    "name": "Qatar",
+    "nativeName": "قطر",
+    "capital": "Doha",
+    "currencyCode": "QAR",
+    "currencySymbol": "ق.ر",
+    "currencyName": "Qatari riyal",
+    "phonePrefix": "+974",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q846",
+    "coordinates": {
+      "latitude": 25.5,
+      "longitude": 51.25
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "999",
+      "fire": "999"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+974-4496-6000",
+      "ukEmbassyPhone": "+974-4496-2000",
+      "ausEmbassyPhone": "+974-4007-8500"
+    },
+    "electricalStandards": {
+      "voltage": "240V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "G"]
+    },
+    "overview": "Qatar offers supreme safety, ultra-modern driverless metro transit in Doha, and strict law enforcement. Violent and street crime are effectively zero.",
+    "keySafetyRules": [
+      "Use the state-of-the-art Doha Metro network with gold-class carriages and contactless fare cards.",
+      "Adhere to local dress and decorum regulations in government premises and cultural museums.",
+      "Emergency services are reachable via 999."
+    ],
+    "primaryCities": ["doha"]
+  },
+  {
+    "iso2": "RO",
+    "iso3": "ROU",
+    "name": "Romania",
+    "nativeName": "România",
+    "capital": "Bucharest",
+    "currencyCode": "RON",
+    "currencySymbol": "lei",
+    "currencyName": "Romanian leu",
+    "phonePrefix": "+40",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "wikidataId": "Q218",
+    "coordinates": {
+      "latitude": 46,
+      "longitude": 25
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+40-21-200-3300",
+      "ukEmbassyPhone": "+40-21-201-7200",
+      "ausEmbassyPhone": "+40-21-200-3300"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Romania is peaceful, highly affordable, and safe for solo exploration. Transylvania rail journeys are scenic, and Bucharest has low violent crime.",
+    "keySafetyRules": [
+      "Use taxi dispatch apps (Bolt, Uber) rather than catching independent airport taxis.",
+      "Exercise standard caution around stray dogs in rural mountainous trailheads; carry a hiking stick.",
+      "Dial 112 for emergency dispatch."
+    ],
+    "primaryCities": ["bucharest"]
+  },
+  {
+    "iso2": "RW",
+    "iso3": "RWA",
+    "name": "Rwanda",
+    "nativeName": "Rwanda",
+    "capital": "Kigali",
+    "currencyCode": "RWF",
+    "currencySymbol": "FRw",
+    "currencyName": "Rwandan franc",
+    "phonePrefix": "+250",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "wikidataId": "Q1037",
+    "coordinates": {
+      "latitude": -2,
+      "longitude": 30
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "912",
+      "fire": "111"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+250-252-596-400",
+      "ukEmbassyPhone": "+250-252-556-000",
+      "ausEmbassyPhone": "+250-252-596-400"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "J"]
+    },
+    "overview": "Rwanda is recognized as one of the cleanest, safest, and best-governed countries in Africa. Kigali is exceptionally clean and peaceful for solo travelers.",
+    "keySafetyRules": [
+      "Plastic bags are prohibited nationwide and confiscated upon airport arrival.",
+      "Motorcycle taxi riders in Kigali are legally required to carry passenger helmets.",
+      "Police emergency is 112; ambulance is 912."
+    ],
+    "primaryCities": ["kigali"]
+  },
+  {
+    "iso2": "SA",
+    "iso3": "SAU",
+    "name": "Saudi Arabia",
+    "nativeName": "المملكة العربية السعودية",
+    "capital": "Riyadh",
+    "currencyCode": "SAR",
+    "currencySymbol": "﷼",
+    "currencyName": "Saudi riyal",
+    "phonePrefix": "+966",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q851",
+    "coordinates": {
+      "latitude": 25,
+      "longitude": 45
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "997",
+      "fire": "998",
+      "touristPolice": "930"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+966-11-488-3800",
+      "ukEmbassyPhone": "+966-11-481-9100",
+      "ausEmbassyPhone": "+966-11-250-0900"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "60Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Saudi Arabia has opened rapidly to international tourism with high safety and modern transport infrastructure. Laws regarding public modesty and cultural sensitivity are strictly upheld.",
+    "keySafetyRules": [
+      "Dress modestly in public spaces, avoiding revealing attire.",
+      "Use Uber or Careem for convenient city transit across Riyadh and Jeddah.",
+      "Dial 930 for dedicated Tourism Call Center assistance."
+    ],
+    "primaryCities": ["riyadh"]
+  },
+  {
+    "iso2": "RS",
+    "iso3": "SRB",
+    "name": "Serbia",
+    "nativeName": "Србија",
+    "capital": "Belgrade",
+    "currencyCode": "RSD",
+    "currencySymbol": "din",
+    "currencyName": "Serbian dinar",
+    "phonePrefix": "+381",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q403",
+    "coordinates": {
+      "latitude": 44,
+      "longitude": 21
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "192",
+      "ambulance": "194",
+      "fire": "193",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+381-11-706-4000",
+      "ukEmbassyPhone": "+381-11-306-0900",
+      "ausEmbassyPhone": "+381-11-330-3400"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Serbia is lively and welcoming with vibrant cafe culture in Belgrade. Violent crime against visitors is rare. Standard vigilance is advised around late-night floating river clubs (splavovi).",
+    "keySafetyRules": [
+      "Call verified taxi dispatch (Pink Taxi, CarGo) rather than hailing unmarked vehicles outside airport terminals.",
+      "Avoid participating in political street rallies or sensitive border discussions.",
+      "Dial 192 for police or 112 for general emergencies."
+    ],
+    "primaryCities": ["belgrade"]
+  },
+  {
+    "iso2": "SC",
+    "iso3": "SYC",
+    "name": "Seychelles",
+    "nativeName": "Seychelles",
+    "capital": "Victoria",
+    "currencyCode": "SCR",
+    "currencySymbol": "SRe",
+    "currencyName": "Seychellois rupee",
+    "phonePrefix": "+248",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "wikidataId": "Q1042",
+    "coordinates": {
+      "latitude": -4.6574977,
+      "longitude": 55.4540146
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "151",
+      "fire": "999"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+230-202-4400",
+      "ukEmbassyPhone": "+248-438-3888",
+      "ausEmbassyPhone": "+230-202-0160"
+    },
+    "electricalStandards": {
+      "voltage": "240V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Seychelles is safe, tranquil, and world-renowned for granite boulder beaches. Violent crime is rare; unattended items on isolated beaches should not be left.",
+    "keySafetyRules": [
+      "Do not leave valuables unattended while swimming on secluded coves (e.g. Anse Source d'Argent).",
+      "Observe marine warning flags regarding seasonal undertows and coral reefs.",
+      "Police emergency dispatch is 999."
+    ],
+    "primaryCities": ["victoria"]
+  },
+  {
+    "iso2": "SG",
+    "iso3": "SGP",
+    "name": "Singapore",
+    "nativeName": "Singapore",
+    "capital": "Singapur",
+    "currencyCode": "SGD",
+    "currencySymbol": "$",
+    "currencyName": "Singapore dollar",
+    "phonePrefix": "+65",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q334",
+    "coordinates": {
+      "latitude": 1.36666666,
+      "longitude": 103.8
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "995",
+      "fire": "995"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+65-6476-9100",
+      "ukEmbassyPhone": "+65-6424-4200",
+      "ausEmbassyPhone": "+65-6836-4100"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "Singapore has among the lowest crime rates globally and strict legal enforcement. Solo travelers can navigate day and night without concern.",
+    "keySafetyRules": [
+      "Strict legal penalties apply to littering, jaywalking, and drug importation.",
+      "Tap-in and tap-out on MRT trains using contactless credit cards or Apple/Google Pay.",
+      "Emergency police is 999; ambulance and fire is 995."
+    ],
+    "primaryCities": ["singapore"]
+  },
+  {
+    "iso2": "SK",
+    "iso3": "SVK",
+    "name": "Slovakia",
+    "nativeName": "Slovensko",
+    "capital": "Bratislava",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+421",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "wikidataId": "Q214",
+    "coordinates": {
+      "latitude": 48.66666666,
+      "longitude": 19.5
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "158",
+      "ambulance": "155",
+      "fire": "150",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+421-2-5443-0861",
+      "ukEmbassyPhone": "+421-2-5998-2000",
+      "ausEmbassyPhone": "+421-2-5443-0861"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "Slovakia combines historic castles with dramatic High Tatras trekking. Bratislava is compact and safe, making it a stress-free solo stop.",
+    "keySafetyRules": [
+      "Always validate train tickets prior to boarding regional ZSSK trains.",
+      "Check Tatras Mountain Rescue (HZS) weather warnings before entering alpine ridges.",
+      "112 provides unified multi-lingual emergency dispatch."
+    ],
+    "primaryCities": ["bratislava"]
+  },
+  {
+    "iso2": "SI",
+    "iso3": "SVN",
+    "name": "Slovenia",
+    "nativeName": "Slovenija",
+    "capital": "Ljubljana",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+386",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q215",
+    "coordinates": {
+      "latitude": 46.11666666,
+      "longitude": 14.81666666
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "113",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+386-1-200-5500",
+      "ukEmbassyPhone": "+386-1-200-3910",
+      "ausEmbassyPhone": "+386-1-200-5500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Slovenia is one of the cleanest and safest countries in Europe. Lake Bled and Ljubljana are quiet, walkable, and welcoming to solo female and male travelers.",
+    "keySafetyRules": [
+      "Purchase a motorway vignette sticker/e-vignette if renting a car before entering highway toll sections.",
+      "Drinking water from public fountains is pristine and potable throughout the country.",
+      "Police dispatch is 113; fire and ambulance is 112."
+    ],
+    "primaryCities": ["ljubljana"]
+  },
+  {
+    "iso2": "ZA",
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "nativeName": "South Africa",
+    "capital": "Pretoria",
+    "currencyCode": "ZAR",
+    "currencySymbol": "R",
+    "currencyName": "South African rand",
+    "phonePrefix": "+27",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "wikidataId": "Q258",
+    "coordinates": {
+      "latitude": -29,
+      "longitude": 24
+    },
+    "defaultRiskTier": "Elevated",
+    "emergencyNumbers": {
+      "police": "10111",
+      "ambulance": "10177",
+      "fire": "10177"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+27-12-431-4000",
+      "ukEmbassyPhone": "+27-12-421-7500",
+      "ausEmbassyPhone": "+27-12-423-6000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "D", "M", "N"]
+    },
+    "overview": "South Africa features dramatic scenery from Table Mountain to Kruger safaris. Elevated violent crime rates require strict situational protocols regarding nighttime movement.",
+    "keySafetyRules": [
+      "Never walk alone in city centers (Cape Town CBD, Johannesburg) after business hours; use Uber door-to-door.",
+      "Do not hike Table Mountain or Lion's Head trails alone; join group trekking parties.",
+      "National police flying squad is 10111."
+    ],
+    "primaryCities": ["cape-town"]
+  },
+  {
+    "iso2": "KR",
+    "iso3": "KOR",
+    "name": "South Korea",
+    "nativeName": "대한민국",
+    "capital": "Seoul",
+    "currencyCode": "KRW",
+    "currencySymbol": "₩",
+    "currencyName": "Won",
+    "phonePrefix": "+82",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "wikidataId": "Q884",
+    "coordinates": {
+      "latitude": 37,
+      "longitude": 127.5
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "119",
+      "fire": "119",
+      "touristPolice": "1330"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+82-2-397-4114",
+      "ukEmbassyPhone": "+82-2-3210-5500",
+      "ausEmbassyPhone": "+82-2-2003-0100"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "60Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "South Korea is exceptionally safe with clean, fast 24/7 public transit and widespread CCTV. Personal property is safe in cafes, and night navigation is straightforward.",
+    "keySafetyRules": [
+      "Use KakaoMap or Naver Map for navigation; Google Maps has limited walking routing in Korea.",
+      "Dial 1330 for the Korea Travel Helpline providing 24/7 English translation and guidance.",
+      "Emergency police line is 112."
+    ],
+    "primaryCities": ["seoul"]
+  },
+  {
+    "iso2": "ES",
+    "iso3": "ESP",
+    "name": "Spain",
+    "nativeName": "España",
+    "capital": "Madrid",
+    "currencyCode": "EUR",
+    "currencySymbol": "€",
+    "currencyName": "Euro",
+    "phonePrefix": "+34",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "wikidataId": "Q29",
+    "coordinates": {
+      "latitude": 40,
+      "longitude": -4
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": "091"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+34-91-587-2200",
+      "ukEmbassyPhone": "+34-91-714-6300",
+      "ausEmbassyPhone": "+34-91-353-6600"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Spain is vibrant and highly accessible for solo travelers. Petty theft and pickpocket syndicates operate aggressively in major pedestrian arteries (Las Ramblas, metro lines) and popular beach promenades.",
+    "keySafetyRules": [
+      "Never place smartphones or bags on outdoor dining tables.",
+      "Maintain active spatial awareness in crowded metro vestibules during boarding and disembarking.",
+      "Report theft immediately at dedicated foreign tourist assistance police stations (SATE)."
+    ],
+    "primaryCities": ["barcelona", "madrid", "seville"]
+  },
+  {
+    "iso2": "LK",
+    "iso3": "LKA",
+    "name": "Sri Lanka",
+    "nativeName": "śrī laṃkāva",
+    "capital": "Colombo",
+    "currencyCode": "LKR",
+    "currencySymbol": "Rs",
+    "currencyName": "Sri Lankan rupee",
+    "phonePrefix": "+94",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "wikidataId": "Q854",
+    "coordinates": {
+      "latitude": 7,
+      "longitude": 81
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "119",
+      "ambulance": "1990",
+      "fire": "110",
+      "touristPolice": "+94-11-242-1052"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+94-11-249-8500",
+      "ukEmbassyPhone": "+94-11-532-6200",
+      "ausEmbassyPhone": "+94-11-246-3200"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "G"]
+    },
+    "overview": "Sri Lanka has scenic hill country and warm coastal culture. Women travelers should maintain firm boundaries with over-attentive tuk-tuk drivers and train companions.",
+    "keySafetyRules": [
+      "Book designated reserved second or first-class seats on popular train routes (Colombo to Ella).",
+      "Dial 1990 for Sri Lanka's free Suwa Seriya ambulance service.",
+      "Use PickMe or Uber apps for regulated tuk-tuk and car rides."
+    ],
+    "primaryCities": ["colombo"]
+  },
+  {
+    "iso2": "SE",
+    "iso3": "SWE",
+    "name": "Sweden",
+    "nativeName": "Sverige",
+    "capital": "Stockholm",
+    "currencyCode": "SEK",
+    "currencySymbol": "ko",
+    "currencyName": "Swedish krona",
+    "phonePrefix": "+46",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q34",
+    "coordinates": {
+      "latitude": 62,
+      "longitude": 15
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+46-8-783-5300",
+      "ukEmbassyPhone": "+46-8-671-3000",
+      "ausEmbassyPhone": "+46-8-613-2900"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Sweden provides supreme safety standards, high English proficiency, and pristine urban design. Nighttime public transport is clean and reliably monitored.",
+    "keySafetyRules": [
+      "Nearly 100% cashless society; buses, metro stations, and restaurants reject physical banknotes.",
+      "Check taxi rates on the rear window before boarding; unregulated taxi pricing permits some operators to charge exorbitant rates.",
+      "Dial 112 for unified emergency response."
+    ],
+    "primaryCities": ["stockholm"]
+  },
+  {
+    "iso2": "CH",
+    "iso3": "CHE",
+    "name": "Switzerland",
+    "nativeName": "Schweiz",
+    "capital": "Bern",
+    "currencyCode": "CHF",
+    "currencySymbol": "CHf",
+    "currencyName": "Swiss franc",
+    "phonePrefix": "+41",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "wikidataId": "Q39",
+    "coordinates": {
+      "latitude": 47,
+      "longitude": 8
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "117",
+      "ambulance": "144",
+      "fire": "118",
+      "touristPolice": "112"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+41-31-357-7011",
+      "ukEmbassyPhone": "+41-31-359-7700",
+      "ausEmbassyPhone": "+41-22-799-9100"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["J"]
+    },
+    "overview": "Switzerland represents the benchmark for physical and operational travel security. Clean, punctually run transit and virtually non-existent violent street crime characterize the nation.",
+    "keySafetyRules": [
+      "Swiss electrical sockets (Type J) require a hexagonal recessed plug; standard European Type F schuko plugs will not fit.",
+      "Always register off-piste alpine routes with Swiss Alpine Club (SAC) or local hut wardens.",
+      "Emergency mountain rescue is dispatched via REGA on emergency channel 1414."
+    ],
+    "primaryCities": ["zurich"]
+  },
+  {
+    "iso2": "TW",
+    "iso3": "TWN",
+    "name": "Taiwan",
+    "nativeName": "臺灣",
+    "capital": "Taipei",
+    "currencyCode": "TWD",
+    "currencySymbol": "$",
+    "currencyName": "New Taiwan dollar",
+    "phonePrefix": "+886",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "wikidataId": "Q865",
+    "coordinates": {
+      "latitude": 23.5,
+      "longitude": 121
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "110",
+      "ambulance": "119",
+      "fire": "119",
+      "touristPolice": "+886-2-2321-4665"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+886-2-2162-2000",
+      "ukEmbassyPhone": "+886-2-8758-2088",
+      "ausEmbassyPhone": "+886-2-8725-4100"
+    },
+    "electricalStandards": {
+      "voltage": "110V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "Taiwan features extraordinary safety, welcoming residents, and high-speed rail links. Earthquakes and summer typhoon systems are the main situational concerns.",
+    "keySafetyRules": [
+      "Get an EasyCard to tap on MRT, regional buses, and convenience store payments.",
+      "Observe weather advisories during typhoon season (June to October).",
+      "Emergency police dispatch is 110."
+    ],
+    "primaryCities": ["taipei"]
+  },
+  {
+    "iso2": "TZ",
+    "iso3": "TZA",
+    "name": "Tanzania",
+    "nativeName": "Tanzania",
+    "capital": "Dodoma",
+    "currencyCode": "TZS",
+    "currencySymbol": "TSh",
+    "currencyName": "Tanzanian shilling",
+    "phonePrefix": "+255",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "wikidataId": "Q924",
+    "coordinates": {
+      "latitude": -6,
+      "longitude": 35
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "115",
+      "fire": "114"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+255-22-229-4000",
+      "ukEmbassyPhone": "+255-22-229-0000",
+      "ausEmbassyPhone": "+255-22-229-4000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["D", "G"]
+    },
+    "overview": "Tanzania is celebrated for Serengeti migrations and Zanzibar spice beaches. Travelers should avoid unmetered taxis in Dar es Salaam and take licensed safari tour operators.",
+    "keySafetyRules": [
+      "Arrange airport transfers directly with verified hotels rather than accepting terminal offers.",
+      "Exercise caution on Stone Town narrow alleys after sunset; walk on well-lit main thoroughfares.",
+      "Unified emergency response is 112."
+    ],
+    "primaryCities": ["zanzibar"]
+  },
+  {
+    "iso2": "TH",
+    "iso3": "THA",
+    "name": "Thailand",
+    "nativeName": "ประเทศไทย",
+    "capital": "Bangkok",
+    "currencyCode": "THB",
+    "currencySymbol": "฿",
+    "currencyName": "Thai baht",
+    "phonePrefix": "+66",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q869",
+    "coordinates": {
+      "latitude": 15,
+      "longitude": 100
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "191",
+      "ambulance": "1669",
+      "fire": "199",
+      "touristPolice": "1155"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+66-2-205-4000",
+      "ukEmbassyPhone": "+66-2-305-8333",
+      "ausEmbassyPhone": "+66-2-344-6300"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "B", "C", "F", "O"]
+    },
+    "overview": "Thailand provides stellar backpacker infrastructure. Chief operational threats are road traffic collisions (especially motorbikes), transit overcharging, and gem/tuk-tuk scams.",
+    "keySafetyRules": [
+      "Insist on metered taxis or use Grab/Bolt rather than negotiating curbside flat rates.",
+      "Dial 1155 for English-speaking Tourist Police mediation.",
+      "Never leave your original passport as rental collateral for motorbikes or jet skis."
+    ],
+    "primaryCities": ["bangkok", "chiang-mai", "phuket"]
+  },
+  {
+    "iso2": "BS",
+    "iso3": "BHS",
+    "name": "The Bahamas",
+    "nativeName": "Bahamas",
+    "capital": "Nassau",
+    "currencyCode": "BSD",
+    "currencySymbol": "B$",
+    "currencyName": "Bahamian dollar",
+    "phonePrefix": "+1",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "wikidataId": "Q778",
+    "coordinates": {
+      "latitude": 24.25,
+      "longitude": -76
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "919",
+      "fire": "919"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+1-242-322-1181",
+      "ukEmbassyPhone": "+1-242-225-6033",
+      "ausEmbassyPhone": "+1-242-322-1181"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "The Bahamas offers world-class diving and beaches. Nassau's 'Over-the-Hill' district south of downtown experiences gang friction; stick to well-patrolled tourist corridors.",
+    "keySafetyRules": [
+      "Avoid entering residential areas south of Shirley Street (the Over-the-Hill area) in Nassau after dark.",
+      "Choose licensed, insured jet ski operators on public beaches.",
+      "Emergency police dispatch is 911."
+    ],
+    "primaryCities": ["nassau"]
+  },
+  {
+    "iso2": "TN",
+    "iso3": "TUN",
+    "name": "Tunisia",
+    "nativeName": "تونس",
+    "capital": "Tunis",
+    "currencyCode": "TND",
+    "currencySymbol": "ت.د",
+    "currencyName": "Tunisian dinar",
+    "phonePrefix": "+216",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "wikidataId": "Q948",
+    "coordinates": {
+      "latitude": 34,
+      "longitude": 9
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "197",
+      "ambulance": "198",
+      "fire": "198",
+      "touristPolice": "+216-71-340-000"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+216-71-107-000",
+      "ukEmbassyPhone": "+216-71-108-700",
+      "ausEmbassyPhone": "+216-71-107-000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "E"]
+    },
+    "overview": "Tunisia features Mediterranean beaches and Roman heritage (Carthage). Solo travelers should avoid remote border zones near Libya and Algeria and exercise standard souk caution.",
+    "keySafetyRules": [
+      "Avoid traveling to southern military desert zones or border areas without official authorizations.",
+      "Confirm taxi meter activation in Tunis yellow cabs.",
+      "Police emergency is 197; ambulance and fire is 198."
+    ],
+    "primaryCities": ["tunis"]
+  },
+  {
+    "iso2": "TR",
+    "iso3": "TUR",
+    "name": "Turkey",
+    "nativeName": "Türkiye",
+    "capital": "Ankara",
+    "currencyCode": "TRY",
+    "currencySymbol": "₺",
+    "currencyName": "Turkish lira",
+    "phonePrefix": "+90",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q43",
+    "coordinates": {
+      "latitude": 39,
+      "longitude": 35
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": "+90-212-527-4503"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+90-312-294-0000",
+      "ukEmbassyPhone": "+90-312-455-3344",
+      "ausEmbassyPhone": "+90-312-459-9500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Turkey offers rich culture and warm hospitality. Solo travelers face aggressive bazaar rug shop solicitations, inflated taxi meters in Istanbul, and the classic 'let's have a drink' bar scam.",
+    "keySafetyRules": [
+      "Never accompany overly friendly strangers inviting you to a bar or tea house in Sultanahmet or Taksim.",
+      "Ensure the taxi driver turns on the digital meter in the rearview mirror or use BiTaksi app.",
+      "Unified emergency dispatch is 112 across Turkey."
+    ],
+    "primaryCities": ["istanbul"]
+  },
+  {
+    "iso2": "AE",
+    "iso3": "ARE",
+    "name": "United Arab Emirates",
+    "nativeName": "دولة الإمارات العربية المتحدة",
+    "capital": "Abu Dhabi",
+    "currencyCode": "AED",
+    "currencySymbol": "إ.د",
+    "currencyName": "United Arab Emirates dirham",
+    "phonePrefix": "+971",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "wikidataId": "Q878",
+    "coordinates": {
+      "latitude": 24,
+      "longitude": 54
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "998",
+      "fire": "997",
+      "touristPolice": "901"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+971-2-414-2200",
+      "ukEmbassyPhone": "+971-4-309-4444",
+      "ausEmbassyPhone": "+971-2-401-7500"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "The UAE boasts world-leading safety rankings with virtually nonexistent violent or petty street crime. Strict legal statutes govern public etiquette, modesty, and digital speech.",
+    "keySafetyRules": [
+      "Respect local legal sensitivities regarding public photography, alcohol consumption in public, and social decorum.",
+      "Taxis are metered, government-regulated, and exceptionally safe day and night.",
+      "Emergency police dispatch is 999; tourist support is 901."
+    ],
+    "primaryCities": ["dubai"]
+  },
+  {
+    "iso2": "GB",
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "nativeName": "United Kingdom",
+    "capital": "London",
+    "currencyCode": "GBP",
+    "currencySymbol": "£",
+    "currencyName": "British pound",
+    "phonePrefix": "+44",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "wikidataId": "Q145",
+    "coordinates": {
+      "latitude": 54,
+      "longitude": -2
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "999",
+      "ambulance": "999",
+      "fire": "999"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+44-20-7499-9000",
+      "ukEmbassyPhone": "+44-20-7008-5000",
+      "ausEmbassyPhone": "+44-20-7379-4334"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["G"]
+    },
+    "overview": "The United Kingdom is a premier solo travel destination with comprehensive rail links and high public safety. The main urban risk is phone snatching by moped and e-bike riders on busy street pavements.",
+    "keySafetyRules": [
+      "Keep phones securely held away from the curb side to prevent moped snatching.",
+      "Tap-and-go contactless cards work across all London transit; avoid buying single paper tickets.",
+      "Only use licensed black cabs or registered rideshare apps (Uber/Bolt) at night."
+    ],
+    "primaryCities": ["london", "edinburgh"]
+  },
+  {
+    "iso2": "US",
+    "iso3": "USA",
+    "name": "United States",
+    "nativeName": "United States",
+    "capital": "Washington",
+    "currencyCode": "USD",
+    "currencySymbol": "$",
+    "currencyName": "United States dollar",
+    "phonePrefix": "+1",
+    "region": "Americas",
+    "subregion": "Northern America",
+    "wikidataId": "Q30",
+    "coordinates": {
+      "latitude": 38,
+      "longitude": -97
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+1-202-501-4444",
+      "ukEmbassyPhone": "+1-202-588-6500",
+      "ausEmbassyPhone": "+1-202-797-3000"
+    },
+    "electricalStandards": {
+      "voltage": "120V",
+      "frequency": "60Hz",
+      "plugTypes": ["A", "B"]
+    },
+    "overview": "The United States offers vast solo travel opportunities with high emergency reliability. Neighborhood safety boundaries vary dramatically within single metropolitan blocks.",
+    "keySafetyRules": [
+      "Examine neighborhood micro-boundaries carefully before choosing hotel or apartment locations.",
+      "Carry comprehensive travel health insurance; out-of-pocket medical bills in the US are catastrophic.",
+      "Dial 911 for immediate unified dispatch anywhere in the country."
+    ],
+    "primaryCities": ["new-york", "san-francisco"]
+  },
+  {
+    "iso2": "UY",
+    "iso3": "URY",
+    "name": "Uruguay",
+    "nativeName": "Uruguay",
+    "capital": "Montevideo",
+    "currencyCode": "UYU",
+    "currencySymbol": "$",
+    "currencyName": "Uruguayan peso",
+    "phonePrefix": "+598",
+    "region": "Americas",
+    "subregion": "South America",
+    "wikidataId": "Q77",
+    "coordinates": {
+      "latitude": -33,
+      "longitude": -56
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "911",
+      "ambulance": "911",
+      "fire": "911"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+598-1770-2000",
+      "ukEmbassyPhone": "+598-2622-3630",
+      "ausEmbassyPhone": "+598-1770-2000"
+    },
+    "electricalStandards": {
+      "voltage": "230V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F", "L"]
+    },
+    "overview": "Uruguay is the safest, most stable country in South America. Solo travelers experience calm coastal towns (Punta del Este) and walkable Montevideo neighborhoods.",
+    "keySafetyRules": [
+      "Standard urban vigilance applies around Montevideo's Ciudad Vieja late at night.",
+      "Carry credit cards; foreign tourists receive significant VAT refunds automatically at dining venues.",
+      "Emergency number 911 provides unified dispatch."
+    ],
+    "primaryCities": ["montevideo"]
+  },
+  {
+    "iso2": "UZ",
+    "iso3": "UZB",
+    "name": "Uzbekistan",
+    "nativeName": "O‘zbekiston",
+    "capital": "Tashkent",
+    "currencyCode": "UZS",
+    "currencySymbol": "лв",
+    "currencyName": "Uzbekistani soʻm",
+    "phonePrefix": "+998",
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "wikidataId": "Q265",
+    "coordinates": {
+      "latitude": 41,
+      "longitude": 64
+    },
+    "defaultRiskTier": "Low",
+    "emergencyNumbers": {
+      "police": "102",
+      "ambulance": "103",
+      "fire": "101",
+      "touristPolice": "+998-71-233-7056"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+998-78-120-5450",
+      "ukEmbassyPhone": "+998-71-120-1500",
+      "ausEmbassyPhone": "+998-78-120-5450"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["C", "F"]
+    },
+    "overview": "Uzbekistan has invested heavily in tourist safety with dedicated Tourist Police and modern Afrosiyob bullet trains linking Silk Road cities. Street crime is extremely low.",
+    "keySafetyRules": [
+      "Retain hotel registration slips given at check-out; these may be inspected upon airport departure.",
+      "Book high-speed Afrosiyob train tickets weeks in advance; they sell out rapidly.",
+      "Tourist Police provide multi-lingual support at all major Silk Road architectural sites."
+    ],
+    "primaryCities": ["tashkent"]
+  },
+  {
+    "iso2": "VN",
+    "iso3": "VNM",
+    "name": "Vietnam",
+    "nativeName": "Việt Nam",
+    "capital": "Hanoi",
+    "currencyCode": "VND",
+    "currencySymbol": "₫",
+    "currencyName": "Vietnamese đồng",
+    "phonePrefix": "+84",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "wikidataId": "Q881",
+    "coordinates": {
+      "latitude": 16.16666666,
+      "longitude": 107.83333333
+    },
+    "defaultRiskTier": "Moderate",
+    "emergencyNumbers": {
+      "police": "113",
+      "ambulance": "115",
+      "fire": "114"
+    },
+    "consularHotlines": {
+      "usEmbassyPhone": "+84-24-3850-5000",
+      "ukEmbassyPhone": "+84-24-3936-0500",
+      "ausEmbassyPhone": "+84-24-3774-0100"
+    },
+    "electricalStandards": {
+      "voltage": "220V",
+      "frequency": "50Hz",
+      "plugTypes": ["A", "C"]
+    },
+    "overview": "Vietnam is peaceful and friendly. The main operational friction points are intense motorcycle traffic flow, currency denomination errors (Dong), and drive-by phone snatching.",
+    "keySafetyRules": [
+      "Cross roads at an even, predictable speed without sudden pauses so scooters can route around you.",
+      "Use Grab to book taxis or scooter rides with pre-locked prices.",
+      "Carefully verify zero counts on banknotes (e.g. 500,000 vs 20,000 VND)."
+    ],
+    "primaryCities": ["hanoi", "ho-chi-minh-city"]
+  }
+]

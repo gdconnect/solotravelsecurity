@@ -1,0 +1,588 @@
+{
+  "version": "1.0.0",
+  "partners": [
+    {
+      "partnerId": "PARTNER-SAFETYWING",
+      "legalBusinessName": "SafetyWing Insurance Services Inc.",
+      "dbaBrandName": "SafetyWing",
+      "primaryDomain": "https://safetywing.com",
+      "partnerCategory": "travel_insurance_underwriter",
+      "corporateJurisdictionIso2": "US",
+      "taxClassification": "us_w9_ein",
+      "contacts": {
+        "commercialLead": {
+          "name": "Affiliate Operations Desk",
+          "email": "partners@safetywing.com"
+        },
+        "technicalContact": {
+          "name": "API & Tracking Support",
+          "email": "tech@safetywing.com"
+        },
+        "emergencyEscalationDesk": {
+          "name": "24/7 Global Medical Assistance Desk",
+          "phone24h": "+1-800-605-2282",
+          "email24h": "support@safetywing.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": true,
+        "underwriterLegalName": "Tokio Marine HCC Medical Insurance Services Group",
+        "amBestRating": "A_PLUS_PLUS",
+        "regulatoryBodyRegistrationId": "CA-0H37750"
+      },
+      "payoutConfig": {
+        "payoutRail": "first_party_direct",
+        "payoutCurrency": "USD",
+        "paymentTerms": "net_30",
+        "minimumPayoutThresholdUsd": 50.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    },
+    {
+      "partnerId": "PARTNER-GLOBAL-RESCUE",
+      "legalBusinessName": "Global Rescue LLC",
+      "dbaBrandName": "Global Rescue",
+      "primaryDomain": "https://www.globalrescue.com",
+      "partnerCategory": "medical_evacuation",
+      "corporateJurisdictionIso2": "US",
+      "taxClassification": "us_w9_ein",
+      "contacts": {
+        "commercialLead": {
+          "name": "Strategic Partnerships",
+          "email": "affiliates@globalrescue.com"
+        },
+        "technicalContact": {
+          "name": "Integration Engineering",
+          "email": "integrations@globalrescue.com"
+        },
+        "emergencyEscalationDesk": {
+          "name": "Global Operations Center (Deployable Paramilitary Evac)",
+          "phone24h": "+1-617-459-4200",
+          "email24h": "operations@globalrescue.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": false,
+        "underwriterLegalName": "Crisis & Evacuation Membership (Direct Security Contractor)",
+        "amBestRating": "NOT_APPLICABLE",
+        "regulatoryBodyRegistrationId": "N/A - Evacuation Service"
+      },
+      "payoutConfig": {
+        "payoutRail": "impact_radius",
+        "payoutCurrency": "USD",
+        "paymentTerms": "net_30",
+        "minimumPayoutThresholdUsd": 100.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    },
+    {
+      "partnerId": "PARTNER-MEDJET",
+      "legalBusinessName": "Medjet Assistance LLC",
+      "dbaBrandName": "Medjet",
+      "primaryDomain": "https://medjetassist.com",
+      "partnerCategory": "medical_evacuation",
+      "corporateJurisdictionIso2": "US",
+      "taxClassification": "us_w9_ein",
+      "contacts": {
+        "commercialLead": {
+          "name": "Partner Programs",
+          "email": "partnerships@medjet.com"
+        },
+        "technicalContact": {
+          "name": "Web Operations",
+          "email": "webmaster@medjet.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": false,
+        "underwriterLegalName": "Air Medical Transport Membership",
+        "amBestRating": "A_PLUS",
+        "regulatoryBodyRegistrationId": "AL-665241"
+      },
+      "payoutConfig": {
+        "payoutRail": "direct_ach_wire",
+        "payoutCurrency": "USD",
+        "paymentTerms": "net_30",
+        "minimumPayoutThresholdUsd": 100.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    },
+    {
+      "partnerId": "PARTNER-AIRALO",
+      "legalBusinessName": "Airgsm Pte. Ltd.",
+      "dbaBrandName": "Airalo",
+      "primaryDomain": "https://www.airalo.com",
+      "partnerCategory": "telecom_esim_carrier",
+      "corporateJurisdictionIso2": "SG",
+      "taxClassification": "us_w8ben_foreign",
+      "contacts": {
+        "commercialLead": {
+          "name": "Global Affiliate Desk",
+          "email": "affiliates@airalo.com"
+        },
+        "technicalContact": {
+          "name": "API Team",
+          "email": "api@airalo.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": false,
+        "underwriterLegalName": "N/A - Telecom Carrier Agreements",
+        "amBestRating": "NOT_APPLICABLE"
+      },
+      "payoutConfig": {
+        "payoutRail": "partnerstack",
+        "payoutCurrency": "USD",
+        "paymentTerms": "net_30",
+        "minimumPayoutThresholdUsd": 50.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    },
+    {
+      "partnerId": "PARTNER-GARMIN",
+      "legalBusinessName": "Garmin International, Inc.",
+      "dbaBrandName": "Garmin",
+      "primaryDomain": "https://www.garmin.com",
+      "partnerCategory": "satellite_hardware_manufacturer",
+      "corporateJurisdictionIso2": "US",
+      "taxClassification": "us_w9_ein",
+      "contacts": {
+        "commercialLead": {
+          "name": "Outdoor Affiliate Desk",
+          "email": "affiliate@garmin.com"
+        },
+        "technicalContact": {
+          "name": "Developer InReach Desk",
+          "email": "inreach-dev@garmin.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": false,
+        "underwriterLegalName": "GEOS / Garmin Response SAR Coordination",
+        "amBestRating": "NOT_APPLICABLE"
+      },
+      "payoutConfig": {
+        "payoutRail": "cj_affiliate",
+        "payoutCurrency": "USD",
+        "paymentTerms": "net_60",
+        "minimumPayoutThresholdUsd": 50.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    },
+    {
+      "partnerId": "PARTNER-WISE",
+      "legalBusinessName": "Wise Payments Limited",
+      "dbaBrandName": "Wise",
+      "primaryDomain": "https://wise.com",
+      "partnerCategory": "fintech_payment_network",
+      "corporateJurisdictionIso2": "GB",
+      "taxClassification": "uk_ltd_vat",
+      "contacts": {
+        "commercialLead": {
+          "name": "Affiliate Operations",
+          "email": "affiliates@wise.com"
+        },
+        "technicalContact": {
+          "name": "API Desk",
+          "email": "developers@wise.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": false,
+        "underwriterLegalName": "UK FCA Authorized Electronic Money Institution",
+        "amBestRating": "NOT_APPLICABLE",
+        "regulatoryBodyRegistrationId": "FCA-900507"
+      },
+      "payoutConfig": {
+        "payoutRail": "impact_radius",
+        "payoutCurrency": "USD",
+        "paymentTerms": "net_30",
+        "minimumPayoutThresholdUsd": 25.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    },
+    {
+      "partnerId": "PARTNER-STS-GUARDIAN",
+      "legalBusinessName": "Solo Travel Security Ltd.",
+      "dbaBrandName": "The Guardian Pass",
+      "primaryDomain": "https://solotravelsecurity.com",
+      "partnerCategory": "first_party_guardian_program",
+      "corporateJurisdictionIso2": "US",
+      "taxClassification": "us_w9_ein",
+      "contacts": {
+        "commercialLead": {
+          "name": "Operations Lead",
+          "email": "guardian@solotravelsecurity.com"
+        },
+        "technicalContact": {
+          "name": "Core Security Engineer",
+          "email": "engineering@solotravelsecurity.com"
+        }
+      },
+      "licensingAndRegulatory": {
+        "isInsuranceLicensed": false,
+        "underwriterLegalName": "First-Party Automated Safety Tripwire & Consular Dispatch Service",
+        "amBestRating": "NOT_APPLICABLE"
+      },
+      "payoutConfig": {
+        "payoutRail": "first_party_direct",
+        "payoutCurrency": "USD",
+        "paymentTerms": "instant_payout",
+        "minimumPayoutThresholdUsd": 0.0
+      },
+      "complianceStatus": {
+        "vettingStage": "active_production",
+        "ftcDisclaimerAccepted": true,
+        "sanctionsComplianceConfirmed": true,
+        "lastAuditedUtc": "2026-09-01T00:00:00Z"
+      }
+    }
+  ],
+  "offers": [
+    {
+      "offerId": "OFFER-SAFETYWING-NOMAD",
+      "partnerId": "PARTNER-SAFETYWING",
+      "title": "SafetyWing Nomad Insurance (Global Health & Evac)",
+      "shortTagline": "Continuous worldwide travel health & evacuation insurance with automatic recurring monthly renewal.",
+      "category": "travel_health_insurance",
+      "commercialTerms": {
+        "payoutModel": "revshare_recurring",
+        "cpaAmountUsd": 65.0,
+        "revsharePercentage": 10.0,
+        "revshareDurationMonths": 12,
+        "currency": "USD",
+        "cookieWindowDays": 365,
+        "historicalConversionRate": 0.042,
+        "benchmarkEpcUsd": 2.73
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://safetywing.com/nomad-insurance?referenceID=solotravelsec&subid={subid}&dest={dest_country}",
+        "supportedTokens": ["subid", "dest_country", "archetype", "click_id"],
+        "relAttributes": "nofollow sponsored noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": ["CU", "IR", "KP", "SY", "RU", "BY"],
+        "eligibleRiskTiers": ["Moderate", "Elevated", "High", "Critical"],
+        "eligibleArchetypes": ["digital-nomad", "budget-backpacker", "first-time-solo"],
+        "eligibleLifecycles": ["pre_trip", "day_roaming", "crisis_escalation"],
+        "maxAge": 69,
+        "requiresEsimHardware": false,
+        "coversScooterMotorcycle": true,
+        "requiresOffGridWilderness": false
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 88.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Covers motor scooter accidents with valid local license",
+          "Emergency medical evacuation up to $100,000",
+          "Renews every 28 days automatically until cancelled"
+        ],
+        "cons": [
+          "Pre-existing medical conditions excluded",
+          "$250 deductible applies to outpatient medical claims"
+        ],
+        "mandatoryLegalNotice": "Insurance is underwritten by Tokio Marine HCC. Read policy terms before purchase."
+      }
+    },
+    {
+      "offerId": "OFFER-GLOBAL-RESCUE-MEDEVAC",
+      "partnerId": "PARTNER-GLOBAL-RESCUE",
+      "title": "Global Rescue Medical & Security Evacuation Membership",
+      "shortTagline": "Private paramedical field extraction and repatriation to your hospital of choice worldwide.",
+      "category": "medical_evac",
+      "commercialTerms": {
+        "payoutModel": "cpa_fixed",
+        "cpaAmountUsd": 140.0,
+        "currency": "USD",
+        "cookieWindowDays": 60,
+        "historicalConversionRate": 0.035,
+        "benchmarkEpcUsd": 4.9
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://ss.globalrescue.com/partner/solotravelsec/?subid={subid}&destination={dest_city}",
+        "supportedTokens": ["subid", "dest_city", "dest_country", "click_id"],
+        "relAttributes": "nofollow sponsored noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": ["KP", "IR", "SY"],
+        "eligibleRiskTiers": ["Elevated", "High", "Critical"],
+        "eligibleArchetypes": ["senior-solo", "solo-female", "digital-nomad", "budget-backpacker"],
+        "eligibleLifecycles": ["pre_trip", "crisis_escalation"],
+        "maxAge": 85,
+        "requiresEsimHardware": false,
+        "coversScooterMotorcycle": true,
+        "requiresOffGridWilderness": false
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 99.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Deploys critical care paramedic teams directly to the point of injury",
+          "Evacuates to home hospital of choice, not nearest clinic",
+          "Includes 24/7 security advisory hotline during civil unrest"
+        ],
+        "cons": [
+          "Higher membership cost than standard travel insurance",
+          "Does not cover routine clinical doctor visits (evacuation & rescue only)"
+        ],
+        "mandatoryLegalNotice": "Global Rescue is an operational rescue and evacuation service, not health insurance."
+      }
+    },
+    {
+      "offerId": "OFFER-MEDJET-HORIZON",
+      "partnerId": "PARTNER-MEDJET",
+      "title": "Medjet Horizon Air Medical Transport & Crisis Response",
+      "shortTagline": "Bedside-to-bedside air ambulance evacuation with 24/7 hostage, extortion, and crisis consultation.",
+      "category": "medical_evac",
+      "commercialTerms": {
+        "payoutModel": "cpa_fixed",
+        "cpaAmountUsd": 120.0,
+        "currency": "USD",
+        "cookieWindowDays": 45,
+        "historicalConversionRate": 0.03,
+        "benchmarkEpcUsd": 3.6
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://medjetassist.com/?aff=solotravelsec&subid={subid}",
+        "supportedTokens": ["subid", "click_id"],
+        "relAttributes": "nofollow sponsored noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": ["KP", "IR", "SY", "CU"],
+        "eligibleRiskTiers": ["Moderate", "Elevated", "High"],
+        "eligibleArchetypes": ["senior-solo", "solo-female"],
+        "eligibleLifecycles": ["pre_trip", "crisis_escalation"],
+        "maxAge": 74,
+        "requiresEsimHardware": false,
+        "coversScooterMotorcycle": false,
+        "requiresOffGridWilderness": false
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 96.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Zero medical necessity clause for bedside transfer to home hospital",
+          "Dedicated 24/7 crisis consultation for violent crime and blackmail",
+          "Preferred provider for senior solo travelers"
+        ],
+        "cons": [
+          "Does not cover off-road wilderness motorcycle accidents",
+          "Maximum age enrollment cap at 74 years old"
+        ]
+      }
+    },
+    {
+      "offerId": "OFFER-AIRALO-GLOBAL-ESIM",
+      "partnerId": "PARTNER-AIRALO",
+      "title": "Airalo Regional & Global Travel eSIM",
+      "shortTagline": "Preloaded local data ready on touchdown before exiting the aircraft gate.",
+      "category": "preloaded_esim",
+      "commercialTerms": {
+        "payoutModel": "cpa_fixed",
+        "cpaAmountUsd": 10.0,
+        "currency": "USD",
+        "cookieWindowDays": 30,
+        "historicalConversionRate": 0.115,
+        "benchmarkEpcUsd": 1.15
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://airalo.tp.st/solotravelsec?country={dest_country}&subid={subid}",
+        "supportedTokens": ["dest_country", "subid", "click_id"],
+        "relAttributes": "nofollow sponsored noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": [],
+        "eligibleRiskTiers": ["Low", "Moderate", "Elevated", "High", "Critical"],
+        "eligibleArchetypes": [
+          "solo-female",
+          "first-time-solo",
+          "digital-nomad",
+          "budget-backpacker",
+          "senior-solo"
+        ],
+        "eligibleLifecycles": ["night_arrival", "pre_trip"],
+        "maxAge": 120,
+        "requiresEsimHardware": true,
+        "coversScooterMotorcycle": false,
+        "requiresOffGridWilderness": false
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 82.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Activates immediately upon touchdown on the tarmac",
+          "Bypasses airport terminal scam queues and rogue taxi touts",
+          "Allows verified rideshare booking inside official pickup zones"
+        ],
+        "cons": [
+          "Requires carrier-unlocked phone with hardware eSIM support",
+          "Data-only connection (voice calls via Signal/WhatsApp)"
+        ]
+      }
+    },
+    {
+      "offerId": "OFFER-GARMIN-INREACH",
+      "partnerId": "PARTNER-GARMIN",
+      "title": "Garmin inReach Mini 2 Satellite Communicator",
+      "shortTagline": "100% global Iridium satellite SOS trigger with two-way texting when cellular towers are dead.",
+      "category": "satellite_sos",
+      "commercialTerms": {
+        "payoutModel": "cpa_fixed",
+        "cpaAmountUsd": 40.0,
+        "currency": "USD",
+        "cookieWindowDays": 30,
+        "historicalConversionRate": 0.028,
+        "benchmarkEpcUsd": 1.12
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://www.rei.com/product/208278/garmin-inreach-mini-2?cm_mmc=aff_solotravelsec&subid={subid}",
+        "supportedTokens": ["subid", "click_id"],
+        "relAttributes": "nofollow sponsored noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": ["KP", "IR", "SY"],
+        "eligibleRiskTiers": ["Elevated", "High", "Critical"],
+        "eligibleArchetypes": ["budget-backpacker", "digital-nomad", "senior-solo"],
+        "eligibleLifecycles": ["day_roaming", "crisis_escalation"],
+        "maxAge": 120,
+        "requiresEsimHardware": false,
+        "coversScooterMotorcycle": true,
+        "requiresOffGridWilderness": true
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 98.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Sends interactive SOS coordinates to Garmin Response 24/7 SAR team",
+          "Up to 14 days battery life in 10-minute tracking mode",
+          "Weighs only 100g (3.5 oz)"
+        ],
+        "cons": [
+          "Requires monthly satellite subscription plan",
+          "Needs clear view of open sky to transmit data"
+        ]
+      }
+    },
+    {
+      "offerId": "OFFER-WISE-TRAVEL-CARD",
+      "partnerId": "PARTNER-WISE",
+      "title": "Wise Multi-Currency Travel Debit Card",
+      "shortTagline": "Hold 40+ currencies at mid-market rates with disposable virtual cards and instant in-app freeze.",
+      "category": "anti_theft_fintech",
+      "commercialTerms": {
+        "payoutModel": "cpa_fixed",
+        "cpaAmountUsd": 25.0,
+        "currency": "USD",
+        "cookieWindowDays": 45,
+        "historicalConversionRate": 0.065,
+        "benchmarkEpcUsd": 1.63
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://wise.com/invite/ihpc/solotravelsec?subid={subid}",
+        "supportedTokens": ["subid", "click_id"],
+        "relAttributes": "nofollow sponsored noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": ["RU", "BY", "KP", "IR", "SY"],
+        "eligibleRiskTiers": ["Low", "Moderate", "Elevated", "High"],
+        "eligibleArchetypes": ["budget-backpacker", "first-time-solo", "digital-nomad"],
+        "eligibleLifecycles": ["pre_trip", "day_roaming"],
+        "maxAge": 120,
+        "requiresEsimHardware": false,
+        "coversScooterMotorcycle": false,
+        "requiresOffGridWilderness": false
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 75.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Generates disposable virtual cards for sketchy merchant terminals",
+          "Zero foreign transaction markup fees",
+          "Instant freeze button in smartphone app if card is skimmed"
+        ],
+        "cons": [
+          "ATM withdrawal fees apply after initial monthly threshold",
+          "Physical card requires 5-10 business days delivery before trip"
+        ]
+      }
+    },
+    {
+      "offerId": "OFFER-GUARDIAN-PASS-39",
+      "partnerId": "PARTNER-STS-GUARDIAN",
+      "title": "The Guardian Pass for Parents ($39 Single Trip)",
+      "shortTagline": "Calm, automated check-in SLA and consular emergency packet for loved ones back home.",
+      "category": "parent_guardian_service",
+      "commercialTerms": {
+        "payoutModel": "cpa_fixed",
+        "cpaAmountUsd": 39.0,
+        "currency": "USD",
+        "cookieWindowDays": 30,
+        "historicalConversionRate": 0.048,
+        "benchmarkEpcUsd": 1.87
+      },
+      "trackingConfig": {
+        "urlTemplate": "https://solotravelsecurity.com/parents?pass=single_trip&subid={subid}",
+        "supportedTokens": ["subid", "dest_country", "dest_city", "click_id"],
+        "relAttributes": "nofollow noopener noreferrer"
+      },
+      "targetingRules": {
+        "eligibleCountries": ["*"],
+        "excludedCountries": [],
+        "eligibleRiskTiers": ["Moderate", "Elevated", "High", "Critical"],
+        "eligibleArchetypes": ["first-time-solo", "solo-female", "budget-backpacker"],
+        "eligibleLifecycles": ["pre_trip", "night_arrival", "crisis_escalation"],
+        "maxAge": 35,
+        "requiresEsimHardware": false,
+        "coversScooterMotorcycle": true,
+        "requiresOffGridWilderness": false
+      },
+      "editorialReview": {
+        "lifeSafetyScore": 95.0,
+        "verifiedPhysicalTest": true,
+        "pros": [
+          "Zero invasive GPS tracking: event-driven heartbeats preserve traveler autonomy",
+          "Automated dead-man tripwire escalation ladder before family panic",
+          "Pre-formatted emergency consular packet with 24/7 embassy hotlines"
+        ],
+        "cons": ["Requires traveler to tap check-in confirmation at least once every 24 hours"]
+      }
+    }
+  ]
+}

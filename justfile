@@ -5,9 +5,13 @@ set shell := ["bash", "-cu"]
 default:
     @just --list
 
-# Start development server on port 3005
+# Start development server on port 3020 (https://solotravelsecurity.localhost)
 dev:
     npm run dev
+
+# Comprehensive local dev runner with Caddy and port verification
+dev-local:
+    ./scripts/dev-local.sh
 
 # Fast lint with Oxlint
 lint-ox:
@@ -34,6 +38,10 @@ format:
 # TypeScript type check
 typecheck:
     npx tsc --noEmit
+
+# Verify Gemini Grounded Data Harvesting & LEGO block schemas
+test-harvest:
+    npm run test:harvest
 
 # Lint GitHub Actions workflow files with actionlint
 actionlint:

@@ -1,0 +1,15 @@
+mutation SaveFavorite($sessionToken: String!, $item: FavoriteItemInput!) {
+  saveFavorite(sessionToken: $sessionToken, item: $item) {
+    id
+    type
+    title
+    url
+    category
+    description
+    price
+    rating
+    badge
+    savedAt
+    notes
+  }
+}

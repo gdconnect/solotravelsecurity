@@ -5,4 +5,7 @@ export type { IconName } from "./Icon";
 export { JsonLd } from "./JsonLd";
 export { Logo } from "./Logo";
 export { Reveal } from "./Reveal";
+export { ScoreMeter } from "./ScoreMeter";
 export { SectionHeading } from "./SectionHeading";
+export { FavoriteButton } from "./FavoriteButton";
+export { HeaderFavoritesBadge } from "./HeaderFavoritesBadge";

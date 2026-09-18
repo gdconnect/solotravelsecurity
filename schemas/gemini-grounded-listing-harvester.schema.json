@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/gemini-grounded-listing-harvester.schema.json",
+  "title": "GeminiGroundedListingHarvester",
+  "description": "Formal schema defining the structured data extraction contract for Google Gemini Grounded Search API feeding Solo Travel Security pSEO listings.",
+  "type": "object",
+  "required": [
+    "harvestJobId",
+    "targetEntityType",
+    "targetLocation",
+    "groundingQuery",
+    "groundingSources",
+    "extractedLegoPayload",
+    "qualityAudit"
+  ],
+  "properties": {
+    "harvestJobId": {
+      "type": "string",
+      "pattern": "^JOB-[A-Z0-9_-]+$",
+      "description": "Unique deterministic harvest execution identifier"
+    },
+    "targetEntityType": {
+      "type": "string",
+      "enum": ["airport", "scam", "micro_zone", "regulatory", "gear"]
+    },
+    "targetLocation": {
+      "type": "object",
+      "required": ["city", "countryCode"],
+      "properties": {
+        "city": { "type": "string" },
+        "citySlug": { "type": "string" },
+        "country": { "type": "string" },
+        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "iata": { "type": "string", "pattern": "^[A-Z]{3}$" }
+      }
+    },
+    "groundingQuery": {
+      "type": "string",
+      "description": "The exact search query passed to Google Search Grounding tool in Gemini"
+    },
+    "groundingSources": {
+      "type": "array",
+      "description": "Verified external URLs and search citations returned by Google Grounding",
+      "items": {
+        "type": "object",
+        "required": ["url", "title"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "title": { "type": "string" },
+          "domain": { "type": "string" },
+          "isOfficialMunicipalOrConsular": { "type": "boolean", "default": false }
+        }
+      }
+    },
+    "extractedLegoPayload": {
+      "type": "object",
+      "description": "Validated JSON structure matching the target LEGO block schema (Draft 2020-12)"
+    },
+    "qualityAudit": {
+      "type": "object",
+      "required": [
+        "schemaValidationPassed",
+        "hallucinationScore",
+        "freshnessTimestampUtc",
+        "approvedForPseoPublish"
+      ],
+      "properties": {
+        "schemaValidationPassed": { "type": "boolean" },
+        "hallucinationScore": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Calculated grounding overlap ratio: 0.0 = fully grounded, 1.0 = potential hallucination"
+        },
+        "freshnessTimestampUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "approvedForPseoPublish": {
+          "type": "boolean",
+          "description": "True only if schema validation passed, citation is official, and hallucination score < 0.15"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

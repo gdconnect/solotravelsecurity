@@ -1,0 +1,19 @@
+query TaxonomyTree {
+  securityPillars {
+    id
+    name
+    slug
+    description
+    weight
+    icon
+    primaryDirectives
+  }
+  lifecyclePhases {
+    id
+    name
+    slug
+    order
+    description
+    typicalWindow
+  }
+}

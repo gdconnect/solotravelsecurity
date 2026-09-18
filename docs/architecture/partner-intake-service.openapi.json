@@ -1,0 +1,248 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Solo Travel Security Partner Intake & Dynamic Offer Matching API",
+    "version": "1.0.0",
+    "description": "Programmatic interface for onboarding partners, ingesting commercial offers, validating compliance via decision tables, and dynamically matching traveler queries with high-yield offers."
+  },
+  "servers": [
+    { "url": "https://solotravelsecurity.com/api/v1", "description": "Production Edge API Gateway" }
+  ],
+  "paths": {
+    "/partners/intake": {
+      "post": {
+        "summary": "Submit Partner Entity Onboarding Profile",
+        "description": "Ingests and validates a partner profile against schemas/partner-profile-intake.schema.json and DT-INTAKE-VALIDATION-01.",
+        "operationId": "submitPartnerProfile",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartnerProfileIntake"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Partner Profile Successfully Validated and Ingested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntakeValidationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Failure (Compliance, FTC, or Licensing Rejection)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntakeValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/partners/offers": {
+      "post": {
+        "summary": "Submit Commercial Offer Contract",
+        "description": "Ingests a discrete offer for an onboarded partner, validated against schemas/partner-offer-intake.schema.json.",
+        "operationId": "submitPartnerOffer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartnerOfferIntake"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Offer Ingested into Active Catalog"
+          },
+          "400": {
+            "description": "Invalid Offer Configuration or Insecure Tracking Template"
+          }
+        }
+      }
+    },
+    "/partners/batch": {
+      "post": {
+        "summary": "Bulk Ingest Partner Batch",
+        "description": "Bulk onboarding batch for multiple partners, offers, and matching rules, conforming to schemas/partner-intake-batch.schema.json.",
+        "operationId": "submitPartnerBatch",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartnerIntakeBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Batch Processed Successfully with Itemized Audit"
+          }
+        }
+      }
+    },
+    "/offers/match": {
+      "post": {
+        "summary": "Evaluate Dynamic User Offer Match",
+        "description": "Evaluates a traveler query context against ingested offers, returning slotted placements, composite relevance scores, and FTC disclosures.",
+        "operationId": "matchUserOffers",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserQueryContext"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Evaluated Slotted Match Result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOfferMatchResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PartnerProfileIntake": {
+        "type": "object",
+        "description": "Referenced from schemas/partner-profile-intake.schema.json",
+        "required": [
+          "partnerId",
+          "legalBusinessName",
+          "dbaBrandName",
+          "primaryDomain",
+          "partnerCategory"
+        ],
+        "properties": {
+          "partnerId": { "type": "string" },
+          "legalBusinessName": { "type": "string" },
+          "dbaBrandName": { "type": "string" },
+          "primaryDomain": { "type": "string" },
+          "partnerCategory": { "type": "string" }
+        }
+      },
+      "PartnerOfferIntake": {
+        "type": "object",
+        "description": "Referenced from schemas/partner-offer-intake.schema.json",
+        "required": ["offerId", "partnerId", "title", "category"],
+        "properties": {
+          "offerId": { "type": "string" },
+          "partnerId": { "type": "string" },
+          "title": { "type": "string" },
+          "category": { "type": "string" }
+        }
+      },
+      "PartnerIntakeBatch": {
+        "type": "object",
+        "description": "Referenced from schemas/partner-intake-batch.schema.json",
+        "required": ["batchId", "partners", "offers"],
+        "properties": {
+          "batchId": { "type": "string" },
+          "partners": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/PartnerProfileIntake" }
+          },
+          "offers": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/PartnerOfferIntake" }
+          }
+        }
+      },
+      "UserQueryContext": {
+        "type": "object",
+        "required": [
+          "archetype",
+          "destinationCity",
+          "destinationCountryIso2",
+          "riskTier",
+          "lifecycle"
+        ],
+        "properties": {
+          "archetype": { "type": "string" },
+          "destinationCity": { "type": "string" },
+          "destinationCountryIso2": { "type": "string" },
+          "riskTier": {
+            "type": "string",
+            "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+          },
+          "lifecycle": {
+            "type": "string",
+            "enum": [
+              "pre_trip",
+              "night_arrival",
+              "lodging_lockdown",
+              "day_roaming",
+              "nightlife_social",
+              "crisis_escalation"
+            ]
+          },
+          "healthProfile": { "type": "string" },
+          "deviceCapability": { "type": "string" }
+        }
+      },
+      "UserOfferMatchResult": {
+        "type": "object",
+        "description": "Referenced from schemas/user-offer-match-result.schema.json",
+        "required": [
+          "evaluatedAtUtc",
+          "queryContext",
+          "matchedOffers",
+          "slotPlacements",
+          "ftcDisclosure"
+        ],
+        "properties": {
+          "evaluatedAtUtc": { "type": "string" },
+          "queryContext": { "$ref": "#/components/schemas/UserQueryContext" },
+          "matchedOffers": { "type": "array", "items": { "type": "object" } },
+          "slotPlacements": { "type": "object" },
+          "ftcDisclosure": { "type": "string" },
+          "exclusionAudit": { "type": "array", "items": { "type": "object" } }
+        }
+      },
+      "IntakeValidationResponse": {
+        "type": "object",
+        "properties": {
+          "isValid": { "type": "boolean" },
+          "status": {
+            "type": "string",
+            "enum": ["APPROVED_PRODUCTION", "PENDING_MANUAL_REVIEW", "REJECTED_COMPLIANCE"]
+          },
+          "issues": { "type": "array", "items": { "type": "object" } }
+        }
+      },
+      "IntakeValidationError": {
+        "type": "object",
+        "properties": {
+          "isValid": { "type": "boolean" },
+          "status": { "type": "string" },
+          "rejectionCode": { "type": "string" },
+          "issues": { "type": "array", "items": { "type": "object" } }
+        }
+      }
+    }
+  }
+}

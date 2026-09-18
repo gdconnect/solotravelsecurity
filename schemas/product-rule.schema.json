@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/product-rule.json",
+  "title": "ProductRule",
+  "description": "Standardized schema for declarative, situation-triggered security products, affiliate offers, and Schema.org rich review metadata.",
+  "type": "object",
+  "required": [
+    "sku",
+    "name",
+    "category",
+    "priorityRank",
+    "situationalRationale",
+    "triggerCriteria",
+    "schemaOrg"
+  ],
+  "properties": {
+    "sku": {
+      "type": "string",
+      "pattern": "^GEAR-[A-Z0-9-]+$",
+      "description": "Unique catalog stock keeping unit."
+    },
+    "name": {
+      "type": "string",
+      "description": "Clean, descriptive product name."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "perimeter_defense",
+        "transit_security",
+        "digital_connectivity",
+        "asset_protection",
+        "power_hardware",
+        "medical_hygiene",
+        "travel_insurance",
+        "books_guides",
+        "privacy_saas",
+        "local_services"
+      ],
+      "description": "Operational security vector category."
+    },
+    "howToRole": {
+      "type": "string",
+      "enum": ["tool", "supply"],
+      "default": "tool",
+      "description": "How to map into Schema.org HowTo schema (HowToTool vs HowToSupply)."
+    },
+    "priorityRank": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "Sort rank when multiple products match (1 = highest urgency/criticality)."
+    },
+    "situationalRationale": {
+      "type": "string",
+      "description": "Field-tested explanation presented to the traveler outlining why their specific situation triggered this item."
+    },
+    "triggerCriteria": {
+      "type": "object",
+      "description": "A JSON Schema subset defining the exact constraints on SituationalContext required to trigger this recommendation."
+    },
+    "schemaOrg": {
+      "type": "object",
+      "required": ["brand", "price", "priceCurrency", "affiliateUrl", "rating", "pros", "cons"],
+      "properties": {
+        "itemType": {
+          "type": "string",
+          "enum": ["Product", "Book", "FinancialProduct", "SoftwareApplication", "LocalBusiness"],
+          "default": "Product"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "isbn": {
+          "type": "string"
+        },
+        "gtin13": {
+          "type": "string",
+          "pattern": "^\\d{13}$"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri"
+        },
+        "price": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d{2}$"
+        },
+        "priceCurrency": {
+          "type": "string",
+          "default": "USD"
+        },
+        "availability": {
+          "type": "string",
+          "enum": [
+            "https://schema.org/InStock",
+            "https://schema.org/OutOfStock",
+            "https://schema.org/PreOrder"
+          ],
+          "default": "https://schema.org/InStock"
+        },
+        "affiliateUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "rating": {
+          "type": "object",
+          "required": ["value", "count"],
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "pros": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Positive notes for Google Pros & Cons rich snippets."
+        },
+        "cons": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Negative notes for Google Pros & Cons rich snippets."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,359 @@
+[
+  {
+    "sku": "GEAR-DOORSTOP-01",
+    "name": "Sabre 120dB Wedge Doorstop Vibration Alarm",
+    "category": "perimeter_defense",
+    "howToRole": "tool",
+    "priorityRank": 10,
+    "situationalRationale": "Mandatory perimeter defense when assigned a ground-floor room or standalone rental where external entry points and sliding patio doors are vulnerable to bypass.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "trip": {
+          "type": "object",
+          "properties": {
+            "lodgingFloor": { "enum": ["ground", "unknown"] },
+            "lodgingType": { "enum": ["rental_airbnb", "hotel", "hostel_private"] }
+          },
+          "required": ["lodgingFloor"]
+        }
+      },
+      "required": ["trip"]
+    },
+    "schemaOrg": {
+      "brand": "Sabre",
+      "gtin13": "0230638012345",
+      "image": "https://solotravelsecurity.com/images/gear/sabre-doorstop.webp",
+      "price": "14.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://amazon.com/dp/B0048F1V4A?tag=solotravelsec-20",
+      "rating": { "value": 4.8, "count": 184 },
+      "pros": [
+        "Ear-splitting 120dB siren audible across multi-story hotels",
+        "Non-skid silicone base locks onto marble, tile, and hardwood floors",
+        "Fully mechanical trigger with zero reliance on Wi-Fi or Bluetooth"
+      ],
+      "cons": [
+        "Requires standard 9V battery (not USB-C rechargeable)",
+        "Not usable on exterior inswing doors with door gap over 15mm"
+      ]
+    }
+  },
+  {
+    "sku": "GEAR-ESIM-01",
+    "name": "Airalo Regional Global Travel eSIM",
+    "category": "digital_connectivity",
+    "howToRole": "supply",
+    "priorityRank": 20,
+    "situationalRationale": "Eliminates night arrivals terminal vulnerability. Instant local data upon touchdown allows verified rideshare dispatch without queuing at public airport SIM counters.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "properties": {
+            "cellularType": { "enum": ["wifi_only", "roaming", "physical_sim_airport"] }
+          },
+          "required": ["cellularType"]
+        },
+        "trip": {
+          "type": "object",
+          "properties": {
+            "arrivalHour": {
+              "anyOf": [
+                { "minimum": 20, "maximum": 23 },
+                { "minimum": 0, "maximum": 6 }
+              ]
+            }
+          }
+        }
+      },
+      "required": ["profile"]
+    },
+    "schemaOrg": {
+      "brand": "Airalo",
+      "image": "https://solotravelsecurity.com/images/gear/airalo-esim.webp",
+      "price": "9.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://airalo.com?ref=solotravelsec",
+      "rating": { "value": 4.9, "count": 420 },
+      "pros": [
+        "Instant zero-touch profile installation via QR code before departure",
+        "Retains primary home physical SIM active for critical bank 2FA SMS",
+        "Direct local Tier-1 carrier agreements with LTE/5G speeds"
+      ],
+      "cons": [
+        "Data-only payload; voice calls require VoIP apps (Signal/WhatsApp)",
+        "Device must be carrier-unlocked with eSIM hardware support"
+      ]
+    }
+  },
+  {
+    "sku": "GEAR-PACSAFE-85",
+    "name": "Pacsafe 85L Anti-Theft Stainless Steel Backpack Protector",
+    "category": "asset_protection",
+    "howToRole": "tool",
+    "priorityRank": 30,
+    "situationalRationale": "Secures laptops, cameras, and primary gear inside shared hostel dormitories where lockers are absent or too small for full packs.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "trip": {
+          "type": "object",
+          "properties": {
+            "lodgingType": { "enum": ["hostel_dorm"] }
+          },
+          "required": ["lodgingType"]
+        },
+        "profile": {
+          "type": "object",
+          "properties": {
+            "gearValueTier": { "enum": ["moderate_laptop_phone", "high_value_cameras"] }
+          },
+          "required": ["gearValueTier"]
+        }
+      },
+      "required": ["trip", "profile"]
+    },
+    "schemaOrg": {
+      "brand": "Pacsafe",
+      "gtin13": "0688334008514",
+      "image": "https://solotravelsecurity.com/images/gear/pacsafe-85.webp",
+      "price": "89.95",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://pacsafe.com/products/85l?ref=solotravelsec",
+      "rating": { "value": 4.6, "count": 62 },
+      "pros": [
+        "Patented 360-degree high-tensile stainless steel eXomesh cage",
+        "Heavy-duty brass padlock anchors securely to structural bed pipes",
+        "Folds down into a compact nylon carry pouch when not in use"
+      ],
+      "cons": [
+        "Adds 580g (1.3 lbs) to luggage weight",
+        "Takes 2 minutes to cinch and padlock over bulky bags"
+      ]
+    }
+  },
+  {
+    "sku": "GEAR-BAIT-WALLET",
+    "name": "Pacsafe Coversafe V100 RFID Blocking Waist Wallet",
+    "category": "transit_security",
+    "howToRole": "supply",
+    "priorityRank": 40,
+    "situationalRationale": "Separates emergency reserves from pocket cash in high-pickpocket transit corridors and crowded metros.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "trip": {
+          "type": "object",
+          "properties": {
+            "destinationRiskTier": { "enum": ["Moderate", "Elevated", "High"] }
+          },
+          "required": ["destinationRiskTier"]
+        }
+      },
+      "required": ["trip"]
+    },
+    "schemaOrg": {
+      "brand": "Pacsafe",
+      "gtin13": "0688334011002",
+      "image": "https://solotravelsecurity.com/images/gear/coversafe-v100.webp",
+      "price": "24.95",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://amazon.com/dp/B00E8BK7B0?tag=solotravelsec-20",
+      "rating": { "value": 4.7, "count": 310 },
+      "pros": [
+        "Ultra-thin breathable material invisible beneath waistband",
+        "RFID-blocking laminate shields passport and credit card chips",
+        "Durable slash-resistant webbing strap"
+      ],
+      "cons": ["Not convenient for frequent purchases (intended for deep reserves)"]
+    }
+  },
+  {
+    "sku": "GEAR-POWER-10K",
+    "name": "Nitecore NB10000 Gen 3 Ultra-Slim Carbon Fiber Power Bank",
+    "category": "power_hardware",
+    "howToRole": "tool",
+    "priorityRank": 50,
+    "situationalRationale": "Guarantees offline navigation and emergency communication redundancy during transit disruptions or prolonged regional outings.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "properties": {
+            "experienceLevel": { "enum": ["first_time", "occasional"] }
+          }
+        }
+      }
+    },
+    "schemaOrg": {
+      "brand": "Nitecore",
+      "gtin13": "6952506494801",
+      "image": "https://solotravelsecurity.com/images/gear/nitecore-nb10000.webp",
+      "price": "59.95",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://nitecore.com/product/nb10000?ref=solotravelsec",
+      "rating": { "value": 4.9, "count": 215 },
+      "pros": [
+        "World's lightest 10,000mAh battery (150g / 5.29 oz)",
+        "Dual USB-C 22.5W fast charging with pass-through capability",
+        "Solid carbon fiber frame withstands drops and airport crush pressure"
+      ],
+      "cons": ["Premium price compared to heavier generic plastic power banks"]
+    }
+  },
+  {
+    "sku": "GEAR-GAN-PLUG",
+    "name": "Epicka Universal 65W GaN Travel Power Adapter",
+    "category": "power_hardware",
+    "howToRole": "tool",
+    "priorityRank": 60,
+    "situationalRationale": "Multi-pin global slider compatible with 150+ countries. Powers laptop and fast-charges two smartphones simultaneously from a single wall socket.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "properties": {
+            "gearValueTier": { "enum": ["moderate_laptop_phone", "high_value_cameras"] }
+          }
+        }
+      }
+    },
+    "schemaOrg": {
+      "brand": "Epicka",
+      "gtin13": "0734009876543",
+      "image": "https://solotravelsecurity.com/images/gear/epicka-65w.webp",
+      "price": "39.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://amazon.com/dp/B0B5DKZ8X3?tag=solotravelsec-20",
+      "rating": { "value": 4.8, "count": 540 },
+      "pros": [
+        "65W GaN output charges MacBooks directly without brick",
+        "Includes integrated auto-resetting 10A fuse against voltage spikes",
+        "Slider locks prevent pins collapsing when plugging into stiff wall outlets"
+      ],
+      "cons": ["Does not step down 220V to 110V for non-dual-voltage appliances (hairdryers)"]
+    }
+  },
+  {
+    "sku": "GEAR-BOOK-01",
+    "name": "The Gift of Fear: Survival Signals That Protect Us from Violence",
+    "category": "books_guides",
+    "howToRole": "tool",
+    "priorityRank": 15,
+    "situationalRationale": "Essential psychological briefing for solo travelers. Details actionable protocols for recognizing pre-incident indicators and neutralizing manipulative charm or forced camaraderie.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "properties": {
+            "experienceLevel": { "enum": ["first_time", "occasional"] }
+          }
+        }
+      }
+    },
+    "schemaOrg": {
+      "itemType": "Book",
+      "brand": "Dell Publishing",
+      "author": "Gavin de Becker",
+      "isbn": "9780440226192",
+      "image": "https://solotravelsecurity.com/images/gear/gift-of-fear.webp",
+      "price": "11.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://amazon.com/dp/0440226198?tag=solotravelsec-20",
+      "rating": { "value": 4.9, "count": 1280 },
+      "pros": [
+        "Teaches intuitive boundary enforcement without awkward social hesitation",
+        "Breaks down specific street solicitation scripts and predator grooming tactics",
+        "Read once, retains lifelong mental defensive frameworks"
+      ],
+      "cons": ["Intense case studies require serious, focused reading attention"]
+    }
+  },
+  {
+    "sku": "GEAR-INSURANCE-01",
+    "name": "SafetyWing Nomad Insurance (Global Medical & Evacuation)",
+    "category": "travel_insurance",
+    "howToRole": "supply",
+    "priorityRank": 5,
+    "situationalRationale": "Critical financial perimeter redundancy. Covers $250k emergency medical treatment, hospital transport, and air evacuation in high or moderate risk jurisdictions.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "trip": {
+          "type": "object",
+          "properties": {
+            "destinationRiskTier": { "enum": ["Low", "Moderate", "Elevated", "High"] }
+          },
+          "required": ["destinationRiskTier"]
+        }
+      },
+      "required": ["trip"]
+    },
+    "schemaOrg": {
+      "itemType": "FinancialProduct",
+      "brand": "SafetyWing",
+      "image": "https://solotravelsecurity.com/images/gear/safetywing.webp",
+      "price": "45.08",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://safetywing.com/nomad-insurance?referenceID=solotravelsec",
+      "rating": { "value": 4.7, "count": 890 },
+      "pros": [
+        "Continuous 28-day auto-renewing subscription; cancel anytime",
+        "Includes $250,000 maximum emergency medical coverage + evacuation",
+        "Covers unplanned visits back to home country up to 30 days"
+      ],
+      "cons": [
+        "$250 deductible applies to standard medical claims",
+        "Extreme adventure sports require specialized policy add-on"
+      ]
+    }
+  },
+  {
+    "sku": "GEAR-SAAS-VPN-01",
+    "name": "Proton VPN Plus & NetShield Ad/Tracker Blocker",
+    "category": "privacy_saas",
+    "howToRole": "tool",
+    "priorityRank": 25,
+    "situationalRationale": "Prevents credential harvesting, fake captive portal attacks, and DNS hijacking when connecting to public airport, train, or hostel Wi-Fi hotspots.",
+    "triggerCriteria": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "properties": {
+            "cellularType": { "enum": ["wifi_only", "roaming", "physical_sim_airport"] }
+          }
+        }
+      }
+    },
+    "schemaOrg": {
+      "itemType": "SoftwareApplication",
+      "brand": "Proton AG",
+      "image": "https://solotravelsecurity.com/images/gear/proton-vpn.webp",
+      "price": "4.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "affiliateUrl": "https://protonvpn.com?ref=solotravelsec",
+      "rating": { "value": 4.9, "count": 640 },
+      "pros": [
+        "Strict Swiss privacy jurisdiction with independently audited zero-logs policy",
+        "Hardware Secure Core servers routed through underground privacy bunkers",
+        "NetShield DNS filter automatically terminates malware and phishing domains"
+      ],
+      "cons": ["Slight throughput latency reduction when multi-hop Secure Core is active"]
+    }
+  }
+]

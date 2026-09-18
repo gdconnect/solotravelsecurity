@@ -1,0 +1,249 @@
+[
+  {
+    "id": "DT-LISTING-LAYOUT-01",
+    "title": "Aspect-to-Listing-Page Composition Matrix",
+    "description": "Determines the exact UI blocks, facet controls, Schema.org entities, and interaction patterns composed onto a listings page based on its domain aspect.",
+    "pillarId": "PIL-TRANSIT",
+    "conditionColumns": [
+      {
+        "key": "aspectType",
+        "label": "Listing Domain Aspect",
+        "type": "enum",
+        "allowedValues": [
+          "gear_saas_directory",
+          "threat_scams_directory",
+          "airport_ingress_directory",
+          "micro_zones_safety_directory",
+          "customs_regulations_directory",
+          "curated_skag_bundle"
+        ]
+      }
+    ],
+    "actionColumns": [
+      { "key": "borrowedModel", "label": "Borrowed Platform Model", "type": "directive" },
+      { "key": "layoutTemplate", "label": "Layout Presentation Template", "type": "directive" },
+      { "key": "primaryCardType", "label": "Primary Modular Card Type", "type": "code" },
+      {
+        "key": "injectedSpecialComponent",
+        "label": "Specialized Interactive Component",
+        "type": "code"
+      },
+      { "key": "schemaOrgEntity", "label": "Schema.org Microdata Type", "type": "directive" }
+    ],
+    "rules": [
+      {
+        "ruleId": "R-ASPECT-GEAR",
+        "scenario": "Tactical Hardware Gear & SaaS Tools Directory",
+        "priority": 100,
+        "conditions": { "aspectType": "gear_saas_directory" },
+        "actions": {
+          "borrowedModel": "NerdWallet (Spec comparison grids, 'Best For' badges, pros/cons, price tiers)",
+          "layoutTemplate": "spec_comparison_grid",
+          "primaryCardType": "product",
+          "injectedSpecialComponent": "CardComparisonDrawer (pinned side-by-side spec drawer)",
+          "schemaOrgEntity": "CollectionPage + Product / Offer"
+        }
+      },
+      {
+        "ruleId": "R-ASPECT-SCAMS",
+        "scenario": "Threat Scams & Deception Dossiers Directory",
+        "priority": 90,
+        "conditions": { "aspectType": "threat_scams_directory" },
+        "actions": {
+          "borrowedModel": "Tripadvisor & Booking.com (Severity ratings, psychological hooks, verified counter-actions)",
+          "layoutTemplate": "dossier_feed_cards",
+          "primaryCardType": "scam",
+          "injectedSpecialComponent": "TruthTableTester (interactive scam condition evaluator)",
+          "schemaOrgEntity": "CollectionPage + HowTo / FAQPage"
+        }
+      },
+      {
+        "ruleId": "R-ASPECT-AIRPORTS",
+        "scenario": "Airport Ingress Hubs & Late-Night Arrival Gates",
+        "priority": 80,
+        "conditions": { "aspectType": "airport_ingress_directory" },
+        "actions": {
+          "borrowedModel": "Seek.com.au & Booking.com (IATA codes, express rail curfews, flat rate taxi kiosks)",
+          "layoutTemplate": "hierarchical_directory_mesh",
+          "primaryCardType": "airport",
+          "injectedSpecialComponent": "AirportIngressSimulator (curfew vs taxi decision calculator)",
+          "schemaOrgEntity": "CollectionPage + Airport / CivicStructure"
+        }
+      },
+      {
+        "ruleId": "R-ASPECT-MICROZONES",
+        "scenario": "Micro-Zone Street Safety & 24/7 Sanctuaries",
+        "priority": 70,
+        "conditions": { "aspectType": "micro_zones_safety_directory" },
+        "actions": {
+          "borrowedModel": "Zillow & realestate.com.au (Suburb crime heatmaps, red-flag corridors, walkability)",
+          "layoutTemplate": "split_map_and_listings",
+          "primaryCardType": "micro_zone",
+          "injectedSpecialComponent": "MicroZoneCard (red-flag streets + 24h safe havens)",
+          "schemaOrgEntity": "CollectionPage + Place / LocalBusiness"
+        }
+      },
+      {
+        "ruleId": "R-ASPECT-CUSTOMS",
+        "scenario": "Customs, Controlled Medications & Legal Landmines",
+        "priority": 60,
+        "conditions": { "aspectType": "customs_regulations_directory" },
+        "actions": {
+          "borrowedModel": "NerdWallet & Seek (Jurisdiction codes, substance bans, permit lead times, penalty grades)",
+          "layoutTemplate": "spec_comparison_grid",
+          "primaryCardType": "regulatory",
+          "injectedSpecialComponent": "MedicalPermitCalculator (lead-time warning for Yakkan Shoumei etc.)",
+          "schemaOrgEntity": "CollectionPage + GovernmentPermit / Legislation"
+        }
+      },
+      {
+        "ruleId": "R-ASPECT-SKAG",
+        "scenario": "Curated 3-Facet Programmatic SKAG Landing Page",
+        "priority": 50,
+        "conditions": { "aspectType": "curated_skag_bundle" },
+        "actions": {
+          "borrowedModel": "Booking.com + Zillow + NerdWallet (Unified composite landing page)",
+          "layoutTemplate": "hierarchical_directory_mesh",
+          "primaryCardType": "composite_lego_blocks",
+          "injectedSpecialComponent": "CutoutEmergencyCard + InlineAssessment + RelatedPlaybooksGrid",
+          "schemaOrgEntity": "CollectionPage + BreadcrumbList + HowTo + EmergencyService"
+        }
+      }
+    ],
+    "defaultAction": {
+      "borrowedModel": "General Faceted Explorer",
+      "layoutTemplate": "dossier_feed_cards",
+      "primaryCardType": "composite_lego_blocks",
+      "injectedSpecialComponent": "SelfContainedCard",
+      "schemaOrgEntity": "CollectionPage"
+    }
+  },
+  {
+    "id": "DT-PSEO-CANONICAL-02",
+    "title": "Programmatic SEO Indexation & Permutation Tiering Matrix",
+    "description": "Evaluates candidate pSEO landing pages across inventory depth, search intent volume, and editorial uniqueness to determine indexing status.",
+    "pillarId": "PIL-CONSULAR",
+    "conditionColumns": [
+      {
+        "key": "pageHierarchyTier",
+        "label": "Page Hierarchy Tier",
+        "type": "enum",
+        "allowedValues": [
+          "tier_1_root_directory",
+          "tier_2_single_facet",
+          "tier_3_double_facet",
+          "tier_4_triple_facet_skag",
+          "dynamic_query_string"
+        ]
+      },
+      {
+        "key": "verifiedLegoCount",
+        "label": "Count of Verified LEGO Blocks",
+        "type": "enum",
+        "allowedValues": ["zero", "one_or_two", "three_to_five", "six_plus"]
+      },
+      {
+        "key": "hasGroundedCitation",
+        "label": "Sourced from Gemini Grounded Search",
+        "type": "boolean"
+      },
+      {
+        "key": "hasEditorialManifesto",
+        "label": "Contains Handcrafted/Synthesized Manifesto",
+        "type": "boolean"
+      }
+    ],
+    "actionColumns": [
+      { "key": "robotsDirective", "label": "Meta Robots Directive", "type": "directive" },
+      { "key": "canonicalStrategy", "label": "Canonical Link Strategy", "type": "directive" },
+      { "key": "sitemapPriority", "label": "Sitemap Priority (0.1 - 1.0)", "type": "code" }
+    ],
+    "rules": [
+      {
+        "ruleId": "R-DYNAMIC-QUERY-NOINDEX",
+        "scenario": "Ad-hoc URL query parameters (?q=, ?type=, ?price=)",
+        "priority": 100,
+        "conditions": {
+          "pageHierarchyTier": "dynamic_query_string",
+          "verifiedLegoCount": "*",
+          "hasGroundedCitation": "*",
+          "hasEditorialManifesto": "*"
+        },
+        "actions": {
+          "robotsDirective": "noindex,follow",
+          "canonicalStrategy": "STRIP_PARAMS_TO_BASE_LISTING_PATH",
+          "sitemapPriority": "0.0 (EXCLUDED)"
+        }
+      },
+      {
+        "ruleId": "R-ROOT-DIRECTORY-INDEX",
+        "scenario": "Tier 1 Root Directory (/playbook/airports, /playbook/countries)",
+        "priority": 90,
+        "conditions": {
+          "pageHierarchyTier": "tier_1_root_directory",
+          "verifiedLegoCount": ["three_to_five", "six_plus"],
+          "hasGroundedCitation": "*",
+          "hasEditorialManifesto": true
+        },
+        "actions": {
+          "robotsDirective": "index,follow",
+          "canonicalStrategy": "SELF_CANONICAL",
+          "sitemapPriority": "1.0"
+        }
+      },
+      {
+        "ruleId": "R-SINGLE-DOUBLE-INDEX",
+        "scenario": "Tier 2/3 Clean Facet Route (/playbook/airports/fco, /playbook/destinations/rome)",
+        "priority": 80,
+        "conditions": {
+          "pageHierarchyTier": ["tier_2_single_facet", "tier_3_double_facet"],
+          "verifiedLegoCount": ["three_to_five", "six_plus"],
+          "hasGroundedCitation": "*",
+          "hasEditorialManifesto": true
+        },
+        "actions": {
+          "robotsDirective": "index,follow",
+          "canonicalStrategy": "SELF_CANONICAL",
+          "sitemapPriority": "0.8"
+        }
+      },
+      {
+        "ruleId": "R-TRIPLE-SKAG-GATED-INDEX",
+        "scenario": "Tier 4 Triple SKAG with 3+ Grounded LEGO Blocks (/solo-female/rome/night-transit)",
+        "priority": 70,
+        "conditions": {
+          "pageHierarchyTier": "tier_4_triple_facet_skag",
+          "verifiedLegoCount": ["three_to_five", "six_plus"],
+          "hasGroundedCitation": true,
+          "hasEditorialManifesto": true
+        },
+        "actions": {
+          "robotsDirective": "index,follow",
+          "canonicalStrategy": "SELF_CANONICAL",
+          "sitemapPriority": "0.7"
+        }
+      },
+      {
+        "ruleId": "R-THIN-SKAG-CANONICALIZE",
+        "scenario": "Tier 4 Triple SKAG with fewer than 3 LEGO Blocks (Thin Content)",
+        "priority": 60,
+        "conditions": {
+          "pageHierarchyTier": "tier_4_triple_facet_skag",
+          "verifiedLegoCount": ["zero", "one_or_two"],
+          "hasGroundedCitation": "*",
+          "hasEditorialManifesto": "*"
+        },
+        "actions": {
+          "robotsDirective": "noindex,follow",
+          "canonicalStrategy": "CANONICAL_TO_PARENT_CITY_OR_ARCHETYPE",
+          "sitemapPriority": "0.0 (EXCLUDED)"
+        }
+      }
+    ],
+    "defaultAction": {
+      "robotsDirective": "noindex,follow",
+      "canonicalStrategy": "CANONICAL_TO_PARENT_DIRECTORY",
+      "sitemapPriority": "0.0"
+    }
+  }
+]

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/gemini-grounding-pipeline.schema.json",
+  "title": "GeminiGroundingPipelineJob",
+  "description": "Machine-readable contract for Gemini API Grounded Harvesting jobs, Google Search Grounding metadata, validation gates, and citation structures.",
+  "type": "object",
+  "required": [
+    "jobId",
+    "targetEntityType",
+    "targetEntityKey",
+    "executionEnvironment",
+    "modelConfig",
+    "groundingConfig",
+    "status",
+    "harvestedAt"
+  ],
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique UUIDv4 identifier for the harvest pipeline execution"
+    },
+    "targetEntityType": {
+      "type": "string",
+      "enum": [
+        "airport_security_hub",
+        "threat_scam_dossier",
+        "micro_zone_dossier",
+        "regulatory_landmine",
+        "transit_modality",
+        "multimodal_visual_audit"
+      ],
+      "description": "The category of LEGO block or audit being processed"
+    },
+    "targetEntityKey": {
+      "type": "string",
+      "description": "Unique key or slug of the entity (e.g. 'FCO', 'scam-rome-airport-taxi', 'JP-adderall')"
+    },
+    "executionEnvironment": {
+      "type": "object",
+      "required": ["runtime", "orchestrator", "host"],
+      "properties": {
+        "runtime": { "type": "string", "enum": ["python-3.12-sidecar", "laravel-artisan-worker"] },
+        "orchestrator": { "type": "string", "enum": ["laravel-horizon-redis", "cron-scheduler"] },
+        "host": { "type": "string", "enum": ["backend-internal", "worker-node"] }
+      }
+    },
+    "modelConfig": {
+      "type": "object",
+      "required": ["modelName", "temperature", "responseMimeType", "schemaValidationMode"],
+      "properties": {
+        "modelName": {
+          "type": "string",
+          "enum": ["gemini-2.0-flash", "gemini-2.0-pro", "gemini-1.5-flash", "gemini-1.5-pro"]
+        },
+        "temperature": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "topP": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "maxOutputTokens": { "type": "integer", "minimum": 256, "maximum": 8192 },
+        "responseMimeType": { "type": "string", "enum": ["application/json"] },
+        "schemaValidationMode": {
+          "type": "string",
+          "enum": ["pydantic_v2_response_schema", "openapi_3_0_constrained_decoding"]
+        },
+        "contextCaching": {
+          "type": "object",
+          "required": ["enabled"],
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "cacheKey": { "type": "string" },
+            "ttlSeconds": { "type": "integer", "minimum": 60 }
+          }
+        }
+      }
+    },
+    "groundingConfig": {
+      "type": "object",
+      "required": ["googleSearchEnabled", "searchQueriesExecuted"],
+      "properties": {
+        "googleSearchEnabled": { "type": "boolean" },
+        "dynamicThreshold": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "searchQueriesExecuted": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sourceTitle", "url", "confidenceScore"],
+        "properties": {
+          "sourceTitle": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "groundingSnippet": { "type": "string" },
+          "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "PROCESSING", "VALIDATING", "COMMITTED", "VALIDATION_FAILED", "REPAIRED"]
+    },
+    "repairTurnCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "default": 0,
+      "description": "Number of automated self-healing repair turns executed if schema validation failed"
+    },
+    "validationReport": {
+      "type": "object",
+      "properties": {
+        "schemaValidated": { "type": "boolean" },
+        "validatorUsed": { "type": "string", "enum": ["zod-4", "pydantic-v2", "opis-json-schema"] },
+        "errorCount": { "type": "integer", "minimum": 0 },
+        "errorPaths": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "diffDetected": {
+      "type": "object",
+      "properties": {
+        "hasModifications": { "type": "boolean" },
+        "modifiedFields": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "triggerStaticRebuild": { "type": "boolean" }
+      }
+    },
+    "harvestedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "durationMs": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

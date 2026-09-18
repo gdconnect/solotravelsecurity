@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/advisory-delta-monitor.schema.json",
+  "title": "AdvisoryDeltaMonitor",
+  "description": "Formal JSON Schema defining multi-government travel advisory tracking, risk delta anomalies, and alert dispatch triggers.",
+  "type": "object",
+  "required": [
+    "countryIso2",
+    "countryName",
+    "lastEvaluatedUtc",
+    "sources",
+    "consensusRiskTier",
+    "hasDeltaAnomaly",
+    "activeDecrees"
+  ],
+  "properties": {
+    "countryIso2": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "countryName": { "type": "string" },
+    "lastEvaluatedUtc": { "type": "string", "format": "date-time" },
+    "sources": {
+      "type": "object",
+      "required": ["usStateDept", "ukFcdo", "ausSmartraveller"],
+      "properties": {
+        "usStateDept": {
+          "type": "object",
+          "required": ["level", "lastUpdated", "summary"],
+          "properties": {
+            "level": { "type": "integer", "minimum": 1, "maximum": 4 },
+            "lastUpdated": { "type": "string" },
+            "summary": { "type": "string" }
+          }
+        },
+        "ukFcdo": {
+          "type": "object",
+          "required": ["level", "lastUpdated", "summary"],
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": ["green_standard", "amber_essential_only", "red_do_not_travel"]
+            },
+            "lastUpdated": { "type": "string" },
+            "summary": { "type": "string" }
+          }
+        },
+        "ausSmartraveller": {
+          "type": "object",
+          "required": ["level", "lastUpdated", "summary"],
+          "properties": {
+            "level": { "type": "integer", "minimum": 1, "maximum": 4 },
+            "lastUpdated": { "type": "string" },
+            "summary": { "type": "string" }
+          }
+        }
+      }
+    },
+    "consensusRiskTier": {
+      "type": "string",
+      "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+    },
+    "hasDeltaAnomaly": { "type": "boolean" },
+    "deltaExplanation": { "type": "string" },
+    "activeDecrees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["decreeId", "title", "category", "effectiveDate", "severity"],
+        "properties": {
+          "decreeId": { "type": "string" },
+          "title": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": ["curfew", "medication_ban", "protest", "natural_disaster", "visa_enforcement"]
+          },
+          "effectiveDate": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["informational", "warning", "critical_legal_hazard"]
+          }
+        }
+      }
+    }
+  }
+}

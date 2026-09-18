@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/facet-search-response.schema.json",
+  "title": "FacetSearchResponse",
+  "description": "Formal schema for faceted search engine response payloads, including facet counts, items, and relaxation diagnostics.",
+  "type": "object",
+  "required": [
+    "totalCount",
+    "page",
+    "totalPages",
+    "items",
+    "facetCounts",
+    "activeFilterCount",
+    "appliedFiltersSummary",
+    "executionMetrics"
+  ],
+  "properties": {
+    "totalCount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of items matching the applied filter criteria."
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "totalPages": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "https://solotravelsecurity.com/schemas/facet-searchable-item.schema.json"
+      }
+    },
+    "facetCounts": {
+      "type": "object",
+      "required": [
+        "types",
+        "pillars",
+        "categories",
+        "archetypes",
+        "riskTiers",
+        "formats",
+        "priceTiers"
+      ],
+      "properties": {
+        "types": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "pillars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "archetypes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "riskTiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "priceTiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label", "count"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "activeFilterCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "appliedFiltersSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["facetKey", "value", "label"],
+        "properties": {
+          "facetKey": { "type": "string" },
+          "value": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "zeroStateRemediation": {
+      "type": "object",
+      "description": "Emitted when totalCount is 0 to guide progressive filter relaxation.",
+      "properties": {
+        "suggestedRemovalFacet": { "type": "string" },
+        "message": { "type": "string" },
+        "relaxedCount": { "type": "integer" }
+      }
+    },
+    "executionMetrics": {
+      "type": "object",
+      "required": ["executionTimeMs", "indexSize", "dataSource"],
+      "properties": {
+        "executionTimeMs": { "type": "number" },
+        "indexSize": { "type": "integer" },
+        "dataSource": {
+          "type": "string",
+          "enum": ["edge_cache", "edge_worker", "client_memory", "offline_cache"]
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

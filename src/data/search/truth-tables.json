@@ -1,0 +1,251 @@
+[
+  {
+    "id": "TT-FACET-STATE-01",
+    "title": "Faceted Filter Evaluation & Invariant Truth Table",
+    "description": "Formal boolean truth table verifying exhaustive, non-contradictory resolutions for facet combinations and query inputs.",
+    "scenarioCategory": "FACET_FILTER_INVARIANTS",
+    "propositions": [
+      {
+        "symbol": "P1",
+        "key": "hasQueryText",
+        "name": "Query String Present",
+        "description": "User has typed at least 1 non-whitespace character in the search input."
+      },
+      {
+        "symbol": "P2",
+        "key": "hasTypeFilter",
+        "name": "Item Type Filter Active",
+        "description": "User has selected at least 1 item type (product, scam, airport, etc.)."
+      },
+      {
+        "symbol": "P3",
+        "key": "hasPillarFilter",
+        "name": "Pillar Filter Active",
+        "description": "User has selected at least 1 sovereign security pillar."
+      },
+      {
+        "symbol": "P4",
+        "key": "isPersonalizedActive",
+        "name": "Personalization Active",
+        "description": "User has toggled zero-PII personal trip tailoring."
+      },
+      {
+        "symbol": "P5",
+        "key": "candidatePoolNonZero",
+        "name": "Matches Found (>0)",
+        "description": "Filtered candidate pool contains 1 or more matching documents."
+      }
+    ],
+    "outputVariables": [
+      { "key": "actionCode", "type": "actionCode", "description": "Formal state action code." },
+      {
+        "key": "threatLevel",
+        "type": "threatLevel",
+        "description": "Alert level: green, yellow, amber, orange, crimson."
+      },
+      { "key": "script", "type": "script", "description": "UI status text and guidance." },
+      { "key": "posture", "type": "posture", "description": "UI rendering posture." }
+    ],
+    "rows": [
+      {
+        "rowId": "TR-FACET-01",
+        "inputs": {
+          "candidatePoolNonZero": false,
+          "hasQueryText": true,
+          "hasTypeFilter": "*",
+          "hasPillarFilter": "*",
+          "isPersonalizedActive": "*"
+        },
+        "outputs": {
+          "actionCode": "ZERO_STATE_RELAX_SUGGESTION",
+          "threatLevel": "amber",
+          "script": "No exact matches found. Suggested relaxation: widen price tier or clear query terms.",
+          "posture": "Display empty-state banner with one-click filter reset and related category links."
+        },
+        "formalRationale": "Empty pool with active query requires graceful relaxation guidance without blocking user flow."
+      },
+      {
+        "rowId": "TR-FACET-02",
+        "inputs": {
+          "candidatePoolNonZero": false,
+          "hasQueryText": false,
+          "hasTypeFilter": true,
+          "hasPillarFilter": true,
+          "isPersonalizedActive": "*"
+        },
+        "outputs": {
+          "actionCode": "OVERCONSTRAINED_FACET_CONFLICT",
+          "threatLevel": "amber",
+          "script": "Selected type and pillar combination has zero items in current catalog.",
+          "posture": "Highlight conflicting facet badge in rose and prompt traveler to toggle alternate type."
+        },
+        "formalRationale": "Disjunctive cross-facet AND logic yielded an empty intersection; prompt facet loosening."
+      },
+      {
+        "rowId": "TR-FACET-03",
+        "inputs": {
+          "candidatePoolNonZero": true,
+          "hasQueryText": true,
+          "hasTypeFilter": "*",
+          "hasPillarFilter": "*",
+          "isPersonalizedActive": true
+        },
+        "outputs": {
+          "actionCode": "PERSONALIZED_FILTERED_STREAM",
+          "threatLevel": "green",
+          "script": "Showing security tools tailored for your destination and active threat profile.",
+          "posture": "Render items with destination badges and elevated SPOF mitigation indicators."
+        },
+        "formalRationale": "Golden state for contextual discovery: local-first trip context intersects successfully with search query."
+      },
+      {
+        "rowId": "TR-FACET-04",
+        "inputs": {
+          "candidatePoolNonZero": true,
+          "hasQueryText": false,
+          "hasTypeFilter": true,
+          "hasPillarFilter": "*",
+          "isPersonalizedActive": false
+        },
+        "outputs": {
+          "actionCode": "FACETED_CATEGORY_BROWSE",
+          "threatLevel": "green",
+          "script": "Browsing filtered security inventory.",
+          "posture": "Render standard grid with active facet counters and sorting controls."
+        },
+        "formalRationale": "Standard exploratory browsing workflow."
+      },
+      {
+        "rowId": "TR-FACET-05",
+        "inputs": {
+          "candidatePoolNonZero": true,
+          "hasQueryText": false,
+          "hasTypeFilter": false,
+          "hasPillarFilter": false,
+          "isPersonalizedActive": false
+        },
+        "outputs": {
+          "actionCode": "FULL_CATALOG_DEFAULT",
+          "threatLevel": "green",
+          "script": "Full security catalog and tactical LEGO blocks.",
+          "posture": "Render default priority list showing curated top-tier items across all 7 pillars."
+        },
+        "formalRationale": "Clean entry state: full directory displayed ordered by default relevance."
+      }
+    ],
+    "completenessVerified": true
+  },
+  {
+    "id": "TT-EDGE-ROUTING-02",
+    "title": "Cloudflare Edge Worker vs Local Browser Execution Truth Table",
+    "description": "Verifies deterministic routing of faceted search queries between Cloudflare Edge Workers and in-browser local WASM/JS execution.",
+    "scenarioCategory": "EDGE_COMPUTE_ROUTING",
+    "propositions": [
+      {
+        "symbol": "P1",
+        "key": "isBrowserOnline",
+        "name": "Browser Online",
+        "description": "Navigator reports active network connectivity."
+      },
+      {
+        "symbol": "P2",
+        "key": "isPersonalizedTripOnly",
+        "name": "Personalized Only Mode",
+        "description": "Query utilizes Zero-PII browser localStorage persona data."
+      },
+      {
+        "symbol": "P3",
+        "key": "isEdgeCacheWarm",
+        "name": "Edge Cache Warm",
+        "description": "Cloudflare Edge Key-Value / Cache API holds precomputed response."
+      },
+      {
+        "symbol": "P4",
+        "key": "isStandardSKAGPath",
+        "name": "Standard SKAG Path",
+        "description": "Request targets static canonical facet route (e.g. /playbook/solo-female/rome/)."
+      }
+    ],
+    "outputVariables": [
+      {
+        "key": "actionCode",
+        "type": "actionCode",
+        "description": "EXECUTE_LOCAL_CLIENT vs FETCH_EDGE_WORKER vs SERVE_EDGE_CACHE."
+      },
+      {
+        "key": "threatLevel",
+        "type": "threatLevel",
+        "description": "Privacy & latency tier: green (sub-20ms), yellow (sub-100ms)."
+      },
+      { "key": "script", "type": "script", "description": "Operational routing instruction." },
+      { "key": "posture", "type": "posture", "description": "Compute allocation architecture." }
+    ],
+    "rows": [
+      {
+        "rowId": "TE-01",
+        "inputs": {
+          "isBrowserOnline": false,
+          "isPersonalizedTripOnly": "*",
+          "isEdgeCacheWarm": "*",
+          "isStandardSKAGPath": "*"
+        },
+        "outputs": {
+          "actionCode": "EXECUTE_LOCAL_CLIENT",
+          "threatLevel": "green",
+          "script": "Offline mode active. Running faceted search against indexed local-first cache.",
+          "posture": "Zero network calls; 100% in-browser client memory execution."
+        },
+        "formalRationale": "Solo travelers in transit or without cellular service must retain full offline search functionality."
+      },
+      {
+        "rowId": "TE-02",
+        "inputs": {
+          "isBrowserOnline": true,
+          "isPersonalizedTripOnly": true,
+          "isEdgeCacheWarm": "*",
+          "isStandardSKAGPath": "*"
+        },
+        "outputs": {
+          "actionCode": "EXECUTE_LOCAL_CLIENT",
+          "threatLevel": "green",
+          "script": "Zero-PII Privacy Shield active. Trip context evaluated locally in browser.",
+          "posture": "No personal trip parameters sent over wire; browser evaluates SEARCH_INDEX."
+        },
+        "formalRationale": "Strict privacy requirement: traveler destination, flight hour, and persona never leak to edge logs."
+      },
+      {
+        "rowId": "TE-03",
+        "inputs": {
+          "isBrowserOnline": true,
+          "isPersonalizedTripOnly": false,
+          "isEdgeCacheWarm": true,
+          "isStandardSKAGPath": true
+        },
+        "outputs": {
+          "actionCode": "SERVE_EDGE_CACHE",
+          "threatLevel": "green",
+          "script": "Serving warm Cloudflare Edge Cache for canonical SKAG facet page.",
+          "posture": "OpenNext Cloudflare Workers CDN cache hit (sub-15ms TTFB worldwide)."
+        },
+        "formalRationale": "Public canonical facet pages leverage worldwide Cloudflare PoPs for zero-compute delivery."
+      },
+      {
+        "rowId": "TE-04",
+        "inputs": {
+          "isBrowserOnline": true,
+          "isPersonalizedTripOnly": false,
+          "isEdgeCacheWarm": false,
+          "isStandardSKAGPath": "*"
+        },
+        "outputs": {
+          "actionCode": "FETCH_EDGE_WORKER",
+          "threatLevel": "yellow",
+          "script": "Evaluating dynamic GraphQL query via Cloudflare Worker GraphQL resolver.",
+          "posture": "Worker evaluates faceted inverted index and populates edge cache."
+        },
+        "formalRationale": "Standard dynamic query fallback with cold cache population."
+      }
+    ],
+    "completenessVerified": true
+  }
+]

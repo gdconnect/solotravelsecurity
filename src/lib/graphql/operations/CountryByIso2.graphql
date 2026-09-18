@@ -1,0 +1,45 @@
+query CountryByIso2($iso2: ID!) {
+  country(iso2: $iso2) {
+    iso2
+    iso3
+    name
+    nativeName
+    capital
+    currencyCode
+    currencySymbol
+    currencyName
+    phonePrefix
+    region
+    subregion
+    wikidataId
+    coordinates {
+      latitude
+      longitude
+    }
+    defaultRiskTier
+    emergencyNumbers {
+      police
+      ambulance
+      fire
+      touristPolice
+    }
+    consularHotlines {
+      usEmbassyPhone
+      ukEmbassyPhone
+      ausEmbassyPhone
+    }
+    electricalStandards {
+      voltage
+      frequency
+      plugTypes
+    }
+    overview
+    keySafetyRules
+    primaryCities {
+      slug
+      name
+      primaryAirportCode
+      riskTier
+    }
+  }
+}

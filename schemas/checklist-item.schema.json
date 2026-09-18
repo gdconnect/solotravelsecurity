@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/checklist-item.schema.json",
+  "title": "ChecklistItem",
+  "description": "Standardized schema for actionable, situation-calibrated security checklist items with scoring weights and SPOF validation.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "pillarId",
+    "phaseId",
+    "criticality",
+    "isSPOF",
+    "verificationType",
+    "scoringDeductionPoints"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CHK-[A-Z0-9_-]+$",
+      "description": "Unique deterministic checklist item identifier."
+    },
+    "title": {
+      "type": "string",
+      "description": "Concise operational command directive."
+    },
+    "description": {
+      "type": "string",
+      "description": "Operational instructions, justification, and threat modeling rationale."
+    },
+    "pillarId": {
+      "type": "string",
+      "description": "Foreign key into taxonomy security pillar (e.g. PIL-FINANCIAL)."
+    },
+    "phaseId": {
+      "type": "string",
+      "description": "Foreign key into travel lifecycle phase (e.g. PHS-INGRESS)."
+    },
+    "criticality": {
+      "type": "string",
+      "enum": ["CRITICAL", "HIGH", "STANDARD", "RECOMMENDED"],
+      "description": "Impact level on physical or financial safety."
+    },
+    "isSPOF": {
+      "type": "boolean",
+      "description": "If true, failure to verify this item triggers an instant Single Point of Failure alert."
+    },
+    "verificationType": {
+      "type": "string",
+      "enum": [
+        "MANUAL_CHECK",
+        "PHOTO_PROOF",
+        "LOCATION_GEO_PING",
+        "CONSULAR_REG_ID",
+        "HARDWARE_TEST",
+        "TRUSTED_CONTACT_CONFIRMATION"
+      ],
+      "description": "Required verification mechanism."
+    },
+    "applicableArchetypes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": ["all"],
+      "description": "Target archetypes (e.g., solo-female, digital-nomad) or 'all'."
+    },
+    "minimumRiskTier": {
+      "type": "string",
+      "enum": ["LOW", "MODERATE", "ELEVATED", "HIGH"],
+      "default": "LOW",
+      "description": "Minimum destination risk tier that mandates this item."
+    },
+    "decisionTableRef": {
+      "type": "string",
+      "description": "Optional ID of decision table that dynamically dictates this item's parameters."
+    },
+    "truthTableRef": {
+      "type": "string",
+      "description": "Optional ID of truth table validating conditional execution."
+    },
+    "scoringDeductionPoints": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 50,
+      "description": "Readiness penalty points deducted if item is unresolved."
+    },
+    "recommendedGearSkus": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Catalog product SKUs that satisfy or harden this checklist requirement."
+    }
+  }
+}

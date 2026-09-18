@@ -1,0 +1,217 @@
+[
+  {
+    "id": "SM-FACET-RELEVANCE-01",
+    "title": "Faceted Multi-Attribute Relevance Ranking Scoring Matrix",
+    "description": "Multi-dimensional weighted scoring matrix evaluating search result relevance across keyword matching, situational context, archetype affinity, and verified protocol status.",
+    "maximumScore": 100,
+    "pillars": [
+      {
+        "pillarId": "DIM-EXACT-MATCH",
+        "name": "Exact Title & SKU Identifier Match",
+        "weight": 30,
+        "criteria": [
+          {
+            "code": "EXACT-TITLE",
+            "label": "Full string match in title or SKU code",
+            "points": 30
+          },
+          {
+            "code": "PREFIX-TITLE",
+            "label": "Title begins with search query prefix",
+            "points": 20
+          },
+          { "code": "SUBSTRING-TITLE", "label": "Query matches token inside title", "points": 10 }
+        ]
+      },
+      {
+        "pillarId": "DIM-BM25-BODY",
+        "name": "Multi-Field BM25 & Semantic Match",
+        "weight": 25,
+        "criteria": [
+          {
+            "code": "DESCRIPTION-HIT",
+            "label": "Query terms present in situational rationale",
+            "points": 12
+          },
+          {
+            "code": "SYNONYM-ALIAS-HIT",
+            "label": "Query matches local scam alias or keyword synonym",
+            "points": 8
+          },
+          {
+            "code": "HIGHLIGHT-PROS-HIT",
+            "label": "Query matches pros, cons, or curfew highlight",
+            "points": 5
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-SITUATIONAL-AFFINITY",
+        "name": "Zero-PII Destination & Context Affinity",
+        "weight": 20,
+        "criteria": [
+          {
+            "code": "DESTINATION-CITY-MATCH",
+            "label": "Item explicitly covers active trip destination city",
+            "points": 12
+          },
+          {
+            "code": "DESTINATION-RISK-MATCH",
+            "label": "Item calibrated for active destination risk tier",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-ARCHETYPE-MATCH",
+        "name": "Traveler Archetype Vulnerability Alignment",
+        "weight": 10,
+        "criteria": [
+          {
+            "code": "TARGET-ARCHETYPE",
+            "label": "Item addresses active traveler archetype directly",
+            "points": 10
+          },
+          {
+            "code": "UNIVERSAL-ARCHETYPE",
+            "label": "Item applies to 'all' traveler personas",
+            "points": 6
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-QUALITY-RATING",
+        "name": "Editorial Verification & User Rating",
+        "weight": 10,
+        "criteria": [
+          { "code": "RATING-HIGH", "label": "Rating >= 4.7 with 50+ reviews", "points": 10 },
+          { "code": "RATING-MED", "label": "Rating between 4.0 and 4.6", "points": 6 },
+          {
+            "code": "OPEN-PROTOCOL",
+            "label": "Free open-source verified security protocol",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-FORMAT-SALIENCY",
+        "name": "Format Tactical Readiness",
+        "weight": 5,
+        "criteria": [
+          {
+            "code": "ACTIONABLE-TRUTH-TABLE",
+            "label": "Contains deterministic boolean truth table",
+            "points": 5
+          },
+          {
+            "code": "FIELD-READY-HARDWARE",
+            "label": "Tested physical security hardware",
+            "points": 4
+          }
+        ]
+      }
+    ],
+    "spofTriggers": [
+      {
+        "triggerId": "SPOF-IRRELEVANT-GEO",
+        "label": "Geographical Mismatch in Explicit City Filter",
+        "conditionExpression": "filter.destinations.length > 0 && item.destinations && !item.destinations.some(d => filter.destinations.includes(d))",
+        "scoreCap": 0,
+        "assignedGrade": "F",
+        "remediationRequired": "Item excluded from destination-filtered candidate pool."
+      },
+      {
+        "triggerId": "SPOF-SEVERITY-SUPPRESSION",
+        "label": "Low Risk Item Masquerading in Critical Query",
+        "conditionExpression": "query.includes('kidnap') && item.riskTiers.includes('Low')",
+        "scoreCap": 25,
+        "assignedGrade": "F",
+        "remediationRequired": "Deprecate low-severity items when query signifies life-safety threat."
+      }
+    ],
+    "gradeThresholds": {
+      "A": 85,
+      "B": 70,
+      "C": 50,
+      "D": 35,
+      "F": 0
+    }
+  },
+  {
+    "id": "SM-SPOF-ELEVATION-02",
+    "title": "Single Point of Failure (SPOF) Threat Priority Elevation Matrix",
+    "description": "Calculates emergency ranking bonuses that override commercial rankings when an item directly resolves a life-safety vulnerability.",
+    "maximumScore": 100,
+    "pillars": [
+      {
+        "pillarId": "DIM-LIFE-SAFETY",
+        "name": "Direct Life-Safety Mitigation",
+        "weight": 50,
+        "criteria": [
+          {
+            "code": "SPOF-NIGHT-INGRESS",
+            "label": "Resolves unverified late-night airport transit ambush",
+            "points": 50
+          },
+          {
+            "code": "SPOF-SINGLE-CARD",
+            "label": "Resolves complete financial strand from single card loss",
+            "points": 40
+          },
+          {
+            "code": "SPOF-GROUND-PERIMETER",
+            "label": "Resolves ground-floor room bypass vulnerability",
+            "points": 35
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-TEMPORAL-URGENCY",
+        "name": "Temporal Ingress Urgency",
+        "weight": 30,
+        "criteria": [
+          {
+            "code": "CURFEW-IMMINENT",
+            "label": "Traveler arrives within 90 minutes of rail/metro shutdown",
+            "points": 30
+          },
+          { "code": "TRANSIT-ACTIVE", "label": "Traveler currently in transit phase", "points": 20 }
+        ]
+      },
+      {
+        "pillarId": "DIM-VERIFICATION-STATUS",
+        "name": "Consular & Field Grounding",
+        "weight": 20,
+        "criteria": [
+          {
+            "code": "OFFICIAL-POLICE-HOTLINE",
+            "label": "Features direct dispatch coordinates and telephone",
+            "points": 20
+          },
+          {
+            "code": "EMBASSY-VERIFIED",
+            "label": "Consular verified landmine warning",
+            "points": 15
+          }
+        ]
+      }
+    ],
+    "spofTriggers": [
+      {
+        "triggerId": "SPOF-UNVERIFIED-COMMERCIAL",
+        "label": "Unverified Affiliate Sponsored Content",
+        "conditionExpression": "item.isSponsored && !item.isFieldVerified",
+        "scoreCap": 30,
+        "assignedGrade": "D",
+        "remediationRequired": "Commercial gear cannot receive life-safety SPOF elevation without independent verification."
+      }
+    ],
+    "gradeThresholds": {
+      "A": 90,
+      "B": 75,
+      "C": 55,
+      "D": 40,
+      "F": 0
+    }
+  }
+]

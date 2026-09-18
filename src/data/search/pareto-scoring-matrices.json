@@ -1,0 +1,143 @@
+{
+  "version": "1.0.0",
+  "scoringMatrices": [
+    {
+      "matrixId": "SM-PARETO-ROI-01",
+      "name": "Pareto 80/20 High-Leverage Strategic ROI Matrix",
+      "description": "Mathematical scoring matrix ranking site capabilities by overall Return on Investment (Financial, Traffic, Life-Safety vs Implementation Effort).",
+      "formula": "ROI_Score = (0.35 * FinancialYield + 0.25 * TrafficLeverage + 0.25 * LifeSafetyImpact + 0.15 * RetentionMultiplier) / (ImplementationEffortNorm)",
+      "dimensions": [
+        {
+          "name": "financialYield",
+          "weight": 0.35,
+          "description": "Direct revenue generation potential (CPA, subscription, affiliate yield)"
+        },
+        {
+          "name": "trafficLeverage",
+          "weight": 0.25,
+          "description": "Organic SEO rankings, viral shareability, and backlink magnet power"
+        },
+        {
+          "name": "lifeSafetyImpact",
+          "weight": 0.25,
+          "description": "Asymmetrical harm reduction in real-world crisis situations"
+        },
+        {
+          "name": "retentionMultiplier",
+          "weight": 0.15,
+          "description": "Repeat usage, parent peace-of-mind, and first-party email list growth"
+        },
+        {
+          "name": "implementationEffort",
+          "weight": -1.0,
+          "description": "Engineering and maintenance complexity (1 = trivial, 5 = massive refactor)"
+        }
+      ],
+      "scoredInitiatives": [
+        {
+          "rank": 1,
+          "name": "Parent / Sponsor Guardian Pass SLA Engine",
+          "category": "B2C Subscription & Peace of Mind",
+          "financialYield": 98,
+          "trafficLeverage": 85,
+          "lifeSafetyImpact": 96,
+          "retentionMultiplier": 95,
+          "implementationEffort": 2,
+          "roiScore": 93.8,
+          "paretoStatus": "Vital 20% (High Asymmetry)"
+        },
+        {
+          "rank": 2,
+          "name": "High-Ticket Medical Evacuation & Health Insurance Routing",
+          "category": "Monetization Engine",
+          "financialYield": 99,
+          "trafficLeverage": 78,
+          "lifeSafetyImpact": 95,
+          "retentionMultiplier": 82,
+          "implementationEffort": 2,
+          "roiScore": 91.2,
+          "paretoStatus": "Vital 20% (High Asymmetry)"
+        },
+        {
+          "rank": 3,
+          "name": "Zero-Connectivity Offline Emergency Cache & Field Pocket Card",
+          "category": "Life-Safety Resilience & Lead Magnet",
+          "financialYield": 80,
+          "trafficLeverage": 92,
+          "lifeSafetyImpact": 100,
+          "retentionMultiplier": 94,
+          "implementationEffort": 2,
+          "roiScore": 90.5,
+          "paretoStatus": "Vital 20% (High Asymmetry)"
+        },
+        {
+          "rank": 4,
+          "name": "Breaking Travel Advisory Delta Arbitrage Engine",
+          "category": "Programmatic SEO & Viral Traffic",
+          "financialYield": 82,
+          "trafficLeverage": 98,
+          "lifeSafetyImpact": 88,
+          "retentionMultiplier": 80,
+          "implementationEffort": 2,
+          "roiScore": 88.4,
+          "paretoStatus": "Vital 20% (High Asymmetry)"
+        },
+        {
+          "rank": 5,
+          "name": "Physical Travel Doorstop & Amazon Gear Catalog",
+          "category": "Legacy Catalog (Current Baseline)",
+          "financialYield": 22,
+          "trafficLeverage": 60,
+          "lifeSafetyImpact": 70,
+          "retentionMultiplier": 35,
+          "implementationEffort": 4,
+          "roiScore": 38.6,
+          "paretoStatus": "Trivial 80% (Low Yield / High Friction)"
+        }
+      ]
+    },
+    {
+      "matrixId": "SM-AFFILIATE-YIELD-01",
+      "name": "Affiliate Revenue Yield per 1,000 Visitors (RPM Comparison)",
+      "description": "Comparative economics demonstrating why medical evacuation and eSIM monetization out-earns physical Amazon gadgets by 50x.",
+      "benchmarks": [
+        {
+          "category": "Physical Amazon Hardware (Doorstops, Padlocks)",
+          "averageOrderValue": 18.0,
+          "commissionRate": 0.03,
+          "effectiveCpaUsd": 0.54,
+          "clickThroughRate": 0.025,
+          "conversionRate": 0.04,
+          "rpmUsd": 0.54
+        },
+        {
+          "category": "Preloaded Travel eSIMs (Airalo, aloSIM)",
+          "averageOrderValue": 15.0,
+          "commissionRate": 0.65,
+          "effectiveCpaUsd": 9.75,
+          "clickThroughRate": 0.045,
+          "conversionRate": 0.115,
+          "rpmUsd": 50.45
+        },
+        {
+          "category": "Medical Evacuation Insurance (Global Rescue, Medjet)",
+          "averageOrderValue": 350.0,
+          "commissionRate": 0.35,
+          "effectiveCpaUsd": 122.5,
+          "clickThroughRate": 0.02,
+          "conversionRate": 0.035,
+          "rpmUsd": 85.75
+        },
+        {
+          "category": "Parent Guardian Pass Subscriptions ($39 / $129)",
+          "averageOrderValue": 68.0,
+          "commissionRate": 1.0,
+          "effectiveCpaUsd": 68.0,
+          "clickThroughRate": 0.035,
+          "conversionRate": 0.042,
+          "rpmUsd": 99.96
+        }
+      ]
+    }
+  ]
+}

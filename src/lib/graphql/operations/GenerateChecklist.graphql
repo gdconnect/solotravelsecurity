@@ -1,0 +1,48 @@
+query GenerateChecklist($input: GenerateChecklistInput) {
+  generateChecklist(input: $input) {
+    generatedAt
+    totalItems
+    criticalCount
+    spofCount
+    items {
+      id
+      title
+      description
+      pillarId
+      phaseId
+      criticality
+      isSPOF
+      verificationType
+      applicableArchetypes
+      minimumRiskTier
+      decisionTableRef
+      truthTableRef
+      scoringDeductionPoints
+      recommendedGearSkus
+    }
+    byPillar {
+      id
+      name
+      slug
+      items {
+        id
+        title
+        criticality
+        isSPOF
+        scoringDeductionPoints
+      }
+    }
+    byPhase {
+      id
+      name
+      slug
+      items {
+        id
+        title
+        criticality
+        isSPOF
+        scoringDeductionPoints
+      }
+    }
+  }
+}

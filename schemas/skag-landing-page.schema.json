@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/skag-landing-page.schema.json",
+  "title": "SKAGLandingPage",
+  "description": "Formal JSON Schema for Programmatic SEO (pSEO) and Single Keyword Ad Group (SKAG) high-converting landing pages.",
+  "type": "object",
+  "required": [
+    "pageSlug",
+    "targetKeywords",
+    "intentCategory",
+    "meta",
+    "hero",
+    "conversionArchitecture",
+    "modularBlockMatrix",
+    "schemaOrgGraph"
+  ],
+  "properties": {
+    "pageSlug": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Canonical route path e.g. /playbook/solo-female/rome/night-arrival-transit"
+    },
+    "targetKeywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Target exact and phrase-match search queries for ad copy and SERP matching"
+    },
+    "intentCategory": {
+      "type": "string",
+      "enum": [
+        "emergency_transit",
+        "perimeter_defense",
+        "scam_avoidance",
+        "hardware_protection",
+        "financial_redundancy",
+        "guardian_ingress"
+      ],
+      "description": "High-level search intent cluster"
+    },
+    "meta": {
+      "type": "object",
+      "required": ["title", "description", "canonicalUrl"],
+      "properties": {
+        "title": { "type": "string", "maxLength": 70 },
+        "description": { "type": "string", "maxLength": 160 },
+        "canonicalUrl": { "type": "string", "format": "uri" },
+        "ogImage": { "type": "string" }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "required": ["headline", "subheadline", "riskTier", "archetypeBadge", "destinationBadge"],
+      "properties": {
+        "headline": { "type": "string" },
+        "subheadline": { "type": "string" },
+        "riskTier": {
+          "type": "string",
+          "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+        },
+        "archetypeBadge": { "type": "string" },
+        "destinationBadge": { "type": "string" },
+        "trustSignals": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "conversionArchitecture": {
+      "type": "object",
+      "required": ["primaryCta", "secondaryCta", "stickyMobileCta"],
+      "properties": {
+        "primaryCta": {
+          "type": "object",
+          "required": ["label", "actionType", "targetAnchor"],
+          "properties": {
+            "label": { "type": "string" },
+            "actionType": {
+              "type": "string",
+              "enum": ["interactive_assessment", "download_card", "generate_checklist", "view_gear"]
+            },
+            "targetAnchor": { "type": "string" }
+          }
+        },
+        "secondaryCta": {
+          "type": "object",
+          "required": ["label", "actionType"],
+          "properties": {
+            "label": { "type": "string" },
+            "actionType": {
+              "type": "string",
+              "enum": ["favorite_save_kit", "email_briefing", "print_card"]
+            }
+          }
+        },
+        "stickyMobileCta": {
+          "type": "object",
+          "required": ["enabled", "label", "buttonText"],
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "label": { "type": "string" },
+            "buttonText": { "type": "string" }
+          }
+        }
+      }
+    },
+    "modularBlockMatrix": {
+      "type": "object",
+      "required": ["hasProtocolSteps", "hasEmergencyCard", "hasFaqAccordion"],
+      "properties": {
+        "hasProtocolSteps": { "type": "boolean" },
+        "hasAirportIngressHub": { "type": "boolean" },
+        "airportIata": { "type": "string", "maxLength": 3 },
+        "hasMicroZoneDossier": { "type": "boolean" },
+        "microZoneId": { "type": "string" },
+        "hasScamTruthTable": { "type": "boolean" },
+        "scamId": { "type": "string" },
+        "hasMatchedProducts": { "type": "boolean" },
+        "recommendedProductSkus": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "hasEmergencyCard": { "type": "boolean" },
+        "hasFaqAccordion": { "type": "boolean" },
+        "faqCount": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "internalLinkingMesh": {
+      "type": "object",
+      "properties": {
+        "siblingVectorLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "title", "url"],
+            "properties": {
+              "slug": { "type": "string" },
+              "title": { "type": "string" },
+              "url": { "type": "string" }
+            }
+          }
+        },
+        "siblingArchetypeLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "title", "url"],
+            "properties": {
+              "slug": { "type": "string" },
+              "title": { "type": "string" },
+              "url": { "type": "string" }
+            }
+          }
+        },
+        "parentHubUrl": { "type": "string" }
+      }
+    },
+    "schemaOrgGraph": {
+      "type": "object",
+      "required": ["entities"],
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["BreadcrumbList", "HowTo", "FAQPage", "Product", "EmergencyService"]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

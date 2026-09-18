@@ -1,0 +1,199 @@
+[
+  {
+    "id": "SM-LISTING-SALIENCY-01",
+    "title": "Listings Card Quality & Conversion Saliency Matrix",
+    "description": "Multi-dimensional weighted scoring matrix evaluating listing cards for top-tier badging ('Top Recommendation', 'Solo Female Pick', 'Field Verified') and default sort elevation.",
+    "maximumScore": 100,
+    "pillars": [
+      {
+        "pillarId": "DIM-OBSERVABLE-DATA",
+        "name": "Falsifiable & Observable Data Depth",
+        "weight": 35,
+        "criteria": [
+          {
+            "code": "HAS-EXACT-COORDINATES",
+            "label": "Exact kiosk door coordinates or platform number",
+            "points": 15
+          },
+          {
+            "code": "HAS-TRUTH-CONDITIONS",
+            "label": "Full binary truth table conditions present",
+            "points": 12
+          },
+          {
+            "code": "HAS-PROS-CONS",
+            "label": "Objective verified pros and cons listed",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-GROUNDING-CONFIDENCE",
+        "name": "Gemini Grounded Search Verification",
+        "weight": 30,
+        "criteria": [
+          {
+            "code": "OFFICIAL-CITATION",
+            "label": "Backed by official municipal or transport authority citation",
+            "points": 20
+          },
+          {
+            "code": "RECENT-TIMESTAMP",
+            "label": "Harvested or refreshed within last 30 days",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-COMMUNITY-EVALUATION",
+        "name": "User Rating & Verification Proof",
+        "weight": 20,
+        "criteria": [
+          { "code": "RATING-HIGH", "label": "Rating >= 4.8 with 50+ user reviews", "points": 12 },
+          {
+            "code": "FIELD-TESTED",
+            "label": "Physical hardware field-tested by author",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-ZERO-PII-AFFINITY",
+        "name": "Local Traveler Context Match",
+        "weight": 15,
+        "criteria": [
+          {
+            "code": "DIRECT-CITY-MATCH",
+            "label": "Item matches active destination city in browser",
+            "points": 10
+          },
+          {
+            "code": "PERSONA-MATCH",
+            "label": "Item matches traveler gender/archetype",
+            "points": 5
+          }
+        ]
+      }
+    ],
+    "spofTriggers": [
+      {
+        "triggerId": "SPOF-UNGROUNDED-DATA",
+        "label": "Zero External Citations or Grounding",
+        "conditionExpression": "!item.groundingSources || item.groundingSources.length === 0",
+        "scoreCap": 35,
+        "assignedGrade": "D",
+        "remediationRequired": "Cannot receive Top Recommendation badge without verified external citations."
+      }
+    ],
+    "gradeThresholds": {
+      "A": 85,
+      "B": 70,
+      "C": 50,
+      "D": 35,
+      "F": 0
+    }
+  },
+  {
+    "id": "SM-PSEO-KEYWORD-01",
+    "title": "Programmatic SEO Opportunity & SKAG Priority Scoring Matrix",
+    "description": "Calculates programmatic SEO priority score (0-100) to schedule static pre-rendering, sitemap weighting, and crawler crawl priority for candidate landing pages.",
+    "maximumScore": 100,
+    "pillars": [
+      {
+        "pillarId": "DIM-INVENTORY-DENSITY",
+        "name": "Unique LEGO Block Inventory Density",
+        "weight": 40,
+        "criteria": [
+          {
+            "code": "INV-DENSE-6-PLUS",
+            "label": "Page contains 6 or more unique verified LEGO blocks",
+            "points": 40
+          },
+          {
+            "code": "INV-SOLID-3-TO-5",
+            "label": "Page contains 3 to 5 unique verified LEGO blocks",
+            "points": 25
+          },
+          {
+            "code": "INV-THIN-UNDER-3",
+            "label": "Page contains fewer than 3 blocks (Thin Content)",
+            "points": 0
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-SEARCH-INTENT",
+        "name": "Life-Safety Search Intent Urgency",
+        "weight": 30,
+        "criteria": [
+          {
+            "code": "INTENT-NIGHT-TRANSIT",
+            "label": "High-stakes arrival / curfew / taxi scam intent",
+            "points": 30
+          },
+          {
+            "code": "INTENT-MEDICATION-BAN",
+            "label": "Customs arrest / controlled medication intent",
+            "points": 25
+          },
+          {
+            "code": "INTENT-NEIGHBORHOOD-SAFETY",
+            "label": "Micro-zone crime / street safety intent",
+            "points": 20
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-COMPETITIVE-GAP",
+        "name": "Competitor Information Deficit",
+        "weight": 20,
+        "criteria": [
+          {
+            "code": "GAP-UNANSWERED-BY-OTA",
+            "label": "Information completely missing from OTAs like Booking/Expedia",
+            "points": 20
+          },
+          {
+            "code": "GAP-OUTDATED-FORUMS",
+            "label": "Existing answers are 3+ year old Reddit/Tripadvisor threads",
+            "points": 15
+          }
+        ]
+      },
+      {
+        "pillarId": "DIM-LOCALIZED-SCHEMA",
+        "name": "Rich Snippet & Schema.org Eligibility",
+        "weight": 10,
+        "criteria": [
+          {
+            "code": "RICH-HOWTO-FAQ",
+            "label": "Eligible for Google HowTo + FAQPage rich carousels",
+            "points": 10
+          },
+          {
+            "code": "RICH-BREADCRUMBS",
+            "label": "Complete hierarchical BreadcrumbList graph",
+            "points": 5
+          }
+        ]
+      }
+    ],
+    "spofTriggers": [
+      {
+        "triggerId": "SPOF-ZERO-INVENTORY",
+        "label": "Zero Matching Modular Blocks",
+        "conditionExpression": "item.matchingBlocksCount < 3",
+        "scoreCap": 0,
+        "assignedGrade": "F",
+        "remediationRequired": "Page cannot be indexed; must emit noindex,follow."
+      }
+    ],
+    "gradeThresholds": {
+      "A": 85,
+      "B": 70,
+      "C": 55,
+      "D": 40,
+      "F": 0
+    }
+  }
+]

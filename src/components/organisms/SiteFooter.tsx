@@ -34,19 +34,37 @@ export function SiteFooter() {
           </p>
           <ul className="mt-3 space-y-2 text-sm font-semibold">
             <li>
-              <Link href="#about" className="text-amber-50/85 transition hover:text-amber-300">
+              <Link href="/playbook/" className="text-amber-50/85 transition hover:text-amber-300">
+                Playbook Directory
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/playbook/countries/"
+                className="text-amber-50/85 transition hover:text-amber-300"
+              >
+                Country Dossiers
+              </Link>
+            </li>
+            <li>
+              <Link href="/parents/" className="text-amber-50/85 transition hover:text-amber-300">
+                For Parents
+              </Link>
+            </li>
+            <li>
+              <Link href="/about/" className="text-amber-50/85 transition hover:text-amber-300">
                 About
               </Link>
             </li>
             <li>
-              <Link href="#notify" className="text-amber-50/85 transition hover:text-amber-300">
+              <Link href="/notify/" className="text-amber-50/85 transition hover:text-amber-300">
                 Get notified
               </Link>
             </li>
             <li>
-              <Link href="/llms.txt" className="text-amber-50/85 transition hover:text-amber-300">
+              <a href="/llms.txt" className="text-amber-50/85 transition hover:text-amber-300">
                 llms.txt
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

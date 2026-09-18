@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/self-contained-card.schema.json",
+  "title": "SelfContainedCard",
+  "description": "Universal formal JSON Schema for self-contained, composable content cards across products, scams, hubs, and playbooks.",
+  "type": "object",
+  "required": ["id", "urn", "type", "title", "description", "href", "badges", "actions"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier e.g. gear-wedge-alarm or scam-hallway-taxi"
+    },
+    "urn": {
+      "type": "string",
+      "pattern": "^urn:sts:[a-z_-]+:[a-zA-Z0-9_-]+$",
+      "description": "Canonical Uniform Resource Name e.g. urn:sts:product:wedge-alarm"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "product",
+        "scam",
+        "airport",
+        "micro_zone",
+        "regulatory",
+        "playbook",
+        "country",
+        "topic"
+      ],
+      "description": "Discriminated entity classification"
+    },
+    "href": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Canonical internal route or external destination"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Secondary line e.g. Brand, City, or Airport code"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "highlight": {
+      "type": "string",
+      "description": "Key tactical distinction e.g. 120dB siren or Last train 23:23"
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "properties": {
+          "label": { "type": "string" },
+          "tone": {
+            "type": "string",
+            "enum": ["amber", "green", "red", "blue", "purple", "neutral"],
+            "default": "neutral"
+          },
+          "icon": { "type": "string" },
+          "tooltip": { "type": "string" }
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["icon", "image", "map", "badge"]
+        },
+        "src": { "type": "string" },
+        "alt": { "type": "string" },
+        "iconName": { "type": "string" },
+        "aspectRatio": {
+          "type": "string",
+          "enum": ["1:1", "4:3", "16:9"]
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "object",
+          "properties": {
+            "value": { "type": "number", "minimum": 0, "maximum": 5 },
+            "count": { "type": "integer", "minimum": 0 },
+            "label": { "type": "string" }
+          }
+        },
+        "price": {
+          "type": "object",
+          "properties": {
+            "formatted": { "type": "string" },
+            "raw": { "type": "number" },
+            "currency": { "type": "string" },
+            "tier": {
+              "type": "string",
+              "enum": ["free", "under_25", "25_to_50", "50_plus"]
+            }
+          }
+        },
+        "risk": {
+          "type": "object",
+          "properties": {
+            "tier": {
+              "type": "string",
+              "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+            },
+            "score": { "type": "integer", "minimum": 0, "maximum": 100 }
+          }
+        }
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "properties": {
+        "canCompare": { "type": "boolean", "default": true },
+        "pros": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cons": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "keyDifferentiator": { "type": "string" },
+        "benchmarkAgainst": { "type": "string" },
+        "comparableItemIds": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "href", "relation"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "href": { "type": "string" },
+          "type": { "type": "string" },
+          "relation": {
+            "type": "string",
+            "enum": ["mitigates", "paired_with", "located_in", "alternative_to", "verifies"]
+          }
+        }
+      }
+    },
+    "actions": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "object",
+          "required": ["label", "href"],
+          "properties": {
+            "label": { "type": "string" },
+            "href": { "type": "string" },
+            "isExternal": { "type": "boolean", "default": false },
+            "tone": {
+              "type": "string",
+              "enum": ["primary", "secondary", "accent"],
+              "default": "primary"
+            },
+            "icon": { "type": "string" }
+          }
+        },
+        "canFavorite": { "type": "boolean", "default": true },
+        "canShare": { "type": "boolean", "default": false }
+      }
+    },
+    "schemaOrg": {
+      "type": "object",
+      "description": "Embedded Schema.org micro-graph for rich SEO indexing"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/root-keywords-taxonomy.schema.json",
+  "title": "RootKeywordsTaxonomy",
+  "description": "Formal JSON Schema defining the root keyword taxonomy, intent clusters, modifier tokens, and campaign groupings for pSEO and SKAG execution on Solo Travel Security.",
+  "type": "object",
+  "required": ["version", "modifierDimensions", "campaignGroups", "skagNamingConvention"],
+  "properties": {
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "modifierDimensions": {
+      "type": "object",
+      "required": ["archetypes", "temporalLifecycles", "intentQualifiers", "geoPlaceholders"],
+      "properties": {
+        "archetypes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "rootTerm", "synonyms"],
+            "properties": {
+              "slug": { "type": "string" },
+              "rootTerm": { "type": "string" },
+              "synonyms": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "temporalLifecycles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["phaseSlug", "rootTerm", "synonyms"],
+            "properties": {
+              "phaseSlug": { "type": "string" },
+              "rootTerm": { "type": "string" },
+              "synonyms": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "intentQualifiers": {
+          "type": "object",
+          "required": [
+            "informational",
+            "commercialInvestigation",
+            "transactional",
+            "lifeSafetyUrgent"
+          ],
+          "properties": {
+            "informational": { "type": "array", "items": { "type": "string" } },
+            "commercialInvestigation": { "type": "array", "items": { "type": "string" } },
+            "transactional": { "type": "array", "items": { "type": "string" } },
+            "lifeSafetyUrgent": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "geoPlaceholders": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["[destination_city]", "[country_name]", "[airport_iata]", "[micro_zone]"]
+          }
+        }
+      }
+    },
+    "campaignGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "groupId",
+          "groupName",
+          "benchmarkModel",
+          "associatedPillar",
+          "primarySearchIntent",
+          "targetRouteTemplate",
+          "rootKeywords"
+        ],
+        "properties": {
+          "groupId": { "type": "string", "pattern": "^GRP-[A-Z0-9_-]+$" },
+          "groupName": { "type": "string" },
+          "benchmarkModel": {
+            "type": "string",
+            "enum": [
+              "seek_intent_grid",
+              "zillow_suburb_heatmap",
+              "nerdwallet_spec_matrix",
+              "tripadvisor_truth_reviews",
+              "booking_ingress_cluster"
+            ]
+          },
+          "associatedPillar": { "type": "string" },
+          "primarySearchIntent": {
+            "type": "string",
+            "enum": [
+              "informational",
+              "commercial_investigation",
+              "transactional",
+              "life_safety_critical"
+            ]
+          },
+          "targetRouteTemplate": { "type": "string" },
+          "negativeKeywords": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "rootKeywords": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["keywordId", "rootPhrase", "canonicalIntent", "priorityScore"],
+              "properties": {
+                "keywordId": { "type": "string" },
+                "rootPhrase": { "type": "string" },
+                "canonicalIntent": { "type": "string" },
+                "priorityScore": { "type": "integer", "minimum": 1, "maximum": 100 },
+                "seedVariants": { "type": "array", "items": { "type": "string" } },
+                "skagHeadline": { "type": "string" },
+                "targetLegoEntityType": {
+                  "type": "string",
+                  "enum": [
+                    "airport",
+                    "scam",
+                    "micro_zone",
+                    "regulatory",
+                    "product",
+                    "topic",
+                    "checklist"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "skagNamingConvention": {
+      "type": "string",
+      "description": "Rule for generating SKAG ad group names e.g. [Pillar] - [Root Phrase] - [Intent]"
+    }
+  },
+  "additionalProperties": false
+}

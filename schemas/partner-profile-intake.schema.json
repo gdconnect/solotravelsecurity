@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/partner-profile-intake.schema.json",
+  "title": "PartnerProfileIntake",
+  "description": "Formal JSON Schema defining the vendor/partner onboarding entity profile, legal registration, licensing, contact hierarchy, and payout rail settings.",
+  "type": "object",
+  "required": [
+    "partnerId",
+    "legalBusinessName",
+    "dbaBrandName",
+    "primaryDomain",
+    "partnerCategory",
+    "corporateJurisdictionIso2",
+    "taxClassification",
+    "contacts",
+    "payoutConfig",
+    "complianceStatus"
+  ],
+  "properties": {
+    "partnerId": {
+      "type": "string",
+      "pattern": "^PARTNER-[A-Z0-9_-]+$",
+      "description": "Unique system identifier for the commercial or safety partner entity."
+    },
+    "legalBusinessName": {
+      "type": "string",
+      "description": "Registered legal entity name."
+    },
+    "dbaBrandName": {
+      "type": "string",
+      "description": "Consumer-facing brand name."
+    },
+    "primaryDomain": {
+      "type": "string",
+      "format": "uri",
+      "description": "Primary corporate or platform URL."
+    },
+    "partnerCategory": {
+      "type": "string",
+      "enum": [
+        "medical_evacuation",
+        "travel_insurance_underwriter",
+        "telecom_esim_carrier",
+        "satellite_hardware_manufacturer",
+        "fintech_payment_network",
+        "cybersecurity_hardware_vendor",
+        "physical_security_manufacturer",
+        "first_party_guardian_program"
+      ]
+    },
+    "corporateJurisdictionIso2": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "Country of corporate incorporation."
+    },
+    "taxClassification": {
+      "type": "string",
+      "enum": [
+        "us_w9_ein",
+        "us_w8ben_foreign",
+        "eu_vat_registered",
+        "uk_ltd_vat",
+        "australian_abn",
+        "non_profit_exempt"
+      ]
+    },
+    "contacts": {
+      "type": "object",
+      "required": ["commercialLead", "technicalContact"],
+      "properties": {
+        "commercialLead": {
+          "type": "object",
+          "required": ["name", "email"],
+          "properties": {
+            "name": { "type": "string" },
+            "email": { "type": "string", "format": "email" },
+            "phone": { "type": "string" }
+          }
+        },
+        "technicalContact": {
+          "type": "object",
+          "required": ["name", "email"],
+          "properties": {
+            "name": { "type": "string" },
+            "email": { "type": "string", "format": "email" }
+          }
+        },
+        "emergencyEscalationDesk": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "phone24h": { "type": "string" },
+            "email24h": { "type": "string", "format": "email" }
+          }
+        }
+      }
+    },
+    "licensingAndRegulatory": {
+      "type": "object",
+      "properties": {
+        "isInsuranceLicensed": { "type": "boolean" },
+        "underwriterLegalName": { "type": "string" },
+        "amBestRating": {
+          "type": "string",
+          "enum": ["A_PLUS_PLUS", "A_PLUS", "A", "A_MINUS", "B_PLUS", "NOT_APPLICABLE"]
+        },
+        "regulatoryBodyRegistrationId": { "type": "string" }
+      }
+    },
+    "payoutConfig": {
+      "type": "object",
+      "required": ["payoutRail", "payoutCurrency", "paymentTerms"],
+      "properties": {
+        "payoutRail": {
+          "type": "string",
+          "enum": [
+            "stripe_connect",
+            "wise_business",
+            "direct_ach_wire",
+            "impact_radius",
+            "cj_affiliate",
+            "partnerstack",
+            "first_party_direct"
+          ]
+        },
+        "payoutCurrency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "paymentTerms": {
+          "type": "string",
+          "enum": ["net_15", "net_30", "net_60", "instant_payout"]
+        },
+        "minimumPayoutThresholdUsd": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "complianceStatus": {
+      "type": "object",
+      "required": ["vettingStage", "ftcDisclaimerAccepted", "sanctionsComplianceConfirmed"],
+      "properties": {
+        "vettingStage": {
+          "type": "string",
+          "enum": [
+            "pending_review",
+            "vetted_sandbox",
+            "active_production",
+            "suspended_compliance_breach"
+          ]
+        },
+        "ftcDisclaimerAccepted": { "type": "boolean" },
+        "sanctionsComplianceConfirmed": { "type": "boolean" },
+        "lastAuditedUtc": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

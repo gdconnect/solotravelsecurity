@@ -1,0 +1,295 @@
+{
+  "version": "1.0.0",
+  "decisionTables": [
+    {
+      "id": "DT-AFFILIATE-ROUTING-01",
+      "name": "High-Ticket Affiliate Routing & Risk-Gated Placement",
+      "description": "Deterministic routing rules mapping destination risk tier, traveler profile, and activities to high-ticket evacuation, health insurance, and hardware partners.",
+      "inputColumns": [
+        {
+          "name": "destinationRiskTier",
+          "type": "string",
+          "allowedValues": ["Low", "Moderate", "Elevated", "High", "Critical"]
+        },
+        {
+          "name": "travelerArchetype",
+          "type": "string",
+          "allowedValues": [
+            "solo-female",
+            "digital-nomad",
+            "budget-backpacker",
+            "senior-solo",
+            "first-time-solo"
+          ]
+        },
+        { "name": "remoteOffGrid", "type": "boolean" }
+      ],
+      "outputColumns": [
+        { "name": "primaryPartnerId", "type": "string" },
+        { "name": "secondaryPartnerId", "type": "string" },
+        { "name": "expectedCpaUsd", "type": "number" },
+        { "name": "placementPriority", "type": "string" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": { "destinationRiskTier": "Critical", "remoteOffGrid": true },
+          "actions": {
+            "primaryPartnerId": "AFF-GLOBAL-RESCUE",
+            "secondaryPartnerId": "AFF-GARMIN-INREACH",
+            "expectedCpaUsd": 180.0,
+            "placementPriority": "hero_sticky_alert"
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "destinationRiskTier": "High", "travelerArchetype": "senior-solo" },
+          "actions": {
+            "primaryPartnerId": "AFF-MEDJET",
+            "secondaryPartnerId": "AFF-GLOBAL-RESCUE",
+            "expectedCpaUsd": 120.0,
+            "placementPriority": "hero_banner"
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "destinationRiskTier": "Elevated", "travelerArchetype": "digital-nomad" },
+          "actions": {
+            "primaryPartnerId": "AFF-SAFETYWING",
+            "secondaryPartnerId": "AFF-AIRALO",
+            "expectedCpaUsd": 75.0,
+            "placementPriority": "spec_matrix_top"
+          }
+        },
+        {
+          "ruleId": "R04",
+          "conditions": {
+            "destinationRiskTier": "Moderate",
+            "travelerArchetype": "budget-backpacker"
+          },
+          "actions": {
+            "primaryPartnerId": "AFF-SAFETYWING",
+            "secondaryPartnerId": "AFF-WISE-CARD",
+            "expectedCpaUsd": 65.0,
+            "placementPriority": "spec_matrix_top"
+          }
+        },
+        {
+          "ruleId": "R05",
+          "conditions": { "destinationRiskTier": "Low", "travelerArchetype": "first-time-solo" },
+          "actions": {
+            "primaryPartnerId": "AFF-AIRALO",
+            "secondaryPartnerId": "AFF-SAFETYWING",
+            "expectedCpaUsd": 35.0,
+            "placementPriority": "inline_checklist"
+          }
+        },
+        {
+          "ruleId": "R06",
+          "conditions": { "remoteOffGrid": true },
+          "actions": {
+            "primaryPartnerId": "AFF-GARMIN-INREACH",
+            "secondaryPartnerId": "AFF-GLOBAL-RESCUE",
+            "expectedCpaUsd": 140.0,
+            "placementPriority": "hero_sticky_alert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DT-GUARDIAN-SLA-01",
+      "name": "Guardian Automated Escalation Ladder",
+      "description": "Automated SLA escalation state machine governing missed check-ins, silent grace periods, and emergency consular packet transmission.",
+      "inputColumns": [
+        { "name": "overdueMinutes", "type": "number" },
+        { "name": "currentStatus", "type": "string", "allowedValues": ["GREEN", "AMBER", "RED"] },
+        {
+          "name": "tierId",
+          "type": "string",
+          "allowedValues": [
+            "free_tripwire",
+            "single_trip_pass",
+            "annual_explorer",
+            "family_syndicate"
+          ]
+        }
+      ],
+      "outputColumns": [
+        { "name": "nextStatus", "type": "string" },
+        { "name": "actionChannel", "type": "string" },
+        { "name": "transmitConsularPacket", "type": "boolean" },
+        { "name": "logAuditLevel", "type": "string" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": { "overdueMinutes": 0, "currentStatus": "GREEN" },
+          "actions": {
+            "nextStatus": "GREEN",
+            "actionChannel": "silent_push_traveler",
+            "transmitConsularPacket": false,
+            "logAuditLevel": "info"
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "overdueMinutes": 30, "currentStatus": "GREEN" },
+          "actions": {
+            "nextStatus": "GREEN",
+            "actionChannel": "sms_traveler",
+            "transmitConsularPacket": false,
+            "logAuditLevel": "warning"
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "overdueMinutes": 60, "currentStatus": "GREEN" },
+          "actions": {
+            "nextStatus": "AMBER",
+            "actionChannel": "email_sponsor",
+            "transmitConsularPacket": false,
+            "logAuditLevel": "warning"
+          }
+        },
+        {
+          "ruleId": "R04",
+          "conditions": { "overdueMinutes": 120, "currentStatus": "AMBER" },
+          "actions": {
+            "nextStatus": "RED",
+            "actionChannel": "sms_sponsor",
+            "transmitConsularPacket": true,
+            "logAuditLevel": "critical"
+          }
+        },
+        {
+          "ruleId": "R05",
+          "conditions": { "overdueMinutes": 240, "currentStatus": "RED" },
+          "actions": {
+            "nextStatus": "RED",
+            "actionChannel": "consular_dispatch_packet",
+            "transmitConsularPacket": true,
+            "logAuditLevel": "critical"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DT-OFFLINE-CACHE-01",
+      "name": "Zero-Connectivity Offline Emergency Cache Priority",
+      "description": "Controls progressive pre-caching of local emergency services, 24h sanctuaries, and survival phrases based on travel departure timeline and network conditions.",
+      "inputColumns": [
+        { "name": "daysUntilDeparture", "type": "number" },
+        {
+          "name": "destinationRiskTier",
+          "type": "string",
+          "allowedValues": ["Low", "Moderate", "Elevated", "High", "Critical"]
+        },
+        {
+          "name": "networkType",
+          "type": "string",
+          "allowedValues": ["wifi_high_speed", "cellular_4g_5g", "slow_2g_3g", "offline"]
+        }
+      ],
+      "outputColumns": [
+        { "name": "cacheStrategy", "type": "string" },
+        { "name": "targetStorageEngine", "type": "string" },
+        { "name": "autoDownloadOfflineCard", "type": "boolean" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": { "daysUntilDeparture": 0, "destinationRiskTier": "Critical" },
+          "actions": {
+            "cacheStrategy": "aggressive_full_offline_bundle",
+            "targetStorageEngine": "indexed_db_and_local_storage",
+            "autoDownloadOfflineCard": true
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "daysUntilDeparture": 3, "networkType": "wifi_high_speed" },
+          "actions": {
+            "cacheStrategy": "full_offline_bundle",
+            "targetStorageEngine": "indexed_db",
+            "autoDownloadOfflineCard": true
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "networkType": "slow_2g_3g" },
+          "actions": {
+            "cacheStrategy": "emergency_vitals_only",
+            "targetStorageEngine": "local_storage",
+            "autoDownloadOfflineCard": false
+          }
+        },
+        {
+          "ruleId": "R04",
+          "conditions": { "networkType": "offline" },
+          "actions": {
+            "cacheStrategy": "serve_from_local_cache_zero_latency",
+            "targetStorageEngine": "local_storage",
+            "autoDownloadOfflineCard": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "DT-ADVISORY-DELTA-01",
+      "name": "Government Advisory Divergence & Delta Anomaly Trigger",
+      "description": "Compares US State Dept, UK FCDO, and Australian DFAT advisory levels to detect sudden safety deltas and trigger breaking pSEO alerts.",
+      "inputColumns": [
+        { "name": "usStateDeptLevel", "type": "number" },
+        { "name": "ukFcdoLevel", "type": "string" },
+        { "name": "ausSmartravellerLevel", "type": "number" }
+      ],
+      "outputColumns": [
+        { "name": "consensusRiskTier", "type": "string" },
+        { "name": "hasDeltaAnomaly", "type": "boolean" },
+        { "name": "triggerBreakingAlert", "type": "boolean" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": { "usStateDeptLevel": 4, "ukFcdoLevel": "red_do_not_travel" },
+          "actions": {
+            "consensusRiskTier": "Critical",
+            "hasDeltaAnomaly": false,
+            "triggerBreakingAlert": true
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "usStateDeptLevel": 3, "ukFcdoLevel": "green_standard" },
+          "actions": {
+            "consensusRiskTier": "Elevated",
+            "hasDeltaAnomaly": true,
+            "triggerBreakingAlert": true
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "usStateDeptLevel": 2, "ausSmartravellerLevel": 3 },
+          "actions": {
+            "consensusRiskTier": "Elevated",
+            "hasDeltaAnomaly": true,
+            "triggerBreakingAlert": true
+          }
+        },
+        {
+          "ruleId": "R04",
+          "conditions": {
+            "usStateDeptLevel": 1,
+            "ukFcdoLevel": "green_standard",
+            "ausSmartravellerLevel": 1
+          },
+          "actions": {
+            "consensusRiskTier": "Low",
+            "hasDeltaAnomaly": false,
+            "triggerBreakingAlert": false
+          }
+        }
+      ]
+    }
+  ]
+}

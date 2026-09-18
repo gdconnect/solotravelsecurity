@@ -1,0 +1,12 @@
+node_modules/
+vendor/
+package-lock.json
+public/build/
+.git/
+storage/
+bootstrap/cache/
+.trinity/*
+!.trinity/TRINITY.md
+!.trinity/passthrough/
+.trinity/passthrough/*
+!.trinity/passthrough/pending/

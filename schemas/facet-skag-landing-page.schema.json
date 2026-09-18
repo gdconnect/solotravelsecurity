@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/facet-skag-landing-page.schema.json",
+  "title": "FacetSkagLandingPage",
+  "description": "Formal schema for programmatically generated SEO / SKAG landing pages derived from curated high-intent facet combinations.",
+  "type": "object",
+  "required": [
+    "routePath",
+    "canonicalUrl",
+    "primaryKeyword",
+    "h1Title",
+    "metaDescription",
+    "robotsDirective",
+    "appliedFacets",
+    "minItemThreshold",
+    "heroManifesto",
+    "schemaOrgType"
+  ],
+  "properties": {
+    "routePath": {
+      "type": "string",
+      "pattern": "^/playbook/[a-z0-9_/-]+/$",
+      "description": "Strict static path e.g. /playbook/solo-female/rome/night-transit/"
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "primaryKeyword": {
+      "type": "string",
+      "description": "Target high-intent search query e.g. 'solo female rome night transit security'"
+    },
+    "h1Title": {
+      "type": "string",
+      "description": "Display H1 title on page"
+    },
+    "metaDescription": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "Google snippet meta description"
+    },
+    "robotsDirective": {
+      "type": "string",
+      "enum": ["index,follow", "noindex,follow", "noindex,nofollow"],
+      "default": "index,follow"
+    },
+    "appliedFacets": {
+      "type": "object",
+      "description": "Pre-applied filter criteria generating this page",
+      "properties": {
+        "archetype": { "type": "string" },
+        "destination": { "type": "string" },
+        "pillar": { "type": "string" },
+        "riskTier": { "type": "string" },
+        "category": { "type": "string" }
+      }
+    },
+    "minItemThreshold": {
+      "type": "integer",
+      "minimum": 3,
+      "default": 3,
+      "description": "Minimum matching items required for index,follow; below this, falls back to noindex,follow"
+    },
+    "heroManifesto": {
+      "type": "string",
+      "description": "Unique editorial paragraph addressing the specific intersection of archetype, destination, and risk"
+    },
+    "schemaOrgType": {
+      "type": "string",
+      "enum": ["CollectionPage", "ItemPage", "SearchResultsPage", "FAQPage"],
+      "default": "CollectionPage"
+    },
+    "faqItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "type": "string" },
+          "answer": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/offline-emergency-cache.schema.json",
+  "title": "OfflineEmergencyCache",
+  "description": "Formal JSON Schema defining zero-connectivity offline emergency caches stored in client-side storage for life-safety continuity.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "destinationCity",
+    "destinationCountryIso2",
+    "cachedAtUtc",
+    "expiresAtUtc",
+    "emergencyContacts",
+    "medicalAlert",
+    "emergencyServices",
+    "sanctuaries24h",
+    "survivalPhrases"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "destinationCity": { "type": "string" },
+    "destinationCountryIso2": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "cachedAtUtc": { "type": "string", "format": "date-time" },
+    "expiresAtUtc": { "type": "string", "format": "date-time" },
+    "emergencyContacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "relation", "phone"],
+        "properties": {
+          "name": { "type": "string" },
+          "relation": { "type": "string" },
+          "phone": { "type": "string" }
+        }
+      }
+    },
+    "medicalAlert": {
+      "type": "object",
+      "required": ["bloodType", "criticalAllergies", "criticalMedications"],
+      "properties": {
+        "bloodType": { "type": "string" },
+        "criticalAllergies": { "type": "array", "items": { "type": "string" } },
+        "criticalMedications": { "type": "array", "items": { "type": "string" } },
+        "emergencyInstructions": { "type": "string" }
+      }
+    },
+    "emergencyServices": {
+      "type": "object",
+      "required": ["police", "ambulance", "fire"],
+      "properties": {
+        "police": { "type": "string" },
+        "ambulance": { "type": "string" },
+        "fire": { "type": "string" },
+        "touristPolice": { "type": "string" },
+        "consular24hCrisis": { "type": "string" }
+      }
+    },
+    "sanctuaries24h": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "address"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "police_station",
+              "hospital_emergency",
+              "24h_pharmacy",
+              "hotel_lobby",
+              "embassy"
+            ]
+          },
+          "address": { "type": "string" },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "lat": { "type": "number" },
+              "lng": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "survivalPhrases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["english", "local", "phonetic"],
+        "properties": {
+          "english": { "type": "string" },
+          "local": { "type": "string" },
+          "phonetic": { "type": "string" }
+        }
+      }
+    }
+  }
+}

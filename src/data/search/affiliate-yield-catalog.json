@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "categoryId": "CAT-EVAC-INSURANCE",
+      "name": "Emergency Medical & Evacuation Insurance",
+      "averageCpaUsd": 95.0,
+      "conversionRateBenchmark": 0.042
+    },
+    {
+      "categoryId": "CAT-ESIM-DATA",
+      "name": "Preloaded Global & Regional Travel eSIMs",
+      "averageCpaUsd": 12.5,
+      "conversionRateBenchmark": 0.115
+    },
+    {
+      "categoryId": "CAT-SATELLITE-SOS",
+      "name": "Satellite Emergency SOS & Two-Way Communicators",
+      "averageCpaUsd": 45.0,
+      "conversionRateBenchmark": 0.028
+    },
+    {
+      "categoryId": "CAT-MULTI-CURRENCY",
+      "name": "Anti-Theft Multi-Currency Travel Cards",
+      "averageCpaUsd": 25.0,
+      "conversionRateBenchmark": 0.065
+    },
+    {
+      "categoryId": "CAT-CYBER-HYGIENE",
+      "name": "Hardware 2FA & Encrypted WireGuard VPNs",
+      "averageCpaUsd": 22.0,
+      "conversionRateBenchmark": 0.055
+    }
+  ],
+  "partners": [
+    {
+      "partnerId": "AFF-SAFETYWING",
+      "brandName": "SafetyWing Nomad Insurance",
+      "categoryId": "CAT-EVAC-INSURANCE",
+      "payoutType": "revshare_recurring",
+      "payoutAmountUsd": 65.0,
+      "cookieWindowDays": 365,
+      "targetRiskTiers": ["Moderate", "Elevated", "High", "Critical"],
+      "targetArchetypes": ["digital-nomad", "budget-backpacker", "first-time-solo"],
+      "primaryValueProp": "Continuous medical & emergency repatriation coverage across 180+ countries with automatic recurring monthly renewal.",
+      "affiliateUrlTemplate": "https://safetywing.com/nomad-insurance?referenceID=solotravelsec"
+    },
+    {
+      "partnerId": "AFF-GLOBAL-RESCUE",
+      "brandName": "Global Rescue Medical Evacuation",
+      "categoryId": "CAT-EVAC-INSURANCE",
+      "payoutType": "cpa_fixed",
+      "payoutAmountUsd": 140.0,
+      "cookieWindowDays": 60,
+      "targetRiskTiers": ["Elevated", "High", "Critical"],
+      "targetArchetypes": ["senior-solo", "solo-female", "digital-nomad"],
+      "primaryValueProp": "Elite private field rescue and transport to hospital of choice during civil unrest, medical crises, or kidnappings.",
+      "affiliateUrlTemplate": "https://ss.globalrescue.com/partner/solotravelsec/"
+    },
+    {
+      "partnerId": "AFF-MEDJET",
+      "brandName": "Medjet Horizon Air Medical Transport",
+      "categoryId": "CAT-EVAC-INSURANCE",
+      "payoutType": "cpa_fixed",
+      "payoutAmountUsd": 120.0,
+      "cookieWindowDays": 45,
+      "targetRiskTiers": ["Elevated", "High"],
+      "targetArchetypes": ["senior-solo", "solo-female"],
+      "primaryValueProp": "Bedside-to-bedside hospital transfer with 24/7 security & crisis response consultation for solo travelers.",
+      "affiliateUrlTemplate": "https://medjetassist.com/?aff=solotravelsec"
+    },
+    {
+      "partnerId": "AFF-AIRALO",
+      "brandName": "Airalo Global Travel eSIM",
+      "categoryId": "CAT-ESIM-DATA",
+      "payoutType": "cpa_fixed",
+      "payoutAmountUsd": 10.0,
+      "cookieWindowDays": 30,
+      "targetRiskTiers": ["Low", "Moderate", "Elevated", "High", "Critical"],
+      "targetArchetypes": [
+        "solo-female",
+        "first-time-solo",
+        "digital-nomad",
+        "budget-backpacker",
+        "senior-solo"
+      ],
+      "primaryValueProp": "Instant touchdown data before exiting the aircraft; eliminates vulnerable public Wi-Fi and airport taxi tout queues.",
+      "affiliateUrlTemplate": "https://airalo.tp.st/solotravelsec"
+    },
+    {
+      "partnerId": "AFF-GARMIN-INREACH",
+      "brandName": "Garmin inReach Mini 2 Satellite Communicator",
+      "categoryId": "CAT-SATELLITE-SOS",
+      "payoutType": "cpa_fixed",
+      "payoutAmountUsd": 40.0,
+      "cookieWindowDays": 30,
+      "targetRiskTiers": ["Elevated", "High", "Critical"],
+      "targetArchetypes": ["budget-backpacker", "digital-nomad", "senior-solo"],
+      "primaryValueProp": "100% global Iridium satellite network SOS triggers even when cell towers are completely destroyed or absent.",
+      "affiliateUrlTemplate": "https://www.rei.com/product/208278/garmin-inreach-mini-2?cm_mmc=aff_solotravelsec"
+    },
+    {
+      "partnerId": "AFF-WISE-CARD",
+      "brandName": "Wise Multi-Currency Travel Debit Card",
+      "categoryId": "CAT-MULTI-CURRENCY",
+      "payoutType": "cpa_fixed",
+      "payoutAmountUsd": 25.0,
+      "cookieWindowDays": 45,
+      "targetRiskTiers": ["Low", "Moderate", "Elevated", "High"],
+      "targetArchetypes": ["budget-backpacker", "first-time-solo", "digital-nomad"],
+      "primaryValueProp": "Zero foreign transaction fees, instant in-app freeze, and virtual disposable cards for street merchant payments.",
+      "affiliateUrlTemplate": "https://wise.com/invite/ihpc/solotravelsec"
+    },
+    {
+      "partnerId": "AFF-YUBICO-2FA",
+      "brandName": "Yubico YubiKey 5C NFC Security Key",
+      "categoryId": "CAT-CYBER-HYGIENE",
+      "payoutType": "cpa_fixed",
+      "payoutAmountUsd": 15.0,
+      "cookieWindowDays": 30,
+      "targetRiskTiers": ["Low", "Moderate", "Elevated", "High"],
+      "targetArchetypes": ["digital-nomad", "solo-female"],
+      "primaryValueProp": "FIDO2 hardware authentication prevents catastrophic account takeover even if primary smartphone is stolen in transit.",
+      "affiliateUrlTemplate": "https://www.yubico.com/store/?ref=solotravelsec"
+    }
+  ],
+  "complianceRules": {
+    "ftcDisclosureRequired": true,
+    "disclaimerText": "Disclosure: SoloTravelSecurity evaluates security gear and services objectively based on verified physical testing and consular data. When you acquire vetted security solutions through our links, we may earn an affiliate commission at no extra cost to you."
+  }
+}

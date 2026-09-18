@@ -1,0 +1,426 @@
+# Solo Travel Security — Authoritative GraphQL Schema (Laravel Lighthouse)
+# Auto-sync source: backend/graphql/exported-schema.graphql
+
+scalar DateTime
+scalar JSON
+
+"""Operational security threat tier."""
+enum RiskTier {
+  LOW
+  MODERATE
+  ELEVATED
+  HIGH
+}
+
+"""Geospatial coordinate point."""
+type GeoCoordinate {
+  latitude: Float!
+  longitude: Float!
+}
+
+"""Deterministic emergency dispatch contact numbers."""
+type EmergencyNumbers {
+  police: String!
+  ambulance: String!
+  fire: String!
+  touristPolice: String
+}
+
+"""Consular 24/7 crisis hotlines."""
+type ConsularHotlines {
+  usEmbassyPhone: String!
+  ukEmbassyPhone: String!
+  ausEmbassyPhone: String!
+}
+
+"""Electrical grid standards and plug configurations."""
+type ElectricalStandards {
+  voltage: String!
+  frequency: String!
+  plugTypes: [String!]!
+}
+
+"""Sovereign nation security dossier."""
+type Country {
+  iso2: ID!
+  iso3: String!
+  name: String!
+  nativeName: String
+  capital: String!
+  currencyCode: String!
+  currencySymbol: String!
+  currencyName: String!
+  phonePrefix: String!
+  region: String!
+  subregion: String!
+  wikidataId: String
+  coordinates: GeoCoordinate!
+  defaultRiskTier: RiskTier!
+  emergencyNumbers: EmergencyNumbers!
+  consularHotlines: ConsularHotlines!
+  electricalStandards: ElectricalStandards!
+  overview: String!
+  keySafetyRules: [String!]!
+  primaryCities: [City!]!
+}
+
+"""Curated destination city hub with airport ingress data."""
+type City {
+  slug: ID!
+  name: String!
+  countryCode: String!
+  country: Country
+  coordinates: GeoCoordinate!
+  wikidataId: String
+  population: Int
+  riskTier: RiskTier!
+  primaryAirportCode: String!
+}
+
+"""Live Parent Command Portal & Dead-Man Heartbeat status."""
+type GuardianPortal {
+  token: ID!
+  travelerName: String!
+  destinationCity: String!
+  destinationCountry: String!
+  status: GuardianStatus!
+  nextWindowUtc: String!
+  readinessScore: Int!
+  readinessGrade: String!
+  milestones: [IngressMilestone!]!
+  consularHotlines: ConsularHotlines!
+  emergencyNumbers: EmergencyNumbers!
+}
+
+enum GuardianStatus {
+  GREEN
+  AMBER
+  RED
+}
+
+type IngressMilestone {
+  id: ID!
+  label: String!
+  expectedTime: String!
+  completedTime: String
+  status: String!
+}
+
+"""Situation-triggered security product, book, insurance, or SaaS tool."""
+type MatchedProduct {
+  sku: ID!
+  name: String!
+  category: String!
+  howToRole: String!
+  priorityRank: Int!
+  situationalRationale: String!
+  isPrimaryRecommendation: Boolean!
+  price: String!
+  priceCurrency: String!
+  affiliateUrl: String!
+  brand: String!
+  author: String
+  isbn: String
+  ratingValue: Float!
+  ratingCount: Int!
+  pros: [String!]!
+  cons: [String!]!
+}
+
+input SituationalContextInput {
+  arrivalHour: Int!
+  lodgingFloor: String!
+  lodgingType: String!
+  destinationRiskTier: RiskTier!
+  cellularType: String
+  experienceLevel: String
+}
+
+input ArmTripwireInput {
+  token: String!
+  contactEmail: String!
+  checkInTimeUtc: String!
+  encryptedPayload: String!
+}
+
+type TripwireResult {
+  armed: Boolean!
+  expiresAtUtc: String!
+  message: String!
+}
+
+"""Taxonomy pillar of solo travel security."""
+type SecurityPillar {
+  id: ID!
+  name: String!
+  slug: String!
+  description: String!
+  weight: Float!
+  icon: String!
+  primaryDirectives: [String!]!
+}
+
+"""Lifecycle phase of solo travel."""
+type LifecyclePhase {
+  id: ID!
+  name: String!
+  slug: String!
+  order: Int!
+  description: String!
+  typicalWindow: String!
+}
+
+"""Actionable security checklist item."""
+type ChecklistItem {
+  id: ID!
+  title: String!
+  description: String!
+  pillarId: String!
+  phaseId: String!
+  criticality: String!
+  isSPOF: Boolean!
+  verificationType: String!
+  applicableArchetypes: [String!]!
+  minimumRiskTier: RiskTier!
+  decisionTableRef: String
+  truthTableRef: String
+  scoringDeductionPoints: Float!
+  recommendedGearSkus: [String!]!
+}
+
+"""Grouped checklist items."""
+type ChecklistGroup {
+  id: ID!
+  name: String!
+  slug: String!
+  items: [ChecklistItem!]!
+}
+
+"""Generated situational checklist payload."""
+type GeneratedChecklist {
+  generatedAt: String!
+  totalItems: Int!
+  criticalCount: Int!
+  spofCount: Int!
+  items: [ChecklistItem!]!
+  byPillar: [ChecklistGroup!]!
+  byPhase: [ChecklistGroup!]!
+}
+
+"""Condition column in decision table."""
+type DecisionCondition {
+  key: String!
+  label: String!
+  type: String!
+  allowedValues: [String!]
+  unit: String
+}
+
+"""Action column in decision table."""
+type DecisionAction {
+  key: String!
+  label: String!
+  type: String!
+}
+
+"""Rule row in decision table."""
+type DecisionRule {
+  ruleId: String!
+  scenario: String!
+  priority: Int!
+  conditions: JSON!
+  actions: JSON!
+}
+
+"""Multi-variable decision table."""
+type DecisionTable {
+  id: ID!
+  title: String!
+  description: String!
+  pillarId: String!
+  conditionColumns: [DecisionCondition!]!
+  actionColumns: [DecisionAction!]!
+  rules: [DecisionRule!]!
+  defaultAction: JSON!
+}
+
+"""Proposition in formal truth table."""
+type TruthProposition {
+  symbol: String!
+  key: String!
+  name: String!
+  description: String!
+}
+
+"""Row in truth table."""
+type TruthRow {
+  rowId: String!
+  inputs: JSON!
+  outputs: JSON!
+  formalRationale: String
+}
+
+"""Formal boolean logic truth table."""
+type TruthTable {
+  id: ID!
+  title: String!
+  description: String!
+  scenarioCategory: String!
+  propositions: [TruthProposition!]!
+  rows: [TruthRow!]!
+  completenessVerified: Boolean!
+}
+
+input GenerateChecklistInput {
+  archetype: String
+  destinationRiskTier: RiskTier
+  phaseId: String
+  pillarId: String
+  criticalOnly: Boolean
+}
+
+"""Item format/medium classification."""
+enum SearchItemFormat {
+  PHYSICAL_GEAR
+  DIGITAL_TOOL
+  TRUTH_TABLE
+  FIELD_PROTOCOL
+  CUSTOMS_RULE
+}
+
+"""Price tier bracket for filtering."""
+enum PriceTierBracket {
+  FREE
+  UNDER_25
+  BETWEEN_25_AND_50
+  ABOVE_50
+}
+
+"""Searchable LEGO block item indexed for faceted search."""
+type SearchableItem {
+  id: ID!
+  title: String!
+  slug: String!
+  url: String!
+  type: String!
+  category: String!
+  categoryLabel: String!
+  pillarId: String
+  description: String!
+  tagline: String
+  archetypes: [String!]!
+  riskTiers: [String!]!
+  destinations: [String!]
+  format: SearchItemFormat!
+  priceTier: PriceTierBracket!
+  priceFormatted: String
+  rating: Float
+  ratingCount: Int
+  affiliateUrl: String
+  pros: [String!]
+  cons: [String!]
+  keyHighlight: String
+}
+
+"""Facet choice option with count."""
+type FacetCountOption {
+  value: String!
+  label: String!
+  count: Int!
+}
+
+"""Aggregated facet counts across dimensions."""
+type FacetGroupCounts {
+  types: [FacetCountOption!]!
+  categories: [FacetCountOption!]!
+  formats: [FacetCountOption!]!
+  priceTiers: [FacetCountOption!]!
+  riskTiers: [FacetCountOption!]!
+}
+
+"""Faceted search query result payload."""
+type FacetedSearchResult {
+  totalCount: Int!
+  items: [SearchableItem!]!
+  facetCounts: FacetGroupCounts!
+}
+
+"""Input filter for faceted search query."""
+input FacetedSearchFilterInput {
+  query: String
+  types: [String!]
+  categories: [String!]
+  archetypes: [String!]
+  riskTiers: [String!]
+  formats: [SearchItemFormat!]
+  priceTiers: [PriceTierBracket!]
+  sortBy: String
+}
+
+"""Hierarchical navigation breadcrumb node."""
+type BreadcrumbItem {
+  label: String!
+  href: String
+  position: Int!
+}
+
+"""Saved favorite / custom kit item."""
+type FavoriteItem {
+  id: ID!
+  type: String!
+  title: String!
+  url: String!
+  category: String!
+  description: String!
+  price: String
+  rating: Float
+  badge: String
+  savedAt: String!
+  notes: String
+}
+
+"""Input for saving an item to anonymous session favorites."""
+input FavoriteItemInput {
+  id: ID!
+  type: String!
+  title: String!
+  url: String!
+  category: String!
+  description: String!
+  price: String
+  rating: Float
+  badge: String
+  notes: String
+}
+
+type Query {
+  countries(region: String, riskTier: RiskTier, search: String): [Country!]!
+  country(iso2: ID!): Country
+  cities(countryCode: String): [City!]!
+  city(slug: ID!): City
+  guardianPortal(token: ID!): GuardianPortal
+  matchedProducts(context: SituationalContextInput!): [MatchedProduct!]!
+  securityPillars: [SecurityPillar!]!
+  lifecyclePhases: [LifecyclePhase!]!
+  masterChecklist(pillarId: String, phaseId: String): [ChecklistItem!]!
+  generateChecklist(input: GenerateChecklistInput): GeneratedChecklist!
+  decisionTables: [DecisionTable!]!
+  decisionTable(id: ID!): DecisionTable
+  truthTables: [TruthTable!]!
+  truthTable(id: ID!): TruthTable
+  searchFacetedItems(filter: FacetedSearchFilterInput): FacetedSearchResult!
+  breadcrumbsForRoute(path: String!): [BreadcrumbItem!]!
+  userFavorites(sessionToken: String!): [FavoriteItem!]!
+}
+
+type Mutation {
+  confirmIngressHeartbeat(token: String!, milestoneId: String!): GuardianPortal!
+  armTripwire(input: ArmTripwireInput!): TripwireResult!
+  evaluateDecision(tableId: ID!, inputs: JSON!): JSON!
+  evaluateTruth(tableId: ID!, inputs: JSON!): JSON!
+  saveFavorite(sessionToken: String!, item: FavoriteItemInput!): FavoriteItem!
+  removeFavorite(sessionToken: String!, itemId: ID!): Boolean!
+  clearFavorites(sessionToken: String!): Boolean!
+}
+
+

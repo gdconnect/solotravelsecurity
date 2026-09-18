@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/micro-zone.schema.json",
+  "title": "MicroZoneDossier",
+  "description": "Formal JSON Schema for hyper-local micro-zone crime heatmaps, red-flag corridors, and 24h safe haven sanctuaries.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "citySlug",
+    "countryCode",
+    "dayRiskTier",
+    "nightRiskTier",
+    "soloFemaleWalkabilityRating",
+    "redFlagCorridors",
+    "safeThoroughfares",
+    "sanctuaries",
+    "lodgingRecommendation"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "citySlug": { "type": "string", "minLength": 1 },
+    "countryCode": { "type": "string", "minLength": 2, "maxLength": 2 },
+    "dayRiskTier": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "nightRiskTier": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "soloFemaleWalkabilityRating": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "redFlagCorridors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "safeThoroughfares": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "sanctuaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "name", "notes"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["pharmacy", "police_box", "hotel_lobby", "transit_staffed_booth", "hospital"]
+          },
+          "name": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "lodgingRecommendation": {
+      "type": "object",
+      "required": ["isRecommendedForSolo", "recommendedSubPockets", "warnings"],
+      "properties": {
+        "isRecommendedForSolo": { "type": "boolean" },
+        "recommendedSubPockets": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "warnings": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

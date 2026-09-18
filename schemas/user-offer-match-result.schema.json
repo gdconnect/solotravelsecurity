@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/user-offer-match-result.schema.json",
+  "title": "UserOfferMatchResult",
+  "description": "Formal JSON Schema defining the evaluated match result output when matching a traveler persona and context with partner offers.",
+  "type": "object",
+  "required": [
+    "evaluatedAtUtc",
+    "queryContext",
+    "matchedOffers",
+    "slotPlacements",
+    "ftcDisclosure",
+    "exclusionAudit"
+  ],
+  "properties": {
+    "evaluatedAtUtc": { "type": "string", "format": "date-time" },
+    "queryContext": {
+      "type": "object",
+      "required": [
+        "archetype",
+        "destinationCity",
+        "destinationCountryIso2",
+        "riskTier",
+        "lifecycle"
+      ],
+      "properties": {
+        "archetype": { "type": "string" },
+        "destinationCity": { "type": "string" },
+        "destinationCountryIso2": { "type": "string" },
+        "riskTier": { "type": "string" },
+        "lifecycle": { "type": "string" },
+        "healthProfile": { "type": "string" },
+        "deviceCapability": { "type": "string" }
+      }
+    },
+    "matchedOffers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "offerId",
+          "brandName",
+          "category",
+          "compositeScore",
+          "resolvedUrl",
+          "placementSlot"
+        ],
+        "properties": {
+          "offerId": { "type": "string" },
+          "brandName": { "type": "string" },
+          "category": { "type": "string" },
+          "compositeScore": { "type": "number" },
+          "lifeSafetyScore": { "type": "number" },
+          "effectiveCpaUsd": { "type": "number" },
+          "resolvedUrl": { "type": "string" },
+          "relAttributes": { "type": "string" },
+          "placementSlot": { "type": "string" },
+          "primaryValueProp": { "type": "string" },
+          "pros": { "type": "array", "items": { "type": "string" } },
+          "cons": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "slotPlacements": {
+      "type": "object",
+      "properties": {
+        "hero_emergency_banner": { "type": ["string", "null"] },
+        "spec_matrix_row": { "type": ["string", "null"] },
+        "inline_checklist_recommendation": { "type": ["string", "null"] },
+        "sticky_bottom_drawer": { "type": ["string", "null"] }
+      }
+    },
+    "ftcDisclosure": { "type": "string" },
+    "exclusionAudit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["offerId", "reason"],
+        "properties": {
+          "offerId": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/offer-matching-rule.schema.json",
+  "title": "OfferMatchingRule",
+  "description": "Formal JSON Schema defining deterministic matching rules that connect traveler situational context with partner offers.",
+  "type": "object",
+  "required": ["ruleId", "ruleName", "priority", "conditions", "actions"],
+  "properties": {
+    "ruleId": {
+      "type": "string",
+      "pattern": "^RULE-[A-Z0-9_-]+$"
+    },
+    "ruleName": { "type": "string" },
+    "priority": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "destinationRiskTiers": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["Low", "Moderate", "Elevated", "High", "Critical"] }
+        },
+        "archetypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "solo-female",
+              "first-time-solo",
+              "digital-nomad",
+              "budget-backpacker",
+              "senior-solo"
+            ]
+          }
+        },
+        "lifecycles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "pre_trip",
+              "night_arrival",
+              "lodging_lockdown",
+              "day_roaming",
+              "nightlife_social",
+              "crisis_escalation"
+            ]
+          }
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "extreme_sports_scooter",
+              "off_grid_remote",
+              "nightlife_drinking",
+              "transit_roaming"
+            ]
+          }
+        },
+        "deviceCapabilities": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["esim_capable", "physical_sim_only"] }
+        }
+      }
+    },
+    "actions": {
+      "type": "object",
+      "required": ["targetCategory", "placementSlot"],
+      "properties": {
+        "targetCategory": { "type": "string" },
+        "placementSlot": {
+          "type": "string",
+          "enum": [
+            "hero_emergency_banner",
+            "spec_matrix_row",
+            "inline_checklist_recommendation",
+            "sticky_bottom_drawer",
+            "footer_disclaimer"
+          ]
+        },
+        "scoreBoostMultiplier": { "type": "number", "default": 1.0 },
+        "forcedOfferId": { "type": "string" },
+        "blockCategories": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

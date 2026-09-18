@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/facet-search-taxonomy.schema.json",
+  "title": "FacetSearchTaxonomy",
+  "description": "Formal JSON Schema defining the complete faceted search taxonomy, facet groups, selection behaviors, and display semantics for Solo Travel Security.",
+  "type": "object",
+  "required": [
+    "version",
+    "facetGroups",
+    "defaultSorting",
+    "disjunctiveFacetingEnabled",
+    "zeroPiiPersonalizationEnabled"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version of the facet search taxonomy."
+    },
+    "defaultSorting": {
+      "type": "string",
+      "enum": ["relevance", "rating", "price_asc", "price_desc", "title", "spof_priority"],
+      "default": "relevance"
+    },
+    "disjunctiveFacetingEnabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "When true, facet counts within the same group reflect OR semantics (selection does not zero-out sibling counts)."
+    },
+    "zeroPiiPersonalizationEnabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "When true, browser-local trip context and persona boost relevant facet groups without network tracking."
+    },
+    "facetGroups": {
+      "type": "array",
+      "description": "Ordered list of facet filter dimensions.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "key",
+          "label",
+          "displayType",
+          "selectionMode",
+          "priorityOrder",
+          "options"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^FG-[A-Z0-9_-]+$",
+            "description": "Unique facet group identifier e.g. FG-ITEM-TYPE"
+          },
+          "key": {
+            "type": "string",
+            "description": "URL query parameter key and state key e.g. 'type', 'category', 'risk'"
+          },
+          "label": {
+            "type": "string",
+            "description": "Human-readable label displayed in UI"
+          },
+          "description": {
+            "type": "string",
+            "description": "Tactical purpose and guidance for traveler"
+          },
+          "displayType": {
+            "type": "string",
+            "enum": [
+              "checkbox_list",
+              "pill_toggle",
+              "range_slider",
+              "segmented_control",
+              "badge_group"
+            ],
+            "description": "UI presentation component"
+          },
+          "selectionMode": {
+            "type": "string",
+            "enum": ["single_exclusive", "multiple_disjunctive", "multiple_conjunctive"],
+            "description": "Boolean aggregation mode across values in this facet"
+          },
+          "priorityOrder": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Display order in sidebar / mobile drawer"
+          },
+          "isCollapsible": {
+            "type": "boolean",
+            "default": true
+          },
+          "initiallyExpanded": {
+            "type": "boolean",
+            "default": true
+          },
+          "icon": {
+            "type": "string",
+            "description": "Lucide icon name"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["value", "label"],
+              "properties": {
+                "value": {
+                  "type": "string",
+                  "description": "Canonical token value stored in filter state"
+                },
+                "label": {
+                  "type": "string",
+                  "description": "Human-readable display text"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Optional tooltip or micro-copy explanation"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "badgeTone": {
+                  "type": "string",
+                  "enum": ["amber", "green", "red", "blue", "purple", "neutral"]
+                },
+                "synonyms": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "Alternative terms mapped to this facet value for fuzzy query matching"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

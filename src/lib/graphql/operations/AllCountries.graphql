@@ -1,0 +1,22 @@
+query AllCountries($region: String, $riskTier: RiskTier, $search: String) {
+  countries(region: $region, riskTier: $riskTier, search: $search) {
+    iso2
+    iso3
+    name
+    nativeName
+    capital
+    currencyCode
+    currencySymbol
+    region
+    defaultRiskTier
+    emergencyNumbers {
+      police
+      ambulance
+      touristPolice
+    }
+    electricalStandards {
+      voltage
+      plugTypes
+    }
+  }
+}

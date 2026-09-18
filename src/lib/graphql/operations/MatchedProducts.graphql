@@ -1,0 +1,21 @@
+query MatchedProducts($context: SituationalContextInput!) {
+  matchedProducts(context: $context) {
+    sku
+    name
+    category
+    howToRole
+    priorityRank
+    situationalRationale
+    isPrimaryRecommendation
+    price
+    priceCurrency
+    affiliateUrl
+    brand
+    author
+    isbn
+    ratingValue
+    ratingCount
+    pros
+    cons
+  }
+}

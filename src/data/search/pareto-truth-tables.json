@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "truthTables": [
+    {
+      "id": "TT-AFFILIATE-COMPLIANCE-01",
+      "name": "Affiliate Monetization Compliance & Gating Truth Table",
+      "description": "Determines whether an affiliate link or high-ticket recommendation can be displayed based on editorial verification, risk tier match, and FTC disclosure visibility.",
+      "conditions": [
+        {
+          "name": "isIndependentlyTested",
+          "description": "Gear or service has been physically verified by editorial team"
+        },
+        {
+          "name": "matchesDestinationRisk",
+          "description": "Partner product addresses the destination's verified security vectors"
+        },
+        {
+          "name": "ftcDisclosureVisible",
+          "description": "Clear and conspicuous FTC affiliate compensation notice rendered on page"
+        }
+      ],
+      "actions": [
+        { "name": "renderRecommendation", "description": "Display high-ticket affiliate card" },
+        {
+          "name": "attachRelAttributes",
+          "description": "Apply rel='nofollow sponsored noopener noreferrer'"
+        },
+        { "name": "logComplianceAudit", "description": "Record compliance state in telemetry" }
+      ],
+      "matrix": [
+        { "conditions": [true, true, true], "actions": [true, true, true] },
+        { "conditions": [true, true, false], "actions": [false, false, true] },
+        { "conditions": [true, false, true], "actions": [false, false, true] },
+        { "conditions": [false, true, true], "actions": [false, false, true] },
+        { "conditions": [false, false, false], "actions": [false, false, false] }
+      ]
+    },
+    {
+      "id": "TT-OFFLINE-SURVIVAL-01",
+      "name": "Zero-Connectivity Offline Survival Truth Table",
+      "description": "Verifies that all life-safety critical data remains 100% accessible when client device has zero internet connectivity.",
+      "conditions": [
+        {
+          "name": "hasCachedEmergencyNumbers",
+          "description": "Local police, ambulance, and consular hotlines present in localStorage"
+        },
+        {
+          "name": "hasCachedSanctuaries",
+          "description": "At least 2 verified 24/7 physical sanctuaries stored locally"
+        },
+        {
+          "name": "hasCachedSurvivalPhrases",
+          "description": "Essential medical and police phonetic phrases available offline"
+        }
+      ],
+      "actions": [
+        {
+          "name": "enableOfflineModeBanner",
+          "description": "Display 'Offline Emergency Mode Active' badge"
+        },
+        {
+          "name": "grantAccessToVault",
+          "description": "Permit full offline reading of pocket card"
+        },
+        {
+          "name": "blockOnlineOnlyFeatures",
+          "description": "Disable dynamic remote APIs gracefully"
+        }
+      ],
+      "matrix": [
+        { "conditions": [true, true, true], "actions": [true, true, true] },
+        { "conditions": [true, true, false], "actions": [true, true, true] },
+        { "conditions": [true, false, false], "actions": [true, true, true] },
+        { "conditions": [false, false, false], "actions": [false, false, true] }
+      ]
+    }
+  ]
+}

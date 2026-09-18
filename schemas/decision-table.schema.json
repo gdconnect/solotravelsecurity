@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/decision-table.schema.json",
+  "title": "DecisionTable",
+  "description": "Formal schema for multi-variable condition-action decision tables guaranteeing deterministic security protocols.",
+  "type": "object",
+  "required": ["id", "title", "conditionColumns", "actionColumns", "rules", "defaultAction"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^DT-[A-Z0-9_-]+$",
+      "description": "Unique deterministic decision table identifier."
+    },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "pillarId": { "type": "string" },
+    "conditionColumns": {
+      "type": "array",
+      "description": "Input environmental, personal, and trip context parameters evaluated.",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "type"],
+        "properties": {
+          "key": { "type": "string" },
+          "label": { "type": "string" },
+          "type": { "type": "string", "enum": ["enum", "boolean", "range", "string"] },
+          "allowedValues": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "unit": { "type": "string" }
+        }
+      }
+    },
+    "actionColumns": {
+      "type": "array",
+      "description": "Deterministic operational security directives emitted.",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "type"],
+        "properties": {
+          "key": { "type": "string" },
+          "label": { "type": "string" },
+          "type": { "type": "string", "enum": ["directive", "code", "hardware", "warning"] }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "description": "Exhaustive priority-ordered decision rules.",
+      "items": {
+        "type": "object",
+        "required": ["ruleId", "conditions", "actions"],
+        "properties": {
+          "ruleId": { "type": "string" },
+          "scenario": { "type": "string" },
+          "priority": { "type": "integer" },
+          "conditions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": ["string", "number", "boolean", "null", "array"]
+            }
+          },
+          "actions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": ["string", "number", "boolean", "null", "array"]
+            }
+          }
+        }
+      }
+    },
+    "defaultAction": {
+      "type": "object",
+      "description": "Safe, conservative fallback actions if no specific rule matches.",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean", "null", "array"]
+      }
+    }
+  }
+}

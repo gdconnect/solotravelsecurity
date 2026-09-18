@@ -1,0 +1,28 @@
+query DecisionTables {
+  decisionTables {
+    id
+    title
+    description
+    pillarId
+    conditionColumns {
+      key
+      label
+      type
+      allowedValues
+      unit
+    }
+    actionColumns {
+      key
+      label
+      type
+    }
+    rules {
+      ruleId
+      scenario
+      priority
+      conditions
+      actions
+    }
+    defaultAction
+  }
+}

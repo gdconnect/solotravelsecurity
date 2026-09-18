@@ -1,0 +1,50 @@
+query SearchFacetedItems($filter: FacetedSearchFilterInput) {
+  searchFacetedItems(filter: $filter) {
+    totalCount
+    items {
+      id
+      title
+      slug
+      url
+      type
+      category
+      categoryLabel
+      description
+      tagline
+      format
+      priceTier
+      priceFormatted
+      rating
+      ratingCount
+      affiliateUrl
+      keyHighlight
+    }
+    facetCounts {
+      types {
+        value
+        label
+        count
+      }
+      categories {
+        value
+        label
+        count
+      }
+      formats {
+        value
+        label
+        count
+      }
+      priceTiers {
+        value
+        label
+        count
+      }
+      riskTiers {
+        value
+        label
+        count
+      }
+    }
+  }
+}

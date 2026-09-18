@@ -1,4 +1,10 @@
 import type { MetadataRoute } from "next";
+import { TOP_SOLO_DESTINATIONS } from "@/data/destinations";
+import { ARCHETYPES } from "@/data/archetypes";
+import { SECURITY_VECTORS } from "@/data/vectors";
+
+import { ENRICHED_COUNTRIES } from "@/data/geo/countries";
+export { buildCountrySchemaGraph, buildCitySchemaGraph } from "./geo/schema-builder";
 
 /**
  * Site-wide constants and JSON-LD helpers.
@@ -49,7 +55,7 @@ export function siteGraph(): Graph {
 
 export function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return [
+  const baseEntries: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/`,
       lastModified: now,
@@ -57,10 +63,105 @@ export function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE_URL}/playbook/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/playbook/countries/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/parents/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/playbook/destinations/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/about/`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/notify/`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       url: `${SITE_URL}/llms.txt`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.4,
     },
+  ];
+
+  const countryHubEntries: MetadataRoute.Sitemap = ENRICHED_COUNTRIES.map((c) => ({
+    url: `${SITE_URL}/playbook/countries/${c.iso2.toLowerCase()}/`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.88,
+  }));
+
+  const cityHubEntries: MetadataRoute.Sitemap = TOP_SOLO_DESTINATIONS.map((d) => ({
+    url: `${SITE_URL}/playbook/destinations/${d.slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
+  const archetypeHubEntries: MetadataRoute.Sitemap = ARCHETYPES.map((a) => ({
+    url: `${SITE_URL}/playbook/archetypes/${a.slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
+  const topicHubEntries: MetadataRoute.Sitemap = SECURITY_VECTORS.map((v) => ({
+    url: `${SITE_URL}/playbook/topics/${v.slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
+  const reportEntries: MetadataRoute.Sitemap = TOP_SOLO_DESTINATIONS.map((d) => ({
+    url: `${SITE_URL}/report/${d.slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  const skagEntries: MetadataRoute.Sitemap = [];
+  for (const dest of TOP_SOLO_DESTINATIONS) {
+    for (const arch of ARCHETYPES) {
+      for (const vec of SECURITY_VECTORS) {
+        skagEntries.push({
+          url: `${SITE_URL}/playbook/${arch.slug}/${dest.slug}/${vec.slug}/`,
+          lastModified: now,
+          changeFrequency: "monthly",
+          priority: 0.7,
+        });
+      }
+    }
+  }
+
+  return [
+    ...baseEntries,
+    ...countryHubEntries,
+    ...cityHubEntries,
+    ...archetypeHubEntries,
+    ...topicHubEntries,
+    ...reportEntries,
+    ...skagEntries,
   ];
 }

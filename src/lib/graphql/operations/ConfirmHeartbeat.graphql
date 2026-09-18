@@ -1,0 +1,14 @@
+mutation ConfirmHeartbeat($token: String!, $milestoneId: String!) {
+  confirmIngressHeartbeat(token: $token, milestoneId: $milestoneId) {
+    token
+    status
+    nextWindowUtc
+    milestones {
+      id
+      label
+      expectedTime
+      completedTime
+      status
+    }
+  }
+}

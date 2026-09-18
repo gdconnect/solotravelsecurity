@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "scoringMatrices": [
+    {
+      "matrixId": "SM-OFFER-RELEVANCE-01",
+      "name": "Offer Dynamic Relevance & Slot Placement Matrix",
+      "description": "Composite multi-objective scoring formula balancing traveler life-safety, commercial yield, contextual fit, and user friction.",
+      "formula": "Composite_Score = (0.35 * LifeSafetyRank) + (0.30 * CommercialYieldScore) + (0.20 * ContextualAffinity) + (0.15 * FrictionInverseScore)",
+      "dimensions": [
+        {
+          "name": "LifeSafetyRank",
+          "weight": 0.35,
+          "scale": "0 - 100",
+          "description": "Editorial assessment of real-world harm reduction and crisis mitigation efficacy."
+        },
+        {
+          "name": "CommercialYieldScore",
+          "weight": 0.3,
+          "scale": "0 - 100",
+          "description": "Expected monetary yield: min(100, 1000 * 0.03 * ConversionRate * EffectiveCpa * 15)."
+        },
+        {
+          "name": "ContextualAffinity",
+          "weight": 0.2,
+          "scale": "0 - 100",
+          "description": "Relevance boost when offer category directly maps to the active lifecycle (e.g. eSIM at Night Arrival, Doorstop at Lodging Lockdown)."
+        },
+        {
+          "name": "FrictionInverseScore",
+          "weight": 0.15,
+          "scale": "0 - 100",
+          "description": "Ease of onboarding: 95 for instant zero-hardware digital services (eSIM, insurance), 60 for physical shipping."
+        }
+      ],
+      "slotThresholds": [
+        { "slot": "hero_emergency_banner", "minCompositeScore": 85.0, "maxItems": 1 },
+        { "slot": "spec_matrix_row", "minCompositeScore": 70.0, "maxItems": 3 },
+        { "slot": "inline_checklist_recommendation", "minCompositeScore": 60.0, "maxItems": 2 },
+        { "slot": "sticky_bottom_drawer", "minCompositeScore": 75.0, "maxItems": 1 }
+      ]
+    },
+    {
+      "matrixId": "SM-PARTNER-REPUTATION-01",
+      "name": "Partner Underwriter Solvency & Trust Index",
+      "description": "Evaluates financial health, claim payout speed, and regulatory standing of partner companies.",
+      "dimensions": [
+        {
+          "name": "underwriterSolvency",
+          "weight": 0.4,
+          "description": "AM Best rating (A++ = 100, A+ = 90, A = 80, Unrated = 40)"
+        },
+        {
+          "name": "claimTurnaroundDays",
+          "weight": 0.3,
+          "description": "Average speed to resolve medical and theft claims (<7 days = 100, <30 days = 70)"
+        },
+        {
+          "name": "regulatoryComplianceHistory",
+          "weight": 0.3,
+          "description": "Zero regulatory sanctions or consumer complaints in past 5 years"
+        }
+      ],
+      "partnerScores": [
+        {
+          "partnerId": "PARTNER-SAFETYWING",
+          "reputationScore": 92.0,
+          "rating": "TIER_1_ENTERPRISE"
+        },
+        {
+          "partnerId": "PARTNER-GLOBAL-RESCUE",
+          "reputationScore": 98.0,
+          "rating": "TIER_1_ENTERPRISE"
+        },
+        { "partnerId": "PARTNER-MEDJET", "reputationScore": 95.0, "rating": "TIER_1_ENTERPRISE" },
+        { "partnerId": "PARTNER-AIRALO", "reputationScore": 90.0, "rating": "TIER_1_ENTERPRISE" },
+        { "partnerId": "PARTNER-GARMIN", "reputationScore": 99.0, "rating": "TIER_1_ENTERPRISE" },
+        { "partnerId": "PARTNER-WISE", "reputationScore": 94.0, "rating": "TIER_1_ENTERPRISE" },
+        {
+          "partnerId": "PARTNER-STS-GUARDIAN",
+          "reputationScore": 100.0,
+          "rating": "FIRST_PARTY_VERIFIED"
+        }
+      ]
+    }
+  ]
+}

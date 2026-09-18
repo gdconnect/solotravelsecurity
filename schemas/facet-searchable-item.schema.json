@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/facet-searchable-item.schema.json",
+  "title": "FacetSearchableItem",
+  "description": "Unified atomic indexing schema for all Solo Travel Security LEGO content blocks searchable via faceted discovery.",
+  "type": "object",
+  "required": [
+    "id",
+    "urn",
+    "title",
+    "slug",
+    "url",
+    "type",
+    "pillarId",
+    "category",
+    "categoryLabel",
+    "description",
+    "archetypes",
+    "riskTiers",
+    "format",
+    "priceTier",
+    "searchableTokens"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier (e.g. SKU, scam ID, IATA hub, microzone ID, reg ID)"
+    },
+    "urn": {
+      "type": "string",
+      "pattern": "^urn:sts:[a-z_-]+:[A-Za-z0-9_.-]+$",
+      "description": "Canonical Uniform Resource Name for zero-ambiguity cross-referencing"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display name of the gear item, threat dossier, or protocol"
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL-safe unique identifier"
+    },
+    "url": {
+      "type": "string",
+      "description": "Internal route path e.g. /playbook/airports/fco/ or external affiliate link"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "product",
+        "scam",
+        "airport",
+        "micro_zone",
+        "regulatory",
+        "topic",
+        "checklist",
+        "country"
+      ],
+      "description": "Primary entity classification"
+    },
+    "pillarId": {
+      "type": "string",
+      "enum": [
+        "PIL-PERIMETER",
+        "PIL-FINANCIAL",
+        "PIL-COMMS",
+        "PIL-TRANSIT",
+        "PIL-THREAT",
+        "PIL-DIGITAL",
+        "PIL-CONSULAR"
+      ],
+      "description": "Primary associated sovereign security pillar"
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Taxonomy sub-category identifier"
+    },
+    "categoryLabel": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable taxonomy sub-category label"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Full operational description or situational rationale"
+    },
+    "tagline": {
+      "type": "string",
+      "description": "Concise 1-line tactical hook or alert summary"
+    },
+    "keyHighlight": {
+      "type": "string",
+      "description": "Key distinguishing attribute (e.g. 'Last Train: 23:23', '120dB Siren', 'Zero-Tolerance Arrest')"
+    },
+    "archetypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "solo-female",
+          "first-time-solo",
+          "digital-nomad",
+          "budget-backpacker",
+          "senior-solo",
+          "all"
+        ]
+      },
+      "minItems": 1
+    },
+    "lifecyclePhases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "PHS-PRETRIP",
+          "PHS-STAGING",
+          "PHS-AIRSIDE",
+          "PHS-INGRESS",
+          "PHS-LODGING",
+          "PHS-DAYROAM",
+          "PHS-NIGHTROAM",
+          "PHS-CRISIS",
+          "PHS-EGRESS"
+        ]
+      },
+      "description": "Chronological phases during which this item is active"
+    },
+    "riskTiers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+      },
+      "minItems": 1
+    },
+    "destinations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Associated city slugs e.g. ['rome', 'paris', 'bangkok']"
+    },
+    "countryCodes": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[A-Z]{2}$" },
+      "description": "ISO 3166-1 alpha-2 country codes e.g. ['IT', 'JP', 'TH']"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "physical_gear",
+        "digital_tool",
+        "truth_table",
+        "field_protocol",
+        "customs_rule",
+        "micro_zone_dossier",
+        "checklist_rule"
+      ]
+    },
+    "priceTier": {
+      "type": "string",
+      "enum": ["free", "under_25", "25_to_50", "50_plus"]
+    },
+    "priceFormatted": {
+      "type": "string",
+      "description": "Formatted price string e.g. '$14.99' or 'Free Protocol'"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "ratingCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "affiliateUrl": {
+      "type": "string"
+    },
+    "pros": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "cons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "mitigatesSpof": {
+      "type": "boolean",
+      "default": false,
+      "description": "Indicates whether this item directly resolves a critical Single Point of Failure"
+    },
+    "spofIdentifier": {
+      "type": "string",
+      "description": "Specific SPOF code mitigated e.g. SPOF-CARD-SINGLE or SPOF-NIGHT-INGRESS"
+    },
+    "searchableTokens": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Stemmed keywords, brand names, model numbers, local scam aliases, and misspellings for fast indexing"
+    },
+    "curfewHour": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 23,
+      "description": "Temporal vulnerability threshold hour (e.g. 23 for 23:00 curfew)"
+    }
+  },
+  "additionalProperties": false
+}

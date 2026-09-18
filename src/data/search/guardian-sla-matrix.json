@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "tiers": [
+    {
+      "tierId": "free_tripwire",
+      "name": "Community Dead-Man Tripwire",
+      "priceUsd": 0,
+      "billingCycle": "free_forever",
+      "targetAudience": "Self-reliant solo backpackers needing basic automated alert",
+      "features": {
+        "maxSponsors": 1,
+        "checkInIntervalsHours": [24],
+        "silentGracePeriodMinutes": 120,
+        "automatedConsularPacket": false,
+        "smsEscalation": false,
+        "emailEscalation": true,
+        "supportLevel": "community"
+      }
+    },
+    {
+      "tierId": "single_trip_pass",
+      "name": "Single Trip Guardian Pass",
+      "priceUsd": 39.0,
+      "billingCycle": "per_trip_up_to_30_days",
+      "targetAudience": "Parents of first-time solo travelers or semester abroad students",
+      "features": {
+        "maxSponsors": 3,
+        "checkInIntervalsHours": [12, 24],
+        "silentGracePeriodMinutes": 45,
+        "automatedConsularPacket": true,
+        "smsEscalation": true,
+        "emailEscalation": true,
+        "supportLevel": "priority_desk"
+      }
+    },
+    {
+      "tierId": "annual_explorer",
+      "name": "Annual Explorer Pass",
+      "priceUsd": 129.0,
+      "billingCycle": "annual_recurring",
+      "targetAudience": "Digital nomads, gap-year explorers, and frequent solo business travelers",
+      "features": {
+        "maxSponsors": 5,
+        "checkInIntervalsHours": [6, 12, 24],
+        "silentGracePeriodMinutes": 30,
+        "automatedConsularPacket": true,
+        "smsEscalation": true,
+        "emailEscalation": true,
+        "supportLevel": "24_7_crisis_liaison"
+      }
+    },
+    {
+      "tierId": "family_syndicate",
+      "name": "Family Syndicate Pass",
+      "priceUsd": 199.0,
+      "billingCycle": "annual_recurring",
+      "targetAudience": "Families with multiple traveling young adults or multi-generational solo travelers",
+      "features": {
+        "maxSponsors": 10,
+        "checkInIntervalsHours": [4, 6, 12, 24],
+        "silentGracePeriodMinutes": 15,
+        "automatedConsularPacket": true,
+        "smsEscalation": true,
+        "emailEscalation": true,
+        "supportLevel": "dedicated_security_officer"
+      }
+    }
+  ],
+  "escalationLadderDefaults": [
+    {
+      "stepNumber": 1,
+      "triggerDelayMinutes": 0,
+      "actionChannel": "silent_push_traveler",
+      "targetRecipient": "traveler",
+      "payloadType": "gentle_check_in_reminder"
+    },
+    {
+      "stepNumber": 2,
+      "triggerDelayMinutes": 30,
+      "actionChannel": "sms_traveler",
+      "targetRecipient": "traveler",
+      "payloadType": "urgent_sms_nudge_with_one_tap_link"
+    },
+    {
+      "stepNumber": 3,
+      "triggerDelayMinutes": 60,
+      "actionChannel": "email_sponsor",
+      "targetRecipient": "sponsor",
+      "payloadType": "calm_parent_notification_with_status_amber"
+    },
+    {
+      "stepNumber": 4,
+      "triggerDelayMinutes": 120,
+      "actionChannel": "sms_sponsor",
+      "targetRecipient": "sponsor",
+      "payloadType": "high_priority_parent_sms_alert"
+    },
+    {
+      "stepNumber": 5,
+      "triggerDelayMinutes": 240,
+      "actionChannel": "consular_dispatch_packet",
+      "targetRecipient": "sponsor",
+      "payloadType": "verified_emergency_dossier_with_embassy_hotline"
+    }
+  ]
+}

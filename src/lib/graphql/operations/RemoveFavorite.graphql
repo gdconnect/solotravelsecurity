@@ -1,0 +1,3 @@
+mutation RemoveFavorite($sessionToken: String!, $itemId: ID!) {
+  removeFavorite(sessionToken: $sessionToken, itemId: $itemId)
+}

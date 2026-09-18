@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/situational-context.json",
+  "title": "SituationalContext",
+  "description": "Standardized schema capturing a traveler's operational threat environment, demographic profile, transit details, and hardware status.",
+  "type": "object",
+  "required": ["trip", "profile"],
+  "properties": {
+    "trip": {
+      "type": "object",
+      "required": [
+        "destinationCity",
+        "destinationCountry",
+        "destinationCountryIso2",
+        "destinationRiskTier",
+        "arrivalHour",
+        "transitMode",
+        "lodgingType",
+        "lodgingFloor"
+      ],
+      "properties": {
+        "destinationCity": {
+          "type": "string",
+          "description": "Canonical city slug or display name."
+        },
+        "destinationCountry": {
+          "type": "string",
+          "description": "Full country name."
+        },
+        "destinationCountryIso2": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2 uppercase country code."
+        },
+        "destinationRiskTier": {
+          "type": "string",
+          "enum": ["Low", "Moderate", "Elevated", "High"],
+          "description": "Assessed operational risk classification."
+        },
+        "arrivalHour": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 23,
+          "description": "Scheduled 24-hour arrival local time."
+        },
+        "transitMode": {
+          "type": "string",
+          "enum": ["flight", "train", "bus", "ferry"],
+          "description": "Primary mode of long-distance ingress."
+        },
+        "lodgingType": {
+          "type": "string",
+          "enum": ["hotel", "hostel_dorm", "hostel_private", "rental_airbnb"],
+          "description": "Accommodation typology."
+        },
+        "lodgingFloor": {
+          "type": "string",
+          "enum": ["ground", "floors_2_to_4", "floors_5_plus", "unknown"],
+          "description": "Floor level relative to ground perimeter."
+        },
+        "hasPrebookedVerifiedTransit": {
+          "type": "boolean",
+          "default": false
+        },
+        "hasOfflineMapDownloaded": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "required": ["genderIdentity", "experienceLevel", "gearValueTier", "cellularType"],
+      "properties": {
+        "genderIdentity": {
+          "type": "string",
+          "enum": ["female", "male", "non_binary_queer", "prefer_not_to_say"]
+        },
+        "experienceLevel": {
+          "type": "string",
+          "enum": ["first_time", "occasional", "seasoned_nomad"]
+        },
+        "gearValueTier": {
+          "type": "string",
+          "enum": ["minimal_phone_only", "moderate_laptop_phone", "high_value_cameras"]
+        },
+        "cellularType": {
+          "type": "string",
+          "enum": ["esim_preloaded", "physical_sim_airport", "roaming", "wifi_only"]
+        },
+        "backupPhoneAvailable": {
+          "type": "boolean",
+          "default": false
+        },
+        "cardsSegregatedPockets": {
+          "type": "boolean",
+          "default": false
+        },
+        "hasEmergencyCashReserve": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

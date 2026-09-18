@@ -1,0 +1,252 @@
+[
+  {
+    "id": "TT-LISTING-CARD-01",
+    "title": "Universal Listing Card Rendering & Badge Truth Table",
+    "description": "Exhaustive boolean truth table determining primary badges, visual callouts, and secondary action buttons on listing cards across all 8 modular LEGO block types.",
+    "scenarioCategory": "LISTINGS_CARD_COMPOSITION",
+    "propositions": [
+      {
+        "symbol": "P1",
+        "key": "hasPriceValue",
+        "name": "Has Commercial Price",
+        "description": "Item has a commercial price string (e.g. '$14.99') rather than being a free protocol."
+      },
+      {
+        "symbol": "P2",
+        "key": "hasCurfewTime",
+        "name": "Has Temporal Curfew",
+        "description": "Item has strict rail/bus departure curfew hours (e.g. 23:23)."
+      },
+      {
+        "symbol": "P3",
+        "key": "hasTruthTableCheck",
+        "name": "Has Formal Truth Table",
+        "description": "Item contains executable boolean truth conditions for scam or threat detection."
+      },
+      {
+        "symbol": "P4",
+        "key": "isCriticalOrSpof",
+        "name": "Critical or SPOF Mitigator",
+        "description": "Item mitigates an active single point of failure or carries Critical risk tier."
+      }
+    ],
+    "outputVariables": [
+      {
+        "key": "primaryBadgeTone",
+        "type": "threatLevel",
+        "description": "Badge tone: green, amber, red, purple, blue."
+      },
+      {
+        "key": "cardLayoutVariant",
+        "type": "actionCode",
+        "description": "SPEC_CARD vs CURFEW_CARD vs TRUTH_DOSSIER_CARD vs PROTOCOL_CARD."
+      },
+      {
+        "key": "quickActionType",
+        "type": "script",
+        "description": "Primary action button directive."
+      }
+    ],
+    "rows": [
+      {
+        "rowId": "TR-CARD-01",
+        "inputs": {
+          "isCriticalOrSpof": true,
+          "hasCurfewTime": "*",
+          "hasPriceValue": "*",
+          "hasTruthTableCheck": "*"
+        },
+        "outputs": {
+          "primaryBadgeTone": "red",
+          "cardLayoutVariant": "SPOF_ELEVATED_CARD",
+          "quickActionType": "Deploy Emergency Lockdown Protocol"
+        },
+        "formalRationale": "Critical life-safety items and active SPOFs always render in high-visibility red with immediate actionable intervention."
+      },
+      {
+        "rowId": "TR-CARD-02",
+        "inputs": {
+          "isCriticalOrSpof": false,
+          "hasCurfewTime": true,
+          "hasPriceValue": "*",
+          "hasTruthTableCheck": "*"
+        },
+        "outputs": {
+          "primaryBadgeTone": "amber",
+          "cardLayoutVariant": "CURFEW_INGRESS_CARD",
+          "quickActionType": "View Train Curfew & Official Taxi Booth"
+        },
+        "formalRationale": "Airport and transit items with temporal curfews feature amber alerts highlighting express train countdowns."
+      },
+      {
+        "rowId": "TR-CARD-03",
+        "inputs": {
+          "isCriticalOrSpof": false,
+          "hasCurfewTime": false,
+          "hasTruthTableCheck": true,
+          "hasPriceValue": "*"
+        },
+        "outputs": {
+          "primaryBadgeTone": "purple",
+          "cardLayoutVariant": "TRUTH_DOSSIER_CARD",
+          "quickActionType": "Verify Scam Indicators in Real-Time"
+        },
+        "formalRationale": "Threat scams with truth tables highlight verifiable binary checks for fast field assessment."
+      },
+      {
+        "rowId": "TR-CARD-04",
+        "inputs": {
+          "isCriticalOrSpof": false,
+          "hasCurfewTime": false,
+          "hasTruthTableCheck": false,
+          "hasPriceValue": true
+        },
+        "outputs": {
+          "primaryBadgeTone": "green",
+          "cardLayoutVariant": "SPEC_PRODUCT_CARD",
+          "quickActionType": "Compare Specs & Vetted Retailer"
+        },
+        "formalRationale": "Physical hardware and digital SaaS tools display price tier, rating, and comparison drawer triggers."
+      },
+      {
+        "rowId": "TR-CARD-05",
+        "inputs": {
+          "isCriticalOrSpof": false,
+          "hasCurfewTime": false,
+          "hasTruthTableCheck": false,
+          "hasPriceValue": false
+        },
+        "outputs": {
+          "primaryBadgeTone": "neutral",
+          "cardLayoutVariant": "FIELD_PROTOCOL_CARD",
+          "quickActionType": "Read Free Field Protocol"
+        },
+        "formalRationale": "Open protocols without commercial pricing or curfews render clean educational cards."
+      }
+    ],
+    "completenessVerified": true
+  },
+  {
+    "id": "TT-GEMINI-HARVEST-01",
+    "title": "Gemini Grounded Search Data Ingestion Quality Gate",
+    "description": "Formal boolean truth table verifying whether data harvested via Google Gemini Grounded Search qualifies for automated pSEO listing generation.",
+    "scenarioCategory": "DATA_HARVEST_QUALITY_GATE",
+    "propositions": [
+      {
+        "symbol": "P1",
+        "key": "schemaValidationPassed",
+        "name": "Schema Validation Passed",
+        "description": "Raw JSON output strictly satisfies Draft-2020-12 target schema."
+      },
+      {
+        "symbol": "P2",
+        "key": "hasOfficialCitationDomain",
+        "name": "Official Citation Domain",
+        "description": "Google Search Grounding cited official airport, municipal, or consular website."
+      },
+      {
+        "symbol": "P3",
+        "key": "isHallucinationScoreUnder015",
+        "name": "Low Hallucination Score",
+        "description": "Grounding overlap ratio is under 0.15 (strong grounding token match)."
+      },
+      {
+        "symbol": "P4",
+        "key": "isDuplicateOfExistingLego",
+        "name": "Duplicate of Existing Entity",
+        "description": "Matches an existing SKU, IATA code, or slug already stored in PostgreSQL."
+      }
+    ],
+    "outputVariables": [
+      {
+        "key": "ingestionDecision",
+        "type": "actionCode",
+        "description": "PUBLISH_LIVE_PSEO vs STAGE_FOR_EDITORIAL_REVIEW vs REJECT_DISCARD."
+      },
+      { "key": "alertLevel", "type": "threatLevel", "description": "Quality assurance status." },
+      {
+        "key": "storageAction",
+        "type": "script",
+        "description": "Database persistence instruction."
+      }
+    ],
+    "rows": [
+      {
+        "rowId": "TR-HARVEST-01",
+        "inputs": {
+          "schemaValidationPassed": false,
+          "hasOfficialCitationDomain": "*",
+          "isHallucinationScoreUnder015": "*",
+          "isDuplicateOfExistingLego": "*"
+        },
+        "outputs": {
+          "ingestionDecision": "REJECT_DISCARD",
+          "alertLevel": "crimson",
+          "storageAction": "Log failure to data_harvest_audit_logs; do not insert into production."
+        },
+        "formalRationale": "Schema non-compliance is an immediate hard reject to preserve frontend type safety."
+      },
+      {
+        "rowId": "TR-HARVEST-02",
+        "inputs": {
+          "schemaValidationPassed": true,
+          "hasOfficialCitationDomain": true,
+          "isHallucinationScoreUnder015": true,
+          "isDuplicateOfExistingLego": false
+        },
+        "outputs": {
+          "ingestionDecision": "PUBLISH_LIVE_PSEO",
+          "alertLevel": "green",
+          "storageAction": "Insert into PostgreSQL and queue Next.js on-demand ISR revalidation."
+        },
+        "formalRationale": "Golden Harvest: Valid schema, official citation, low hallucination, unique new entity."
+      },
+      {
+        "rowId": "TR-HARVEST-03",
+        "inputs": {
+          "schemaValidationPassed": true,
+          "hasOfficialCitationDomain": true,
+          "isHallucinationScoreUnder015": true,
+          "isDuplicateOfExistingLego": true
+        },
+        "outputs": {
+          "ingestionDecision": "MERGE_AND_UPDATE_DIFF",
+          "alertLevel": "green",
+          "storageAction": "Run diff engine; update fields if curfew or flat-rate changed, log audit diff."
+        },
+        "formalRationale": "Self-healing knowledge graph: updates existing entity with fresh data without creating duplicate URLs."
+      },
+      {
+        "rowId": "TR-HARVEST-04",
+        "inputs": {
+          "schemaValidationPassed": true,
+          "hasOfficialCitationDomain": false,
+          "isHallucinationScoreUnder015": true,
+          "isDuplicateOfExistingLego": "*"
+        },
+        "outputs": {
+          "ingestionDecision": "STAGE_FOR_EDITORIAL_REVIEW",
+          "alertLevel": "amber",
+          "storageAction": "Save to staging_harvest_queue with citation warning for human sign-off."
+        },
+        "formalRationale": "Non-official citations (e.g. blog, forum) must be human-verified before entering pSEO index."
+      },
+      {
+        "rowId": "TR-HARVEST-05",
+        "inputs": {
+          "schemaValidationPassed": true,
+          "hasOfficialCitationDomain": "*",
+          "isHallucinationScoreUnder015": false,
+          "isDuplicateOfExistingLego": "*"
+        },
+        "outputs": {
+          "ingestionDecision": "STAGE_FOR_EDITORIAL_REVIEW",
+          "alertLevel": "amber",
+          "storageAction": "Flag hallucination risk; require manual source verification."
+        },
+        "formalRationale": "High hallucination score indicates model generated claims unsupported by cited text."
+      }
+    ],
+    "completenessVerified": true
+  }
+]

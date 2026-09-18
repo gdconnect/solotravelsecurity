@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/listings-page-composition.schema.json",
+  "title": "ListingsPageComposition",
+  "description": "Formal JSON Schema defining the modular LEGO block composition, faceted layout, and pSEO metadata for listings pages across Solo Travel Security.",
+  "type": "object",
+  "required": [
+    "pageId",
+    "slug",
+    "aspectType",
+    "title",
+    "tagline",
+    "canonicalRoute",
+    "primaryLegoEntityType",
+    "layoutTemplate",
+    "activeFacets",
+    "injectedBlocks",
+    "pseoConfig"
+  ],
+  "properties": {
+    "pageId": {
+      "type": "string",
+      "pattern": "^LST-[A-Z0-9_-]+$",
+      "description": "Unique deterministic listings page identifier e.g. LST-AIRPORTS-GLOBAL or LST-MICROZONES-ROME"
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL route slug path e.g. 'airports' or 'destinations/rome/micro-zones'"
+    },
+    "aspectType": {
+      "type": "string",
+      "enum": [
+        "gear_saas_directory",
+        "threat_scams_directory",
+        "airport_ingress_directory",
+        "micro_zones_safety_directory",
+        "customs_regulations_directory",
+        "universal_vectors_directory",
+        "curated_skag_bundle"
+      ],
+      "description": "Functional domain aspect modeled after leading e-commerce, travel, and real estate archetypes"
+    },
+    "borrowedPlatformModel": {
+      "type": "string",
+      "enum": [
+        "nerdwallet_spec_matrix",
+        "zillow_suburb_heatmap",
+        "booking_ingress_cluster",
+        "tripadvisor_truth_reviews",
+        "seek_intent_grid"
+      ],
+      "description": "Benchmark platform design pattern utilized for this page layout"
+    },
+    "title": { "type": "string" },
+    "tagline": { "type": "string" },
+    "canonicalRoute": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "primaryLegoEntityType": {
+      "type": "string",
+      "enum": [
+        "product",
+        "scam",
+        "airport",
+        "micro_zone",
+        "regulatory",
+        "topic",
+        "checklist",
+        "country"
+      ]
+    },
+    "layoutTemplate": {
+      "type": "string",
+      "enum": [
+        "split_map_and_listings",
+        "spec_comparison_grid",
+        "dossier_feed_cards",
+        "hierarchical_directory_mesh"
+      ]
+    },
+    "activeFacets": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Facet dimension keys enabled on this listings page (e.g. ['risk', 'price', 'format'])"
+    },
+    "injectedBlocks": {
+      "type": "object",
+      "required": ["hasHeaderHero", "hasInteractiveQuiz", "hasBreadcrumbs", "hasFaqAccordion"],
+      "properties": {
+        "hasHeaderHero": { "type": "boolean", "default": true },
+        "hasInteractiveQuiz": { "type": "boolean", "default": false },
+        "hasBreadcrumbs": { "type": "boolean", "default": true },
+        "hasCardComparisonDrawer": { "type": "boolean", "default": true },
+        "hasSpofUrgencyPanel": { "type": "boolean", "default": false },
+        "hasFaqAccordion": { "type": "boolean", "default": true },
+        "hasEmergencyPocketCard": { "type": "boolean", "default": false },
+        "hasRelatedMeshFooter": { "type": "boolean", "default": true }
+      }
+    },
+    "pseoConfig": {
+      "type": "object",
+      "required": ["robotsDirective", "minItemThreshold", "sitemapPriority", "schemaOrgType"],
+      "properties": {
+        "robotsDirective": {
+          "type": "string",
+          "enum": ["index,follow", "noindex,follow"]
+        },
+        "minItemThreshold": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 3,
+          "description": "Minimum verified LEGO items required to emit index,follow"
+        },
+        "sitemapPriority": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "default": 0.8
+        },
+        "schemaOrgType": {
+          "type": "string",
+          "enum": ["CollectionPage", "ItemPage", "SearchResultsPage", "FAQPage"]
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

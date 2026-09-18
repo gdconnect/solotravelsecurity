@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "truthTables": [
+    {
+      "id": "TT-INTAKE-GATING-01",
+      "name": "Partner Onboarding Legal & Integrity Truth Table",
+      "description": "Exhaustive truth table ensuring zero unverified, fraudulent, or non-compliant commercial partners enter production.",
+      "conditions": [
+        {
+          "name": "c1_entityRegistered",
+          "description": "Legal entity and corporate jurisdiction verified"
+        },
+        {
+          "name": "c2_insuranceRegulatedIfApplicable",
+          "description": "Insurance underwriter has valid license and AM Best rating >= A"
+        },
+        {
+          "name": "c3_trackingHttpsSecure",
+          "description": "Tracking template uses HTTPS and valid token syntax"
+        },
+        {
+          "name": "c4_editorialTested",
+          "description": "Product/service physically reviewed or verified by editorial staff"
+        }
+      ],
+      "actions": [
+        {
+          "name": "a1_allowIntakeApproval",
+          "description": "Permit ingestion into production catalog"
+        },
+        {
+          "name": "a2_tagRequiresManualAudit",
+          "description": "Flag for human security officer review"
+        },
+        { "name": "a3_hardReject", "description": "Reject intake and log security audit notice" }
+      ],
+      "matrix": [
+        { "conditions": [true, true, true, true], "actions": [true, false, false] },
+        { "conditions": [true, true, true, false], "actions": [false, true, false] },
+        { "conditions": [true, true, false, true], "actions": [false, false, true] },
+        { "conditions": [true, false, true, true], "actions": [false, false, true] },
+        { "conditions": [false, true, true, true], "actions": [false, false, true] },
+        { "conditions": [false, false, false, false], "actions": [false, false, true] }
+      ]
+    },
+    {
+      "id": "TT-SANCTIONS-EXCLUSION-01",
+      "name": "OFAC & International Sanctions Geofence Truth Table",
+      "description": "Guarantees absolute compliance with international sanctions laws by disallowing commercial transactions in embargoed jurisdictions.",
+      "conditions": [
+        {
+          "name": "c1_destinationSanctioned",
+          "description": "Country is listed under OFAC/UN embargo (e.g. Syria, North Korea, Iran)"
+        },
+        {
+          "name": "c2_isCommercialPayoutOffer",
+          "description": "Offer involves monetary affiliate payout or commercial fee"
+        },
+        {
+          "name": "c3_isFirstPartyPublicSafety",
+          "description": "Offer is free emergency consular or public health information"
+        }
+      ],
+      "actions": [
+        { "name": "a1_renderOffer", "description": "Permit display on traveler listings page" },
+        {
+          "name": "a2_suppressCommercialLinks",
+          "description": "Strip affiliate links and tracking tokens"
+        },
+        {
+          "name": "a3_displayEmbassyWarningOnly",
+          "description": "Render life-safety consular advisory banner only"
+        }
+      ],
+      "matrix": [
+        { "conditions": [false, true, false], "actions": [true, false, false] },
+        { "conditions": [false, false, true], "actions": [true, false, false] },
+        { "conditions": [true, true, false], "actions": [false, true, true] },
+        { "conditions": [true, false, true], "actions": [true, false, true] }
+      ]
+    },
+    {
+      "id": "TT-OFFER-CONFLICT-01",
+      "name": "Offer Category Collision & Exclusivity Truth Table",
+      "description": "Resolves multi-offer rendering when two competing partners target the exact same slot.",
+      "conditions": [
+        {
+          "name": "c1_multipleEligibleInSameSlot",
+          "description": "Two or more offers qualify for the single hero banner"
+        },
+        {
+          "name": "c2_exclusiveSponsorAgreementActive",
+          "description": "One partner holds category exclusivity contract"
+        },
+        {
+          "name": "c3_safetyScoresIdentical",
+          "description": "Difference in editorial safety score is <= 3 points"
+        }
+      ],
+      "actions": [
+        {
+          "name": "a1_serveExclusivePartner",
+          "description": "Display contractually exclusive partner"
+        },
+        {
+          "name": "a2_serveHighestSafetyScore",
+          "description": "Display offer with superior safety score"
+        },
+        {
+          "name": "a3_renderSideBySideComparison",
+          "description": "Split hero into dual comparison drawer"
+        }
+      ],
+      "matrix": [
+        { "conditions": [true, true, true], "actions": [true, false, false] },
+        { "conditions": [true, true, false], "actions": [true, false, false] },
+        { "conditions": [true, false, false], "actions": [false, true, false] },
+        { "conditions": [true, false, true], "actions": [false, false, true] },
+        { "conditions": [false, false, false], "actions": [false, false, false] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/high-ticket-affiliate-yield.schema.json",
+  "title": "HighTicketAffiliateYield",
+  "description": "Formal JSON Schema defining high-ticket affiliate monetization partners, payout models, destination risk triggers, and compliance rules.",
+  "type": "object",
+  "required": ["version", "categories", "partners", "complianceRules"],
+  "properties": {
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["categoryId", "name", "averageCpaUsd", "conversionRateBenchmark"],
+        "properties": {
+          "categoryId": { "type": "string" },
+          "name": { "type": "string" },
+          "averageCpaUsd": { "type": "number", "minimum": 0 },
+          "conversionRateBenchmark": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "partners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "partnerId",
+          "brandName",
+          "categoryId",
+          "payoutType",
+          "payoutAmountUsd",
+          "cookieWindowDays",
+          "targetRiskTiers",
+          "primaryValueProp",
+          "affiliateUrlTemplate"
+        ],
+        "properties": {
+          "partnerId": { "type": "string" },
+          "brandName": { "type": "string" },
+          "categoryId": { "type": "string" },
+          "payoutType": { "type": "string", "enum": ["cpa_fixed", "revshare_recurring", "hybrid"] },
+          "payoutAmountUsd": { "type": "number", "minimum": 0 },
+          "cookieWindowDays": { "type": "integer", "minimum": 1 },
+          "targetRiskTiers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+            }
+          },
+          "targetArchetypes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "primaryValueProp": { "type": "string" },
+          "affiliateUrlTemplate": { "type": "string" }
+        }
+      }
+    },
+    "complianceRules": {
+      "type": "object",
+      "required": ["ftcDisclosureRequired", "disclaimerText"],
+      "properties": {
+        "ftcDisclosureRequired": { "type": "boolean" },
+        "disclaimerText": { "type": "string" }
+      }
+    }
+  }
+}

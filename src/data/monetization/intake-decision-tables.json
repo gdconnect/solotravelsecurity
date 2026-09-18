@@ -1,0 +1,203 @@
+{
+  "version": "1.0.0",
+  "decisionTables": [
+    {
+      "id": "DT-INTAKE-VALIDATION-01",
+      "name": "Partner & Offer Onboarding Gating Decision Table",
+      "description": "Rules determining whether an onboarded partner or commercial offer is approved for production deployment.",
+      "inputColumns": [
+        { "name": "isInsuranceLicensedOrExempt", "type": "boolean" },
+        { "name": "hasVerifiedPhysicalTest", "type": "boolean" },
+        { "name": "hasValidHttpsTrackingTemplate", "type": "boolean" },
+        { "name": "hasAcceptedFtcDisclaimer", "type": "boolean" },
+        { "name": "hasConfirmedSanctionsCompliance", "type": "boolean" }
+      ],
+      "outputColumns": [
+        {
+          "name": "onboardingDecision",
+          "type": "string",
+          "allowedValues": ["APPROVED_PRODUCTION", "REJECTED_COMPLIANCE", "PENDING_MANUAL_REVIEW"]
+        },
+        { "name": "rejectionReason", "type": "string" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": {
+            "isInsuranceLicensedOrExempt": true,
+            "hasVerifiedPhysicalTest": true,
+            "hasValidHttpsTrackingTemplate": true,
+            "hasAcceptedFtcDisclaimer": true,
+            "hasConfirmedSanctionsCompliance": true
+          },
+          "actions": {
+            "onboardingDecision": "APPROVED_PRODUCTION",
+            "rejectionReason": "NONE"
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "hasAcceptedFtcDisclaimer": false },
+          "actions": {
+            "onboardingDecision": "REJECTED_COMPLIANCE",
+            "rejectionReason": "FTC_DISCLOSURE_REJECTED"
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "hasConfirmedSanctionsCompliance": false },
+          "actions": {
+            "onboardingDecision": "REJECTED_COMPLIANCE",
+            "rejectionReason": "SANCTIONS_NON_COMPLIANT"
+          }
+        },
+        {
+          "ruleId": "R04",
+          "conditions": { "hasValidHttpsTrackingTemplate": false },
+          "actions": {
+            "onboardingDecision": "REJECTED_COMPLIANCE",
+            "rejectionReason": "INVALID_OR_INSECURE_TRACKING_URL"
+          }
+        },
+        {
+          "ruleId": "R05",
+          "conditions": { "hasVerifiedPhysicalTest": false },
+          "actions": {
+            "onboardingDecision": "PENDING_MANUAL_REVIEW",
+            "rejectionReason": "AWAITING_PHYSICAL_EDITORIAL_VERIFICATION"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DT-OFFER-ELIGIBILITY-01",
+      "name": "Offer Eligibility & Contextual Filtering Decision Table",
+      "description": "Deterministic rules matching traveler profile, destination risk, and device capabilities with commercial offers.",
+      "inputColumns": [
+        {
+          "name": "destinationRiskTier",
+          "type": "string",
+          "allowedValues": ["Low", "Moderate", "Elevated", "High", "Critical"]
+        },
+        { "name": "destinationSanctioned", "type": "boolean" },
+        { "name": "travelerArchetype", "type": "string" },
+        { "name": "deviceIsEsimCapable", "type": "boolean" },
+        { "name": "activityScooterMotorcycle", "type": "boolean" }
+      ],
+      "outputColumns": [
+        { "name": "eligibleCategories", "type": "array" },
+        { "name": "blockedCategories", "type": "array" },
+        { "name": "slotHeroBannerCategory", "type": "string" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": { "destinationSanctioned": true },
+          "actions": {
+            "eligibleCategories": [],
+            "blockedCategories": ["all_commercial_offers"],
+            "slotHeroBannerCategory": "NONE_SANCTIONED"
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "destinationRiskTier": "Critical", "activityScooterMotorcycle": true },
+          "actions": {
+            "eligibleCategories": ["medical_evac", "satellite_sos", "travel_health_insurance"],
+            "blockedCategories": ["perimeter_defense_hardware"],
+            "slotHeroBannerCategory": "medical_evac"
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "destinationRiskTier": "High", "travelerArchetype": "senior-solo" },
+          "actions": {
+            "eligibleCategories": ["medical_evac", "preloaded_esim"],
+            "blockedCategories": ["anti_theft_fintech"],
+            "slotHeroBannerCategory": "medical_evac"
+          }
+        },
+        {
+          "ruleId": "R04",
+          "conditions": {
+            "destinationRiskTier": "Moderate",
+            "travelerArchetype": "first-time-solo"
+          },
+          "actions": {
+            "eligibleCategories": [
+              "parent_guardian_service",
+              "preloaded_esim",
+              "anti_theft_fintech"
+            ],
+            "blockedCategories": [],
+            "slotHeroBannerCategory": "parent_guardian_service"
+          }
+        },
+        {
+          "ruleId": "R05",
+          "conditions": { "deviceIsEsimCapable": false },
+          "actions": {
+            "eligibleCategories": [
+              "medical_evac",
+              "travel_health_insurance",
+              "satellite_sos",
+              "anti_theft_fintech",
+              "perimeter_defense_hardware",
+              "parent_guardian_service"
+            ],
+            "blockedCategories": ["preloaded_esim"],
+            "slotHeroBannerCategory": "contextual_default"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DT-PAYOUT-ARBITRAGE-02",
+      "name": "Commercial Yield vs Life-Safety Arbitrage Table",
+      "description": "Resolves placement rank when an offer with higher commercial CPA competes against an offer with higher life-safety utility.",
+      "inputColumns": [
+        { "name": "destinationRiskTier", "type": "string" },
+        {
+          "name": "lifeSafetyScoreDelta",
+          "type": "number",
+          "description": "Safety score difference (Offer A - Offer B)"
+        },
+        {
+          "name": "cpaDollarDelta",
+          "type": "number",
+          "description": "CPA dollar difference (Offer A - Offer B)"
+        }
+      ],
+      "outputColumns": [
+        { "name": "priorityWinner", "type": "string" },
+        { "name": "arbitrageRationale", "type": "string" }
+      ],
+      "rules": [
+        {
+          "ruleId": "R01",
+          "conditions": { "destinationRiskTier": "Critical", "lifeSafetyScoreDelta": 10 },
+          "actions": {
+            "priorityWinner": "HIGHER_SAFETY_OFFER",
+            "arbitrageRationale": "In Critical risk zones, life-safety protection unconditionally supersedes commercial EPC."
+          }
+        },
+        {
+          "ruleId": "R02",
+          "conditions": { "destinationRiskTier": "High", "lifeSafetyScoreDelta": 15 },
+          "actions": {
+            "priorityWinner": "HIGHER_SAFETY_OFFER",
+            "arbitrageRationale": "In High risk zones, safety advantage over 15 points wins top slot."
+          }
+        },
+        {
+          "ruleId": "R03",
+          "conditions": { "destinationRiskTier": "Low", "cpaDollarDelta": 20 },
+          "actions": {
+            "priorityWinner": "HIGHER_COMMERCIAL_OFFER",
+            "arbitrageRationale": "In Low risk zones, baseline safety is satisfied; prioritize conversion velocity and yield."
+          }
+        }
+      ]
+    }
+  ]
+}

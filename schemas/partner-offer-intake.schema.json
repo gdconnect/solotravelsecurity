@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/partner-offer-intake.schema.json",
+  "title": "PartnerOfferIntake",
+  "description": "Formal JSON Schema defining a discrete commercial or safety offer provided by an onboarded partner, including commission structures, deep-linking, targeting constraints, and life-safety grading.",
+  "type": "object",
+  "required": [
+    "offerId",
+    "partnerId",
+    "title",
+    "category",
+    "commercialTerms",
+    "trackingConfig",
+    "targetingRules",
+    "editorialReview"
+  ],
+  "properties": {
+    "offerId": {
+      "type": "string",
+      "pattern": "^OFFER-[A-Z0-9_-]+$",
+      "description": "Unique offer identifier."
+    },
+    "partnerId": {
+      "type": "string",
+      "pattern": "^PARTNER-[A-Z0-9_-]+$",
+      "description": "Foreign key referencing partner-profile-intake."
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the product or service offer."
+    },
+    "shortTagline": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "medical_evac",
+        "travel_health_insurance",
+        "satellite_sos",
+        "preloaded_esim",
+        "anti_theft_fintech",
+        "cyber_hygiene_hardware",
+        "perimeter_defense_hardware",
+        "parent_guardian_service"
+      ]
+    },
+    "commercialTerms": {
+      "type": "object",
+      "required": ["payoutModel", "currency", "cookieWindowDays"],
+      "properties": {
+        "payoutModel": {
+          "type": "string",
+          "enum": [
+            "cpa_fixed",
+            "revshare_recurring",
+            "hybrid_cpa_revshare",
+            "cost_per_lead",
+            "zero_bounty_public_interest"
+          ]
+        },
+        "cpaAmountUsd": { "type": "number", "minimum": 0 },
+        "revsharePercentage": { "type": "number", "minimum": 0, "maximum": 100 },
+        "revshareDurationMonths": { "type": "integer", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "cookieWindowDays": { "type": "integer", "minimum": 1, "maximum": 365 },
+        "historicalConversionRate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "benchmarkEpcUsd": { "type": "number", "minimum": 0 }
+      }
+    },
+    "trackingConfig": {
+      "type": "object",
+      "required": ["urlTemplate"],
+      "properties": {
+        "urlTemplate": {
+          "type": "string",
+          "description": "Deep-link template supporting tokens: {subid}, {dest_country}, {dest_city}, {archetype}, {click_id}, {session_id}."
+        },
+        "supportedTokens": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "relAttributes": {
+          "type": "string",
+          "default": "nofollow sponsored noopener noreferrer"
+        }
+      }
+    },
+    "targetingRules": {
+      "type": "object",
+      "required": ["eligibleRiskTiers", "eligibleArchetypes"],
+      "properties": {
+        "eligibleCountries": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of ISO-3166 alpha-2 country codes, or ['*'] for worldwide."
+        },
+        "excludedCountries": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "ISO-3166 alpha-2 country codes blocked by sanctions or licensing."
+        },
+        "eligibleRiskTiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Low", "Moderate", "Elevated", "High", "Critical"]
+          }
+        },
+        "eligibleArchetypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "solo-female",
+              "first-time-solo",
+              "digital-nomad",
+              "budget-backpacker",
+              "senior-solo"
+            ]
+          }
+        },
+        "eligibleLifecycles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "pre_trip",
+              "night_arrival",
+              "lodging_lockdown",
+              "day_roaming",
+              "nightlife_social",
+              "crisis_escalation"
+            ]
+          }
+        },
+        "maxAge": {
+          "type": "integer",
+          "default": 120
+        },
+        "requiresEsimHardware": {
+          "type": "boolean",
+          "default": false
+        },
+        "coversScooterMotorcycle": {
+          "type": "boolean",
+          "default": false
+        },
+        "requiresOffGridWilderness": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "editorialReview": {
+      "type": "object",
+      "required": ["lifeSafetyScore", "verifiedPhysicalTest", "pros", "cons"],
+      "properties": {
+        "lifeSafetyScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Deterministic safety efficacy score evaluated by editorial staff."
+        },
+        "verifiedPhysicalTest": { "type": "boolean" },
+        "pros": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cons": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "mandatoryLegalNotice": { "type": "string" }
+      }
+    }
+  }
+}

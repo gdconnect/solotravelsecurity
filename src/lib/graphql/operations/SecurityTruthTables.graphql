@@ -1,0 +1,21 @@
+query SecurityTruthTables {
+  truthTables {
+    id
+    title
+    description
+    scenarioCategory
+    propositions {
+      symbol
+      key
+      name
+      description
+    }
+    rows {
+      rowId
+      inputs
+      outputs
+      formalRationale
+    }
+    completenessVerified
+  }
+}

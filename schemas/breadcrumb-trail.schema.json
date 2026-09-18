@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/breadcrumb-trail.schema.json",
+  "title": "BreadcrumbTrail",
+  "description": "Formal JSON Schema for hierarchical navigation breadcrumbs and Schema.org BreadcrumbList alignment.",
+  "type": "object",
+  "required": ["routePath", "items"],
+  "properties": {
+    "routePath": {
+      "type": "string",
+      "description": "Target normalized URL route"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "position"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "href": { "type": "string" },
+          "position": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

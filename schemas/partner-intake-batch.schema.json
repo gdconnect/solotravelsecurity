@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://solotravelsecurity.com/schemas/partner-intake-batch.schema.json",
+  "title": "PartnerIntakeBatch",
+  "description": "Formal JSON Schema for batch intake and bulk ingestion of partner profiles, commercial offers, and matching rules.",
+  "type": "object",
+  "required": ["batchId", "schemaVersion", "ingestedAtUtc", "submittedBy", "partners", "offers"],
+  "properties": {
+    "batchId": {
+      "type": "string",
+      "pattern": "^BATCH-[A-Z0-9_-]+$"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "ingestedAtUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "submittedBy": {
+      "type": "string"
+    },
+    "partners": {
+      "type": "array",
+      "items": {
+        "$ref": "https://solotravelsecurity.com/schemas/partner-profile-intake.schema.json"
+      }
+    },
+    "offers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://solotravelsecurity.com/schemas/partner-offer-intake.schema.json"
+      }
+    },
+    "matchingRules": {
+      "type": "array",
+      "items": {
+        "$ref": "https://solotravelsecurity.com/schemas/offer-matching-rule.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Solo Travel Security - Gemini Grounded Harvester Service",
+    "version": "1.0.0",
+    "description": "Internal asynchronous sidecar API orchestrating Google Gemini API with Google Search Grounding, Pydantic response_schema constrained decoding, and OpenCV sanitization."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8088",
+      "description": "Internal Python 3.12 Harvester Daemon"
+    },
+    {
+      "url": "http://127.0.0.1:8000",
+      "description": "Laravel Application API Gateway"
+    }
+  ],
+  "paths": {
+    "/api/v1/harvest/airport": {
+      "post": {
+        "summary": "Execute grounded search harvest for an international airport",
+        "description": "Triggers Google Search Grounding against official airport transport websites and municipal decrees, outputting structured AirportSecurityHub JSON.",
+        "operationId": "harvestAirportIngress",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["iata", "airportName", "city", "country"],
+                "properties": {
+                  "iata": { "type": "string", "minLength": 3, "maxLength": 3, "example": "FCO" },
+                  "airportName": {
+                    "type": "string",
+                    "example": "Leonardo da Vinci–Fiumicino Airport"
+                  },
+                  "city": { "type": "string", "example": "Rome" },
+                  "country": { "type": "string", "example": "Italy" },
+                  "model": { "type": "string", "default": "gemini-2.0-flash" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validated grounded airport security hub block",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://solotravelsecurity.com/schemas/gemini-grounding-pipeline.schema.json"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Schema validation failure after self-healing repair exhaustion"
+          }
+        }
+      }
+    },
+    "/api/v1/harvest/scam": {
+      "post": {
+        "summary": "Synthesize scam attack vector into binary truth table",
+        "description": "Analyzes police reports and traveler incident databases to isolate observable falsification conditions.",
+        "operationId": "harvestScamTruthTable",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["scamName", "vectorCategory", "destination"],
+                "properties": {
+                  "scamName": { "type": "string", "example": "Unlicensed Arrival Hall Taxi Tout" },
+                  "vectorCategory": {
+                    "type": "string",
+                    "enum": [
+                      "counterfeit_official",
+                      "financial_extortion",
+                      "distraction_theft",
+                      "rigged_meter_taxi"
+                    ]
+                  },
+                  "destination": { "type": "string", "example": "Rome" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Structured scam dossier with executable truth table"
+          }
+        }
+      }
+    },
+    "/api/v1/audit/multimodal-taxi": {
+      "post": {
+        "summary": "Forensic visual audit of vehicle livery or taximeter",
+        "description": "Strips EXIF metadata, blurs faces and payment cards via OpenCV, then invokes Gemini Vision with TaxiVisualAuditSchema.",
+        "operationId": "auditTaxiVisuals",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": ["image", "city"],
+                "properties": {
+                  "image": { "type": "string", "format": "binary" },
+                  "city": { "type": "string", "example": "Rome" },
+                  "contextType": {
+                    "type": "string",
+                    "enum": ["exterior_livery", "dashboard_meter"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Forensic visual audit verdict and directive",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["isLikelyOfficial", "confidenceScore", "immediateDirective"],
+                  "properties": {
+                    "isLikelyOfficial": { "type": "boolean" },
+                    "confidenceScore": { "type": "number" },
+                    "immediateDirective": { "type": "string" },
+                    "redFlags": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grounding/context-cache": {
+      "post": {
+        "summary": "Initialize or refresh Gemini Context Cache",
+        "description": "Uploads and pre-tokenizes large static corpora (transit decrees, penal statutes) in Gemini memory for 75-80% cost reduction.",
+        "operationId": "manageContextCache",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["corpusKey", "documentPaths", "ttlHours"],
+                "properties": {
+                  "corpusKey": { "type": "string", "example": "eu-transit-bylaws" },
+                  "documentPaths": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "ttlHours": { "type": "integer", "default": 24 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Context cache token and expiry confirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cacheName": { "type": "string" },
+                    "cachedTokenCount": { "type": "integer" },
+                    "expireTime": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

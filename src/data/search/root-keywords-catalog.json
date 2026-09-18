@@ -1,0 +1,759 @@
+{
+  "version": "1.0.0",
+  "skagNamingConvention": "[Pillar] - [Root Phrase] - [Intent]",
+  "modifierDimensions": {
+    "archetypes": [
+      {
+        "slug": "solo-female",
+        "rootTerm": "solo female",
+        "synonyms": ["women solo", "female traveler", "solo woman", "woman traveling alone"]
+      },
+      {
+        "slug": "first-time-solo",
+        "rootTerm": "first time solo",
+        "synonyms": ["beginner solo travel", "first solo trip", "solo travel guide for beginners"]
+      },
+      {
+        "slug": "digital-nomad",
+        "rootTerm": "digital nomad",
+        "synonyms": ["remote worker", "work from anywhere", "nomad workstation", "remote laptop"]
+      },
+      {
+        "slug": "budget-backpacker",
+        "rootTerm": "backpacker",
+        "synonyms": ["hostel traveler", "budget solo travel", "hostelling", "youth traveler"]
+      },
+      {
+        "slug": "senior-solo",
+        "rootTerm": "senior solo",
+        "synonyms": [
+          "older solo traveler",
+          "over 60 solo travel",
+          "independent senior",
+          "retired traveler"
+        ]
+      }
+    ],
+    "temporalLifecycles": [
+      {
+        "phaseSlug": "night-arrival",
+        "rootTerm": "night arrival",
+        "synonyms": ["late night transit", "midnight flight", "after dark landing", "curfew hour"]
+      },
+      {
+        "phaseSlug": "lodging-lockdown",
+        "rootTerm": "hotel check in",
+        "synonyms": ["room security", "room inspection", "first 3 minutes", "sanctuary vetting"]
+      },
+      {
+        "phaseSlug": "day-roaming",
+        "rootTerm": "day walking",
+        "synonyms": ["sightseeing safety", "street navigation", "public transit roaming"]
+      },
+      {
+        "phaseSlug": "nightlife-social",
+        "rootTerm": "nightlife",
+        "synonyms": ["bars after dark", "evening walking", "socializing solo"]
+      },
+      {
+        "phaseSlug": "crisis-escalation",
+        "rootTerm": "emergency response",
+        "synonyms": ["missed check in", "lost passport", "consular help", "police dispatch"]
+      }
+    ],
+    "intentQualifiers": {
+      "informational": [
+        "guide",
+        "protocol",
+        "rules",
+        "truth table",
+        "how to avoid",
+        "checklist",
+        "is it safe",
+        "curfew hours",
+        "scenarios",
+        "tips"
+      ],
+      "commercialInvestigation": [
+        "best",
+        "review",
+        "top rated",
+        "comparison",
+        "vs",
+        "recommended",
+        "vetted",
+        "tested",
+        "pros and cons"
+      ],
+      "transactional": [
+        "where to buy",
+        "cost",
+        "price",
+        "voucher",
+        "booking",
+        "download checklist"
+      ],
+      "lifeSafetyUrgent": [
+        "scam alert",
+        "emergency dispatch",
+        "police hotline",
+        "embassy crisis",
+        "detention risk",
+        "arrest penalty",
+        "spiking warning",
+        "spof"
+      ]
+    },
+    "geoPlaceholders": ["[destination_city]", "[country_name]", "[airport_iata]", "[micro_zone]"]
+  },
+  "campaignGroups": [
+    {
+      "groupId": "GRP-AIRPORT-INGRESS",
+      "groupName": "Airport Ingress & Late-Night Arrival Gates",
+      "benchmarkModel": "seek_intent_grid",
+      "associatedPillar": "PIL-TRANSIT",
+      "primarySearchIntent": "life_safety_critical",
+      "targetRouteTemplate": "/playbook/airports/[airport_iata]/",
+      "negativeKeywords": [
+        "flight tickets",
+        "cheap flights",
+        "duty free shopping",
+        "airport parking deals",
+        "lounge pass discount"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-AIRPORT-01",
+          "rootPhrase": "airport express train curfew",
+          "canonicalIntent": "Find exact last departure time for express rail into city center to avoid night transit strand.",
+          "priorityScore": 95,
+          "seedVariants": [
+            "[airport_iata] express train last departure time",
+            "what time does the last train leave [airport_iata]",
+            "[airport_iata] train night curfew solo travel"
+          ],
+          "skagHeadline": "[airport_iata] Express Train Curfew | Last Departure Time",
+          "targetLegoEntityType": "airport"
+        },
+        {
+          "keywordId": "ROOT-AIRPORT-02",
+          "rootPhrase": "airport official taxi flat rate",
+          "canonicalIntent": "Determine verified municipal taxi flat fare and official kiosk booth door coordinates.",
+          "priorityScore": 92,
+          "seedVariants": [
+            "[destination_city] airport official taxi flat fare cost",
+            "[airport_iata] taxi kiosk exact terminal door location",
+            "how much is official taxi from [airport_iata] to center"
+          ],
+          "skagHeadline": "Official [airport_iata] Taxi Stand & Flat Rate Fares",
+          "targetLegoEntityType": "airport"
+        },
+        {
+          "keywordId": "ROOT-AIRPORT-03",
+          "rootPhrase": "airport hallway rogue taxi touts",
+          "canonicalIntent": "Recognize and bypass unlicensed hallway drivers claiming long queues or train strikes.",
+          "priorityScore": 88,
+          "seedVariants": [
+            "[airport_iata] arrival hall taxi tout scam",
+            "fake taxi drivers inside [airport_iata] terminal",
+            "unlicensed drivers at [destination_city] airport exit"
+          ],
+          "skagHeadline": "Bypass [airport_iata] Rogue Taxi Touts | Truth Table",
+          "targetLegoEntityType": "scam"
+        },
+        {
+          "keywordId": "ROOT-AIRPORT-04",
+          "rootPhrase": "late night airport arrival safety",
+          "canonicalIntent": "Step-by-step procedural protocol for solo travelers touching down between 21:00 and 05:00.",
+          "priorityScore": 96,
+          "seedVariants": [
+            "arriving at [airport_iata] late at night solo",
+            "is it safe to land in [destination_city] at midnight solo female",
+            "[airport_iata] night arrival transit protocol"
+          ],
+          "skagHeadline": "Late Night Arrival at [airport_iata] | Solo Protocol",
+          "targetLegoEntityType": "topic"
+        },
+        {
+          "keywordId": "ROOT-AIRPORT-05",
+          "rootPhrase": "airport safe waiting rest zone",
+          "canonicalIntent": "Locate 24/7 lit airside and landside safe resting zones to wait out dawn.",
+          "priorityScore": 82,
+          "seedVariants": [
+            "safest place to sleep at [airport_iata] overnight",
+            "24 hour staffed cafes [airport_iata] arrivals",
+            "staying airside until morning [airport_iata]"
+          ],
+          "skagHeadline": "24/7 Safe Waiting Zones at [airport_iata]",
+          "targetLegoEntityType": "airport"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-LODGING-PERIMETER",
+      "groupName": "Hotel Room Sanctuary & Lodging Perimeter Lockdown",
+      "benchmarkModel": "nerdwallet_spec_matrix",
+      "associatedPillar": "PIL-PERIMETER",
+      "primarySearchIntent": "commercial_investigation",
+      "targetRouteTemplate": "/playbook/topics/hotel-room-perimeter/",
+      "negativeKeywords": [
+        "cheap hotel rooms",
+        "hotel booking deals",
+        "luxury hotel reviews",
+        "free breakfast hotels"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-LODGING-01",
+          "rootPhrase": "portable hotel door lock",
+          "canonicalIntent": "Evaluate and purchase mechanical portable travel locks that prevent master-key bypass.",
+          "priorityScore": 94,
+          "seedVariants": [
+            "best portable door lock for solo travel",
+            "hotel door secondary lock for women traveling alone",
+            "addalock vs portable travel lock review"
+          ],
+          "skagHeadline": "Top Vetted Portable Door Locks for Solo Travelers",
+          "targetLegoEntityType": "product"
+        },
+        {
+          "keywordId": "ROOT-LODGING-02",
+          "rootPhrase": "doorstop vibration alarm",
+          "canonicalIntent": "Deploy non-skid rubber wedge doorstops with 120dB ear-splitting sirens on hotel doors.",
+          "priorityScore": 91,
+          "seedVariants": [
+            "120db door stop alarm for hotel rooms",
+            "sabre doorstop vibration alarm review",
+            "best travel doorstop wedge alarm"
+          ],
+          "skagHeadline": "120dB Doorstop Wedge Vibration Alarms Tested",
+          "targetLegoEntityType": "product"
+        },
+        {
+          "keywordId": "ROOT-LODGING-03",
+          "rootPhrase": "hotel ground floor room safety",
+          "canonicalIntent": "Understand perimeter risks of ground floor lodging and execute 180s window latch audit.",
+          "priorityScore": 86,
+          "seedVariants": [
+            "why ground floor hotel rooms are dangerous solo travel",
+            "hotel floor security sweetspot floors 2 to 4",
+            "ground floor airbnb security audit"
+          ],
+          "skagHeadline": "Ground Floor Lodging Defense | The 180s Audit",
+          "targetLegoEntityType": "topic"
+        },
+        {
+          "keywordId": "ROOT-LODGING-04",
+          "rootPhrase": "hotel peephole reverse viewer privacy",
+          "canonicalIntent": "Inspect and cover hotel door peepholes to prevent reverse fish-eye optical surveillance.",
+          "priorityScore": 79,
+          "seedVariants": [
+            "reverse peephole viewer hotel door spy",
+            "how to block hotel room peephole",
+            "hotel door peephole inspection checklist"
+          ],
+          "skagHeadline": "Hotel Door Peephole Inspection & Defense",
+          "targetLegoEntityType": "checklist"
+        },
+        {
+          "keywordId": "ROOT-LODGING-05",
+          "rootPhrase": "hostel dorm locker padlock",
+          "canonicalIntent": "Select heavy-duty brass combination padlocks that fit standard hostel locker hasps.",
+          "priorityScore": 84,
+          "seedVariants": [
+            "best padlock for hostel lockers backpacker",
+            "hostel locker theft prevention combination lock",
+            "brass vs steel padlock for shared dorm"
+          ],
+          "skagHeadline": "Best Hostel Dorm Locker Padlocks | Vetted",
+          "targetLegoEntityType": "product"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-STREET-SCAMS",
+      "groupName": "Street Scams & Psychological Deception Registers",
+      "benchmarkModel": "tripadvisor_truth_reviews",
+      "associatedPillar": "PIL-THREAT",
+      "primarySearchIntent": "informational",
+      "targetRouteTemplate": "/playbook/topics/street-scams/",
+      "negativeKeywords": [
+        "scam crypto",
+        "online survey scams",
+        "phone robocalls",
+        "phishing email templates"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-SCAM-01",
+          "rootPhrase": "fake police plainclothes scam",
+          "canonicalIntent": "Detect bogus authority figures demanding street wallet or passport inspections.",
+          "priorityScore": 93,
+          "seedVariants": [
+            "fake police asking for passport in [destination_city]",
+            "plainclothes police wallet inspection scam",
+            "how to verify legitimate police abroad"
+          ],
+          "skagHeadline": "Bogus Police Inspection Scam | Truth Table",
+          "targetLegoEntityType": "scam"
+        },
+        {
+          "keywordId": "ROOT-SCAM-02",
+          "rootPhrase": "distraction spill pickpocketing",
+          "canonicalIntent": "Neutralize intentional condiment, bird poop, or liquid drops used as pickpocket diversion.",
+          "priorityScore": 89,
+          "seedVariants": [
+            "mustard spill scam [destination_city]",
+            "dropped item distraction theft pickpockets",
+            "spill scam street de-escalation protocol"
+          ],
+          "skagHeadline": "Distraction Spill Pickpocket Defense Protocol",
+          "targetLegoEntityType": "scam"
+        },
+        {
+          "keywordId": "ROOT-SCAM-03",
+          "rootPhrase": "friendship bracelet forced payment",
+          "canonicalIntent": "Counter aggressive street vendors tying woven string onto wrists and demanding cash.",
+          "priorityScore": 87,
+          "seedVariants": [
+            "friendship bracelet scam [destination_city]",
+            "string tied around finger street scam",
+            "petition deaf signature scam [destination_city]"
+          ],
+          "skagHeadline": "Friendship Bracelet Scam Inoculation & Refusal",
+          "targetLegoEntityType": "scam"
+        },
+        {
+          "keywordId": "ROOT-SCAM-04",
+          "rootPhrase": "bar drink spiking extortion scam",
+          "canonicalIntent": "Protect against friendly stranger invitations to private clubs resulting in extortionate bills.",
+          "priorityScore": 96,
+          "seedVariants": [
+            "drink spiking bar bill extortion [destination_city]",
+            "teahouse scam friendly strangers [destination_city]",
+            "kabukicho tout bar bill extortion scam"
+          ],
+          "skagHeadline": "Bar Bill Extortion & Spiking Truth Table",
+          "targetLegoEntityType": "scam"
+        },
+        {
+          "keywordId": "ROOT-SCAM-05",
+          "rootPhrase": "tuk tuk gem shop detour scam",
+          "canonicalIntent": "Avoid transport drivers claiming national temples are closed to redirect to gem/suit shops.",
+          "priorityScore": 85,
+          "seedVariants": [
+            "temple closed gem store scam [destination_city]",
+            "tuk tuk 20 baht detour scam",
+            "government export center suit scam"
+          ],
+          "skagHeadline": "Tuk-Tuk Closed Temple Scam | Counter-Actions",
+          "targetLegoEntityType": "scam"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-MICROZONE-SAFETY",
+      "groupName": "Micro-Zone & Neighborhood Street Safety Dossiers",
+      "benchmarkModel": "zillow_suburb_heatmap",
+      "associatedPillar": "PIL-TRANSIT",
+      "primarySearchIntent": "informational",
+      "targetRouteTemplate": "/playbook/destinations/[destination_city]/",
+      "negativeKeywords": [
+        "houses for sale",
+        "apartments for rent lease",
+        "real estate agent listings",
+        "suburb mortgage calculator"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-ZONE-01",
+          "rootPhrase": "safest neighborhoods to stay solo",
+          "canonicalIntent": "Identify specific urban pockets with high walkability, active lighting, and low crime rates.",
+          "priorityScore": 97,
+          "seedVariants": [
+            "safest area to stay in [destination_city] solo female",
+            "best neighborhood for first time solo traveler in [destination_city]",
+            "[destination_city] neighborhood safety rankings"
+          ],
+          "skagHeadline": "Safest Areas to Stay in [destination_city] Solo",
+          "targetLegoEntityType": "micro_zone"
+        },
+        {
+          "keywordId": "ROOT-ZONE-02",
+          "rootPhrase": "dangerous areas to avoid at night",
+          "canonicalIntent": "Identify specific red-flag street corridors and plazas with high mugging/tout frequency.",
+          "priorityScore": 95,
+          "seedVariants": [
+            "streets to avoid in [destination_city] after dark",
+            "[destination_city] bad areas red flag corridors",
+            "dangerous neighborhoods in [destination_city] solo travel"
+          ],
+          "skagHeadline": "Red-Flag Streets to Avoid in [destination_city]",
+          "targetLegoEntityType": "micro_zone"
+        },
+        {
+          "keywordId": "ROOT-ZONE-03",
+          "rootPhrase": "train station district safety at night",
+          "canonicalIntent": "Evaluate late-night vulnerability around central rail terminals (Termini, Gare du Nord, etc.).",
+          "priorityScore": 92,
+          "seedVariants": [
+            "is [destination_city] train station area safe at night",
+            "termini station rome safety solo female night",
+            "staying near gare du nord paris safe"
+          ],
+          "skagHeadline": "[destination_city] Central Station Safety Audit",
+          "targetLegoEntityType": "micro_zone"
+        },
+        {
+          "keywordId": "ROOT-ZONE-04",
+          "rootPhrase": "solo female walkability score",
+          "canonicalIntent": "Evaluate street harassment frequency and reactionary safety for solo women on foot.",
+          "priorityScore": 94,
+          "seedVariants": [
+            "is [destination_city] safe to walk alone at night woman",
+            "[destination_city] solo female walkability rating",
+            "street harassment in [destination_city] solo female"
+          ],
+          "skagHeadline": "Solo Female Walkability in [destination_city]",
+          "targetLegoEntityType": "micro_zone"
+        },
+        {
+          "keywordId": "ROOT-ZONE-05",
+          "rootPhrase": "24 hour safe havens sanctuaries",
+          "canonicalIntent": "Map immediate shelter locations (armed police posts, 24h pharmacies, 24h hotel concierges).",
+          "priorityScore": 81,
+          "seedVariants": [
+            "24 hour police station near [micro_zone]",
+            "emergency sanctuary safe haven [destination_city]",
+            "koban police box locations [destination_city]"
+          ],
+          "skagHeadline": "24/7 Sanctuaries & Police Havens in [destination_city]",
+          "targetLegoEntityType": "micro_zone"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-REGULATORY-CUSTOMS",
+      "groupName": "Customs Landmines & Controlled Medication Bans",
+      "benchmarkModel": "seek_intent_grid",
+      "associatedPillar": "PIL-CONSULAR",
+      "primarySearchIntent": "life_safety_critical",
+      "targetRouteTemplate": "/playbook/countries/[country_name]/",
+      "negativeKeywords": [
+        "buy medication online",
+        "no prescription pharmacy",
+        "cheap vapes wholesale",
+        "customs clearance broker"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-REG-01",
+          "rootPhrase": "banned prescription medications customs",
+          "canonicalIntent": "Identify ADHD stimulants, codeine, and psychotropics that trigger arrest upon arrival.",
+          "priorityScore": 98,
+          "seedVariants": [
+            "bringing adderall into [country_name] arrest penalty",
+            "banned adhd stimulants customs [country_name]",
+            "can you bring vyvanse to [country_name] legally"
+          ],
+          "skagHeadline": "[country_name] Banned Medication Laws | ADHD Alert",
+          "targetLegoEntityType": "regulatory"
+        },
+        {
+          "keywordId": "ROOT-REG-02",
+          "rootPhrase": "medication import permit certificate",
+          "canonicalIntent": "Determine Yakkan Shoumei or consular permit application deadlines and paperwork requirements.",
+          "priorityScore": 91,
+          "seedVariants": [
+            "yakkan shoumei permit lead time [country_name]",
+            "yunyu kakunin sho application form medicine",
+            "doctor letter format foreign customs medicine"
+          ],
+          "skagHeadline": "[country_name] Medication Import Permit Guide",
+          "targetLegoEntityType": "regulatory"
+        },
+        {
+          "keywordId": "ROOT-REG-03",
+          "rootPhrase": "tourist vaping electronic cigarette ban",
+          "canonicalIntent": "Understand zero-tolerance e-cigarette import prohibitions, extortion fines, and prison terms.",
+          "priorityScore": 94,
+          "seedVariants": [
+            "is vaping illegal in [country_name] tourist fine",
+            "[country_name] vape pen customs seizure penalty",
+            "bringing vape into [destination_city] airport"
+          ],
+          "skagHeadline": "[country_name] Vape Ban & Customs Penalties Alert",
+          "targetLegoEntityType": "regulatory"
+        },
+        {
+          "keywordId": "ROOT-REG-04",
+          "rootPhrase": "tourist mandatory passport carriage law",
+          "canonicalIntent": "Clarify legal requirements to carry original physical passport vs photocopy on person.",
+          "priorityScore": 88,
+          "seedVariants": [
+            "do tourists have to carry original passport in [country_name]",
+            "police stop passport check fine [country_name]",
+            "passport copy vs original street check [country_name]"
+          ],
+          "skagHeadline": "[country_name] Mandatory Passport Carriage Laws",
+          "targetLegoEntityType": "regulatory"
+        },
+        {
+          "keywordId": "ROOT-REG-05",
+          "rootPhrase": "public alcohol curfew glass bottle decree",
+          "canonicalIntent": "Avoid administrative spot fines for carrying open beer or wine containers on public streets.",
+          "priorityScore": 83,
+          "seedVariants": [
+            "public drinking ban street alcohol curfew [destination_city]",
+            "glass bottle fine after 22:00 [destination_city]",
+            "takeaway alcohol sales curfew law [destination_city]"
+          ],
+          "skagHeadline": "[destination_city] Public Alcohol Curfew Decrees",
+          "targetLegoEntityType": "regulatory"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-DIGITAL-WORKSTATION",
+      "groupName": "Digital Nomad Asset & Cyber Hygiene",
+      "benchmarkModel": "nerdwallet_spec_matrix",
+      "associatedPillar": "PIL-DIGITAL",
+      "primarySearchIntent": "commercial_investigation",
+      "targetRouteTemplate": "/playbook/topics/laptop-gear-security/",
+      "negativeKeywords": [
+        "free wifi passwords",
+        "how to hack wifi",
+        "cheap used laptops",
+        "work from home jobs"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-DIGITAL-01",
+          "rootPhrase": "cafe laptop theft grab and run",
+          "canonicalIntent": "Position workstations and deploy physical anchors to defeat scooter grab-and-runs.",
+          "priorityScore": 89,
+          "seedVariants": [
+            "how to prevent laptop theft in cafes digital nomad",
+            "leaving laptop unattended in cafe bathroom break",
+            "cafe seating position defense grab and run"
+          ],
+          "skagHeadline": "Cafe Laptop Theft Defense | Nomad Protocol",
+          "targetLegoEntityType": "topic"
+        },
+        {
+          "keywordId": "ROOT-DIGITAL-02",
+          "rootPhrase": "public wifi security wireguard vpn",
+          "canonicalIntent": "Deploy fast, encrypted WireGuard VPN tunnels on unencrypted cafe and airport routers.",
+          "priorityScore": 92,
+          "seedVariants": [
+            "best vpn for digital nomads public wifi",
+            "wireguard vs openvpn solo travel security",
+            "safe banking on hotel wifi without hack"
+          ],
+          "skagHeadline": "Best WireGuard VPNs for Digital Nomads Tested",
+          "targetLegoEntityType": "product"
+        },
+        {
+          "keywordId": "ROOT-DIGITAL-03",
+          "rootPhrase": "usb data blocker juice jacking",
+          "canonicalIntent": "Install hardware power-only USB dongles to prevent malware injection at public charging kiosks.",
+          "priorityScore": 85,
+          "seedVariants": [
+            "usb data blocker for airport charging stations",
+            "juice jacking prevention dongle solo travel",
+            "usb condom data defender review"
+          ],
+          "skagHeadline": "USB Data Blockers for Public Charging Kiosks",
+          "targetLegoEntityType": "product"
+        },
+        {
+          "keywordId": "ROOT-DIGITAL-04",
+          "rootPhrase": "hardware 2fa security key backup",
+          "canonicalIntent": "Prevent catastrophic account lockout abroad with redundant dual YubiKeys and paper seeds.",
+          "priorityScore": 87,
+          "seedVariants": [
+            "yubikey travel redundancy 2fa lockout",
+            "digital nomad backup 2fa keys stolen phone",
+            "hardware security key best practices travel"
+          ],
+          "skagHeadline": "Hardware 2FA Key Redundancy for Travelers",
+          "targetLegoEntityType": "product"
+        },
+        {
+          "keywordId": "ROOT-DIGITAL-05",
+          "rootPhrase": "remote wipe stolen phone abroad",
+          "canonicalIntent": "Configure iCloud and Google Find My remote kill-switches with 2-minute auto-sleep locks.",
+          "priorityScore": 86,
+          "seedVariants": [
+            "how to remote wipe stolen iphone while abroad",
+            "lost phone in foreign country account lockout",
+            "stolen phone emergency protocol traveler"
+          ],
+          "skagHeadline": "Emergency Remote Wipe Protocol for Lost Phones",
+          "targetLegoEntityType": "topic"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-FINANCIAL-REDUNDANCY",
+      "groupName": "Financial Redundancy & Anti-Theft Protocols",
+      "benchmarkModel": "nerdwallet_spec_matrix",
+      "associatedPillar": "PIL-FINANCIAL",
+      "primarySearchIntent": "commercial_investigation",
+      "targetRouteTemplate": "/playbook/topics/two-cards-backup/",
+      "negativeKeywords": [
+        "credit repair",
+        "how to get loan fast",
+        "cryptocurrency trading",
+        "free gift card generator"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-FIN-01",
+          "rootPhrase": "two card two pocket rule",
+          "canonicalIntent": "Segregate primary and secondary payment cards across independent physical locations.",
+          "priorityScore": 95,
+          "seedVariants": [
+            "two cards two pockets solo travel financial rule",
+            "how to split credit cards while traveling solo",
+            "never carry all cards in one bag travel"
+          ],
+          "skagHeadline": "Financial Redundancy: Two Cards, Two Pockets",
+          "targetLegoEntityType": "topic"
+        },
+        {
+          "keywordId": "ROOT-FIN-02",
+          "rootPhrase": "decoy bait wallet solo travel",
+          "canonicalIntent": "Set up a disposable street wallet containing expired cards and small bills for robbery compliance.",
+          "priorityScore": 90,
+          "seedVariants": [
+            "how to make a fake bait wallet for travel mugging",
+            "dummy wallet street compliance solo travel",
+            "decoy wallet expired cards small cash"
+          ],
+          "skagHeadline": "How to Build a Decoy Bait Wallet for Travel",
+          "targetLegoEntityType": "topic"
+        },
+        {
+          "keywordId": "ROOT-FIN-03",
+          "rootPhrase": "emergency hard currency cash reserve",
+          "canonicalIntent": "Stash $100–$200 in pristine USD/EUR banknotes for total power and ATM network outages.",
+          "priorityScore": 88,
+          "seedVariants": [
+            "emergency cash reserve solo travel 100 dollars",
+            "how to hide emergency cash in shoes or luggage",
+            "pristine usd bills emergency travel stash"
+          ],
+          "skagHeadline": "The Emergency Hard Currency Cash Stash Guide",
+          "targetLegoEntityType": "checklist"
+        },
+        {
+          "keywordId": "ROOT-FIN-04",
+          "rootPhrase": "foreign atm card swallowed backup",
+          "canonicalIntent": "Immediate response protocol when an ATM swallows a card in an unfamiliar country.",
+          "priorityScore": 89,
+          "seedVariants": [
+            "what to do if foreign atm eats your card",
+            "bank card swallowed abroad no money left",
+            "atm skimming detection solo travel"
+          ],
+          "skagHeadline": "ATM Swallowed Card Crisis | Immediate Steps",
+          "targetLegoEntityType": "checklist"
+        },
+        {
+          "keywordId": "ROOT-FIN-05",
+          "rootPhrase": "anti-theft slash proof bag",
+          "canonicalIntent": "Select lockable zipper, cut-resistant wire-reinforced daypacks and waist pouches.",
+          "priorityScore": 92,
+          "seedVariants": [
+            "best slash proof cross body bag solo travel",
+            "pacsafe anti-theft daypack review",
+            "lockable zipper backpack for pickpocket prevention"
+          ],
+          "skagHeadline": "Top Tested Slash-Proof Anti-Theft Daypacks",
+          "targetLegoEntityType": "product"
+        }
+      ]
+    },
+    {
+      "groupId": "GRP-EMERGENCY-ESCALATION",
+      "groupName": "Automated Tripwire & Escalation Ladder",
+      "benchmarkModel": "tripadvisor_truth_reviews",
+      "associatedPillar": "PIL-COMMS",
+      "primarySearchIntent": "informational",
+      "targetRouteTemplate": "/playbook/topics/emergency-check-in/",
+      "negativeKeywords": [
+        "cheap sim card deals",
+        "unlimited international calling plan",
+        "find my friends app download"
+      ],
+      "rootKeywords": [
+        {
+          "keywordId": "ROOT-COMMS-01",
+          "rootPhrase": "solo travel check in ladder",
+          "canonicalIntent": "Establish fixed daily check-in windows with graceful verification steps before family panic.",
+          "priorityScore": 93,
+          "seedVariants": [
+            "solo travel parent check in schedule protocol",
+            "how often to check in with parents solo trip",
+            "calm check in ladder for solo travelers"
+          ],
+          "skagHeadline": "The Solo Travel Check-In Escalation Ladder",
+          "targetLegoEntityType": "topic"
+        },
+        {
+          "keywordId": "ROOT-COMMS-02",
+          "rootPhrase": "preloaded travel esim touchdown data",
+          "canonicalIntent": "Activate roaming or eSIM prior to aircraft descent so cellular data is live upon gate opening.",
+          "priorityScore": 94,
+          "seedVariants": [
+            "best esim for international travel instant data",
+            "airalo regional esim installation before flight",
+            "avoiding airport sim card lines arrival"
+          ],
+          "skagHeadline": "Best Global Travel eSIMs | Instant Touchdown Data",
+          "targetLegoEntityType": "product"
+        },
+        {
+          "keywordId": "ROOT-COMMS-03",
+          "rootPhrase": "printable emergency pocket card",
+          "canonicalIntent": "Generate a battery-independent laminated card with translated emergency numbers.",
+          "priorityScore": 86,
+          "seedVariants": [
+            "printable emergency contact card for travelers",
+            "paper emergency numbers card dead phone battery",
+            "wallet emergency card with translated hospital phrases"
+          ],
+          "skagHeadline": "Generate Free Printable Emergency Pocket Card",
+          "targetLegoEntityType": "checklist"
+        },
+        {
+          "keywordId": "ROOT-COMMS-04",
+          "rootPhrase": "consular 24 hour crisis emergency phone",
+          "canonicalIntent": "Speed-dial embassy crisis officers during arrests, medical emergencies, or lost passports.",
+          "priorityScore": 90,
+          "seedVariants": [
+            "us embassy 24/7 crisis hotline [country_name]",
+            "australian consular emergency service overseas",
+            "what can an embassy do if arrested abroad"
+          ],
+          "skagHeadline": "24/7 Consular Crisis Hotlines by Country",
+          "targetLegoEntityType": "country"
+        },
+        {
+          "keywordId": "ROOT-COMMS-05",
+          "rootPhrase": "dead man emergency tripwire solo",
+          "canonicalIntent": "Automate a timed email release of vault credentials and itinerary if a check-in is missed.",
+          "priorityScore": 84,
+          "seedVariants": [
+            "dead man switch for solo travelers safety",
+            "automated emergency notification if solo traveler missing",
+            "tripwire check in system solo travel security"
+          ],
+          "skagHeadline": "Dead-Man Tripwire Escalation for Solo Trips",
+          "targetLegoEntityType": "topic"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,951 @@
+[
+  {
+    "slug": "tokyo",
+    "name": "Tokyo",
+    "countryCode": "JP",
+    "coordinates": {
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "wikidataId": "Q1490",
+    "population": 13960000,
+    "riskTier": "Low",
+    "primaryAirportCode": "HND"
+  },
+  {
+    "slug": "kyoto",
+    "name": "Kyoto",
+    "countryCode": "JP",
+    "coordinates": {
+      "latitude": 35.0116,
+      "longitude": 135.7681
+    },
+    "wikidataId": "Q34600",
+    "population": 1464000,
+    "riskTier": "Low",
+    "primaryAirportCode": "KIX"
+  },
+  {
+    "slug": "osaka",
+    "name": "Osaka",
+    "countryCode": "JP",
+    "coordinates": {
+      "latitude": 34.6937,
+      "longitude": 135.5023
+    },
+    "wikidataId": "Q35765",
+    "population": 2691000,
+    "riskTier": "Low",
+    "primaryAirportCode": "KIX"
+  },
+  {
+    "slug": "bangkok",
+    "name": "Bangkok",
+    "countryCode": "TH",
+    "coordinates": {
+      "latitude": 13.7563,
+      "longitude": 100.5018
+    },
+    "wikidataId": "Q1861",
+    "population": 10539000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "BKK"
+  },
+  {
+    "slug": "chiang-mai",
+    "name": "Chiang Mai",
+    "countryCode": "TH",
+    "coordinates": {
+      "latitude": 18.7883,
+      "longitude": 98.9853
+    },
+    "wikidataId": "Q193630",
+    "population": 127000,
+    "riskTier": "Low",
+    "primaryAirportCode": "CNX"
+  },
+  {
+    "slug": "phuket",
+    "name": "Phuket",
+    "countryCode": "TH",
+    "coordinates": {
+      "latitude": 7.8804,
+      "longitude": 98.3923
+    },
+    "wikidataId": "Q182567",
+    "population": 79000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "HKT"
+  },
+  {
+    "slug": "bali",
+    "name": "Bali (Denpasar)",
+    "countryCode": "ID",
+    "coordinates": {
+      "latitude": -8.6705,
+      "longitude": 115.2126
+    },
+    "wikidataId": "Q4648",
+    "population": 4362000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "DPS"
+  },
+  {
+    "slug": "hanoi",
+    "name": "Hanoi",
+    "countryCode": "VN",
+    "coordinates": {
+      "latitude": 21.0285,
+      "longitude": 105.8542
+    },
+    "wikidataId": "Q1858",
+    "population": 8053663,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "HAN"
+  },
+  {
+    "slug": "ho-chi-minh-city",
+    "name": "Ho Chi Minh City",
+    "countryCode": "VN",
+    "coordinates": {
+      "latitude": 10.8231,
+      "longitude": 106.6297
+    },
+    "wikidataId": "Q1854",
+    "population": 8993082,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "SGN"
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "countryCode": "SG",
+    "coordinates": {
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "wikidataId": "Q334",
+    "population": 5685807,
+    "riskTier": "Low",
+    "primaryAirportCode": "SIN"
+  },
+  {
+    "slug": "seoul",
+    "name": "Seoul",
+    "countryCode": "KR",
+    "coordinates": {
+      "latitude": 37.5665,
+      "longitude": 126.978
+    },
+    "wikidataId": "Q8684",
+    "population": 9776000,
+    "riskTier": "Low",
+    "primaryAirportCode": "ICN"
+  },
+  {
+    "slug": "taipei",
+    "name": "Taipei",
+    "countryCode": "TW",
+    "coordinates": {
+      "latitude": 25.033,
+      "longitude": 121.5654
+    },
+    "wikidataId": "Q1867",
+    "population": 2602418,
+    "riskTier": "Low",
+    "primaryAirportCode": "TPE"
+  },
+  {
+    "slug": "kuala-lumpur",
+    "name": "Kuala Lumpur",
+    "countryCode": "MY",
+    "coordinates": {
+      "latitude": 3.139,
+      "longitude": 101.6869
+    },
+    "wikidataId": "Q1865",
+    "population": 1982112,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "KUL"
+  },
+  {
+    "slug": "manila",
+    "name": "Manila",
+    "countryCode": "PH",
+    "coordinates": {
+      "latitude": 14.5995,
+      "longitude": 120.9842
+    },
+    "wikidataId": "Q1461",
+    "population": 1846513,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "MNL"
+  },
+  {
+    "slug": "siem-reap",
+    "name": "Siem Reap",
+    "countryCode": "KH",
+    "coordinates": {
+      "latitude": 13.3671,
+      "longitude": 103.8448
+    },
+    "wikidataId": "Q652837",
+    "population": 139458,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "SAI"
+  },
+  {
+    "slug": "luang-prabang",
+    "name": "Luang Prabang",
+    "countryCode": "LA",
+    "coordinates": {
+      "latitude": 19.8893,
+      "longitude": 102.1337
+    },
+    "wikidataId": "Q190130",
+    "population": 55884,
+    "riskTier": "Low",
+    "primaryAirportCode": "LPQ"
+  },
+  {
+    "slug": "colombo",
+    "name": "Colombo",
+    "countryCode": "LK",
+    "coordinates": {
+      "latitude": 6.9271,
+      "longitude": 79.8612
+    },
+    "wikidataId": "Q35381",
+    "population": 752993,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "CMB"
+  },
+  {
+    "slug": "new-delhi",
+    "name": "New Delhi",
+    "countryCode": "IN",
+    "coordinates": {
+      "latitude": 28.6139,
+      "longitude": 77.209
+    },
+    "wikidataId": "Q987",
+    "population": 14200000,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "DEL"
+  },
+  {
+    "slug": "kathmandu",
+    "name": "Kathmandu",
+    "countryCode": "NP",
+    "coordinates": {
+      "latitude": 27.7172,
+      "longitude": 85.324
+    },
+    "wikidataId": "Q1861",
+    "population": 1442000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "KTM"
+  },
+  {
+    "slug": "sydney",
+    "name": "Sydney",
+    "countryCode": "AU",
+    "coordinates": {
+      "latitude": -33.8688,
+      "longitude": 151.2093
+    },
+    "wikidataId": "Q3130",
+    "population": 5312000,
+    "riskTier": "Low",
+    "primaryAirportCode": "SYD"
+  },
+  {
+    "slug": "melbourne",
+    "name": "Melbourne",
+    "countryCode": "AU",
+    "coordinates": {
+      "latitude": -37.8136,
+      "longitude": 144.9631
+    },
+    "wikidataId": "Q3141",
+    "population": 5078000,
+    "riskTier": "Low",
+    "primaryAirportCode": "MEL"
+  },
+  {
+    "slug": "auckland",
+    "name": "Auckland",
+    "countryCode": "NZ",
+    "coordinates": {
+      "latitude": -36.8485,
+      "longitude": 174.7633
+    },
+    "wikidataId": "Q37100",
+    "population": 1657000,
+    "riskTier": "Low",
+    "primaryAirportCode": "AKL"
+  },
+  {
+    "slug": "tbilisi",
+    "name": "Tbilisi",
+    "countryCode": "GE",
+    "coordinates": {
+      "latitude": 41.7151,
+      "longitude": 44.8271
+    },
+    "wikidataId": "Q994",
+    "population": 1154000,
+    "riskTier": "Low",
+    "primaryAirportCode": "TBS"
+  },
+  {
+    "slug": "rome",
+    "name": "Rome",
+    "countryCode": "IT",
+    "coordinates": {
+      "latitude": 41.8919,
+      "longitude": 12.5113
+    },
+    "wikidataId": "Q220",
+    "population": 2873000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "FCO"
+  },
+  {
+    "slug": "florence",
+    "name": "Florence",
+    "countryCode": "IT",
+    "coordinates": {
+      "latitude": 43.7696,
+      "longitude": 11.2558
+    },
+    "wikidataId": "Q2044",
+    "population": 382258,
+    "riskTier": "Low",
+    "primaryAirportCode": "FLR"
+  },
+  {
+    "slug": "milan",
+    "name": "Milan",
+    "countryCode": "IT",
+    "coordinates": {
+      "latitude": 45.4642,
+      "longitude": 9.19
+    },
+    "wikidataId": "Q490",
+    "population": 1352000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "MXP"
+  },
+  {
+    "slug": "venice",
+    "name": "Venice",
+    "countryCode": "IT",
+    "coordinates": {
+      "latitude": 45.4408,
+      "longitude": 12.3155
+    },
+    "wikidataId": "Q641",
+    "population": 261905,
+    "riskTier": "Low",
+    "primaryAirportCode": "VCE"
+  },
+  {
+    "slug": "barcelona",
+    "name": "Barcelona",
+    "countryCode": "ES",
+    "coordinates": {
+      "latitude": 41.3851,
+      "longitude": 2.1734
+    },
+    "wikidataId": "Q1492",
+    "population": 1620000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "BCN"
+  },
+  {
+    "slug": "madrid",
+    "name": "Madrid",
+    "countryCode": "ES",
+    "coordinates": {
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    "wikidataId": "Q2807",
+    "population": 3223000,
+    "riskTier": "Low",
+    "primaryAirportCode": "MAD"
+  },
+  {
+    "slug": "seville",
+    "name": "Seville",
+    "countryCode": "ES",
+    "coordinates": {
+      "latitude": 37.3891,
+      "longitude": -5.9845
+    },
+    "wikidataId": "Q8717",
+    "population": 688711,
+    "riskTier": "Low",
+    "primaryAirportCode": "SVQ"
+  },
+  {
+    "slug": "paris",
+    "name": "Paris",
+    "countryCode": "FR",
+    "coordinates": {
+      "latitude": 48.8566,
+      "longitude": 2.3522
+    },
+    "wikidataId": "Q90",
+    "population": 2161000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "CDG"
+  },
+  {
+    "slug": "nice",
+    "name": "Nice",
+    "countryCode": "FR",
+    "coordinates": {
+      "latitude": 43.7102,
+      "longitude": 7.262
+    },
+    "wikidataId": "Q33959",
+    "population": 342522,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "NCE"
+  },
+  {
+    "slug": "lisbon",
+    "name": "Lisbon",
+    "countryCode": "PT",
+    "coordinates": {
+      "latitude": 38.7223,
+      "longitude": -9.1393
+    },
+    "wikidataId": "Q597",
+    "population": 504718,
+    "riskTier": "Low",
+    "primaryAirportCode": "LIS"
+  },
+  {
+    "slug": "porto",
+    "name": "Porto",
+    "countryCode": "PT",
+    "coordinates": {
+      "latitude": 41.1579,
+      "longitude": -8.6291
+    },
+    "wikidataId": "Q36433",
+    "population": 231800,
+    "riskTier": "Low",
+    "primaryAirportCode": "OPO"
+  },
+  {
+    "slug": "amsterdam",
+    "name": "Amsterdam",
+    "countryCode": "NL",
+    "coordinates": {
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "wikidataId": "Q727",
+    "population": 872680,
+    "riskTier": "Low",
+    "primaryAirportCode": "AMS"
+  },
+  {
+    "slug": "london",
+    "name": "London",
+    "countryCode": "GB",
+    "coordinates": {
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    "wikidataId": "Q84",
+    "population": 8982000,
+    "riskTier": "Low",
+    "primaryAirportCode": "LHR"
+  },
+  {
+    "slug": "edinburgh",
+    "name": "Edinburgh",
+    "countryCode": "GB",
+    "coordinates": {
+      "latitude": 55.9533,
+      "longitude": -3.1883
+    },
+    "wikidataId": "Q23436",
+    "population": 527620,
+    "riskTier": "Low",
+    "primaryAirportCode": "EDI"
+  },
+  {
+    "slug": "dublin",
+    "name": "Dublin",
+    "countryCode": "IE",
+    "coordinates": {
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "wikidataId": "Q1761",
+    "population": 1173179,
+    "riskTier": "Low",
+    "primaryAirportCode": "DUB"
+  },
+  {
+    "slug": "berlin",
+    "name": "Berlin",
+    "countryCode": "DE",
+    "coordinates": {
+      "latitude": 52.52,
+      "longitude": 13.405
+    },
+    "wikidataId": "Q64",
+    "population": 3645000,
+    "riskTier": "Low",
+    "primaryAirportCode": "BER"
+  },
+  {
+    "slug": "munich",
+    "name": "Munich",
+    "countryCode": "DE",
+    "coordinates": {
+      "latitude": 48.1351,
+      "longitude": 11.582
+    },
+    "wikidataId": "Q1726",
+    "population": 1472000,
+    "riskTier": "Low",
+    "primaryAirportCode": "MUC"
+  },
+  {
+    "slug": "vienna",
+    "name": "Vienna",
+    "countryCode": "AT",
+    "coordinates": {
+      "latitude": 48.2082,
+      "longitude": 16.3738
+    },
+    "wikidataId": "Q1741",
+    "population": 1911000,
+    "riskTier": "Low",
+    "primaryAirportCode": "VIE"
+  },
+  {
+    "slug": "prague",
+    "name": "Prague",
+    "countryCode": "CZ",
+    "coordinates": {
+      "latitude": 50.0755,
+      "longitude": 14.4378
+    },
+    "wikidataId": "Q1085",
+    "population": 1309000,
+    "riskTier": "Low",
+    "primaryAirportCode": "PRG"
+  },
+  {
+    "slug": "budapest",
+    "name": "Budapest",
+    "countryCode": "HU",
+    "coordinates": {
+      "latitude": 47.4979,
+      "longitude": 19.0402
+    },
+    "wikidataId": "Q1781",
+    "population": 1756000,
+    "riskTier": "Low",
+    "primaryAirportCode": "BUD"
+  },
+  {
+    "slug": "athens",
+    "name": "Athens",
+    "countryCode": "GR",
+    "coordinates": {
+      "latitude": 37.9838,
+      "longitude": 23.7275
+    },
+    "wikidataId": "Q1524",
+    "population": 664046,
+    "riskTier": "Low",
+    "primaryAirportCode": "ATH"
+  },
+  {
+    "slug": "dubrovnik",
+    "name": "Dubrovnik",
+    "countryCode": "HR",
+    "coordinates": {
+      "latitude": 42.6507,
+      "longitude": 18.0944
+    },
+    "wikidataId": "Q1722",
+    "population": 42615,
+    "riskTier": "Low",
+    "primaryAirportCode": "DBV"
+  },
+  {
+    "slug": "reykjavik",
+    "name": "Reykjavik",
+    "countryCode": "IS",
+    "coordinates": {
+      "latitude": 64.1466,
+      "longitude": -21.9426
+    },
+    "wikidataId": "Q395",
+    "population": 131136,
+    "riskTier": "Low",
+    "primaryAirportCode": "KEF"
+  },
+  {
+    "slug": "zurich",
+    "name": "Zurich",
+    "countryCode": "CH",
+    "coordinates": {
+      "latitude": 47.3769,
+      "longitude": 8.5417
+    },
+    "wikidataId": "Q72",
+    "population": 434008,
+    "riskTier": "Low",
+    "primaryAirportCode": "ZRH"
+  },
+  {
+    "slug": "copenhagen",
+    "name": "Copenhagen",
+    "countryCode": "DK",
+    "coordinates": {
+      "latitude": 55.6761,
+      "longitude": 12.5683
+    },
+    "wikidataId": "Q1748",
+    "population": 799033,
+    "riskTier": "Low",
+    "primaryAirportCode": "CPH"
+  },
+  {
+    "slug": "stockholm",
+    "name": "Stockholm",
+    "countryCode": "SE",
+    "coordinates": {
+      "latitude": 59.3293,
+      "longitude": 18.0686
+    },
+    "wikidataId": "Q1754",
+    "population": 975551,
+    "riskTier": "Low",
+    "primaryAirportCode": "ARN"
+  },
+  {
+    "slug": "oslo",
+    "name": "Oslo",
+    "countryCode": "NO",
+    "coordinates": {
+      "latitude": 59.9139,
+      "longitude": 10.7522
+    },
+    "wikidataId": "Q585",
+    "population": 634293,
+    "riskTier": "Low",
+    "primaryAirportCode": "OSL"
+  },
+  {
+    "slug": "istanbul",
+    "name": "Istanbul",
+    "countryCode": "TR",
+    "coordinates": {
+      "latitude": 41.0082,
+      "longitude": 28.9784
+    },
+    "wikidataId": "Q406",
+    "population": 15460000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "IST"
+  },
+  {
+    "slug": "mexico-city",
+    "name": "Mexico City",
+    "countryCode": "MX",
+    "coordinates": {
+      "latitude": 19.4326,
+      "longitude": -99.1332
+    },
+    "wikidataId": "Q1489",
+    "population": 9209944,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "MEX"
+  },
+  {
+    "slug": "oaxaca",
+    "name": "Oaxaca",
+    "countryCode": "MX",
+    "coordinates": {
+      "latitude": 17.0732,
+      "longitude": -96.7266
+    },
+    "wikidataId": "Q184288",
+    "population": 300050,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "OAX"
+  },
+  {
+    "slug": "cancun",
+    "name": "Cancun",
+    "countryCode": "MX",
+    "coordinates": {
+      "latitude": 21.1619,
+      "longitude": -86.8515
+    },
+    "wikidataId": "Q8969",
+    "population": 888797,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "CUN"
+  },
+  {
+    "slug": "medellin",
+    "name": "Medellín",
+    "countryCode": "CO",
+    "coordinates": {
+      "latitude": 6.2442,
+      "longitude": -75.5812
+    },
+    "wikidataId": "Q48278",
+    "population": 2569007,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "MDE"
+  },
+  {
+    "slug": "bogota",
+    "name": "Bogota",
+    "countryCode": "CO",
+    "coordinates": {
+      "latitude": 4.711,
+      "longitude": -74.0721
+    },
+    "wikidataId": "Q2841",
+    "population": 7181469,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "BOG"
+  },
+  {
+    "slug": "cartagena",
+    "name": "Cartagena",
+    "countryCode": "CO",
+    "coordinates": {
+      "latitude": 10.391,
+      "longitude": -75.4794
+    },
+    "wikidataId": "Q657",
+    "population": 914552,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "CTG"
+  },
+  {
+    "slug": "lima",
+    "name": "Lima",
+    "countryCode": "PE",
+    "coordinates": {
+      "latitude": -12.0464,
+      "longitude": -77.0428
+    },
+    "wikidataId": "Q2868",
+    "population": 9674755,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "LIM"
+  },
+  {
+    "slug": "cusco",
+    "name": "Cusco",
+    "countryCode": "PE",
+    "coordinates": {
+      "latitude": -13.5319,
+      "longitude": -71.9675
+    },
+    "wikidataId": "Q208282",
+    "population": 428450,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "CUZ"
+  },
+  {
+    "slug": "buenos-aires",
+    "name": "Buenos Aires",
+    "countryCode": "AR",
+    "coordinates": {
+      "latitude": -34.6037,
+      "longitude": -58.3816
+    },
+    "wikidataId": "Q1486",
+    "population": 3120612,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "EZE"
+  },
+  {
+    "slug": "santiago",
+    "name": "Santiago",
+    "countryCode": "CL",
+    "coordinates": {
+      "latitude": -33.4489,
+      "longitude": -70.6693
+    },
+    "wikidataId": "Q2887",
+    "population": 6257516,
+    "riskTier": "Low",
+    "primaryAirportCode": "SCL"
+  },
+  {
+    "slug": "rio-de-janeiro",
+    "name": "Rio de Janeiro",
+    "countryCode": "BR",
+    "coordinates": {
+      "latitude": -22.9068,
+      "longitude": -43.1729
+    },
+    "wikidataId": "Q8678",
+    "population": 6748000,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "GIG"
+  },
+  {
+    "slug": "new-york",
+    "name": "New York City",
+    "countryCode": "US",
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
+    "wikidataId": "Q60",
+    "population": 8336817,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "JFK"
+  },
+  {
+    "slug": "san-francisco",
+    "name": "San Francisco",
+    "countryCode": "US",
+    "coordinates": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "wikidataId": "Q62",
+    "population": 873965,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "SFO"
+  },
+  {
+    "slug": "toronto",
+    "name": "Toronto",
+    "countryCode": "CA",
+    "coordinates": {
+      "latitude": 43.6532,
+      "longitude": -79.3832
+    },
+    "wikidataId": "Q172",
+    "population": 2794356,
+    "riskTier": "Low",
+    "primaryAirportCode": "YYZ"
+  },
+  {
+    "slug": "vancouver",
+    "name": "Vancouver",
+    "countryCode": "CA",
+    "coordinates": {
+      "latitude": 49.2827,
+      "longitude": -123.1207
+    },
+    "wikidataId": "Q24639",
+    "population": 675218,
+    "riskTier": "Low",
+    "primaryAirportCode": "YVR"
+  },
+  {
+    "slug": "san-jose",
+    "name": "San Jose",
+    "countryCode": "CR",
+    "coordinates": {
+      "latitude": 9.9281,
+      "longitude": -84.0907
+    },
+    "wikidataId": "Q3070",
+    "population": 342188,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "SJO"
+  },
+  {
+    "slug": "dubai",
+    "name": "Dubai",
+    "countryCode": "AE",
+    "coordinates": {
+      "latitude": 25.2048,
+      "longitude": 55.2708
+    },
+    "wikidataId": "Q612",
+    "population": 3331420,
+    "riskTier": "Low",
+    "primaryAirportCode": "DXB"
+  },
+  {
+    "slug": "marrakech",
+    "name": "Marrakech",
+    "countryCode": "MA",
+    "coordinates": {
+      "latitude": 31.6295,
+      "longitude": -7.9811
+    },
+    "wikidataId": "Q101625",
+    "population": 928850,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "RAK"
+  },
+  {
+    "slug": "cairo",
+    "name": "Cairo",
+    "countryCode": "EG",
+    "coordinates": {
+      "latitude": 30.0444,
+      "longitude": 31.2357
+    },
+    "wikidataId": "Q85",
+    "population": 9540000,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "CAI"
+  },
+  {
+    "slug": "cape-town",
+    "name": "Cape Town",
+    "countryCode": "ZA",
+    "coordinates": {
+      "latitude": -33.9249,
+      "longitude": 18.4241
+    },
+    "wikidataId": "Q5465",
+    "population": 4618000,
+    "riskTier": "Elevated",
+    "primaryAirportCode": "CPT"
+  },
+  {
+    "slug": "nairobi",
+    "name": "Nairobi",
+    "countryCode": "KE",
+    "coordinates": {
+      "latitude": -1.2921,
+      "longitude": 36.8219
+    },
+    "wikidataId": "Q3870",
+    "population": 4397073,
+    "riskTier": "Moderate",
+    "primaryAirportCode": "NBO"
+  },
+  {
+    "slug": "amman",
+    "name": "Amman",
+    "countryCode": "JO",
+    "coordinates": {
+      "latitude": 31.9454,
+      "longitude": 35.9284
+    },
+    "wikidataId": "Q3805",
+    "population": 4007526,
+    "riskTier": "Low",
+    "primaryAirportCode": "AMM"
+  }
+]
