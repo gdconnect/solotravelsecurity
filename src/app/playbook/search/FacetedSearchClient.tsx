@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useTransition } from "react";
+import { useState, useMemo, useCallback, useTransition } from "react";
+import { useStorageVersion } from "@/lib/use-storage-version";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   SEARCH_INDEX,
@@ -15,7 +16,12 @@ import type {
   FacetPriceTier,
   FacetRiskTier,
 } from "@/lib/search";
-import { getStoredTrips, getActiveTripId, getStoredPersona } from "@/lib/personalization/storage";
+import {
+  getStoredTrips,
+  getActiveTripId,
+  getStoredPersona,
+  STORAGE_EVENTS,
+} from "@/lib/personalization/storage";
 import type { TripPlan, TravelerPersona } from "@/lib/personalization/types";
 import { Icon } from "@/components/atoms/Icon";
 import { Badge } from "@/components/atoms";
@@ -29,11 +35,21 @@ export function FacetedSearchClient() {
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  // Local state for active trip context (Zero-PII local-first)
-  const [activeTripContext, setActiveTripContext] = useState<{
-    trip: TripPlan;
-    persona: TravelerPersona;
-  } | null>(null);
+  // Active trip context (Zero-PII local-first), re-derived after hydration
+  // and whenever the portal writes to storage.
+  const storageVersion = useStorageVersion(STORAGE_EVENTS);
+  const activeTripContext = useMemo<{ trip: TripPlan; persona: TravelerPersona } | null>(() => {
+    if (storageVersion < 0) return null;
+    try {
+      const trips = getStoredTrips();
+      const activeId = getActiveTripId();
+      const persona = getStoredPersona();
+      const trip = trips.find((t) => t.id === activeId) || trips[0];
+      return trip && persona ? { trip, persona } : null;
+    } catch {
+      return null;
+    }
+  }, [storageVersion]);
 
   // Initialize filter state from URL params
   const [filterState, setFilterState] = useState<SearchFilterState>(() => {
@@ -44,7 +60,7 @@ export function FacetedSearchClient() {
     const riskTiers = (searchParams.getAll("risk") as FacetRiskTier[]).filter(Boolean);
     const formats = (searchParams.getAll("format") as FacetFormat[]).filter(Boolean);
     const priceTiers = (searchParams.getAll("price") as FacetPriceTier[]).filter(Boolean);
-    const sortBy = (searchParams.get("sort") as any) || "relevance";
+    const sortBy = (searchParams.get("sort") as SearchFilterState["sortBy"] | null) || "relevance";
     const personalizedOnly = searchParams.get("personalized") === "1";
 
     return {
@@ -61,21 +77,6 @@ export function FacetedSearchClient() {
   });
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-
-  // Load client-side trip context for Zero-PII personalization
-  useEffect(() => {
-    try {
-      const trips = getStoredTrips();
-      const activeId = getActiveTripId();
-      const persona = getStoredPersona();
-      const trip = trips.find((t) => t.id === activeId) || trips[0];
-      if (trip && persona) {
-        setActiveTripContext({ trip, persona });
-      }
-    } catch {
-      // LocalStorage access error fallback
-    }
-  }, []);
 
   // Synchronize state changes to URL query string
   const updateUrlParams = useCallback(
@@ -594,7 +595,10 @@ export function FacetedSearchClient() {
                 id="sort-select"
                 value={filterState.sortBy}
                 onChange={(e) =>
-                  handleFilterChange((p) => ({ ...p, sortBy: e.target.value as any }))
+                  handleFilterChange((p) => ({
+                    ...p,
+                    sortBy: e.target.value as SearchFilterState["sortBy"],
+                  }))
                 }
                 className="rounded-xl border border-slate-200 bg-white px-3 py-1.5 font-display text-xs font-bold text-slate-800 shadow-2xs dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
               >

@@ -48,7 +48,7 @@ interface ResolvedTarget {
 
 const OPERATION_NAME_RE = /^\s*(?:query|mutation)\s+([A-Za-z_][A-Za-z0-9_]*)/m;
 
-type FixtureResolver = (variables?: any) => unknown;
+type FixtureResolver = (variables: Record<string, unknown>) => unknown;
 
 async function resolveFixture<TData>(query: string, variables: unknown): Promise<TData> {
   const { GRAPHQL_FIXTURES } = await import("./fixtures");
@@ -62,7 +62,7 @@ async function resolveFixture<TData>(query: string, variables: unknown): Promise
     throw new Error(message);
   }
 
-  return entry(variables ?? {}) as TData;
+  return entry((variables ?? {}) as Record<string, unknown>) as TData;
 }
 
 async function resolveTarget(token?: string): Promise<ResolvedTarget> {

@@ -21,7 +21,24 @@ export interface IntakeValidationResult {
 /**
  * Validates a Partner Profile payload prior to ingestion.
  */
-export function validatePartnerProfile(partner: any): IntakeValidationResult {
+/** Untrusted intake payloads: every field optional until validated. */
+export interface PartnerProfileIntake {
+  partnerId?: string;
+  legalBusinessName?: string;
+  primaryDomain?: string;
+  complianceStatus?: {
+    ftcDisclaimerAccepted?: boolean;
+    sanctionsComplianceConfirmed?: boolean;
+  };
+}
+
+export interface PartnerOfferIntake {
+  offerId?: string;
+  trackingConfig?: { urlTemplate?: string };
+  editorialReview?: { verifiedPhysicalTest?: boolean };
+}
+
+export function validatePartnerProfile(partner: PartnerProfileIntake): IntakeValidationResult {
   const issues: ValidationIssue[] = [];
 
   if (!partner.partnerId || !partner.partnerId.startsWith("PARTNER-")) {
@@ -86,7 +103,7 @@ export function validatePartnerProfile(partner: any): IntakeValidationResult {
 /**
  * Validates a Partner Commercial Offer payload prior to ingestion.
  */
-export function validatePartnerOffer(offer: any): IntakeValidationResult {
+export function validatePartnerOffer(offer: PartnerOfferIntake): IntakeValidationResult {
   const issues: ValidationIssue[] = [];
 
   if (!offer.offerId || !offer.offerId.startsWith("OFFER-")) {

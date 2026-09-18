@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
+import { useStorageVersion } from "@/lib/use-storage-version";
 import { Icon } from "@/components/atoms/Icon";
 import {
   saveEmergencyBundleOffline,
   isCityCachedOffline,
+  OFFLINE_CACHE_UPDATE_EVENT,
   type OfflineEmergencyBundle,
 } from "@/lib/offline/emergency-cache";
 
@@ -25,18 +27,20 @@ interface OfflineEmergencyBadgeProps {
   }[];
 }
 
+const OFFLINE_EVENTS = [OFFLINE_CACHE_UPDATE_EVENT] as const;
+
 export function OfflineEmergencyBadge({
   destinationCity,
   destinationCountryIso2,
   emergencyNumbers,
   survivalPhrases,
 }: OfflineEmergencyBadgeProps) {
-  const [isCached, setIsCached] = useState(false);
   const [justSaved, setJustSaved] = useState(false);
-
-  useEffect(() => {
-    setIsCached(isCityCachedOffline(destinationCity));
-  }, [destinationCity]);
+  const cacheVersion = useStorageVersion(OFFLINE_EVENTS);
+  const isCached = useMemo(
+    () => cacheVersion >= 0 && isCityCachedOffline(destinationCity),
+    [cacheVersion, destinationCity],
+  );
 
   const handleSaveOffline = () => {
     const bundle: OfflineEmergencyBundle = {
@@ -67,7 +71,6 @@ export function OfflineEmergencyBadge({
 
     const ok = saveEmergencyBundleOffline(bundle);
     if (ok) {
-      setIsCached(true);
       setJustSaved(true);
       setTimeout(() => setJustSaved(false), 3500);
     }

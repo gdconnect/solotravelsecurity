@@ -9,13 +9,16 @@
 import { getAllCountries, getCountryByIso2 } from "@/data/geo/countries";
 import { GEAR_CATALOG } from "@/data/gear/matcher";
 import { SECURITY_PILLARS, LIFECYCLE_PHASES } from "@/data/taxonomy";
-import { generateSituationalChecklist } from "@/lib/engine/checklist-generator";
+import {
+  generateSituationalChecklist,
+  type ChecklistGenerationParams,
+} from "@/lib/engine/checklist-generator";
 import { DECISION_TABLE_CATALOG } from "@/lib/engine/decision-tables";
 import { TRUTH_TABLE_CATALOG } from "@/lib/engine/truth-tables";
 import { SEARCH_INDEX, filterSearchItems, calculateFacetCounts } from "@/lib/search";
 import type { SearchFilterState } from "@/lib/search/types";
 
-export type FixtureHandler = (vars?: any) => unknown;
+export type FixtureHandler = (vars: Record<string, unknown>) => unknown;
 
 const formatMapIn: Record<string, string> = {
   PHYSICAL_GEAR: "physical_gear",
@@ -211,7 +214,9 @@ export const GRAPHQL_FIXTURES: Record<string, FixtureHandler> = {
   },
 
   GenerateChecklist: (vars) => {
-    const result = generateSituationalChecklist(vars?.input || {});
+    const result = generateSituationalChecklist(
+      (vars?.input as ChecklistGenerationParams | undefined) ?? {},
+    );
     return {
       generateChecklist: result,
     };
@@ -230,15 +235,23 @@ export const GRAPHQL_FIXTURES: Record<string, FixtureHandler> = {
   },
 
   SearchFacetedItems: (vars) => {
-    const filterInput = vars?.filter || {};
+    // GraphQL enum spellings (PHYSICAL_GEAR) arrive here and are mapped to facet values below.
+    const filterInput = (vars.filter ?? {}) as Partial<
+      Omit<SearchFilterState, "formats" | "priceTiers"> & {
+        formats: string[];
+        priceTiers: string[];
+      }
+    >;
     const state: SearchFilterState = {
       query: filterInput.query || "",
       types: filterInput.types || [],
       categories: filterInput.categories || [],
-      formats: (filterInput.formats || []).map((f: string) => formatMapIn[f] || f.toLowerCase()),
+      formats: (filterInput.formats || []).map(
+        (f) => formatMapIn[f] || f.toLowerCase(),
+      ) as SearchFilterState["formats"],
       priceTiers: (filterInput.priceTiers || []).map(
-        (p: string) => priceMapIn[p] || p.toLowerCase(),
-      ),
+        (p) => priceMapIn[p] || p.toLowerCase(),
+      ) as SearchFilterState["priceTiers"],
       riskTiers: filterInput.riskTiers || [],
       archetypes: filterInput.archetypes || [],
       personalizedOnly: false,
@@ -318,7 +331,7 @@ export const GRAPHQL_FIXTURES: Record<string, FixtureHandler> = {
 
   SaveFavorite: (vars) => {
     const token = (vars?.sessionToken as string) || "default";
-    const itemInput = vars?.item || {};
+    const itemInput = (vars?.item ?? {}) as FixtureFavorite;
     const current = sessionFavoritesStore.get(token) || [];
     const savedItem: FixtureFavorite = {
       id: itemInput.id,

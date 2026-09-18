@@ -131,7 +131,7 @@ export function AirportIngressSimulator({ hub }: AirportIngressSimulatorProps) {
           </label>
           <select
             value={luggage}
-            onChange={(e) => setLuggage(e.target.value as any)}
+            onChange={(e) => setLuggage(e.target.value as typeof luggage)}
             className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900 shadow-2xs dark:border-slate-700 dark:bg-slate-800 dark:text-amber-50"
           >
             <option value="light_backpack">Light Backpack Only (High Mobility)</option>
@@ -147,7 +147,7 @@ export function AirportIngressSimulator({ hub }: AirportIngressSimulatorProps) {
           </label>
           <select
             value={budgetTier}
-            onChange={(e) => setBudgetTier(e.target.value as any)}
+            onChange={(e) => setBudgetTier(e.target.value as typeof budgetTier)}
             className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900 shadow-2xs dark:border-slate-700 dark:bg-slate-800 dark:text-amber-50"
           >
             <option value="safety_first">Safety First (Zero Risk)</option>

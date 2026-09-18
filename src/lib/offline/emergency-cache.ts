@@ -5,6 +5,8 @@
  * Implements Truth Table TT-OFFLINE-SURVIVAL-01 and Decision Table DT-OFFLINE-CACHE-01.
  */
 
+export const OFFLINE_CACHE_UPDATE_EVENT = "sts_offline_cache_update";
+
 export interface OfflineEmergencyBundle {
   destinationCity: string;
   destinationCountryIso2: string;
@@ -50,6 +52,7 @@ export function saveEmergencyBundleOffline(bundle: OfflineEmergencyBundle): bool
       "sts_active_offline_destination",
       bundle.destinationCity.toLowerCase(),
     );
+    window.dispatchEvent(new CustomEvent(OFFLINE_CACHE_UPDATE_EVENT));
     return true;
   } catch (err) {
     console.error("[OfflineCache] Failed to save offline bundle:", err);

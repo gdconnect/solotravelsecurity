@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
+import { useStorageVersion } from "@/lib/use-storage-version";
 import Link from "next/link";
 import { Icon } from "@/components/atoms/Icon";
 import { ScoreMeter, Badge } from "@/components/atoms";
@@ -13,6 +14,7 @@ import type {
 import {
   getStoredPersona,
   getStoredTrips,
+  STORAGE_EVENTS,
   getActiveTripId,
   setActiveTripId,
   addTrip,
@@ -71,9 +73,21 @@ const PHASES: Array<{
 ];
 
 export function TravelerPortalClient() {
-  const [trips, setTrips] = useState<TripPlan[]>(DEFAULT_TRIPS);
-  const [activeTripId, setActiveTripIdState] = useState<string>(DEFAULT_TRIPS[0].id);
-  const [persona, setPersona] = useState<TravelerPersona>(DEFAULT_TRAVELER_PERSONA);
+  // Storage-backed state: defaults on the server, re-derived after hydration
+  // and on every storage write (writers dispatch STORAGE_UPDATE_EVENT).
+  const storageVersion = useStorageVersion(STORAGE_EVENTS);
+  const trips = useMemo<TripPlan[]>(
+    () => (storageVersion >= 0 ? getStoredTrips() : DEFAULT_TRIPS),
+    [storageVersion],
+  );
+  const activeTripId = useMemo<string>(
+    () => (storageVersion >= 0 ? getActiveTripId() : DEFAULT_TRIPS[0].id),
+    [storageVersion],
+  );
+  const persona = useMemo<TravelerPersona>(
+    () => (storageVersion >= 0 ? getStoredPersona() : DEFAULT_TRAVELER_PERSONA),
+    [storageVersion],
+  );
   const [activeTab, setActiveTab] = useState<
     | "checklists"
     | "reminders"
@@ -112,22 +126,6 @@ export function TravelerPortalClient() {
   // ICS notification banner
   const [calendarExported, setCalendarExported] = useState<boolean>(false);
 
-  // Load from localStorage on mount
-  useEffect(() => {
-    setTrips(getStoredTrips());
-    setActiveTripIdState(getActiveTripId());
-    setPersona(getStoredPersona());
-
-    const handleStorageUpdate = () => {
-      setTrips(getStoredTrips());
-      setActiveTripIdState(getActiveTripId());
-      setPersona(getStoredPersona());
-    };
-
-    window.addEventListener("sts_storage_update", handleStorageUpdate);
-    return () => window.removeEventListener("sts_storage_update", handleStorageUpdate);
-  }, []);
-
   const activeTrip: TripPlan = useMemo(() => {
     return trips.find((t) => t.id === activeTripId) || trips[0] || DEFAULT_TRIPS[0];
   }, [trips, activeTripId]);
@@ -160,7 +158,9 @@ export function TravelerPortalClient() {
   const checklist = useMemo(() => {
     return generateSituationalChecklist({
       archetype: persona.archetype,
-      destinationRiskTier: activeTrip.destinationRiskTier.toUpperCase() as any,
+      destinationRiskTier: activeTrip.destinationRiskTier.toUpperCase() as Uppercase<
+        TripPlan["destinationRiskTier"]
+      >,
     });
   }, [persona.archetype, activeTrip.destinationRiskTier]);
 
@@ -864,7 +864,7 @@ export function TravelerPortalClient() {
 
               <select
                 value={newCustomPhase}
-                onChange={(e) => setNewCustomPhase(e.target.value as any)}
+                onChange={(e) => setNewCustomPhase(e.target.value as TripLifecyclePhase)}
                 className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-900 focus:border-amber-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
               >
                 <option value="pre_trip">Pre-Trip Staging</option>
@@ -1710,7 +1710,7 @@ export function TravelerPortalClient() {
                   <select
                     id="new-trip-risk-tier"
                     value={newRisk}
-                    onChange={(e) => setNewRisk(e.target.value as any)}
+                    onChange={(e) => setNewRisk(e.target.value as typeof newRisk)}
                     className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-2.5 font-medium text-slate-900 focus:border-amber-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
                   >
                     <option value="Low">Low Risk (e.g. Tokyo, Reykjavik)</option>
@@ -1786,7 +1786,7 @@ export function TravelerPortalClient() {
                   <select
                     id="new-trip-lodging-type"
                     value={newLodgingType}
-                    onChange={(e) => setNewLodgingType(e.target.value as any)}
+                    onChange={(e) => setNewLodgingType(e.target.value as typeof newLodgingType)}
                     className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-2.5 font-medium text-slate-900 focus:border-amber-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
                   >
                     <option value="hotel">Standard Hotel</option>
@@ -1806,7 +1806,7 @@ export function TravelerPortalClient() {
                   <select
                     id="new-trip-lodging-floor"
                     value={newLodgingFloor}
-                    onChange={(e) => setNewLodgingFloor(e.target.value as any)}
+                    onChange={(e) => setNewLodgingFloor(e.target.value as typeof newLodgingFloor)}
                     className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 p-2.5 font-medium text-slate-900 focus:border-amber-400 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"
                   >
                     <option value="ground">Ground Floor (Vulnerable Entry)</option>

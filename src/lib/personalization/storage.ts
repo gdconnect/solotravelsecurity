@@ -5,6 +5,10 @@ import type {
   CustomTripChecklistItem,
 } from "./types";
 
+export const STORAGE_UPDATE_EVENT = "sts_storage_update";
+/** Pass to useStorageVersion to react to persona/trip changes. */
+export const STORAGE_EVENTS = [STORAGE_UPDATE_EVENT] as const;
+
 const PERSONA_STORAGE_KEY = "sts_traveler_persona";
 const TRIPS_STORAGE_KEY = "sts_traveler_trips";
 const ACTIVE_TRIP_KEY = "sts_active_trip_id";
@@ -136,7 +140,7 @@ export function saveStoredPersona(persona: TravelerPersona): void {
   if (typeof window === "undefined") return;
   try {
     localStorage.setItem(PERSONA_STORAGE_KEY, JSON.stringify(persona));
-    window.dispatchEvent(new CustomEvent("sts_storage_update"));
+    window.dispatchEvent(new CustomEvent(STORAGE_UPDATE_EVENT));
   } catch {
     // Non-fatal
   }
@@ -160,7 +164,7 @@ export function saveStoredTrips(trips: TripPlan[]): void {
   if (typeof window === "undefined") return;
   try {
     localStorage.setItem(TRIPS_STORAGE_KEY, JSON.stringify(trips));
-    window.dispatchEvent(new CustomEvent("sts_storage_update"));
+    window.dispatchEvent(new CustomEvent(STORAGE_UPDATE_EVENT));
   } catch {
     // Non-fatal
   }
@@ -180,7 +184,7 @@ export function setActiveTripId(id: string): void {
   if (typeof window === "undefined") return;
   try {
     localStorage.setItem(ACTIVE_TRIP_KEY, id);
-    window.dispatchEvent(new CustomEvent("sts_storage_update"));
+    window.dispatchEvent(new CustomEvent(STORAGE_UPDATE_EVENT));
   } catch {
     // Non-fatal
   }

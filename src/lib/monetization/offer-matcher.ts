@@ -7,6 +7,8 @@
 
 import partnerCatalog from "@/data/monetization/partner-intake-catalog.json";
 
+type CatalogOffer = (typeof partnerCatalog)["offers"][number];
+
 export interface UserQueryContext {
   archetype: string;
   destinationCity: string;
@@ -87,7 +89,7 @@ function resolveUrlTemplate(
 export function matchUserWithOffers(context: UserQueryContext): UserOfferMatchResult {
   const evaluatedAtUtc = new Date().toISOString();
   const exclusionAudit: { offerId: string; reason: string }[] = [];
-  const eligibleCandidateList: { score: number; offer: any }[] = [];
+  const eligibleCandidateList: { score: number; offer: CatalogOffer }[] = [];
 
   const isSanctioned = SANCTIONED_COUNTRIES.includes(context.destinationCountryIso2.toUpperCase());
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
+import { useStorageVersion } from "@/lib/use-storage-version";
 import Link from "next/link";
 import {
   generateSituationalChecklist,
@@ -14,6 +15,10 @@ interface ChecklistClientEngineProps {
   initialChecklist: GeneratedChecklist;
 }
 
+const COMPLETED_STORAGE_KEY = "sts_completed_checklists";
+const COMPLETED_UPDATE_EVENT = "sts_completed_checklists_update";
+const COMPLETED_EVENTS = [COMPLETED_UPDATE_EVENT] as const;
+
 export function ChecklistClientEngine({ initialChecklist }: ChecklistClientEngineProps) {
   const [archetype, setArchetype] = useState<string>(
     initialChecklist.params.archetype || "solo-female",
@@ -24,35 +29,32 @@ export function ChecklistClientEngine({ initialChecklist }: ChecklistClientEngin
   const [selectedPhase, setSelectedPhase] = useState<string>("all");
   const [selectedPillar, setSelectedPillar] = useState<string>("all");
   const [criticalOnly, setCriticalOnly] = useState<boolean>(false);
-  const [completedIds, setCompletedIds] = useState<Set<string>>(new Set());
-
-  // Load persisted checklist state
-  useEffect(() => {
+  // Persisted completion state lives in localStorage; the version counter
+  // re-derives it after hydration and after every toggle.
+  const completedVersion = useStorageVersion(COMPLETED_EVENTS);
+  const completedIds = useMemo<Set<string>>(() => {
+    if (completedVersion < 0) return new Set();
     try {
-      const saved = localStorage.getItem("sts_completed_checklists");
-      if (saved) {
-        setCompletedIds(new Set(JSON.parse(saved)));
-      }
+      const saved = localStorage.getItem(COMPLETED_STORAGE_KEY);
+      return new Set(saved ? (JSON.parse(saved) as string[]) : []);
+    } catch {
+      return new Set();
+    }
+  }, [completedVersion]);
+
+  const toggleItem = (id: string) => {
+    const next = new Set(completedIds);
+    if (next.has(id)) {
+      next.delete(id);
+    } else {
+      next.add(id);
+    }
+    try {
+      localStorage.setItem(COMPLETED_STORAGE_KEY, JSON.stringify(Array.from(next)));
+      window.dispatchEvent(new CustomEvent(COMPLETED_UPDATE_EVENT));
     } catch {
       // Non-fatal
     }
-  }, []);
-
-  const toggleItem = (id: string) => {
-    setCompletedIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      try {
-        localStorage.setItem("sts_completed_checklists", JSON.stringify(Array.from(next)));
-      } catch {
-        // Non-fatal
-      }
-      return next;
-    });
   };
 
   // Re-generate checklist when filters change
@@ -164,7 +166,7 @@ export function ChecklistClientEngine({ initialChecklist }: ChecklistClientEngin
             </label>
             <select
               value={riskTier}
-              onChange={(e) => setRiskTier(e.target.value as any)}
+              onChange={(e) => setRiskTier(e.target.value as typeof riskTier)}
               className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-800 outline-none transition focus:border-amber-500 dark:border-slate-800 dark:bg-slate-950 dark:text-amber-50"
             >
               <option value="LOW">LOW Risk (e.g., Tokyo, Zurich)</option>

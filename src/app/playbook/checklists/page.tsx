@@ -7,6 +7,7 @@ import { Icon } from "@/components/atoms/Icon";
 import { cachedFetchGraphQL } from "@/lib/graphql/cached-fetch";
 import { GenerateChecklistDocument } from "@/lib/graphql/__generated__/documents";
 import type { GenerateChecklistQuery } from "@/lib/graphql/__generated__/types";
+import { RiskTier } from "@/lib/graphql/__generated__/types";
 import { parseGeneratedChecklist, type ValidatedGeneratedChecklist } from "@/lib/schemas/checklist";
 import { generateSituationalChecklist } from "@/lib/engine/checklist-generator";
 import { ChecklistClientEngine } from "./ChecklistClientEngine";
@@ -31,7 +32,7 @@ const loadInitialChecklist = cache(async (): Promise<ValidatedGeneratedChecklist
       variables: {
         input: {
           archetype: "solo-female",
-          destinationRiskTier: "MODERATE" as any,
+          destinationRiskTier: RiskTier.Moderate,
         },
       },
       operationName: "GenerateChecklist",

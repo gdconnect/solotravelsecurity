@@ -379,8 +379,8 @@ export function resolveStreetEncounter(inputs: StreetEncounterInputs): StreetEnc
   });
 
   return {
-    actionCode: result.actionCode as any,
-    threatLevel: result.threatLevel as any,
+    actionCode: result.actionCode as StreetEncounterResolution["actionCode"],
+    threatLevel: result.threatLevel as StreetEncounterResolution["threatLevel"],
     script: result.script,
     posture: result.posture,
   };

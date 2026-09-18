@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useMemo } from "react";
+import { useStorageVersion } from "@/lib/use-storage-version";
 
 export const COMPARISON_STORAGE_KEY = "sts_comparison_items";
 export const COMPARISON_UPDATE_EVENT = "sts_comparison_update";
@@ -78,27 +79,15 @@ export function clearComparison(): void {
 /**
  * SSR-safe reactive React hook for card comparison.
  */
+const COMPARISON_EVENTS = [COMPARISON_UPDATE_EVENT] as const;
+
 export function useComparison() {
-  const [comparisonIds, setComparisonIds] = useState<string[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const refresh = useCallback(() => {
-    setComparisonIds(getStoredComparisonIds());
-    setIsLoaded(true);
-  }, []);
-
-  useEffect(() => {
-    refresh();
-
-    const handleUpdate = () => refresh();
-    window.addEventListener(COMPARISON_UPDATE_EVENT, handleUpdate);
-    window.addEventListener("storage", handleUpdate);
-
-    return () => {
-      window.removeEventListener(COMPARISON_UPDATE_EVENT, handleUpdate);
-      window.removeEventListener("storage", handleUpdate);
-    };
-  }, [refresh]);
+  const version = useStorageVersion(COMPARISON_EVENTS);
+  const isLoaded = version >= 0;
+  const comparisonIds = useMemo<string[]>(
+    () => (version >= 0 ? getStoredComparisonIds() : []),
+    [version],
+  );
 
   const toggle = useCallback((id: string) => {
     return toggleComparison(id);
