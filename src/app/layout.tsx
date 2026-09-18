@@ -55,24 +55,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      data-scroll-behavior="smooth"
-      className="h-full antialiased"
-    >
-      <head>
-        <meta name="color-scheme" content="light dark" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('solotravelsecurity:theme:v1');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d){document.documentElement.classList.add('dark');document.documentElement.setAttribute('data-theme','dark');document.documentElement.style.colorScheme='dark';}else{document.documentElement.classList.remove('dark');document.documentElement.setAttribute('data-theme','light');document.documentElement.style.colorScheme='light';}}catch(e){}})();`,
-          }}
-        />
-      </head>
-      <body className="min-h-full">
+    // Dark mode driven by pure CSS via prefers-color-scheme in globals.css —
+    // no inline script, no FOUC, no parse blocking.
+    // Notify form uses native HTML POST to /api/notify (no client JS).
+    <html lang="en" className="h-full antialiased">
+      <body className="min-h-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-amber-50 transition-colors duration-200">
         <JsonLd data={siteGraph()} />
         {children}
-        <script defer src="/notify.js" />
       </body>
     </html>
   );

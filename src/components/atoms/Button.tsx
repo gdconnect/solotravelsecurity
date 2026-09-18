@@ -1,10 +1,9 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 /**
  * ATOM — Button.
  * Editorial pill: soft layered shadow, confident lift on hover.
- * Editorial charcoal + amber palette for solo travel security brand.
+ * Plain <a> for href — no client-side router needed for a single-page site.
  */
 type Variant = "primary" | "amber" | "white" | "ghost";
 type Size = "sm" | "md" | "lg";
@@ -36,11 +35,9 @@ interface ButtonProps {
   disabled?: boolean;
   onClick?: (e?: React.MouseEvent) => void;
   id?: string;
-  prefetch?: boolean;
   "aria-label"?: string;
   "aria-expanded"?: boolean;
   "aria-controls"?: string;
-  suppressHydrationWarning?: boolean;
 }
 
 export function Button({
@@ -53,18 +50,15 @@ export function Button({
   disabled = false,
   onClick,
   id,
-  prefetch,
   "aria-label": ariaLabel,
   "aria-expanded": ariaExpanded,
   "aria-controls": ariaControls,
-  suppressHydrationWarning,
 }: ButtonProps) {
   const cls = `inline-flex items-center justify-center gap-2 rounded-full font-display font-bold tracking-tight transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${VARIANTS[variant]} ${SIZES[size]} ${className}`;
   if (href) {
     return (
-      <Link
+      <a
         href={href}
-        prefetch={prefetch}
         className={cls}
         id={id}
         onClick={onClick}
@@ -72,10 +66,9 @@ export function Button({
         aria-disabled={disabled}
         aria-controls={ariaControls}
         aria-expanded={ariaExpanded}
-        suppressHydrationWarning={suppressHydrationWarning}
       >
         {children}
-      </Link>
+      </a>
     );
   }
   return (
@@ -87,7 +80,6 @@ export function Button({
       aria-label={ariaLabel}
       aria-expanded={ariaExpanded}
       aria-controls={ariaControls}
-      suppressHydrationWarning={suppressHydrationWarning}
       className={cls}
     >
       {children}

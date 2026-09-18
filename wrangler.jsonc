@@ -1,28 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
   "name": "solotravelsecurity",
   "compatibility_date": "2026-09-06",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "limits": {
-    "cpu_ms": 30000,
-  },
+  // Static export: `next build` writes ./out; no Worker script, no bindings.
+  // See next.config.ts (output: "export").
   "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS",
-  },
-  "services": [
-    {
-      // Self-reference service binding, the service name must match the worker name
-      // see https://opennext.js.org/cloudflare/caching
-      "binding": "WORKER_SELF_REFERENCE",
-      "service": "solotravelsecurity",
-    },
-  ],
-  "images": {
-    // Enable image optimization
-    // see https://opennext.js.org/cloudflare/howtos/image
-    "binding": "IMAGES",
+    "directory": "./out",
+    // Next static export emits out/404.html
+    "not_found_handling": "404-page",
+    // next.config.ts trailingSlash: true → /foo/ ↔ out/foo/index.html
+    "html_handling": "auto-trailing-slash",
   },
   "routes": [
     {

@@ -42,3 +42,7 @@ yarn-error.log*
 # opennext + wrangler
 /.open-next/
 /.wrangler/
+.trinity/
+.trinity/__pycache__/
+.worktrees/
+/.cache/

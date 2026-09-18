@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* dark: variant uses the Tailwind v4 default (prefers-color-scheme) — no .dark class setter exists */
 
 /**
  * Solo Travel Security design tokens.
@@ -43,16 +43,17 @@
 }
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
 }
 
 html {
-  color-scheme: light;
   scroll-behavior: smooth;
-}
-
-html.dark {
-  color-scheme: dark;
 }
 
 body {
@@ -64,9 +65,11 @@ body {
     color 0.2s ease;
 }
 
-html.dark body {
-  background-color: #020617;
-  color: #fef3c7;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #020617;
+    color: #fef3c7;
+  }
 }
 
 ::selection {
@@ -74,9 +77,11 @@ html.dark body {
   color: #0f172a;
 }
 
-html.dark ::selection {
-  background: #fbbf24;
-  color: #020617;
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background: #fbbf24;
+    color: #020617;
+  }
 }
 
 /* Visible keyboard focus everywhere (WCAG 2.4.7 & 2.4.11 compliant) */
@@ -159,4 +164,39 @@ html.dark ::selection {
 }
 .prose p:last-child {
   margin-bottom: 0;
+}
+
+/* Print / PDF Engine Styles for Pocket Folio */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt;
+  }
+
+  header,
+  footer,
+  nav,
+  button,
+  .no-print,
+  [data-skip-print="true"] {
+    display: none !important;
+  }
+
+  .print-page {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .print-card {
+    border: 1.5pt solid #0f172a !important;
+    border-radius: 6pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  .print-cutout {
+    border: 1.5pt dashed #475569 !important;
+  }
 }

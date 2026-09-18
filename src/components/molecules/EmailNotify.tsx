@@ -1,11 +1,11 @@
 import { Icon } from "@/components/atoms";
 
 /**
- * MOLECULE — EmailNotify (server-rendered, progressive enhancement).
+ * MOLECULE — EmailNotify (server-rendered, native submit).
  *
- * Pure static form — no React runtime shipped. The submit handler lives in
- * /public/notify.js (cached for 1 year). Falls back to native form POST
- * if JS is off.
+ * Plain HTML form — POSTs to /api/notify via native browser submit. No
+ * "use client", no JS, no hydration. Users without JS still get the form
+ * working. Progressive enhancement: layer fetch + status UI on top later.
  */
 const notifyEndpoint = "/api/notify";
 
@@ -16,7 +16,6 @@ export function EmailNotify({ idSuffix = "" }: { idSuffix?: string }) {
       id={formId}
       action={notifyEndpoint}
       method="post"
-      data-form="notify"
       className="flex w-full max-w-xl flex-col gap-3 sm:flex-row"
       aria-label="Notify me when launch"
     >
@@ -41,20 +40,12 @@ export function EmailNotify({ idSuffix = "" }: { idSuffix?: string }) {
       </div>
       <button
         type="submit"
-        className="inline-flex h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-slate-900 px-6 text-base font-extrabold text-amber-50 shadow-card transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lift disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 dark:bg-amber-400 dark:text-slate-950 dark:hover:bg-amber-300 dark:focus-visible:ring-offset-slate-950"
+        className="inline-flex h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-slate-900 px-6 text-base font-extrabold text-amber-50 shadow-card transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 dark:bg-amber-400 dark:text-slate-950 dark:hover:bg-amber-300 dark:focus-visible:ring-offset-slate-950"
       >
-        <span data-icon="idle">
-          <Icon name="bell" className="size-4" />
-        </span>
-        <span data-icon="loading" hidden>
-          <Icon name="loader" className="size-4 animate-spin" />
-        </span>
-        <span data-icon="done" hidden>
-          <Icon name="check" className="size-4" />
-        </span>
-        <span data-label>Notify me</span>
+        <Icon name="bell" className="size-4" />
+        <span>Notify me</span>
       </button>
-      <p data-status="idle" className="text-sm font-semibold text-slate-700 dark:text-amber-50/75">
+      <p className="text-sm font-semibold text-slate-700 dark:text-amber-50/75">
         One email at launch. No spam, no resale, no growth-hack nonsense.
       </p>
     </form>
