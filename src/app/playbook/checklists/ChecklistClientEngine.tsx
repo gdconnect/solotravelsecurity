@@ -73,12 +73,10 @@ export function ChecklistClientEngine({ initialChecklist }: ChecklistClientEngin
     const totalItems = currentChecklist.items.length;
     if (totalItems === 0) return { score: 100, grade: "A", unverifiedSPOFs: [] };
 
-    let totalDeductionsPossible = 0;
     let activeDeductions = 0;
     const unverifiedSPOFs: string[] = [];
 
     for (const item of currentChecklist.items) {
-      totalDeductionsPossible += item.scoringDeductionPoints;
       const isResolved = completedIds.has(item.id);
 
       if (!isResolved) {

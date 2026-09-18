@@ -15,6 +15,9 @@ const eslintConfig = defineConfig([
     // OpenNext Cloudflare build output:
     ".open-next/**",
     ".wrangler/**",
+    // Local tooling, git-ignored:
+    ".trinity/**",
+    ".worktrees/**",
   ]),
 ]);
 

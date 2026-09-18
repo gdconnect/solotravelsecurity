@@ -26,11 +26,7 @@ const BADGE_TONE_STYLES: Record<CardBadgeTone, string> = {
     "bg-slate-100 text-slate-800 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700",
 };
 
-export function SelfContainedCard({
-  card,
-  layout: _layout = "auto",
-  showCompare = true,
-}: SelfContainedCardProps) {
+export function SelfContainedCard({ card, showCompare = true }: SelfContainedCardProps) {
   const { isComparing, toggle: toggleCompare } = useComparison();
   const [copied, setCopied] = useState(false);
   const [prosOpen, setProsOpen] = useState(false);
